@@ -13,6 +13,7 @@
 
 ## Table of contents
 - [Introduction](#introduction)
+ - [What is Mazz?](#what-is-mazz)
 - [Help](#help)
 - [Developers](#developers)
 
