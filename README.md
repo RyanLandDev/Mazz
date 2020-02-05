@@ -11,3 +11,7 @@ Welcome to the official Mazz Github repository! Here you will find the bot code.
 - Language: Javascript
 - Runtime: Node.js
 - DB Provider: TBD
+
+> ### Contributors
+- RyanLand (RyanLandDev)
+- Alcoholic (Al-Koholik)
