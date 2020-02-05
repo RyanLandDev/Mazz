@@ -10,8 +10,15 @@
     <a href="https://www.patreon.com/discordjs"><img src="https://img.shields.io/badge/donate-patreon-F96854.svg" alt="Patreon" /></a>
   </p>
 </div>
+> ### What is Mazz?
+Mazz is a public Discord bot focused on a one-of-a-kind economy/currency/money system.
+
+> ### How do I use it?
+An extensive documentation about Mazz can be found [here](https://ryanland.gitbook.io/mazz).
+An invite to the official support server can be found [here](https://discord.gg/aZEZ7Ct).
 
 ## Developers
+Want to help out?
 - Version: v6.1.0
 - Version Name: The Total Rewrite
 - Version Status: INDEV  
