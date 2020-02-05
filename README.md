@@ -6,5 +6,5 @@ Status: INDEV
 
 # Dependencies
 - Language: Javascript
-- Library: Node.js
+- Runtime: Node.js
 - DB Provider: TBD
