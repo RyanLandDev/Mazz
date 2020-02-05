@@ -12,15 +12,17 @@
 </div>
 
 ## Table of contents
-- [FAQ](#faq)
- - [What is Mazz?](#What is Mazz?)
-## FAQ
-Here is an overview of the most frequently asked questions. You'll probably find your answer here.
+- [Introduction](#introduction)
+- [Help](#help)
+- [Developers](#developers)
+
+## Introduction
+Welcome to the official Mazz Github repository!
 
 > ### What is Mazz?
 Mazz is a public Discord bot focused on a one-of-a-kind economy/currency/money system.
 
-> ### How do I use it?
+## Help
 An extensive documentation about Mazz can be found [here](https://ryanland.gitbook.io/mazz).
 An invite to the official support server can be found [here](https://discord.gg/aZEZ7Ct).
 
