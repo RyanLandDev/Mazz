@@ -14,4 +14,4 @@ Welcome to the official Mazz Github repository! Here you will find the bot code.
 
 > ### Contributors
 - RyanLand (RyanLandDev)
-- Alcoholic (Al-Koholik)
+- Alcoholic (Al-Kohollik)
