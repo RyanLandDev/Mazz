@@ -11,6 +11,12 @@
   </p>
 </div>
 
+## Table of contents
+- [FAQ](#faq)
+ - [What is Mazz?](#What is Mazz?)
+## FAQ
+Here is an overview of the most frequently asked questions. You'll probably find your answer here.
+
 > ### What is Mazz?
 Mazz is a public Discord bot focused on a one-of-a-kind economy/currency/money system.
 
@@ -36,9 +42,9 @@ Note: You should ensure the code you've made works. We can't use broken code.
 
 > ### Dependencies
 - Language: Javascript
-- Runtime: Node.js
+- Runtime: Node.js 12
 - Library: Discord.js 11.5
-- DB Provider: TBD
+- Database Provider: TBD
 
 > ### Contributors
 - RyanLand (RyanLandDev)
