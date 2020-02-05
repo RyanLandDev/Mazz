@@ -13,9 +13,14 @@
 
 ## Table of contents
 - [Introduction](#introduction)
- - [What is Mazz?](#what-is-mazz)
+  - [What is Mazz?](#what-is-mazz)
 - [Help](#help)
 - [Developers](#developers)
+  - [What should I help with?](#what-should-i-help-with)
+  - [Version Info](#version-info)
+  - [Coding Tips](#coding-tips)
+  - [Dependencies](#dependencies)
+  - [Contributors](#contributors)
 
 ## Introduction
 Welcome to the official Mazz Github repository!
@@ -39,7 +44,7 @@ Note: You should ensure the code you've made works. We can't use broken code.
 - Version Name: The Total Rewrite
 - Version Status: INDEV  
 
-> ### Tips
+> ### Coding Tips
 - Use ESLint
 - Commit from your code editor
 
