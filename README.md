@@ -21,6 +21,10 @@ An invite to the official support server can be found [here](https://discord.gg/
 ## Developers
 Want to support Mazz code-wise? You've come to the right place! You are free to propose commits anywhere in the repository. You'll get a free cookie 🍪
 
+> ### What should I help with?
+You could help with anything! Helping us in any way helps. What helps us most? The answer to that is bug fixes. We love to work on new features, but unfortunately bugs come with that too. It would make our day if you helped fix one of them!
+Note: You should ensure the code you've made works. We can't use broken code.
+
 > ### Version Info
 - Version: v6.1.0
 - Version Name: The Total Rewrite
