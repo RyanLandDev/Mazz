@@ -16,27 +16,24 @@
 <h2>Table of contents</h2>
 <ol>
 <li><a href="#introduction">Introduction</a>
-  <ol>
-    <li><a href="#what-is-mazz">What is Mazz?</a></li>
-  </ol>
+<ol type="i">
+<li><a href="#what-is-mazz">What is Mazz?</a></li>
+</ol>
 </li>
-</ol>
-<li>2.<a href="#help">Help</a></li>
+<li><a href="#help">Help</a></li>
 <li><a href="#developers">Developers</a></li>
-  <ol type="1"><li><a href="#what-should-i-help-with">What should I help with?</a></li></ol>
-  <ol type="1"><li><a href="#version-info">Version Info</a></li></ol>
-  - [Coding Tips](#coding-tips)
-  - [Dependencies](#dependencies)
-  - [Contributors](#contributors)
-</ol>
+<ol type="i"><li><a href="#what-should-i-help-with">What should I help with?</a></li>
+<li><a href="#version-info">Version Info</a></li>
+<li><a href="#coding-tips">Coding Tips</a></li>
+<li><a href="#contributors">Contributors</a></li></ol>
 
 ## Introduction
 Welcome to the official Mazz Github repository! Here you can find the source code that makes Mazz work. If you like what we do, don't be afraid to ⭐ <strong>star</strong> this repository!
 
-> ### What is Mazz?
+### What is Mazz?
 Mazz is a public Discord bot focused on a one-of-a-kind 💵 <strong>economy/currency/money</strong> system.
 
-> ### How do I get it?
+### How do I get it?
 You can invite the bot to your own Discord server using [this](https://discordapp.com/oauth2/authorize?client_id=650273454062567435&permissions=371776&scope=bot) link.
 ## Help
 An extensive documentation about Mazz can be found [here](https://ryanland.gitbook.io/mazz).
@@ -45,25 +42,25 @@ An invite to the official support server can be found [here](https://discord.gg/
 ## Developers
 Want to support Mazz code-wise? You've come to the right place! You are free to propose commits anywhere in the repository. You'll get a free cookie 🍪
 
-> ### What should I help with?
+### What should I help with?
 You could help with anything! Helping us in any way helps. What helps us most? 🐞 <strong>Bug fixes</strong>. We love to work on new features, but unfortunately bugs come with that too. It would make our day if you helped fix one of them!  
 Note: You should ensure the code you've made works. We can't use broken code.
 
-> ### Version Info
+### Version Info
 - Version: v6.1.0
 - Version Name: The Total Rewrite
 - Version Status: INDEV  
 
-> ### Coding Tips
+### Coding Tips
 - Use ESLint
 - Commit from your code editor
 
-> ### Dependencies
+### Dependencies
 - Language: Javascript
 - Runtime: Node.js 12
 - Library: Discord.js 11.5
 - Database Provider: TBD
 
-> ### Contributors
+### Contributors
 - RyanLand (RyanLandDev)
 - Alcoholic (Al-Kohollik)
