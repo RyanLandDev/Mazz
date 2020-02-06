@@ -9,8 +9,7 @@
 [![](https://img.shields.io/badge/contributors-2-brightgreen?logo=github)](https://github.com/RyanLandDev/Mazz)
 [![](https://img.shields.io/badge/discord.js-v11.5.0-blue.svg?logo=npm)](https://discord.js.org)
 [![](https://img.shields.io/badge/donate-patreon-F96854.svg?logo=patreon)](https://patreon.com/mazzbot)
-</div>
-
+</div>  
 ## Table of contents
 - [Introduction](#introduction)
   - [What is Mazz?](#what-is-mazz)
