@@ -9,11 +9,15 @@
 [![](https://img.shields.io/badge/contributors-2-brightgreen?logo=github)](https://github.com/RyanLandDev/Mazz)
 [![](https://img.shields.io/badge/discord.js-v11.5.0-blue.svg?logo=npm)](https://discord.js.org)
 [![](https://img.shields.io/badge/donate-patreon-F96854.svg?logo=patreon)](https://patreon.com/mazzbot)
+
 </div>  
 <br />
+<br />
+
 <h2>Table of contents</h2>
-<a href="#introduction">Introduction</a>
-  - [What is Mazz?](#what-is-mazz)
+<ol>
+<li><a href="#introduction">Introduction</a></li>
+  <ol type="I"><li><a href="#what-is-mazz">What is Mazz?</a></li></ol>
 - [Help](#help)
 - [Developers](#developers)
   - [What should I help with?](#what-should-i-help-with)
@@ -21,6 +25,7 @@
   - [Coding Tips](#coding-tips)
   - [Dependencies](#dependencies)
   - [Contributors](#contributors)
+</ol>
 
 ## Introduction
 Welcome to the official Mazz Github repository! Here you can find the source code that makes Mazz work. If you like what we do, don't be afraid to ⭐ <strong>star</strong> this repository!
