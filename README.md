@@ -3,7 +3,7 @@
 <img width="150" height="150" align="left" style="float: left; margin: 0 10px 0 0;" alt="Mazz" src="https://cdn.discordapp.com/attachments/542040668453732352/674713874586402816/39aaa46e86544209c6ab2cd44f958481.png"></img>  
 </p>
 
-# Mazz
+# Mazza
 
 [![](https://img.shields.io/discord/631734689530380308.svg?logo=discord&colorB=7289DA)](https://discord.gg/aZEZ7Ct)
 [![](https://img.shields.io/badge/contributors-2-brightgreen?logo=github)](https://github.com/RyanLandDev/Mazz)
