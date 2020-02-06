@@ -1,14 +1,13 @@
 <div align="center">
   <br />
-  <p>
-    <a href="https://discord.gg/aZEZ7Ct"><img src="https://cdn.discordapp.com/attachments/542040668453732352/674713874586402816/39aaa46e86544209c6ab2cd44f958481.png" width="546" alt="Mazz" /></a>
-  </p>
+<img width="150" height="150" align="left" style="float: left; margin: 0 10px 0 0;" alt="Mazz" src="https://cdn.discordapp.com/attachments/542040668453732352/674713874586402816/39aaa46e86544209c6ab2cd44f958481.png">  
 <div align="center"><h1><strong>Mazz</strong></h1></div>
   <br />
-  <p>
 <a href="https://www.github.com/RyanLandDev/Mazz"><img src="https://img.shields.io/badge/contributors-2-brightgreen" alt="Contributors" /></a>
     <a href="https://www.patreon.com/discordjs"><img src="https://img.shields.io/badge/donate-patreon-F96854.svg" alt="Patreon" /></a>
-  </p>
+[![](https://img.shields.io/discord/565048515357835264.svg?logo=discord&colorB=7289DA)](https://discord.atlanta-bot.fr)
+[![](https://discordbots.org/api/widget/status/557445719892688897.svg)](https://discordbots.org/bot/557445719892688897)
+[![](https://img.shields.io/badge/discord.js-v12.0.0--dev-blue.svg?logo=npm)](https://github.com/discordjs)
 </div>
 
 ## Table of contents
