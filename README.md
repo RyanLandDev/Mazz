@@ -23,7 +23,7 @@
   <li><a href="#documentation">Documentation</a></li>
   <li><a href="#support-server">Support server</a></li>
   <li><a href="#faq">FAQ</a></li>
-    <ul><li><a href="#how-do-i-make-a-suggestion">How do I make a suggestion?</a></li>
+    <ul type="circle"><li><a href="#how-do-i-make-a-suggestion">How do I make a suggestion?</a></li>
     <li><a href="#i-want-to-help-code-the-bot-how-can-i">I want to help code the bot. How can I?</a></li>
     </ul>
   </ol>
