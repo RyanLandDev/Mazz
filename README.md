@@ -11,6 +11,7 @@
 [![](https://img.shields.io/badge/donate-patreon-F96854.svg?logo=patreon)](https://patreon.com/mazzbot)
 </div>  
   
+
   ## Table of contents
 - [Introduction](#introduction)
   - [What is Mazz?](#what-is-mazz)
@@ -23,11 +24,13 @@
   - [Contributors](#contributors)
 
 ## Introduction
-Welcome to the official Mazz Github repository!
+Welcome to the official Mazz Github repository! Here you can find the source code that makes Mazz work. If you like what we do, don't be afraid to ⭐ <strong>star</strong> this repository!
 
 > ### What is Mazz?
-Mazz is a public Discord bot focused on a one-of-a-kind economy/currency/money system.
+Mazz is a public Discord bot focused on a one-of-a-kind 💵 <strong>economy/currency/money</strong> system.
 
+> ### How do I get it?
+You can invite the bot to your own Discord server using [this](https://discordapp.com/oauth2/authorize?client_id=650273454062567435&permissions=371776&scope=bot) link.
 ## Help
 An extensive documentation about Mazz can be found [here](https://ryanland.gitbook.io/mazz).
 An invite to the official support server can be found [here](https://discord.gg/aZEZ7Ct).
@@ -36,7 +39,7 @@ An invite to the official support server can be found [here](https://discord.gg/
 Want to support Mazz code-wise? You've come to the right place! You are free to propose commits anywhere in the repository. You'll get a free cookie 🍪
 
 > ### What should I help with?
-You could help with anything! Helping us in any way helps. What helps us most? The answer to that is bug fixes. We love to work on new features, but unfortunately bugs come with that too. It would make our day if you helped fix one of them!
+You could help with anything! Helping us in any way helps. What helps us most? 🐞 <strong>Bug fixes</strong>. We love to work on new features, but unfortunately bugs come with that too. It would make our day if you helped fix one of them!  
 Note: You should ensure the code you've made works. We can't use broken code.
 
 > ### Version Info
