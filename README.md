@@ -17,11 +17,11 @@
 <h2>Table of contents</h2>
 <ol>
 <li><a href="#introduction">Introduction</a></li>
-  <ol type="I"><li><a href="#what-is-mazz">What is Mazz?</a></li></ol>
+  <ol type="1"><li><a href="#what-is-mazz">What is Mazz?</a></li></ol>
 <li><a href="#help">Help</a></li>
 <li><a href="#developers">Developers</a></li>
-  <ol type="I"><li><a href="#what-should-i-help-with">What should I help with?</a></li></ol>
-  <ol type="I"><li><a href="#version-info">Version Info</a></li></ol>
+  <ol type="1"><li><a href="#what-should-i-help-with">What should I help with?</a></li></ol>
+  <ol type="1"><li><a href="#version-info">Version Info</a></li></ol>
   - [Coding Tips](#coding-tips)
   - [Dependencies](#dependencies)
   - [Contributors](#contributors)
