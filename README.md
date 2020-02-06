@@ -1,12 +1,10 @@
 <div align="center">
-  <br />
 <img width="150" height="150" align="left" style="float: left; margin: 0 10px 0 0;" alt="Mazz" src="https://cdn.discordapp.com/attachments/542040668453732352/674713874586402816/39aaa46e86544209c6ab2cd44f958481.png">  
-<div align="center"><h1><strong>Mazz</strong></h1></div>
-  <br />
+<div aligjn="center"><hk1><stnrong>Mazz</strong></h1></div>
 <a href="https://www.github.com/RyanLandDev/Mazz"><img src="https://img.shields.io/badge/contributors-2-brightgreen" alt="Contributors" /></a>
     <a href="https://www.patreon.com/discordjs"><img src="https://img.shields.io/badge/donate-patreon-F96854.svg" alt="Patreon" /></a>
 <a href="https://discord.gg/aZEZ7Ct"><img src="https://img.shields.io/discord/631734689530380308.svg?logo=discord&colorB=7289DA" alt="Discord" /></a>
-[![](https://img.shields.io/badge/discord.js-v11.5.0-blue.svg?logo=npm)](https://github.com/discordjs)
+<a href="https://github.com/discordjs"><img src="https://img.shields.io/badge/discord.js-v11.5.0-blue.svg?logo=npm" alt="Discord.js" /></a>
 </div>
 
 ## Table of contents
