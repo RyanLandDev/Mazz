@@ -18,9 +18,10 @@
 <ol>
 <li><a href="#introduction">Introduction</a>
   <ol>
-<li><a href="#what-is-mazz">What is Mazz?</a></li>
-</ol>
+    <li><a href="#what-is-mazz">What is Mazz?</a></li>
+  </ol>
 </li>
+</ol>
 <li><a href="#help">Help</a></li>
 <li><a href="#developers">Developers</a></li>
   <ol type="1"><li><a href="#what-should-i-help-with">What should I help with?</a></li></ol>
