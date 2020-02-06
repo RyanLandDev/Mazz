@@ -2,7 +2,7 @@
 <p>
 <img width="150" height="150" align="left" style="float: left; margin: 0 10px 0 0;" alt="Mazz" src="https://cdn.discordapp.com/attachments/542040668453732352/674713874586402816/39aaa46e86544209c6ab2cd44f958481.png"></img>  
 </p>
-
+<iframe src="https://canary.discordapp.com/widget?id=631734689530380308&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
 # Mazz
 
 [![](https://img.shields.io/discord/631734689530380308.svg?logo=discord&colorB=7289DA)](https://discord.gg/aZEZ7Ct)
