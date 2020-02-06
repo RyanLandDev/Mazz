@@ -3,8 +3,8 @@
 
 # Mazz
 
-<a href="https://www.github.com/RyanLandDev/Mazz"><img src="https://img.shields.io/badge/contributors-2-brightgreen" alt="Contributors" /></a>
-    <a href="https://www.patreon.com/discordjs"><img src="https://img.shields.io/badge/donate-patreon-F96854.svg" alt="Patreon" /></a>
+[![](https://img.shields.io/badge/contributors-2-brightgreen?logo=github)](https://github.com/RyanLandDev/Mazz)
+[![](https://img.shields.io/badge/donate-patreon-F96854.svg?logo=patreon)](https://patreon.com/mazzbot)
 <a href="https://discord.gg/aZEZ7Ct"><img src="https://img.shields.io/discord/631734689530380308.svg?logo=discord&colorB=7289DA" alt="Discord" /></a>
 <a href="https://github.com/discordjs"><img src="https://img.shields.io/badge/discord.js-v11.5.0-blue.svg?logo=npm" alt="Discord.js" /></a>
 </div>
