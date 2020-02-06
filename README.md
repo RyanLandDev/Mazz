@@ -10,9 +10,8 @@
 [![](https://img.shields.io/badge/discord.js-v11.5.0-blue.svg?logo=npm)](https://discord.js.org)
 [![](https://img.shields.io/badge/donate-patreon-F96854.svg?logo=patreon)](https://patreon.com/mazzbot)
 
-</div>  
-<br />
-<br />
+</div>
+<br><br><br><br>
 
 <h2>Table of contents</h2>
 <ol>
@@ -22,7 +21,7 @@
   </ol>
 </li>
 </ol>
-<li><a href="#help">Help</a></li>
+<li>2.<a href="#help">Help</a></li>
 <li><a href="#developers">Developers</a></li>
   <ol type="1"><li><a href="#what-should-i-help-with">What should I help with?</a></li></ol>
   <ol type="1"><li><a href="#version-info">Version Info</a></li></ol>
