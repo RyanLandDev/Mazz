@@ -20,8 +20,8 @@
   <ol type="I"><li><a href="#what-is-mazz">What is Mazz?</a></li></ol>
 <li><a href="#help">Help</a></li>
 <li><a href="#developers">Developers</a></li>
-  - [What should I help with?](#what-should-i-help-with)
-  - [Version Info](#version-info)
+  <ol type="I"><li><a href="#what-should-i-help-with">What should I help with?</a></li></ol>
+  <ol type="I"><li><a href="#version-info">Version Info</a></li></ol>
   - [Coding Tips](#coding-tips)
   - [Dependencies](#dependencies)
   - [Contributors](#contributors)
