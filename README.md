@@ -16,16 +16,23 @@
 ## Table of contents
 <ul>
 <li><a href="#introduction">Introduction</a>
-<ol type="I">
-<li><a href="#what-is-mazz">What is Mazz?</a></li>
-</ol>
-</li>
+  <ol type="I"><li><a href="#what-is-mazz">What is Mazz?</a></li>
+  <li><a href="#how-do-i-get-it">How do I get it?</a></li></ol></li>
 <li><a href="#help">Help</a></li>
+  <ol type="I"><li><a href="#commands">Commands</a></li>
+  <li><a href="#documentation">Documentation</a></li>
+  <li><a href="#support-server">Support server</a></li>
+  <li><a href="#faq">FAQ</a></li>
+    <ul><li><a href="#how-do-i-make-a-suggestion">How do I make a suggestion?</a></li>
+    <li><a href="#i-want-to-help-code-the-bot-how-can-i">I want to help code the bot. How can I?</a></li>
+    </ul>
+  </ol>
 <li><a href="#developers">Developers</a></li>
 <ol type="I"><li><a href="#what-should-i-help-with">What should I help with?</a></li>
-<li><a href="#version-info">Version Info</a></li>
-<li><a href="#coding-tips">Coding Tips</a></li>
-<li><a href="#contributors">Contributors</a></li></ul>
+  <li><a href="#version-info">Version Info</a></li>
+  <li><a href="#coding-tips">Coding Tips</a></li>
+  <li><a href="#dependencies">Dependencies</a></li>
+  <li><a href="#contributors">Contributors</a></li></ul>
 
 ## Introduction
 Welcome to the official Mazz Github repository! Here you can find the source code that makes Mazz work. If you like what we do, don't be afraid to ⭐ <b>star</b> this repository!
