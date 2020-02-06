@@ -1,9 +1,8 @@
 <div align="center">
 <p>
-<img width="250" height="250" align="left" style="float: left; margin: 0 10px 0 0;" alt="Mazz" src="https://cdn.discordapp.com/attachments/542040668453732352/674713874586402816/39aaa46e86544209c6ab2cd44f958481.png"></img>  
+<img width="350" height="350" align="left" style="float: left; margin: 0 10px 0 0;" alt="Mazz" src="https://cdn.discordapp.com/attachments/542040668453732352/674713874586402816/39aaa46e86544209c6ab2cd44f958481.png"></img>  
 </p>
-<br />
-<h1><strong>Mazz</h1></strong>
+<h1 style=font-size:100px><strong>Mazz</h1></strong>
 
 [![](https://discordapp.com/api/guilds/631734689530380308/embed.png)](https://discord.gg/aZEZ7Ct)
 [![](https://img.shields.io/badge/contributors-2-brightgreen?logo=github)](https://github.com/RyanLandDev/Mazz)
