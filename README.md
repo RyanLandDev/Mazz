@@ -10,9 +10,8 @@
 [![](https://img.shields.io/badge/discord.js-v11.5.0-blue.svg?logo=npm)](https://discord.js.org)
 [![](https://img.shields.io/badge/donate-patreon-F96854.svg?logo=patreon)](https://patreon.com/mazzbot)
 </div>  
-  
-
-  ## Table of contents
+<br />
+<h2>Table of contents</h2>
 - [Introduction](#introduction)
   - [What is Mazz?](#what-is-mazz)
 - [Help](#help)
