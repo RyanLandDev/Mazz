@@ -12,7 +12,7 @@
 </div>  
 <br />
 <h2>Table of contents</h2>
-- [Introduction](#introduction)
+<a href="#introduction">Introduction</a>
   - [What is Mazz?](#what-is-mazz)
 - [Help](#help)
 - [Developers](#developers)
