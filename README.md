@@ -5,6 +5,7 @@
 
 # Mazz
 
+[![](https://discordapp.com/api/guilds/631734689530380308/embed.png)](https://discord.gg/aZEZ7Ct)
 [![](https://img.shields.io/discord/631734689530380308.svg?logo=discord&colorB=7289DA)](https://discord.gg/aZEZ7Ct)
 [![](https://img.shields.io/badge/contributors-2-brightgreen?logo=github)](https://github.com/RyanLandDev/Mazz)
 [![](https://img.shields.io/badge/discord.js-v11.5.0-blue.svg?logo=npm)](https://discord.js.org)
