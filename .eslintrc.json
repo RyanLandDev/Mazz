@@ -1,3 +1,5 @@
+// this is a eslint config template we use while developing Mazz
+
 {
 	"extends": "eslint:recommended",
 	"env": {
