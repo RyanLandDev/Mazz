@@ -1,12 +1,17 @@
-// server.js
+// require modules
 const Discord = require('discord.js');
 const fs = require('fs');
 
-//create a new client
+// create a new client
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
-//ready
+// ============================================================================================================================================
+//
+// Status
+//
+// ============================================================================================================================================
+
 client.once('ready', () => {
 	// log that the bot is ready
 	console.log('Ready!');
@@ -14,25 +19,28 @@ client.once('ready', () => {
 	client.user.setActivity(`m!help | ${client.guilds.size} servers 🔥`);
 });
 
-// guildCreate
 client.on('guildCreate', () => {
 	client.user.setActivity(`m!help | ${client.guilds.size} servers 🔥`);
 });
 
-// guildDelete
 client.on('guildDelete', () => {
 	client.user.setActivity(`m!help | ${client.guilds.size} servers 🔥`);
 });
 
-// message responses
-client.on('message', (message) => {
-  
-});
-
+// ============================================================================================================================================
+//
+// Login
+//
+// ============================================================================================================================================
 
 client.login(process.env.token)
 
-//init project
+// ============================================================================================================================================
+//
+// Initialization
+//
+// ============================================================================================================================================
+
 const express = require("express");
 const app = express();
 
