@@ -2,8 +2,18 @@
 const Discord = require('discord.js');
 const { Client } = require('klasa');
 
-// create a new client
 const client = new Discord.Client();
+
+// create a new client
+new Client({
+  fetchAllMembers: false,
+  prefix: 'm!',
+  commandEditing: true,
+  typing: true,
+  noPrefixDM: true,
+  prefixCaseInsensitive: true,
+  readyMessage: () => 'Ready!',
+}).login('NjUwMjczNDU0MDYyNTY3NDM1.Xj0dig.RmOexpnQoYUmh1mA_6JAd6gHDhA');
 
 // ============================================================================================================================================
 //
@@ -25,14 +35,6 @@ client.on('guildCreate', () => {
 client.on('guildDelete', () => {
   client.user.setActivity(`m!help | ${client.guilds.size} servers 🔥`);
 });
-
-// ============================================================================================================================================
-//
-// Login
-//
-// ============================================================================================================================================
-
-client.login(process.env.token);
 
 // ============================================================================================================================================
 //
