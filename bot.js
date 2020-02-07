@@ -1,6 +1,7 @@
 // require modules
 const Discord = require('discord.js');
 const { Client } = require('klasa');
+const { token } = require('./config.json');
 
 const client = new Discord.Client();
 
@@ -8,33 +9,13 @@ const client = new Discord.Client();
 new Client({
   fetchAllMembers: false,
   prefix: 'm!',
+  presence: { name: `m!help | ${client.guilds.size} servers 🔥` },
   commandEditing: true,
   typing: true,
   noPrefixDM: true,
   prefixCaseInsensitive: true,
   readyMessage: () => 'Ready!',
-}).login('NjUwMjczNDU0MDYyNTY3NDM1.Xj0-yw.f72VL9KfJDTxqOrB_yqvQqbCC2g');
-
-// ============================================================================================================================================
-//
-// Status
-//
-// ============================================================================================================================================
-
-client.once('ready', () => {
-  // log that the bot is ready
-  console.log('Ready!');
-  // bot activity
-  client.user.setActivity(`m!help | ${client.guilds.size} servers 🔥`);
-});
-
-client.on('guildCreate', () => {
-  client.user.setActivity(`m!help | ${client.guilds.size} servers 🔥`);
-});
-
-client.on('guildDelete', () => {
-  client.user.setActivity(`m!help | ${client.guilds.size} servers 🔥`);
-});
+}).login(token);
 
 // ============================================================================================================================================
 //
