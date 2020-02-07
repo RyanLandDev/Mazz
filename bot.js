@@ -13,7 +13,7 @@ new Client({
   noPrefixDM: true,
   prefixCaseInsensitive: true,
   readyMessage: () => 'Ready!',
-}).login('NjUwMjczNDU0MDYyNTY3NDM1.Xj0dig.RmOexpnQoYUmh1mA_6JAd6gHDhA');
+}).login('NjUwMjczNDU0MDYyNTY3NDM1.Xj0-yw.f72VL9KfJDTxqOrB_yqvQqbCC2g');
 
 // ============================================================================================================================================
 //
