@@ -1,0 +1,2493 @@
+{
+	"versions": {
+		"1.0.1": {
+			"name": "discord.js",
+			"version": "1.0.1",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "05f0e62919ed53dfb5d3958c5be9fe8880806023",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-1.0.1.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"1.0.2": {
+			"name": "discord.js",
+			"version": "1.0.2",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "d99fa8d1ab5b0d188dc8133f439a83c367c009bc",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-1.0.2.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"1.1.0": {
+			"name": "discord.js",
+			"version": "1.1.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "5fbaa54d8ed9b4890e00b7e22261ff3707cf5243",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-1.1.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"1.2.1": {
+			"name": "discord.js",
+			"version": "1.2.1",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "b28061aa918b267e795146870ebc9c76f782fd3b",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-1.2.1.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"1.2.2": {
+			"name": "discord.js",
+			"version": "1.2.2",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "72f4c850840da8bde344b5de7eed5d7fbb634b90",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-1.2.2.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.0.0": {
+			"name": "discord.js",
+			"version": "2.0.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "327154c668dd60887665fbcab53e8dda0dd90c4b",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.0.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.0.1": {
+			"name": "discord.js",
+			"version": "2.0.1",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "6ed878aae5d07f219bae982b0559cdf90cc92a3d",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.0.1.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.0.2": {
+			"name": "discord.js",
+			"version": "2.0.2",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "6141f5ab6f4c9dead3342f6f9128f18e741a3475",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.0.2.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.1.0": {
+			"name": "discord.js",
+			"version": "2.1.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "b99bad667799db62ae757937fc29e3228b05f254",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.1.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.1.1": {
+			"name": "discord.js",
+			"version": "2.1.1",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "b9cbd97b8b75682afef7dbfb05184a6314859065",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.1.1.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.2.0": {
+			"name": "discord.js",
+			"version": "2.2.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "3810493bfc3796933f97ec084790a5d00a0e0f2c",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.2.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.2.1": {
+			"name": "discord.js",
+			"version": "2.2.1",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "5ff5ebf6bfd824e3ad981b751b2f6b52df8494b1",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.2.1.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.2.2": {
+			"name": "discord.js",
+			"version": "2.2.2",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "4e3b08b4c41cc508d60d19b5ebd8c0fb3e5bdb19",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.2.2.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.3.0": {
+			"name": "discord.js",
+			"version": "2.3.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "ab85aed2527493401ea7343f761a53ffe0440924",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.3.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.3.1": {
+			"name": "discord.js",
+			"version": "2.3.1",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "d417e8cc58c612b1ec1e2520e4b6d8c5e459a00d",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.3.1.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.4.0": {
+			"name": "discord.js",
+			"version": "2.4.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "f22e21fe2365e6e52815310df64a5b9319f5831e",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.4.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.4.1": {
+			"name": "discord.js",
+			"version": "2.4.1",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "d00bf5ad90f7010aaf1412c55a53b147ad44d970",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.4.1.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.4.2": {
+			"name": "discord.js",
+			"version": "2.4.2",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "54de0dbc994c566baa281c64d84da1b4a944b5ac",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.4.2.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.5.0": {
+			"name": "discord.js",
+			"version": "2.5.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "ce6da27a995204dfae9adb6f2dd7476ceb8773b6",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.5.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.6.0": {
+			"name": "discord.js",
+			"version": "2.6.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "700a127a268f46d50702c51b82f3b59c7d97521f",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.6.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.6.1": {
+			"name": "discord.js",
+			"version": "2.6.1",
+			"dependencies": {
+				"md5": "^2.0.0",
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "0980845950c086fe46863c985ac5befe36302fcb",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.6.1.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.6.2": {
+			"name": "discord.js",
+			"version": "2.6.2",
+			"dependencies": {
+				"md5": "^2.0.0",
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "8dddb3c73d8359925f76093fb1b05948201488f2",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.6.2.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.6.3": {
+			"name": "discord.js",
+			"version": "2.6.3",
+			"dependencies": {
+				"md5": "^2.0.0",
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "0853f958c863ce6db34517f331630ce735d9e474",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.6.3.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.6.4": {
+			"name": "discord.js",
+			"version": "2.6.4",
+			"dependencies": {
+				"md5": "^2.0.0",
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "9a3be3d3348b1f7b6efc729e88368d664bdd1d3d",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.6.4.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.6.5": {
+			"name": "discord.js",
+			"version": "2.6.5",
+			"dependencies": {
+				"md5": "^2.0.0",
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "580d0a97c6c8897e4b15055a305a58c094bca793",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.6.5.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.6.6": {
+			"name": "discord.js",
+			"version": "2.6.6",
+			"dependencies": {
+				"md5": "^2.0.0",
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "cc06ead9bad8add758b34a5be56aacbac38957db",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.6.6.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.6.7": {
+			"name": "discord.js",
+			"version": "2.6.7",
+			"dependencies": {
+				"md5": "^2.0.0",
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "58438a0cbf60f0aab52bce475eb73917afdf9cc3",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.6.7.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.6.8": {
+			"name": "discord.js",
+			"version": "2.6.8",
+			"dependencies": {
+				"md5": "^2.0.0",
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "3c5c2dbaf8920910d04d6aef7895189eb8ca9beb",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.6.8.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.7.0": {
+			"name": "discord.js",
+			"version": "2.7.0",
+			"dependencies": {
+				"md5": "^2.0.0",
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "9cf60d2599880d05f470ca469e24189e196bc2e9",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.7.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.7.1": {
+			"name": "discord.js",
+			"version": "2.7.1",
+			"dependencies": {
+				"md5": "^2.0.0",
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "d78090b212f25af923ea31ef20979c0b20e5e534",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.7.1.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"2.7.2": {
+			"name": "discord.js",
+			"version": "2.7.2",
+			"dependencies": {
+				"md5": "^2.0.0",
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "46e19555fd2700aa968dff78f96e872be269a068",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-2.7.2.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.0.0": {
+			"name": "discord.js",
+			"version": "3.0.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "a36f9f3e9084d223a70c12505fb929f614199b19",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.0.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.0.1": {
+			"name": "discord.js",
+			"version": "3.0.1",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "83f3073c8872ae48562948d42d9eb679f9abfc81",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.0.1.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.0.2": {
+			"name": "discord.js",
+			"version": "3.0.2",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "cd81d579337ab17c0509b1470c5dbee82eb405e1",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.0.2.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.0.3": {
+			"name": "discord.js",
+			"version": "3.0.3",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "eed33f08d27d5bb47b916ad6310e6815544df443",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.0.3.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.1.1": {
+			"name": "discord.js",
+			"version": "3.1.1",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "76bc26d9ae33dc2c1f7618504ae66742dbfa901b",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.1.1.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.1.2": {
+			"name": "discord.js",
+			"version": "3.1.2",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "001f5b2fa3270d91f1205e1532198d86450c8dff",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.1.2.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.1.3": {
+			"name": "discord.js",
+			"version": "3.1.3",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "bbe3f9edfddf069685906b93dfb207fbec559fd9",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.1.3.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.1.4": {
+			"name": "discord.js",
+			"version": "3.1.4",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "954501163f3029d8a8ceb1cd3bee4335a09663c1",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.1.4.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.1.5": {
+			"name": "discord.js",
+			"version": "3.1.5",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "6c82b1a1b0d114c279f24c8f4ee74bc48eaa4971",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.1.5.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.1.6": {
+			"name": "discord.js",
+			"version": "3.1.6",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "8b31a7e01f6f2eedf64eb7549d8a3f02861e6ad5",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.1.6.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.2.0": {
+			"name": "discord.js",
+			"version": "3.2.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "3e277d695b65a72683a278c10b7e30bb4d8a00a9",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.2.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.2.1": {
+			"name": "discord.js",
+			"version": "3.2.1",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "eebda1e725e81c82cfece5d54c89d71b1be3b8b1",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.2.1.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.3.0": {
+			"name": "discord.js",
+			"version": "3.3.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "fd2a37d90532d79e0e445239bd9f1c5130b80d7d",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.3.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.3.1": {
+			"name": "discord.js",
+			"version": "3.3.1",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "dab330bf6ada547b460e776315ee027015c6e3a0",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.3.1.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.3.2": {
+			"name": "discord.js",
+			"version": "3.3.2",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "c6a8c566b519a652807a12718ca765fe59d80486",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.3.2.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.3.3": {
+			"name": "discord.js",
+			"version": "3.3.3",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "7d57080a421beef1f9a6316ea80124d73053a859",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.3.3.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.3.4": {
+			"name": "discord.js",
+			"version": "3.3.4",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "e111e9759d6799610aec5e5a3b958a618ac238ba",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.3.4.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.4.0": {
+			"name": "discord.js",
+			"version": "3.4.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "8f757b678ac0061149650ab86fe926f9b7f5e09b",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.4.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.4.1": {
+			"name": "discord.js",
+			"version": "3.4.1",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "0d6f8460f5da1dde22fe04fc4558efa3346d4a73",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.4.1.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.4.2": {
+			"name": "discord.js",
+			"version": "3.4.2",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "2349af90e219b0dd9bcda4640684b98ad7aae242",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.4.2.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.5.0": {
+			"name": "discord.js",
+			"version": "3.5.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "de00ec1e236e875a85b7809e7e7799c64c8774a8",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.5.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.6.0": {
+			"name": "discord.js",
+			"version": "3.6.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "732e93ccea6cdc397ca6101bc01c8b47a127f25c",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.6.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.6.1": {
+			"name": "discord.js",
+			"version": "3.6.1",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "1b3f2b50d9585af5d3be5279d6c5fcc422c7a867",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.6.1.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.6.2": {
+			"name": "discord.js",
+			"version": "3.6.2",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "3c0af4f9ab2a671900894fef44f638105596e31a",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.6.2.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.6.3": {
+			"name": "discord.js",
+			"version": "3.6.3",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "27b680c72338585d71630d309e184f668e175a3d",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.6.3.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.7.0": {
+			"name": "discord.js",
+			"version": "3.7.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "8c4f67a65f40cd67be277a96c2aab60eb7081632",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.7.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.7.1": {
+			"name": "discord.js",
+			"version": "3.7.1",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "78df21b802c68b59b30f825b63a2f5ddfb4d6985",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.7.1.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.7.2": {
+			"name": "discord.js",
+			"version": "3.7.2",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "596055d9300eeb7b72fc6e0ef01179df4bd104f5",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.7.2.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.8.0": {
+			"name": "discord.js",
+			"version": "3.8.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "30f40d009f6ad01428cbab46cf66ea2d50afd163",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.8.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.8.1": {
+			"name": "discord.js",
+			"version": "3.8.1",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "56c7c12aa1ba0ea982b3f2355e9e24a94567a44a",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.8.1.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.8.2": {
+			"name": "discord.js",
+			"version": "3.8.2",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "b5bf54c596463fa40d87ad520b30808ddca99490",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.8.2.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.8.3": {
+			"name": "discord.js",
+			"version": "3.8.3",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "ea3649add099ebd349e914eaf8de09e023ac38cd",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.8.3.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.9.0": {
+			"name": "discord.js",
+			"version": "3.9.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "f769a087d76350c74c9f6e3043333f2d04bd278e",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.9.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.9.1": {
+			"name": "discord.js",
+			"version": "3.9.1",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "6ff0af49ec2ee901069dee5deea123cdab7fffc0",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.9.1.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.10.0": {
+			"name": "discord.js",
+			"version": "3.10.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "88e4a54968bc94f46879fcb443e70a72b7d187c3",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.10.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.10.1": {
+			"name": "discord.js",
+			"version": "3.10.1",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "d7f1bf8f5368509d85f61a752c1edaeb0a0115a9",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.10.1.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"3.10.2": {
+			"name": "discord.js",
+			"version": "3.10.2",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "e97cc1dc3797fffa4af1d7a69a3f263e4b7c1ef6",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-3.10.2.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"4.0.0": {
+			"name": "discord.js",
+			"version": "4.0.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "c5e920dd9d7b8f5a9be1fabff77b2a80082ca4dc",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-4.0.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"4.1.0": {
+			"name": "discord.js",
+			"version": "4.1.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "8044d7413ebd662630a96e9f2a06fd040e9a390e",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-4.1.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"4.1.1": {
+			"name": "discord.js",
+			"version": "4.1.1",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "159782afcb19ca53baf2c7d6ad55f054bcd72b4f",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-4.1.1.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"5.0.0": {
+			"name": "discord.js",
+			"version": "5.0.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2",
+				"node-opus": "^0.1.11"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.1.11"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "afd71e920222dd08836d03e145563c0d55aa3d0f",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-5.0.0.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"5.0.1": {
+			"name": "discord.js",
+			"version": "5.0.1",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2",
+				"node-opus": "^0.1.11"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.1.11"
+			},
+			"devDependencies": {
+				"grunt": "~0.4.5",
+				"grunt-babel": "^5.0.1",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "edc681e776af8e1b6d450d05f395d43821be4ae0",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-5.0.1.tgz"
+			},
+			"deprecated": "no longer supported"
+		},
+		"5.1.0": {
+			"name": "discord.js",
+			"version": "5.1.0",
+			"dependencies": {
+				"superagent": "^1.3.0",
+				"ws": "^0.7.2",
+				"node-opus": "^0.1.11"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.1.11"
+			},
+			"devDependencies": {
+				"babel-preset-es2015": "^6.1.18",
+				"babel-preset-es2015-loose": "^6.1.2",
+				"colors": "^1.1.2",
+				"grunt": "~0.4.5",
+				"grunt-babel": "<6.0.0",
+				"grunt-browserify": "^4.0.0",
+				"grunt-contrib-uglify": "^0.9.2",
+				"load-grunt-tasks": "^3.2.0",
+				"mocha": "^2.3.4"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "ff34629d7bc549829b6f6b469611c33d9339eaeb",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-5.1.0.tgz"
+			},
+			"engines": {
+				"node": ">=0.12.7"
+			},
+			"deprecated": "no longer supported"
+		},
+		"5.2.0": {
+			"name": "discord.js",
+			"version": "5.2.0",
+			"dependencies": {
+				"fs-extra": "^0.26.2",
+				"superagent": "^1.5.0",
+				"ws": "^0.8.1",
+				"node-opus": "^0.1.11"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.1.11"
+			},
+			"devDependencies": {
+				"colors": "^1.1.2",
+				"eslint": "^1.10.3",
+				"grunt": "^0.4.5",
+				"grunt-babel": "<6.0.0",
+				"grunt-browserify": "^4.0.1",
+				"grunt-contrib-uglify": "^0.11.0",
+				"load-grunt-tasks": "^3.3.0",
+				"mocha": "^2.3.4"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "e23156f15d092c0f48837298632809f6e28eed42",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-5.2.0.tgz"
+			},
+			"engines": {
+				"node": ">=0.12.7"
+			},
+			"deprecated": "no longer supported"
+		},
+		"5.3.0": {
+			"name": "discord.js",
+			"version": "5.3.0",
+			"dependencies": {
+				"fs-extra": "^0.26.2",
+				"superagent": "^1.5.0",
+				"unpipe": "^1.0.0",
+				"ws": "^0.8.1",
+				"node-opus": "^0.1.11"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.1.11"
+			},
+			"devDependencies": {
+				"colors": "^1.1.2",
+				"eslint": "^1.10.3",
+				"grunt": "^0.4.5",
+				"grunt-babel": "<6.0.0",
+				"grunt-browserify": "^4.0.1",
+				"grunt-contrib-uglify": "^0.11.0",
+				"load-grunt-tasks": "^3.3.0",
+				"mocha": "^2.3.4"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "0bbfcda2f82afb188db02188ad1b5ca2b50d570e",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-5.3.0.tgz"
+			},
+			"engines": {
+				"node": ">=0.12.7"
+			},
+			"deprecated": "no longer supported"
+		},
+		"5.3.1": {
+			"name": "discord.js",
+			"version": "5.3.1",
+			"dependencies": {
+				"fs-extra": "^0.26.2",
+				"superagent": "^1.5.0",
+				"unpipe": "^1.0.0",
+				"ws": "^0.8.1",
+				"node-opus": "^0.1.11"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.1.11"
+			},
+			"devDependencies": {
+				"colors": "^1.1.2",
+				"eslint": "^1.10.3",
+				"grunt": "^0.4.5",
+				"grunt-babel": "<6.0.0",
+				"grunt-browserify": "^4.0.1",
+				"grunt-contrib-uglify": "^0.11.0",
+				"load-grunt-tasks": "^3.3.0",
+				"mocha": "^2.3.4"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "8d397d278265101313a163dc431199861e7f218f",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-5.3.1.tgz"
+			},
+			"engines": {
+				"node": ">=0.12.7"
+			},
+			"deprecated": "no longer supported"
+		},
+		"5.3.2": {
+			"name": "discord.js",
+			"version": "5.3.2",
+			"dependencies": {
+				"fs-extra": "^0.26.2",
+				"superagent": "^1.5.0",
+				"unpipe": "^1.0.0",
+				"ws": "^0.8.1",
+				"node-opus": "^0.1.11"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.1.11"
+			},
+			"devDependencies": {
+				"colors": "^1.1.2",
+				"eslint": "^1.10.3",
+				"grunt": "^0.4.5",
+				"grunt-babel": "<6.0.0",
+				"grunt-browserify": "^4.0.1",
+				"grunt-contrib-uglify": "^0.11.0",
+				"load-grunt-tasks": "^3.3.0",
+				"mocha": "^2.3.4"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "0051c712156d6a25cad447c69165be8917fdd2ae",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-5.3.2.tgz"
+			},
+			"engines": {
+				"node": ">=0.12.7"
+			},
+			"deprecated": "no longer supported"
+		},
+		"6.0.0": {
+			"name": "discord.js",
+			"version": "6.0.0",
+			"dependencies": {
+				"superagent": "^1.5.0",
+				"unpipe": "^1.0.0",
+				"ws": "^0.8.1",
+				"node-opus": "^0.1.11"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.1.11"
+			},
+			"devDependencies": {
+				"colors": "^1.1.2",
+				"eslint": "^1.10.3",
+				"grunt": "^0.4.5",
+				"grunt-babel": "<6.0.0",
+				"grunt-browserify": "^4.0.1",
+				"grunt-contrib-uglify": "^0.11.0",
+				"load-grunt-tasks": "^3.3.0",
+				"mocha": "^2.3.4"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "1bdc0a4b24f5cde79316a32dbc3e4ad398c58657",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-6.0.0.tgz"
+			},
+			"engines": {
+				"node": ">=0.12.7"
+			},
+			"deprecated": "no longer supported"
+		},
+		"6.1.0": {
+			"name": "discord.js",
+			"version": "6.1.0",
+			"dependencies": {
+				"superagent": "^1.8.0",
+				"unpipe": "^1.0.0",
+				"ws": "^1.0.1",
+				"node-opus": "^0.1.12"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.1.12"
+			},
+			"devDependencies": {
+				"colors": "^1.1.2",
+				"eslint": "^1.10.3",
+				"grunt": "^0.4.5",
+				"grunt-babel": "<6.0.0",
+				"grunt-browserify": "^4.0.1",
+				"grunt-contrib-uglify": "^0.11.0",
+				"load-grunt-tasks": "^3.4.0",
+				"mocha": "^2.4.5"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "43e4cef1306cec40beb1fe3e7f5d18928af321da",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-6.1.0.tgz"
+			},
+			"engines": {
+				"node": ">=0.12.7"
+			},
+			"deprecated": "no longer supported"
+		},
+		"7.0.0": {
+			"name": "discord.js",
+			"version": "7.0.0",
+			"dependencies": {
+				"superagent": "^1.8.3",
+				"unpipe": "^1.0.0",
+				"ws": "^1.0.1",
+				"node-opus": "^0.1.12",
+				"tweetnacl": "^0.14.3"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.1.12",
+				"tweetnacl": "^0.14.3"
+			},
+			"devDependencies": {
+				"colors": "^1.1.2",
+				"eslint": "^1.10.3",
+				"grunt": "^0.4.5",
+				"grunt-babel": "<6.0.0",
+				"grunt-browserify": "^4.0.1",
+				"grunt-contrib-uglify": "^0.11.0",
+				"load-grunt-tasks": "^3.4.0",
+				"mocha": "^2.4.5"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "77ef101ba5d2774f1c3185b4ced447d39f68c7fd",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-7.0.0.tgz"
+			},
+			"engines": {
+				"node": ">=0.12.7"
+			},
+			"deprecated": "no longer supported"
+		},
+		"7.0.1": {
+			"name": "discord.js",
+			"version": "7.0.1",
+			"dependencies": {
+				"superagent": "^1.8.3",
+				"unpipe": "^1.0.0",
+				"ws": "^1.0.1",
+				"node-opus": "^0.1.12",
+				"tweetnacl": "^0.14.3"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.1.12",
+				"tweetnacl": "^0.14.3"
+			},
+			"devDependencies": {
+				"colors": "^1.1.2",
+				"eslint": "^1.10.3",
+				"grunt": "^0.4.5",
+				"grunt-babel": "<6.0.0",
+				"grunt-browserify": "^4.0.1",
+				"grunt-contrib-uglify": "^0.11.0",
+				"load-grunt-tasks": "^3.4.0",
+				"mocha": "^2.4.5"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "3875576ef9c9a04eda569d4050c7cf02f2ad13d8",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-7.0.1.tgz"
+			},
+			"engines": {
+				"node": ">=0.12.7"
+			},
+			"deprecated": "no longer supported"
+		},
+		"8.0.0": {
+			"name": "discord.js",
+			"version": "8.0.0",
+			"dependencies": {
+				"superagent": "^1.8.3",
+				"unpipe": "^1.0.0",
+				"ws": "^1.1.0",
+				"node-opus": "^0.2.0",
+				"tweetnacl": "^0.14.3"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.2.0",
+				"tweetnacl": "^0.14.3"
+			},
+			"devDependencies": {
+				"colors": "^1.1.2",
+				"eslint": "^1.10.3",
+				"grunt": "^0.4.5",
+				"grunt-babel": "<6.0.0",
+				"grunt-browserify": "^4.0.1",
+				"grunt-contrib-uglify": "^0.11.0",
+				"load-grunt-tasks": "^3.4.0",
+				"mocha": "^2.4.5"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "ac52073d280d1eac69fc2735b8e877284015c0b3",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-8.0.0.tgz"
+			},
+			"engines": {
+				"node": ">=0.12.7"
+			},
+			"deprecated": "no longer supported"
+		},
+		"8.1.0": {
+			"name": "discord.js",
+			"version": "8.1.0",
+			"dependencies": {
+				"superagent": "^2.1.0",
+				"unpipe": "^1.0.0",
+				"ws": "^1.1.1",
+				"node-opus": "^0.2.1",
+				"tweetnacl": "^0.14.3"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.2.1",
+				"tweetnacl": "^0.14.3"
+			},
+			"devDependencies": {
+				"colors": "^1.1.2",
+				"eslint": "^1.10.3",
+				"grunt": "^0.4.5",
+				"grunt-babel": "<6.0.0",
+				"grunt-browserify": "^4.0.1",
+				"grunt-contrib-uglify": "^0.11.0",
+				"load-grunt-tasks": "^3.4.0",
+				"mocha": "^2.4.5"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "7696000078547ae47cfc2e8a9617317fd9d1e47f",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-8.1.0.tgz"
+			},
+			"engines": {
+				"node": ">=0.12.7"
+			},
+			"deprecated": "no longer supported"
+		},
+		"9.0.0": {
+			"name": "discord.js",
+			"version": "9.0.0",
+			"dependencies": {
+				"superagent": "^1.5.0",
+				"tweetnacl": "^0.14.3",
+				"ws": "^1.1.1",
+				"opusscript": "^0.0.1",
+				"node-opus": "^0.1.13"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.1.13"
+			},
+			"devDependencies": {
+				"fs-extra": "^0.30.0",
+				"jsdoc-parse": "^1.2.0",
+				"eslint": "^3.4.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "f40b086092af47358a6439bbf2d56381c4fae9f1",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-9.0.0.tgz"
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			},
+			"deprecated": "no longer supported"
+		},
+		"9.0.1": {
+			"name": "discord.js",
+			"version": "9.0.1",
+			"dependencies": {
+				"superagent": "^1.5.0",
+				"tweetnacl": "^0.14.3",
+				"ws": "^1.1.1",
+				"opusscript": "^0.0.1",
+				"node-opus": "^0.1.13"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.1.13"
+			},
+			"devDependencies": {
+				"fs-extra": "^0.30.0",
+				"jsdoc-parse": "^1.2.0",
+				"eslint": "^3.4.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "3c1bb3fcfe22689d97482bcea3983220e74ae901",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-9.0.1.tgz"
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			},
+			"deprecated": "no longer supported"
+		},
+		"9.0.2": {
+			"name": "discord.js",
+			"version": "9.0.2",
+			"dependencies": {
+				"superagent": "^1.5.0",
+				"tweetnacl": "^0.14.3",
+				"ws": "^1.1.1",
+				"opusscript": "^0.0.1",
+				"node-opus": "^0.1.13"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.1.13"
+			},
+			"devDependencies": {
+				"fs-extra": "^0.30.0",
+				"jsdoc-parse": "^1.2.0",
+				"eslint": "^3.4.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "bf1d023ed40c5669e4ae3c457875bfb74673c971",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-9.0.2.tgz"
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			},
+			"deprecated": "no longer supported"
+		},
+		"9.1.0": {
+			"name": "discord.js",
+			"version": "9.1.0",
+			"dependencies": {
+				"superagent": "^2.2.0",
+				"tweetnacl": "^0.14.3",
+				"ws": "^1.1.1",
+				"opusscript": "^0.0.1",
+				"node-opus": "^0.2.1"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.2.1"
+			},
+			"devDependencies": {
+				"fs-extra": "^0.30.0",
+				"jsdoc-parse": "^1.2.0",
+				"eslint": "^3.4.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "0e04e7c34022a3fd20a7ec5ca6843039ffe609ff",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-9.1.0.tgz"
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			},
+			"deprecated": "no longer supported"
+		},
+		"9.1.1": {
+			"name": "discord.js",
+			"version": "9.1.1",
+			"dependencies": {
+				"superagent": "^2.2.0",
+				"tweetnacl": "^0.14.3",
+				"ws": "^1.1.1",
+				"opusscript": "^0.0.1",
+				"node-opus": "^0.2.1"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.2.1"
+			},
+			"devDependencies": {
+				"fs-extra": "^0.30.0",
+				"jsdoc-parse": "^1.2.0",
+				"eslint": "^3.4.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "fbc39818409b3ece488c1c630d3c83e4c213a8bf",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-9.1.1.tgz"
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			},
+			"deprecated": "no longer supported"
+		},
+		"9.2.0": {
+			"name": "discord.js",
+			"version": "9.2.0",
+			"dependencies": {
+				"superagent": "^2.2.0",
+				"tweetnacl": "^0.14.3",
+				"ws": "^1.1.1",
+				"opusscript": "^0.0.1",
+				"node-opus": "^0.2.1"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.2.1"
+			},
+			"devDependencies": {
+				"fs-extra": "^0.30.0",
+				"jsdoc-parse": "^1.2.0",
+				"eslint": "^3.4.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "5700402a78d242ebe34f3dcba146a9aed74e82e0",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-9.2.0.tgz"
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			},
+			"deprecated": "no longer supported"
+		},
+		"9.3.0": {
+			"name": "discord.js",
+			"version": "9.3.0",
+			"dependencies": {
+				"superagent": "^2.2.0",
+				"tweetnacl": "^0.14.3",
+				"ws": "^1.1.1",
+				"opusscript": "^0.0.1",
+				"node-opus": "^0.2.1"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.2.1"
+			},
+			"devDependencies": {
+				"fs-extra": "^0.30.0",
+				"jsdoc-parse": "^1.2.0",
+				"eslint": "^3.4.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "cc5de9aee8c00342e4251e813746e05a77947767",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-9.3.0.tgz"
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			},
+			"deprecated": "no longer supported"
+		},
+		"8.2.0": {
+			"name": "discord.js",
+			"version": "8.2.0",
+			"dependencies": {
+				"superagent": "^2.3.0",
+				"unpipe": "^1.0.0",
+				"ws": "^1.1.1",
+				"node-opus": "^0.2.2",
+				"tweetnacl": "^0.14.3"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.2.2",
+				"tweetnacl": "^0.14.3"
+			},
+			"devDependencies": {
+				"colors": "^1.1.2",
+				"eslint": "^1.10.3",
+				"grunt": "^0.4.5",
+				"grunt-babel": "<6.0.0",
+				"grunt-browserify": "^4.0.1",
+				"grunt-contrib-uglify": "^0.11.0",
+				"load-grunt-tasks": "^3.4.0",
+				"mocha": "^2.4.5"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "778b1e3350d8ff0d43685819916487919f1c9310",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-8.2.0.tgz"
+			},
+			"engines": {
+				"node": ">=0.12.7"
+			},
+			"deprecated": "no longer supported"
+		},
+		"9.3.1": {
+			"name": "discord.js",
+			"version": "9.3.1",
+			"dependencies": {
+				"superagent": "^2.2.0",
+				"tweetnacl": "^0.14.3",
+				"ws": "^1.1.1",
+				"opusscript": "^0.0.1",
+				"node-opus": "^0.2.1"
+			},
+			"optionalDependencies": {
+				"node-opus": "^0.2.1"
+			},
+			"devDependencies": {
+				"fs-extra": "^0.30.0",
+				"jsdoc-parse": "^1.2.0",
+				"eslint": "^3.4.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "a05f261740b27701019d692001b9737d8ca6d9d7",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-9.3.1.tgz"
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			},
+			"deprecated": "no longer supported"
+		},
+		"10.0.0": {
+			"name": "discord.js",
+			"version": "10.0.0",
+			"dependencies": {
+				"superagent": "^2.2.0",
+				"tweetnacl": "^0.14.3",
+				"ws": "^1.1.1"
+			},
+			"devDependencies": {
+				"fs-extra": "^0.30.0",
+				"jsdoc-parse": "^1.2.0",
+				"eslint": "^3.4.0"
+			},
+			"peerDependencies": {
+				"node-opus": "^0.2.1",
+				"opusscript": "^0.0.1"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "b27e0583024e468900c22e39ffb48fd04ee9a1d5",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-10.0.0.tgz"
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			},
+			"deprecated": "no longer supported"
+		},
+		"10.0.1": {
+			"name": "discord.js",
+			"version": "10.0.1",
+			"dependencies": {
+				"superagent": "^2.3.0",
+				"tweetnacl": "^0.14.3",
+				"ws": "^1.1.1"
+			},
+			"devDependencies": {
+				"eslint": "^3.8.0",
+				"fs-extra": "^0.30.0",
+				"jsdoc-to-markdown": "^2.0.0"
+			},
+			"peerDependencies": {
+				"node-opus": "^0.2.1",
+				"opusscript": "^0.0.1"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "9663802ef2a52961d10b731e8d357ed1e175d06b",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-10.0.1.tgz"
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			},
+			"deprecated": "no longer supported"
+		},
+		"11.0.0": {
+			"name": "discord.js",
+			"version": "11.0.0",
+			"dependencies": {
+				"@types/node": "^6.0.0",
+				"pako": "^1.0.0",
+				"superagent": "^3.3.0",
+				"tweetnacl": "^0.14.0",
+				"ws": "^1.1.0"
+			},
+			"devDependencies": {
+				"discord.js-docgen": "github:hydrabolt/discord.js-docgen#master",
+				"eslint": "^3.12.0",
+				"parallel-webpack": "^1.6.0",
+				"uglify-js": "github:mishoo/UglifyJS2#harmony",
+				"webpack": "2.2.0-rc.3"
+			},
+			"peerDependencies": {
+				"erlpack": "hammerandchisel/erlpack#master",
+				"node-opus": "^0.2.0",
+				"opusscript": "^0.0.1",
+				"uws": "^0.12.0"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "735a4fc5607b04b2c1d0d699c88ea2936cf0d656",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-11.0.0.tgz"
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			}
+		},
+		"11.1.0": {
+			"name": "discord.js",
+			"version": "11.1.0",
+			"dependencies": {
+				"long": "^3.2.0",
+				"prism-media": "^0.0.1",
+				"snekfetch": "^3.1.0",
+				"tweetnacl": "^0.14.0",
+				"ws": "^2.0.0"
+			},
+			"devDependencies": {
+				"@types/node": "^7.0.0",
+				"discord.js-docgen": "github:hydrabolt/discord.js-docgen",
+				"eslint": "^3.19.0",
+				"parallel-webpack": "^1.6.0",
+				"uglify-js": "github:mishoo/UglifyJS2#harmony",
+				"webpack": "^2.2.0"
+			},
+			"peerDependencies": {
+				"bufferutil": "^3.0.0",
+				"erlpack": "hammerandchisel/erlpack",
+				"node-opus": "^0.2.5",
+				"opusscript": "^0.0.3",
+				"sodium": "^2.0.1",
+				"libsodium-wrappers": "^0.5.1",
+				"uws": "^0.14.1"
+			},
+			"directories": {},
+			"dist": {
+				"shasum": "5351d59e3798f536de1975e92cae4d11af3d9266",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-11.1.0.tgz"
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			}
+		},
+		"11.2.0": {
+			"name": "discord.js",
+			"version": "11.2.0",
+			"dependencies": {
+				"long": "^3.2.0",
+				"prism-media": "^0.0.1",
+				"snekfetch": "^3.3.0",
+				"tweetnacl": "^1.0.0",
+				"ws": "^3.1.0"
+			},
+			"devDependencies": {
+				"@types/node": "^7.0.43",
+				"discord.js-docgen": "github:hydrabolt/discord.js-docgen",
+				"eslint": "^4.6.0",
+				"parallel-webpack": "^2.1.0",
+				"uglifyjs-webpack-plugin": "^1.0.0-beta.1",
+				"webpack": "^3.5.5"
+			},
+			"peerDependencies": {
+				"bufferutil": "^3.0.2",
+				"erlpack": "hammerandchisel/erlpack",
+				"node-opus": "^0.2.6",
+				"opusscript": "^0.0.3",
+				"sodium": "^2.0.1",
+				"libsodium-wrappers": "^0.5.4",
+				"uws": "^0.14.5"
+			},
+			"directories": {},
+			"dist": {
+				"integrity": "sha512-IqJoACKH7hGXuewvNHvaeWmdetAU8IRHkfTTmRbihOQkwzaRaJdaGWDcUXQIswEEFX40W8B6w7rhO2xSEB3W+w==",
+				"shasum": "aadde2b86b69b905166b83bc49cfc435238e1aeb",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-11.2.0.tgz"
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			}
+		},
+		"11.2.1": {
+			"name": "discord.js",
+			"version": "11.2.1",
+			"dependencies": {
+				"long": "^3.2.0",
+				"prism-media": "^0.0.1",
+				"snekfetch": "^3.3.0",
+				"tweetnacl": "^1.0.0",
+				"ws": "^3.1.0"
+			},
+			"devDependencies": {
+				"@types/node": "^7.0.43",
+				"discord.js-docgen": "github:hydrabolt/discord.js-docgen",
+				"eslint": "^4.6.0",
+				"parallel-webpack": "^2.1.0",
+				"uglifyjs-webpack-plugin": "^1.0.0-beta.1",
+				"webpack": "^3.5.5"
+			},
+			"peerDependencies": {
+				"bufferutil": "^3.0.2",
+				"erlpack": "hammerandchisel/erlpack",
+				"node-opus": "^0.2.6",
+				"opusscript": "^0.0.3",
+				"sodium": "^2.0.1",
+				"libsodium-wrappers": "^0.5.4",
+				"uws": "^0.14.5"
+			},
+			"directories": {},
+			"dist": {
+				"integrity": "sha512-8Mor+IREVWHinjRd6Bu6OwRfT+ET/WEoLWMl8crFvBVcTFmaO/TSwP39C8QIGCB2YMVMYMdljjX/w17AUMemqg==",
+				"shasum": "bfc0f5a8b6398dc372d026e503592646456053fc",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-11.2.1.tgz"
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			}
+		},
+		"11.3.0": {
+			"name": "discord.js",
+			"version": "11.3.0",
+			"dependencies": {
+				"long": "^3.2.0",
+				"prism-media": "^0.0.1",
+				"snekfetch": "^3.6.1",
+				"tweetnacl": "^1.0.0",
+				"ws": "^4.0.0"
+			},
+			"devDependencies": {
+				"@types/node": "^8.5.7",
+				"discord.js-docgen": "github:hydrabolt/discord.js-docgen",
+				"eslint": "^4.15.0",
+				"parallel-webpack": "^2.2.0",
+				"uglifyjs-webpack-plugin": "^1.1.6",
+				"webpack": "^3.10.0"
+			},
+			"peerDependencies": {
+				"bufferutil": "^3.0.3",
+				"erlpack": "discordapp/erlpack",
+				"node-opus": "^0.2.7",
+				"opusscript": "^0.0.6",
+				"sodium": "^2.0.3",
+				"libsodium-wrappers": "^0.5.4",
+				"uws": "^9.14.0"
+			},
+			"directories": {},
+			"dist": {
+				"integrity": "sha512-xM3ydvb4urHjCP3N+Mgpw53a7ZGtmPwllwVgwPqdF2SHNPvTDr4So/+55VVx76s5eO9IMrOWpczsEuIr0/MAgQ==",
+				"shasum": "0d3e2ae12846e4e002bdbdfe3cb265e2bf24bf32",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-11.3.0.tgz"
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			}
+		},
+		"11.3.1": {
+			"name": "discord.js",
+			"version": "11.3.1",
+			"dependencies": {
+				"long": "^4.0.0",
+				"prism-media": "^0.0.2",
+				"snekfetch": "^3.6.4",
+				"tweetnacl": "^1.0.0",
+				"ws": "^4.0.0"
+			},
+			"devDependencies": {
+				"@types/node": "^9.4.6",
+				"discord.js-docgen": "discordjs/docgen",
+				"eslint": "^4.18.0",
+				"parallel-webpack": "^2.2.0",
+				"uglifyjs-webpack-plugin": "^1.2.0",
+				"webpack": "^3.11.0"
+			},
+			"peerDependencies": {
+				"bufferutil": "^3.0.3",
+				"erlpack": "discordapp/erlpack",
+				"node-opus": "^0.2.7",
+				"opusscript": "^0.0.6",
+				"sodium": "^2.0.3",
+				"libsodium-wrappers": "^0.7.3",
+				"uws": "^9.14.0"
+			},
+			"_hasShrinkwrap": false,
+			"directories": {},
+			"dist": {
+				"shasum": "3e4de5db1dbb0fd2bbed1e7469df6ee78c7c0dbc",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-11.3.1.tgz",
+				"fileCount": 173,
+				"unpackedSize": 566034
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			}
+		},
+		"11.3.2": {
+			"name": "discord.js",
+			"version": "11.3.2",
+			"dependencies": {
+				"long": "^4.0.0",
+				"prism-media": "^0.0.2",
+				"snekfetch": "^3.6.4",
+				"tweetnacl": "^1.0.0",
+				"ws": "^4.0.0"
+			},
+			"devDependencies": {
+				"@types/node": "^9.4.6",
+				"discord.js-docgen": "github:discordjs/docgen",
+				"eslint": "^4.18.0",
+				"parallel-webpack": "^2.2.0",
+				"uglifyjs-webpack-plugin": "^1.2.0",
+				"webpack": "^3.11.0"
+			},
+			"peerDependencies": {
+				"bufferutil": "^3.0.3",
+				"erlpack": "discordapp/erlpack",
+				"node-opus": "^0.2.7",
+				"opusscript": "^0.0.6",
+				"sodium": "^2.0.3",
+				"libsodium-wrappers": "^0.7.3",
+				"uws": "^9.14.0"
+			},
+			"_hasShrinkwrap": false,
+			"directories": {},
+			"dist": {
+				"integrity": "sha512-Abw9CTMX3Jb47IeRffqx2VNSnXl/OsTdQzhvbw/JnqCyqc2imAocc7pX2HoRmgKd8CgSqsjBFBneusz/E16e6A==",
+				"shasum": "3c4074c1cb1a4916582fb96ded5ffa1324411f95",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-11.3.2.tgz",
+				"fileCount": 162,
+				"unpackedSize": 650463
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			}
+		},
+		"11.4.0": {
+			"name": "discord.js",
+			"version": "11.4.0",
+			"dependencies": {
+				"long": "^4.0.0",
+				"prism-media": "^0.0.2",
+				"snekfetch": "^3.6.4",
+				"tweetnacl": "^1.0.0",
+				"ws": "^4.0.0"
+			},
+			"devDependencies": {
+				"@types/node": "^9.4.6",
+				"discord.js-docgen": "github:discordjs/docgen",
+				"eslint": "^4.18.0",
+				"parallel-webpack": "^2.2.0",
+				"uglifyjs-webpack-plugin": "^1.2.0",
+				"webpack": "^3.11.0"
+			},
+			"peerDependencies": {
+				"bufferutil": "^3.0.3",
+				"erlpack": "discordapp/erlpack",
+				"node-opus": "^0.2.7",
+				"opusscript": "^0.0.6",
+				"sodium": "^2.0.3",
+				"libsodium-wrappers": "^0.7.3",
+				"uws": "^9.14.0"
+			},
+			"_hasShrinkwrap": false,
+			"directories": {},
+			"dist": {
+				"integrity": "sha512-x/MxoRHMdRG6Ao5hwtIlwXW+0Z2JFlDg9uxgG+Azpl5zjqKgARwbyG2aqMs5GhEMinAP/zLHCrq5gbITWdWRbw==",
+				"shasum": "a8a01c540141a7213aa108c0448ca592805505da",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-11.4.0.tgz",
+				"fileCount": 163,
+				"unpackedSize": 686968,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbHWECRA9TVsSAnZWagAAeuUP/ROfklkdoxD649w+hkm9\nZ96PmrlQWVjQBmtkGlVGimd1zzK9OLP2JeGd0efzFS6Ks/CDSWrAbC5TTPZE\nhSrkSQqGsOqCOTGwdYvjHq7IQ7FTqJfAykomko0bZ6NTnwWZcjV0wvCqUGmP\nZvG8mUFY8r+SwmMO91Gmd9mf9bSqbfNERhWVpaNTgMC/ja4YeBgLhG15SAd8\nDrwgHD2syuEkqXPl75lp8h8AFZokxgh4mjd8Zgs7uKrHRuH8MeI7QI1FubBj\nB8ocpNlZy0lZe3ozs9QPv64JAJUyLAwYw9vMAPAQBD1Bc4hq58hMrXb1+CP/\nqm4so1WXaAk+moZ+Vqt5crkn4m7ZV5CNBv8tpR2RrIEFTUKhMkEDRQEWGe8/\nBbgig2OeL4Msr8YEcoAGMhl9a78ZIaTFAErmOYFVqtx593bklUP511Ocddav\nq+gs81Iy1NKJe72HQf0uJERNcZWJ1QRf0WPPmGick4b4AkxhGNk1NdgBxkev\nzn93u/CMcBRHixYinVp33oEpjZW/K5cSGlBtmMzG5M7TBoBxR96r1LCNuZig\nqYaNkMNesIxxJVvhtvSfC5cvUszh8YIFoKNarC1dsznck44/rwGrNU/AzeD7\nyp50c90K3d4d5oP8H9F4LpgtW+WFNNn7ClqvDmLQunFeY77Jxbe+AHTpFWZh\nys3U\r\n=8/P/\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			}
+		},
+		"11.4.1": {
+			"name": "discord.js",
+			"version": "11.4.1",
+			"dependencies": {
+				"long": "^4.0.0",
+				"prism-media": "^0.0.3",
+				"snekfetch": "^3.6.4",
+				"tweetnacl": "^1.0.0",
+				"ws": "^4.0.0"
+			},
+			"devDependencies": {
+				"@types/node": "^9.4.6",
+				"discord.js-docgen": "github:discordjs/docgen",
+				"eslint": "^4.18.0",
+				"parallel-webpack": "^2.2.0",
+				"uglifyjs-webpack-plugin": "^1.2.0",
+				"webpack": "^3.11.0"
+			},
+			"peerDependencies": {
+				"bufferutil": "^3.0.3",
+				"erlpack": "discordapp/erlpack",
+				"node-opus": "^0.2.7",
+				"opusscript": "^0.0.6",
+				"sodium": "^2.0.3",
+				"libsodium-wrappers": "^0.7.3",
+				"uws": "^9.14.0"
+			},
+			"_hasShrinkwrap": false,
+			"directories": {},
+			"dist": {
+				"integrity": "sha512-n7OPtU1Rn0Oj4qG0gi2xbnwx24K/vVDxVK0jBB8BLXPO6IZUqdoGYHJaGXxGr6KxGD4+QeMysyHWuVjsOvPcIQ==",
+				"shasum": "b5c496ed3d6ed608607b1b83e9a682cbc219bbc1",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-11.4.1.tgz",
+				"fileCount": 155,
+				"unpackedSize": 598632,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbcKNzCRA9TVsSAnZWagAA60QQAJvk5ShtVaULua2wlka8\nz+se0pDTL1cm/M1XvtQ1xFIcU+zeUpIDscLMP9qrjyyiBXvMeBvShwx5YyJe\n/3mjQxTtbhv0Ow6xRcJcGi39P04bbnrE1VMS2e7QgVQ7JnSWZIva4T0RJY1m\nDDaiZQUyBfhucZV0BeL5pbxFW0gBz0aRWtSWS6f22ZyxLAMWaNBRm5sVWrtR\n1nFvgN8pQwXd+JRiroHVrLRESj3/LZ9wp+Txw6h8P6m1/EaBhXUmC8A0jDZR\npj1M4QImc/bblrvAmsqQjohRzz3WupCQnN6iMfNt1667oJsmQ8AXRoDKpNI4\nnB2KfFlbhUeisag6WOTy6Uwgbsi3xzqUOtmHDQ3+Mz841vAwrEX/AV7AldCH\nxzeAEwNRjwm8VgD2UiW86mfbqsUcObTLlZK7NDTuHtkmZxJgdSI8e4XqhIb8\nk+wGxJgKGoga+T0lldsDEYKDykcgb3Ll3wIsUaqIMvIqNg4lNN02Hg7k6tKr\nFWa724ydow8rGBzXIELNSNJmE1EN2NWuPOfaoC/+SdqVonoqTHVYIj4u0XZS\nKWYeO0xnB7SbeYjdh+xaaXGgJDUIdBwdjta2y9ffxTNepydv5Dws+nOhJ0uh\nv4rzFWCIXwE7GF+Y++RMM0OjNaZIuq4Wbk7gor1KuRD07BrwUk+pxoRVgjfi\nr/gz\r\n=c/xi\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			}
+		},
+		"11.4.2": {
+			"name": "discord.js",
+			"version": "11.4.2",
+			"dependencies": {
+				"long": "^4.0.0",
+				"prism-media": "^0.0.3",
+				"snekfetch": "^3.6.4",
+				"tweetnacl": "^1.0.0",
+				"ws": "^4.0.0"
+			},
+			"devDependencies": {
+				"@types/node": "^9.4.6",
+				"discord.js-docgen": "github:discordjs/docgen",
+				"eslint": "^4.18.0",
+				"parallel-webpack": "^2.2.0",
+				"uglifyjs-webpack-plugin": "^1.2.0",
+				"webpack": "^3.11.0"
+			},
+			"peerDependencies": {
+				"bufferutil": "^3.0.3",
+				"erlpack": "discordapp/erlpack",
+				"node-opus": "^0.2.7",
+				"opusscript": "^0.0.6",
+				"sodium": "^2.0.3",
+				"libsodium-wrappers": "^0.7.3",
+				"uws": "^9.14.0"
+			},
+			"_hasShrinkwrap": false,
+			"directories": {},
+			"dist": {
+				"integrity": "sha512-MDwpu0lMFTjqomijDl1Ed9miMQe6kB4ifKdP28QZllmLv/HVOJXhatRgjS8urp/wBlOfx+qAYSXcdI5cKGYsfg==",
+				"shasum": "54586981926521572051f2a30b984aad2b49786e",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-11.4.2.tgz",
+				"fileCount": 163,
+				"unpackedSize": 687432,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbcZQiCRA9TVsSAnZWagAAMtgP/3xVBz5LGleXqPlhlpQq\nCYztD4R2TWH4uZ4kuJ8zwlCPkB/hwVqPWE/ihciq+y345k+TyB61/TnXoW6T\neH4Bnn7ZNBkzp+ufY+cEbqgU9gKQCS3CErPqrmeKNlFI/pPo2SlqJF69y4nf\nbvQEw2qMEoy0/Q3+1wp2SsflXiUeQXvzLNwXRyQmcnIDfUkN+0nL9Qpg6txb\nuNY0IBot6Q55G52KHSpvTYM9Vvxmn1asD29Ttd5QP3tmxsTl/hGMPIBPNoz7\nO+U/PaEvJu2jiO8pBd11Y5+3mTVRTyhtCfqAclLo42yxoEoBZWXNUJ4IxlWj\n4Ab3PGXr/mwig9VjuxnTDzv8hcSgOamG4vIBSfFWMcpmVBFPK5TinycrUTgi\nR5Umu+UG6R51FlqAFR7brsbdUTLDY59GGpLkaNFnZNurOEIh72v27iszCnYk\nSRAbR3TkNtGwENgaBhbZWguHyJAvp3n02x/SPA6g1f0ua10h1eSPaWmf/JIn\nWsujFakugQjjhIn4pjBebdqTZX74ilM2lF7EUeNZ0u8oZU/B+7E/XippZO52\nH2GCAg+fdFFwDpsx1wvB5TTU9H2DGMLekf3yS0tfCO2Wx3lWaNy2p6QIeWfn\nG6g1aiVpyhD8LEWfCTwrVnqMb9BZQuGrANcP831H8zezWdI5X7IQ+ljv9CuM\nVM9w\r\n=d0xW\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			}
+		},
+		"11.5.0": {
+			"name": "discord.js",
+			"version": "11.5.0",
+			"dependencies": {
+				"long": "^4.0.0",
+				"prism-media": "^0.0.3",
+				"snekfetch": "^3.6.4",
+				"tweetnacl": "^1.0.0",
+				"ws": "^6.0.0"
+			},
+			"devDependencies": {
+				"@types/node": "^9.4.6",
+				"discord.js-docgen": "discordjs/docgen",
+				"eslint": "^5.4.0",
+				"parallel-webpack": "^2.3.0",
+				"tslint": "^3.15.1",
+				"tslint-config-typings": "^0.2.4",
+				"typescript": "^3.0.1",
+				"uglifyjs-webpack-plugin": "^1.3.0",
+				"webpack": "^4.17.0"
+			},
+			"peerDependencies": {
+				"bufferutil": "^4.0.0",
+				"erlpack": "discordapp/erlpack",
+				"libsodium-wrappers": "^0.7.3",
+				"node-opus": "^0.2.7",
+				"opusscript": "^0.0.6",
+				"sodium": "^2.0.3",
+				"@discordjs/uws": "^10.149.0"
+			},
+			"_hasShrinkwrap": false,
+			"directories": {},
+			"dist": {
+				"shasum": "23a74bb0e92572b41ae18b203461cb16410ba85d",
+				"integrity": "sha512-7TAyr2p1ZP9k4gaIhQWOxZpybznT6ND55HbhntUqwQqXkAjIxU3ATbwiOSuCMd4AXz7L9wk1rioRL0sOjXs5CA==",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-11.5.0.tgz",
+				"fileCount": 181,
+				"unpackedSize": 701628,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc11cXCRA9TVsSAnZWagAAWlQP+QEWKvYHtc8s7xtDiJlQ\nhLzNpmJsCzy8lPXPXc/eDWhhCr0l3Lf24Xlm+aPE4f3h/Olx3L+yCwWIBYOt\nKM6a3dQZM96H6To1kXDPlB69Ga01kGLYq2Gb1Jv3k0D5k38cR9YxKF/KgHlV\nmPSM2jNDj/SX/kiB15Qwlqgur/Er6Oq8sb/Dci6th3MWAe4d3+/zt2LB0Nqz\nrWs1L7i6zxkf9CiI8D04fGAI0q+K1WGhB6NpaZg9eZG9yWhEvBwV0vz54/Bx\nRNYjGR8Kf3o5Izx1CekcsF7TY4mNJW/xW7UmLeh4Upes3VNLgw/bY/cM+in2\nrFczwd0Kk1mHoDkF1XYPNypYJaZrhTNyVTW/JnyWZE88EUl6U4ELzTU9hND/\nXb6JDuqgTPN2ekSimnGFoUIpNbfq2dSHQIIG+Qe/ScLTVoCaAguGhjtLnK32\nP5Vu3utJDM/icZeoPG4uFqPhIbvb8wnnrdWReyPSjCeZKIuCL66hLxN7xVEE\n08TGQIpWyABCFuBoGrM7LeR81BTiCBP4W44YcozE3pxGASO1/0s4ojw2cc1B\n0Ki02Tf7m+r5CTmJqay7KgDZWkA1Dt8SGNgu32I8Jk6gjROgN3WyesnVKRMF\nxQ3+/LfNboYpbZSSqhMOBHWZaGGGbFWfHZwrUN4iATewwJEDXNZ8wwdksTvY\np3G8\r\n=Kisv\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			},
+			"peerDependenciesMeta": {
+				"bufferutil": {
+					"optional": true
+				},
+				"erlpack": {
+					"optional": true
+				},
+				"node-opus": {
+					"optional": true
+				},
+				"opusscript": {
+					"optional": true
+				},
+				"sodium": {
+					"optional": true
+				},
+				"libsodium-wrappers": {
+					"optional": true
+				},
+				"uws": {
+					"optional": true
+				}
+			}
+		},
+		"11.5.1": {
+			"name": "discord.js",
+			"version": "11.5.1",
+			"dependencies": {
+				"long": "^4.0.0",
+				"prism-media": "^0.0.3",
+				"snekfetch": "^3.6.4",
+				"tweetnacl": "^1.0.0",
+				"ws": "^6.0.0"
+			},
+			"devDependencies": {
+				"@types/node": "^9.4.6",
+				"discord.js-docgen": "discordjs/docgen",
+				"eslint": "^5.4.0",
+				"parallel-webpack": "^2.3.0",
+				"tslint": "^3.15.1",
+				"tslint-config-typings": "^0.2.4",
+				"typescript": "^3.0.1",
+				"uglifyjs-webpack-plugin": "^1.3.0",
+				"webpack": "^4.17.0"
+			},
+			"peerDependencies": {
+				"bufferutil": "^4.0.0",
+				"erlpack": "discordapp/erlpack",
+				"libsodium-wrappers": "^0.7.3",
+				"node-opus": "^0.2.7",
+				"opusscript": "^0.0.6",
+				"sodium": "^2.0.3",
+				"@discordjs/uws": "^10.149.0"
+			},
+			"_hasShrinkwrap": false,
+			"directories": {},
+			"dist": {
+				"shasum": "910fb9f6410328581093e044cafb661783a4d9e8",
+				"integrity": "sha512-tGhV5xaZXE3Z+4uXJb3hYM6gQ1NmnSxp9PClcsSAYFVRzH6AJH74040mO3afPDMWEAlj8XsoPXXTJHTxesqcGw==",
+				"tarball": "https://registry.npmjs.org/discord.js/-/discord.js-11.5.1.tgz",
+				"fileCount": 181,
+				"unpackedSize": 702371,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc7uoyCRA9TVsSAnZWagAA/8QP/3ppTesg15Y3dnEvR4t6\nYIHshsOoIDFiySukzLUemAxr5XQNmkpYme8WKTK0Dz+sWTmcQRXTrjwqJaTF\ngm6Uk6YhANRk7fNcuITE5Y6CFRCKX/0eyC1ihZ2fp5xLPR9iU1detpsSEvvz\nXHYpZKclBYRQ68W9ixWumAGHu9hIgysP1bdcSqacjDfnkEl7pY07AjPsEAo5\nygtpD3ejbsanmCb42UL7ujd9retBiis6I8cjs6YRSU4nac0zHCwZnv7S2wnG\nakha5ZC++upQuApjlrulv1YsZEPLXkhMagRP2ct4apA8S4gid1txsM6V4XFS\nGgi/iIjqwp7Hr/wddwWUffzaACN0j37rXwPDfLgF179GF0vLehIEF0IVUuoE\nVyW/sJTGryZ1k0y3id6MTwvcxuXyKTmukfVw5HhFlAYLDQh3GNyoHF3W1B/Y\nlBi6L8pCJlZ8Q+0DWPFT4uAlARKJxaozz/Fp9gpwhlkf4+t+Iew6MxT8CS1f\nPBERGL8nQifR4+lJRYRFkGlEtfAOodKmrcSavWN3zTpzkBoLpxbrfGmj6JKm\nemQkMezDHQ5B7EfHwYXhCotiQ8tnFkCBBNYZ/Jbh2jpAvUzEx8/Rs4DlJW1w\nYICsrqmTcYiqB5u2ALf1SxgSKH0LNeRwJgyIkgdYHaQcSfDisPgn10grNJ8V\nvZCj\r\n=3N3p\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"engines": {
+				"node": ">=6.0.0"
+			},
+			"peerDependenciesMeta": {
+				"bufferutil": {
+					"optional": true
+				},
+				"erlpack": {
+					"optional": true
+				},
+				"node-opus": {
+					"optional": true
+				},
+				"opusscript": {
+					"optional": true
+				},
+				"sodium": {
+					"optional": true
+				},
+				"libsodium-wrappers": {
+					"optional": true
+				},
+				"uws": {
+					"optional": true
+				}
+			}
+		}
+	},
+	"name": "discord.js",
+	"dist-tags": {
+		"latest": "11.5.1"
+	},
+	"modified": "2020-01-13T07:12:27.892Z",
+	"cachedAt": 1581066620501
+}
