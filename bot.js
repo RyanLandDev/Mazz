@@ -1,7 +1,6 @@
 // require modules
 const Discord = require('discord.js');
 const { Client } = require('klasa');
-const { token } = require('./config.json');
 
 const client = new Discord.Client();
 
@@ -15,7 +14,7 @@ new Client({
   noPrefixDM: true,
   prefixCaseInsensitive: true,
   readyMessage: () => 'Ready!',
-}).login(token);
+}).login(process.env.token);
 
 // ============================================================================================================================================
 //
