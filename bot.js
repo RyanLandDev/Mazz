@@ -1,7 +1,6 @@
 // require modules
 const Discord = require('discord.js');
-const fs = require('fs');
-// const { Client } = require('klasa');
+const { Client } = require('klasa');
 
 // create a new client
 const client = new Discord.Client();
