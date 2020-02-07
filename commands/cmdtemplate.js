@@ -139,7 +139,7 @@ module.exports = class extends Command {
       // Description: The string to delimit the command input for usage
       usageDelim: undefined,
       // ==========================================================================================
-      // reference: https://klasa.js.org/#/docs/klasa/master/Piece%20Basics/CreatingCommands?scrollTo=options
+      // reference: https://klasa.js.org/#/docs/klasa/master/typedef/CommandOptions
     });
   }
 
