@@ -1,0 +1,76 @@
+{
+	"versions": {
+		"1.0.0": {
+			"name": "node-bin-setup",
+			"version": "1.0.0",
+			"_hasShrinkwrap": false,
+			"directories": {},
+			"dist": {
+				"integrity": "sha512-c0Ixlbmobzrh7lQQ0/fECUIRYnMJvv+8/I2eZc51m4YAQCKJJZEki1x+i4M9KhYyRYTgWLLyvNgt2IAf5eUKBQ==",
+				"shasum": "f23d7379adf7050b84a621a376951ad7ad8d303b",
+				"tarball": "https://registry.npmjs.org/node-bin-setup/-/node-bin-setup-1.0.0.tgz"
+			}
+		},
+		"1.0.1": {
+			"name": "node-bin-setup",
+			"version": "1.0.1",
+			"_hasShrinkwrap": false,
+			"directories": {},
+			"dist": {
+				"integrity": "sha512-PcmN7ZBV4KhAqJBybqXv3CnXDkCVWCD/DvpRJpe2phWGj04tqF0NqtlSQdFhYXt2LvGetM8oSXxaz8oMHasShA==",
+				"shasum": "b33babe56b81fffb4f3d67f4a967ff488ddb1034",
+				"tarball": "https://registry.npmjs.org/node-bin-setup/-/node-bin-setup-1.0.1.tgz"
+			}
+		},
+		"1.0.2": {
+			"name": "node-bin-setup",
+			"version": "1.0.2",
+			"_hasShrinkwrap": false,
+			"directories": {},
+			"dist": {
+				"integrity": "sha512-2NP03gJbe+ZWo0Ogqz5/DKMO9/+vd48leRzje8Bh5Pw0381IXq3CIU5D7N4MAie7RqqlD8ET9sBscaSZ/oPc6g==",
+				"shasum": "73263788c7a3254cdba6df2953e025e41b8fcfdc",
+				"tarball": "https://registry.npmjs.org/node-bin-setup/-/node-bin-setup-1.0.2.tgz"
+			}
+		},
+		"1.0.3": {
+			"name": "node-bin-setup",
+			"version": "1.0.3",
+			"_hasShrinkwrap": false,
+			"directories": {},
+			"dist": {
+				"integrity": "sha512-e9HjU8XhdC7hkwBEmeaz89CNCo86OlW1d/FBXtahQUe4M5M/ExLLJejb6zTq544VbQxOzpbfVpcVNJnnvt3tRQ==",
+				"shasum": "383cbd0867ec843f81110f8de0c4dbfcf4c87d67",
+				"tarball": "https://registry.npmjs.org/node-bin-setup/-/node-bin-setup-1.0.3.tgz"
+			}
+		},
+		"1.0.4": {
+			"name": "node-bin-setup",
+			"version": "1.0.4",
+			"_hasShrinkwrap": false,
+			"directories": {},
+			"dist": {
+				"integrity": "sha512-YcQpyIhxfOhm3WQdG2CLJy8E7vB6aqZ3rkt+tvSfqdxaiiggz9X9/52sw3EHdt/kB8fP3RA9FisgjJv2MDyvnQ==",
+				"shasum": "b221cc11d627a30ea8063cfd735cc907eb72e84f",
+				"tarball": "https://registry.npmjs.org/node-bin-setup/-/node-bin-setup-1.0.4.tgz"
+			}
+		},
+		"1.0.6": {
+			"name": "node-bin-setup",
+			"version": "1.0.6",
+			"_hasShrinkwrap": false,
+			"directories": {},
+			"dist": {
+				"integrity": "sha512-uPIxXNis1CRbv1DwqAxkgBk5NFV3s7cMN/Gf556jSw6jBvV7ca4F9lRL/8cALcZecRibeqU+5dFYqFFmzv5a0Q==",
+				"shasum": "4b5c9bb937ece702d7069b36ca78af4684677528",
+				"tarball": "https://registry.npmjs.org/node-bin-setup/-/node-bin-setup-1.0.6.tgz"
+			}
+		}
+	},
+	"name": "node-bin-setup",
+	"dist-tags": {
+		"latest": "1.0.6"
+	},
+	"modified": "2017-07-25T03:32:58.108Z",
+	"cachedAt": 1581066620615
+}
