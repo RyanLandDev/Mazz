@@ -1,8 +1,10 @@
 // require modules
 const Discord = require('discord.js');
 const { Client } = require('klasa');
+require('dotenv').config();
 
 const client = new Discord.Client();
+const token = process.env.token;
 
 // create a new client
 new Client({
@@ -14,7 +16,7 @@ new Client({
   noPrefixDM: true,
   prefixCaseInsensitive: true,
   readyMessage: () => 'Ready!',
-}).login(process.env.token);
+}).login(token);
 
 // ============================================================================================================================================
 //
