@@ -1,10 +1,15 @@
 // require modules
 const Discord = require('discord.js');
-const { Client } = require('klasa');
+const { Client, PermissionLevels } = require('klasa');
 require('dotenv').config();
 
+const config = require('./config.json');
 const client = new Discord.Client();
 const token = process.env.token;
+
+config.permissionLevels = new PermissionLevels()
+  // anyone can use
+  .addLevel(0, false, () => true);
 
 // create a new client
 new Client({
