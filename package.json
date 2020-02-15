@@ -7,10 +7,7 @@
     "start": "node bot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": [
-    "RyanLand",
-    "Al Kohollik"
-  ],
+  "author": "Mazz Studios",
   "dependencies": {
     "discord.js": "github:discordjs/discord.js",
     "dotenv": "^8.2.0",
