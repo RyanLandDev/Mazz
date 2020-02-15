@@ -1,7 +1,7 @@
 // require modules
 const Discord = require('discord.js');
 const { Client, PermissionLevels } = require('klasa');
-require('dotenv').config();
+require('./.env');
 
 const config = require('./config.json');
 const client = new Discord.Client();
@@ -30,7 +30,7 @@ new Client({
 //
 // ============================================================================================================================================
 
-config.permissionLevels = new PermissionLevels(30)
+config.permissionLevels = new PermissionLevels(31)
 // anyone
   .add(0, () => true)
 // anyone that isn't banned from using the bot
