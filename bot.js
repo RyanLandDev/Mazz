@@ -7,11 +7,12 @@ const config = require('./config.json');
 const client = new Discord.Client();
 const token = process.env.token;
 
-config.permissionLevels = new PermissionLevels()
-  // anyone can use
-  .addLevel(0, false, () => true);
+// ============================================================================================================================================
+//
+// Client
+//
+// ============================================================================================================================================
 
-// create a new client
 new Client({
   fetchAllMembers: false,
   prefix: 'm!',
@@ -22,6 +23,33 @@ new Client({
   prefixCaseInsensitive: true,
   readyMessage: () => 'Ready!',
 }).login(token);
+
+// ============================================================================================================================================
+//
+// Permission Levels
+//
+// ============================================================================================================================================
+
+config.permissionLevels = new PermissionLevels(30)
+// anyone
+  .add(0, () => true)
+// anyone that isn't banned from using the bot
+// (add)
+// kick members
+  .add(20, ({ guild, member }) => guild && member.permissions.has('KICK_MEMBERS'), { fetch: true })
+// ban members
+  .add(21, ({ guild, member }) => guild && member.permissions.has('BAN_MEMBERS'), { fetch: true })
+// manage server
+  .add(22, ({ guild, member }) => guild && member.permissions.has('MANAGE_GUILD'), { fetch: true })
+// server administrator
+  .add(23, ({ guild, member }) => guild && member.permissions.has('ADMINISTRATOR'), { fetch: true })
+// server owner
+  .add(24, ({ guild, member }) => guild && member === guild.owner, { fetch: true })
+
+// (add 25-29)
+
+// RyanLand (silent)
+  .add(30, ({ author }) => author === client.owner, { break: true });
 
 // ============================================================================================================================================
 //
