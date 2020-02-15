@@ -8,7 +8,7 @@ module.exports = class extends Command {
       aliases: ['commands'],
       guarded: true,
       permissionLevel: 30,
-      description: language => language.get('COMMAND_HELP_DESCRIPTION'),
+      description: 'You can use this command to get a list of all commands or information about one.',
       usage: '(Command:command)',
     });
 
@@ -22,10 +22,10 @@ module.exports = class extends Command {
     if (command) {
       const info = [
         `= ${command.name} = `,
-        isFunction(command.description) ? command.description(message.language) : command.description,
-        message.language.get('COMMAND_HELP_USAGE', command.usage.fullUsage(message)),
-        message.language.get('COMMAND_HELP_EXTENDED'),
-        isFunction(command.extendedHelp) ? command.extendedHelp(message.language) : command.extendedHelp,
+        command.description,
+        `Usage :: ${command.usage.fullUsage(message)}`,
+        'Extra ::',
+        command.extendedHelp,
       ].join('\n');
       return message.sendMessage(info, { code: 'asciidoc' });
     }
