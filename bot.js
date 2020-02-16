@@ -2,9 +2,9 @@
 const Discord = require('discord.js');
 const { Client, PermissionLevels } = require('klasa');
 
-const config = require('./config.json');
+const tokens = require('./config/tokens.json');
 const client = new Discord.Client();
-const token = config.token;
+const token = tokens.login_token;
 
 // ============================================================================================================================================
 //
@@ -12,7 +12,7 @@ const token = config.token;
 //
 // ============================================================================================================================================
 
-Client.permissionLevels = new PermissionLevels()
+Client.permissionLevels = new PermissionLevels(11)
 // anyone
   .add(0, () => true)
 // anyone that isn't banned from using the bot
@@ -30,7 +30,7 @@ Client.permissionLevels = new PermissionLevels()
 // bot developers
 // (add 9)
 // RyanLand
-  .add(10, ({ author }) => author.id === 298491523459317762);
+  .add(7, ({ author }) => author.id === 298491523459317762);
 
 // ============================================================================================================================================
 //
