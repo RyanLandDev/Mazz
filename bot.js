@@ -5,7 +5,7 @@ require('./.env');
 
 const config = require('./config.json');
 const client = new Discord.Client();
-const token = 'NjUwMjczNDU0MDYyNTY3NDM1.Xkge_Q.WpDcx7sGVqOXhUx8-RfUC3Wd4yY';
+const token = process.env.token;
 
 // ============================================================================================================================================
 //
