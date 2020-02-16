@@ -69,11 +69,6 @@ module.exports = class extends Command {
       // Type: boolean
       // Description: Controls if whether the command is enabled or not
       enabled: false,
-      // Name: extendedHelp
-      // Default: undefined
-      // Type: ExtendedHelp
-      // Description: Extended help strings
-      extendedHelp: undefined,
       // Name: guarded
       // Default: false
       // Type: boolean

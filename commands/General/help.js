@@ -7,7 +7,7 @@ module.exports = class extends Command {
     super(...args, {
       aliases: ['commands'],
       guarded: true,
-      permissionLevel: 10,
+      // permissionLevel: 10,
       description: 'You can use this command to get a list of all commands or information about one.',
       usage: '(Command:command)',
     });
@@ -25,8 +25,6 @@ module.exports = class extends Command {
         `= ${command.name} = `,
         command.description,
         `Usage :: ${command.usage.fullUsage(message)}`,
-        'Extra ::',
-        command.extendedHelp,
       ].join('\n');
       console.log('1');
       return message.channel.send(info, { code: 'asciidoc' });

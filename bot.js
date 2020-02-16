@@ -1,28 +1,10 @@
 // require modules
 const Discord = require('discord.js');
 const { Client, PermissionLevels } = require('klasa');
-require('./.env');
 
 const config = require('./config.json');
 const client = new Discord.Client();
-const token = process.env.token;
-
-// ============================================================================================================================================
-//
-// Client
-//
-// ============================================================================================================================================
-
-new Client({
-  fetchAllMembers: false,
-  prefix: 'm!',
-  presence: { name: `m!help | ${client.guilds.size} servers 🔥` },
-  commandEditing: true,
-  typing: true,
-  noPrefixDM: true,
-  prefixCaseInsensitive: true,
-  readyMessage: () => 'Ready!',
-}).login(token);
+const token = config.token;
 
 // ============================================================================================================================================
 //
@@ -30,7 +12,7 @@ new Client({
 //
 // ============================================================================================================================================
 
-config.permissionLevels = new PermissionLevels()
+Client.permissionLevels = new PermissionLevels()
 // anyone
   .add(0, () => true)
 // anyone that isn't banned from using the bot
@@ -48,7 +30,24 @@ config.permissionLevels = new PermissionLevels()
 // bot developers
 // (add 9)
 // RyanLand
-  .add(10, ({ author }) => author === client.owner);
+  .add(10, ({ author }) => author.id === 298491523459317762);
+
+// ============================================================================================================================================
+//
+// Client
+//
+// ============================================================================================================================================
+
+new Client({
+  fetchAllMembers: false,
+  prefix: 'm!',
+  presence: { name: `m!help | ${client.guilds.size} servers 🔥` },
+  commandEditing: true,
+  typing: true,
+  noPrefixDM: true,
+  prefixCaseInsensitive: true,
+  readyMessage: () => 'Ready!',
+}).login(token);
 
 // ============================================================================================================================================
 //
