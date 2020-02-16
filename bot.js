@@ -30,26 +30,25 @@ new Client({
 //
 // ============================================================================================================================================
 
-config.permissionLevels = new PermissionLevels(31)
+config.permissionLevels = new PermissionLevels()
 // anyone
   .add(0, () => true)
 // anyone that isn't banned from using the bot
 // (add)
 // kick members
-  .add(20, ({ guild, member }) => guild && member.permissions.has('KICK_MEMBERS'), { fetch: true })
+  .add(2, ({ guild, member }) => guild && member.permissions.has('KICK_MEMBERS'), { fetch: true })
 // ban members
-  .add(21, ({ guild, member }) => guild && member.permissions.has('BAN_MEMBERS'), { fetch: true })
+  .add(3, ({ guild, member }) => guild && member.permissions.has('BAN_MEMBERS'), { fetch: true })
 // manage server
-  .add(22, ({ guild, member }) => guild && member.permissions.has('MANAGE_GUILD'), { fetch: true })
+  .add(4, ({ guild, member }) => guild && member.permissions.has('MANAGE_GUILD'), { fetch: true })
 // server administrator
-  .add(23, ({ guild, member }) => guild && member.permissions.has('ADMINISTRATOR'), { fetch: true })
+  .add(5, ({ guild, member }) => guild && member.permissions.has('ADMINISTRATOR'), { fetch: true })
 // server owner
-  .add(24, ({ guild, member }) => guild && member === guild.owner, { fetch: true })
-
-// (add 25-29)
-
-// RyanLand (silent)
-  .add(30, ({ author }) => author === client.owner, { break: true });
+  .add(6, ({ guild, member }) => guild && member === guild.owner, { fetch: true })
+// bot developers
+// (add 9)
+// RyanLand
+  .add(10, ({ author }) => author === client.owner);
 
 // ============================================================================================================================================
 //
