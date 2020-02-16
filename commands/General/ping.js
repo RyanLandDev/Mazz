@@ -5,13 +5,12 @@ module.exports = class extends Command {
   constructor(...args) {
     super(...args, {
       guarded: true,
-      description: language => language.get('COMMAND_PING_DESCRIPTION'),
+      description: 'Get the ping of the bot.',
     });
   }
 
   async run(message) {
-    const msg = await message.sendLocale('COMMAND_PING');
-    return message.sendLocale('COMMAND_PINGPONG', [(msg.editedTimestamp || msg.createdTimestamp) - (message.editedTimestamp || message.createdTimestamp), Math.round(this.client.ws.ping)]);
+    message.channel.send(`:ping_pong: Returned at ${Math.round(this.client.ws.ping)}ms.`);
   }
 
 };
