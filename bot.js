@@ -12,25 +12,25 @@ const token = tokens.login_token;
 //
 // ============================================================================================================================================
 
-Client.permissionLevels = new PermissionLevels(11)
+Client.permissionLevels = new PermissionLevels(31)
 // anyone
   .add(0, () => true)
 // anyone that isn't banned from using the bot
 // (add)
 // kick members
-  .add(2, ({ guild, member }) => guild && member.permissions.has('KICK_MEMBERS'))
+  .add(20, ({ guild, member }) => guild && member.permissions.has('KICK_MEMBERS'))
 // ban members
-  .add(3, ({ guild, member }) => guild && member.permissions.has('BAN_MEMBERS'))
+  .add(21, ({ guild, member }) => guild && member.permissions.has('BAN_MEMBERS'))
 // manage server
-  .add(4, ({ guild, member }) => guild && member.permissions.has('MANAGE_GUILD'))
+  .add(22, ({ guild, member }) => guild && member.permissions.has('MANAGE_GUILD'))
 // server administrator
-  .add(5, ({ guild, member }) => guild && member.permissions.has('ADMINISTRATOR'))
+  .add(23, ({ guild, member }) => guild && member.permissions.has('ADMINISTRATOR'))
 // server owner
-  .add(6, ({ guild, member }) => guild && member === guild.owner)
+  .add(24, ({ guild, member }) => guild && member === guild.owner)
 // bot developers
 // (add 9)
 // RyanLand
-  .add(7, ({ author }) => author.id === 298491523459317762);
+  .add(30, ({ author }) => author.id === 298491523459317762);
 
 // ============================================================================================================================================
 //
