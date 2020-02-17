@@ -1,56 +1,28 @@
 const { Command } = require('klasa');
+const obj = require('../../config/developers.json');
+const fs = require('fs');
 
-// set up the command
 module.exports = class extends Command {
 
-  // construct the command and configure it
   constructor(...args) {
     super(...args, {
-      aliases: [],
-      autoAliases: true,
-      requiredPermissions: 0,
-      deletable: false,
       description: 'Add a new developer.',
-      enabled: true,
-      guarded: false,
-      hidden: false,
-      name: 'is this the actual command you write? for example m!this',
-      permissionLevel: 25,
-      quotedStringSupport: false,
-      // Name: requiredSettings
-      // Default: []
-      // Type: Array<string>
-      // Description: The required guild settings to use this command
-      requiredSettings: [],
-      // Name: runIn
-      // Default: ['text','dm']
-      // Type: Array<string>
-      // Description: What channel types the command should run in
-      runIn: ['text', 'dm'],
-      // Name: subcommands
-      // Default: false
-      // Type: boolean
-      // Description: Whether to enable sub commands or not
-      subcommands: false,
-      // Name: usage
-      // Default: ''
-      // Type: string
-      // Description: The usage string for the command
-      usage: '',
-      // Name: usageDelim
-      // Default: undefined
-      // Type: string
-      // Description: The string to delimit the command input for usage
-      usageDelim: undefined,
-      // ==========================================================================================
-      // reference: https://klasa.js.org/#/docs/klasa/master/typedef/CommandOptions
+      name: 'devadd',
+      guarded: true,
+      usage: '<User:member>',
     });
   }
 
-  // message variable = message object of the message which was used to trigger the command
-  // params variable = all parameters given in an array
   async run(message, [...params]) {
-    // code run when the command is called
+    const stringToSearch = JSON.stringify(obj);
+    const integer = parseInt(params[0].user.id, 10);
+    if (stringToSearch.includes(integer)) return message.channel.send('This user is already a developer!');
+    obj.headdeveloperlist.push(integer);
+    const stringToSave = JSON.stringify(obj, null, 4);
+    fs.writeFile('./config/developers.json', stringToSave, (err) => {
+      if (err) throw err;
+    });
+    message.channel.send(`${message.author} has been added to the developer team!`);
   }
 
   async init() {

@@ -18,17 +18,17 @@ Client.permissionLevels = new PermissionLevels(31)
 // anyone that isn't banned from using the bot
 // (add)
 // kick members
-  .add(20, ({ guild, member }) => guild && member.permissions.has('KICK_MEMBERS'))
+  .add(21, ({ guild, member }) => guild && member.permissions.has('KICK_MEMBERS'))
 // ban members
-  .add(21, ({ guild, member }) => guild && member.permissions.has('BAN_MEMBERS'))
+  .add(22, ({ guild, member }) => guild && member.permissions.has('BAN_MEMBERS'))
 // manage server
-  .add(22, ({ guild, member }) => guild && member.permissions.has('MANAGE_GUILD'))
+  .add(23, ({ guild, member }) => guild && member.permissions.has('MANAGE_GUILD'))
 // server administrator
-  .add(23, ({ guild, member }) => guild && member.permissions.has('ADMINISTRATOR'))
+  .add(24, ({ guild, member }) => guild && member.permissions.has('ADMINISTRATOR'))
 // server owner
-  .add(24, ({ guild, member }) => guild && member === guild.owner)
+  .add(25, ({ guild, member }) => guild && member === guild.owner)
 // bot developers
-// (add 9)
+  .add(29, 1 === 1)
 // RyanLand
   .add(30, ({ author }) => author.id === 298491523459317762);
 

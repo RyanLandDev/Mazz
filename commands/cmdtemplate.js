@@ -140,7 +140,7 @@ module.exports = class extends Command {
   }
 
   // message variable = message object of the message which was used to trigger the command
-  // params variable = all parameters given in an array
+  // params variable = all parameters given in an array depending on usage string
   async run(message, [...params]) {
     // code run when the command is called
   }
