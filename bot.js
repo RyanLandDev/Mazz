@@ -12,6 +12,18 @@ const token = tokens.login_token;
 //
 // ============================================================================================================================================
 
+const trials_obj = require('./config/trials.json');
+const trials_string = JSON.stringify(trials_obj);
+
+const mods_obj = require('./config/mods.json');
+const mods_string = JSON.stringify(mods_obj);
+
+const admins_obj = require('./config/admins.json');
+const admins_string = JSON.stringify(admins_obj);
+
+const devs_obj = require('./config/developers.json');
+const devs_string = JSON.stringify(devs_obj);
+
 Client.permissionLevels = new PermissionLevels(31)
 // anyone
   .add(0, () => true)
@@ -27,8 +39,14 @@ Client.permissionLevels = new PermissionLevels(31)
   .add(24, ({ guild, member }) => guild && member.permissions.has('ADMINISTRATOR'))
 // server owner
   .add(25, ({ guild, member }) => guild && member === guild.owner)
-// bot developers
-  .add(29, 1 === 1)
+// mazz trial
+  .add(26, ({ author }) => trials_string.includes(parseInt(author.id, 10)))
+// mazz mod
+  .add(27, ({ author }) => mods_string.includes(parseInt(author.id, 10)))
+// mazz admin
+  .add(28, ({ author }) => admins_string.includes(parseInt(author.id, 10)))
+// bot developer
+  .add(29, ({ author }) => devs_string.includes(parseInt(author.id, 10)))
 // RyanLand
   .add(30, ({ author }) => author.id === 298491523459317762);
 

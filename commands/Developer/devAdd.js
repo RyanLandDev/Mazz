@@ -9,6 +9,7 @@ module.exports = class extends Command {
       description: 'Add a new developer.',
       name: 'devadd',
       guarded: true,
+      // permissionLevel: 29,
       usage: '<User:member>',
     });
   }
@@ -17,8 +18,8 @@ module.exports = class extends Command {
     const stringToSearch = JSON.stringify(obj);
     const integer = parseInt(params[0].user.id, 10);
     if (stringToSearch.includes(integer)) return message.channel.send('This user is already a developer!');
-    obj.headdeveloperlist.push(integer);
-    const stringToSave = JSON.stringify(obj, null, 4);
+    obj.headdeveloper.push(integer);
+    const stringToSave = JSON.stringify(obj, null, 2);
     fs.writeFile('./config/developers.json', stringToSave, (err) => {
       if (err) throw err;
     });
