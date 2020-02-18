@@ -19,7 +19,7 @@ module.exports = class extends Command {
     const newUser = params[0].user.id;
     if (stringToSearch.includes(newUser)) return message.channel.send('This user is already a developer!');
     obj.headdeveloper.push(newUser);
-    const stringToSave = JSON.stringify(obj, null, 2);
+    const stringToSave = JSON.stringify(obj, null, 4);
     fs.writeFile('./config/developers.json', stringToSave, (err) => {
       if (err) throw err;
     });
