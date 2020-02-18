@@ -1,0 +1,16 @@
+{
+    "fetchAllMembers": false,
+    "prefix": "m!",
+    "presence": { 
+        "name": "`m!help | ${client.guilds.size} servers 🔥"
+     },
+    "commandEditing": true,
+    "typing": true,
+    "noPrefixDM": true,
+    "prefixCaseInsensitive": true,
+    "readyMessage": "Ready!",
+
+    "permissionLevels": {
+
+    }
+  }

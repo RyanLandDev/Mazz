@@ -9,16 +9,16 @@ module.exports = class extends Command {
       description: 'Add a new developer.',
       name: 'devadd',
       guarded: true,
-      // permissionLevel: 29,
+      permissionLevel: 29,
       usage: '<User:member>',
     });
   }
 
   async run(message, [...params]) {
     const stringToSearch = JSON.stringify(obj);
-    const integer = parseInt(params[0].user.id, 10);
-    if (stringToSearch.includes(integer)) return message.channel.send('This user is already a developer!');
-    obj.headdeveloper.push(integer);
+    const newUser = params[0].user.id;
+    if (stringToSearch.includes(newUser)) return message.channel.send('This user is already a developer!');
+    obj.headdeveloper.push(newUser);
     const stringToSave = JSON.stringify(obj, null, 2);
     fs.writeFile('./config/developers.json', stringToSave, (err) => {
       if (err) throw err;

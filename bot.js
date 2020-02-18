@@ -1,10 +1,10 @@
-// require modules
-const Discord = require('discord.js');
 const { Client, PermissionLevels } = require('klasa');
+const Discord = require('discord.js');
+const client = new Discord.Client();
 
 const tokens = require('./config/tokens.json');
-const client = new Discord.Client();
-const token = tokens.login_token;
+const clientConfig = require('./config/clientConfig.json');
+console.log(clientConfig);
 
 // ============================================================================================================================================
 //
@@ -24,11 +24,35 @@ const admins_string = JSON.stringify(admins_obj);
 const devs_obj = require('./config/developers.json');
 const devs_string = JSON.stringify(devs_obj);
 
-Client.permissionLevels = new PermissionLevels(31)
+clientConfig.permissionLevels = new PermissionLevels(31)
 // anyone
   .add(0, () => true)
 // anyone that isn't banned from using the bot
 // (add)
+// ============================================================================================================================================
+
+  .add(1, () => true)
+  .add(2, () => true)
+  .add(3, () => true)
+  .add(4, () => true)
+  .add(5, () => true)
+  .add(6, () => true)
+  .add(7, () => true)
+  .add(8, () => true)
+  .add(9, () => true)
+  .add(10, () => true)
+  .add(11, () => true)
+  .add(12, () => true)
+  .add(13, () => true)
+  .add(14, () => true)
+  .add(15, () => true)
+  .add(16, () => true)
+  .add(17, () => true)
+  .add(18, () => true)
+  .add(19, () => true)
+  .add(20, () => true)
+
+// ============================================================================================================================================
 // kick members
   .add(21, ({ guild, member }) => guild && member.permissions.has('KICK_MEMBERS'))
 // ban members
@@ -46,9 +70,9 @@ Client.permissionLevels = new PermissionLevels(31)
 // mazz admin
   .add(28, ({ author }) => admins_string.includes(parseInt(author.id, 10)))
 // bot developer
-  .add(29, ({ author }) => devs_string.includes(parseInt(author.id, 10)))
+  .add(29, ({ member }) => devs_string.includes(member.id))
 // RyanLand
-  .add(30, ({ author }) => author.id === 298491523459317762);
+  .add(30, ({ author }) => author.id === client.owner);
 
 // ============================================================================================================================================
 //
@@ -56,35 +80,4 @@ Client.permissionLevels = new PermissionLevels(31)
 //
 // ============================================================================================================================================
 
-new Client({
-  fetchAllMembers: false,
-  prefix: 'm!',
-  presence: { name: `m!help | ${client.guilds.size} servers 🔥` },
-  commandEditing: true,
-  typing: true,
-  noPrefixDM: true,
-  prefixCaseInsensitive: true,
-  readyMessage: () => 'Ready!',
-}).login(token);
-
-// ============================================================================================================================================
-//
-// Initialization
-//
-// ============================================================================================================================================
-
-const express = require('express');
-const app = express();
-
-// http://expressjs.com/en/starter/static-files.html
-app.use(express.static('public'));
-
-// http://expressjs.com/en/starter/basic-routing.html
-app.get('/', function(request, response) {
-  response.sendFile(__dirname + '/views/index.html');
-});
-
-// listen for requests :)
-const listener = app.listen(process.env.PORT, function() {
-  console.log('Your app is listening on port ' + listener.address().port);
-});
+new Client(clientConfig).login(tokens.login_token);
