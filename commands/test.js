@@ -6,7 +6,7 @@ module.exports = class extends Command {
     super(...args, {
       guarded: true,
       description: 'Get the ping of the bot.',
-      permissionLevel: 10,
+      permissionLevel: 30,
     });
   }
 

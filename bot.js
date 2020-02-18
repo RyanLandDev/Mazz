@@ -4,7 +4,6 @@ const client = new Discord.Client();
 
 const tokens = require('./config/tokens.json');
 const clientConfig = require('./config/clientConfig.json');
-console.log(clientConfig);
 
 // ============================================================================================================================================
 //
@@ -64,11 +63,11 @@ clientConfig.permissionLevels = new PermissionLevels(31)
 // server owner
   .add(25, ({ guild, member }) => guild && member === guild.owner)
 // mazz trial
-  .add(26, ({ author }) => trials_string.includes(parseInt(author.id, 10)))
+  .add(26, ({ member }) => trials_string.includes(member.id))
 // mazz mod
-  .add(27, ({ author }) => mods_string.includes(parseInt(author.id, 10)))
+  .add(27, ({ member }) => mods_string.includes(member.id))
 // mazz admin
-  .add(28, ({ author }) => admins_string.includes(parseInt(author.id, 10)))
+  .add(28, ({ member }) => admins_string.includes(member.id))
 // bot developer
   .add(29, ({ member }) => devs_string.includes(member.id))
 // RyanLand
