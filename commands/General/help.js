@@ -18,14 +18,12 @@ module.exports = class extends Command {
   }
 
   async run(message, [command]) {
-    console.log('0');
     if (command) {
       const info = [
         `= ${command.name} = `,
         command.description,
         `Usage :: ${command.usage.fullUsage(message)}`,
       ].join('\n');
-      console.log('1');
       return message.channel.send(info, { code: 'asciidoc' });
     }
     const help = await this.buildHelp(message);
@@ -36,7 +34,6 @@ module.exports = class extends Command {
       const subCategories = Object.keys(help[categories[cat]]);
       for (let subCat = 0; subCat < subCategories.length; subCat++) helpMessage.push(`= ${subCategories[subCat]} =`, `${help[categories[cat]][subCategories[subCat]].join('\n')}\n`);
       helpMessage.push('```', '\u200b');
-      console.log('2');
     }
 
     return message.author.send(helpMessage, { split: { char: '\u200b' } })
@@ -50,7 +47,6 @@ module.exports = class extends Command {
     const { prefix } = message.guildSettings;
     const commandNames = [...this.client.commands.keys()];
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
-    console.log('3');
     await Promise.all(this.client.commands.map((command) =>
       this.client.inhibitors.run(message, command, true)
         .then(() => {
@@ -58,7 +54,6 @@ module.exports = class extends Command {
           if (!has(help[command.category], command.subCategory)) help[command.category][command.subCategory] = [];
           const description = command.description;
           help[command.category][command.subCategory].push(`${prefix}${command.name.padEnd(longest)} :: ${description}`);
-          console.log('4');
         })
         .catch(() => {
           // noop

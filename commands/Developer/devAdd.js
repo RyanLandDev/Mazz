@@ -6,8 +6,8 @@ module.exports = class extends Command {
 
   constructor(...args) {
     super(...args, {
-      description: 'Add a new developer.',
-      name: 'devadd',
+      description: 'Manages staff members.',
+      name: 'staff',
       guarded: true,
       permissionLevel: 29,
       usage: '<User:member>',
