@@ -1,11 +1,9 @@
 const { Command } = require('klasa');
 const fs = require('fs');
 
-
 //
 // UNFINISHED
 //
-
 
 module.exports = class extends Command {
 
@@ -17,34 +15,60 @@ module.exports = class extends Command {
       permissionLevel: 29,
       subcommands: true,
       usageDelim: ' ',
-      usage: '<add|remove|purge> <trial|moderator|admin|developer> (User:member)',
+      usage: '<add|remove|purge> <trial|moderator|admin|developer> (User:member) [Head:boolean]',
     });
   }
 
   async add(message, params) {
+    let arrayToPush = 0;
     const obj = require(`../../config/${params[0]}s.json`);
     const stringToSearch = JSON.stringify(obj);
     const newUser = params[1].user.id;
     if (stringToSearch.includes(newUser)) return message.channel.send('This user is already a developer!');
-    obj.headdeveloper.push(newUser);
+    if (params[2] === true) {
+      arrayToPush = 'head' + params[0];
+    }
+    else {
+      arrayToPush = 'second' + params[0];
+    }
+    obj[arrayToPush].push(newUser);
     const stringToSave = JSON.stringify(obj, null, 4);
     fs.writeFile(`./config/${params[0]}s.json`, stringToSave, (err) => {
       if (err) throw err;
     });
-    return message.channel.send(`${params[1].user} has been added to the ${params[0]} team!`);
+    return message.channel.send(`${params[1].user} has been added to the${params[2] ? ' head ' : ' '}${params[0]} team!`);
   }
 
   async remove(message, params) {
+    let arrayToSplice = 0;
     const obj = require(`../../config/${params[0]}s.json`);
-    const stringToSearch = JSON.stringify(obj);
+    const fullStringToSearch = JSON.stringify(obj);
+    const stringToSearch = JSON.stringify(obj[(params[2] ? 'head' : 'second') + params[0]]);
     const newUser = params[1].user.id;
-    if (!stringToSearch.includes(newUser)) return message.channel.send('This user isn\'t staff!');
-    obj.splice(obj.indexOf(newUser), 1);
+    if (!stringToSearch.includes(newUser)) return message.channel.send(`This user isn't${params[2] ? ' head ' : ' second '}${params[0]}!`);
+    if (params[2] === true) {
+      arrayToSplice = 'head' + params[0];
+    }
+    else {
+      arrayToSplice = 'second' + params[0];
+    }
+    obj[arrayToSplice].splice(obj[arrayToSplice].indexOf(newUser), 1);
+    const stringToSaveNoMod = JSON.stringify(obj);
     const stringToSave = JSON.stringify(obj, null, 4);
+    if (stringToSaveNoMod === fullStringToSearch) return message.channel.send(`This user isn't${params[2] ? ' head ' : ' second '}${params[0]}!`);
     fs.writeFile(`./config/${params[0]}s.json`, stringToSave, (err) => {
       if (err) throw err;
     });
-    return message.channel.send(`${params[1].user} has been removed from the ${params[0]} team!`);
+    return message.channel.send(`${params[1].user} has been removed from the${params[2] ? ' head ' : ' '}${params[0]} team!`);
+  }
+
+  async purge(message, params) {
+    const objText = JSON.stringify(require(`../../config/${params[0]}s.json`));
+    if (objText === '{}') return message.channel.send(`There aren't any ${params[0]} members to purge!`);
+    fs.writeFile(`./config/${params[0]}s.json}`, '{}', (err) => {
+      if (err) throw err;
+    });
+    return message.channel.send(`The ${params[0]} team has been purged!`);
   }
 
 };

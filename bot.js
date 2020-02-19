@@ -71,7 +71,7 @@ clientConfig.permissionLevels = new PermissionLevels(31)
 // bot developer
   .add(29, ({ member }) => devs_string.includes(member.id))
 // RyanLand
-  .add(30, ({ author }) => author.id === client.owner);
+  .add(30, ({ member }) => member.user.id === client.owner.user.id);
 
 // ============================================================================================================================================
 //
