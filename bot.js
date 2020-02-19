@@ -1,6 +1,4 @@
 const { Client, PermissionLevels } = require('klasa');
-const Discord = require('discord.js');
-const client = new Discord.Client();
 
 const tokens = require('./config/tokens.json');
 const clientConfig = require('./config/clientConfig.json');
@@ -10,18 +8,6 @@ const clientConfig = require('./config/clientConfig.json');
 // Permission Levels
 //
 // ============================================================================================================================================
-
-const trials_obj = require('./config/trials.json');
-const trials_string = JSON.stringify(trials_obj);
-
-const mods_obj = require('./config/moderators.json');
-const mods_string = JSON.stringify(mods_obj);
-
-const admins_obj = require('./config/admins.json');
-const admins_string = JSON.stringify(admins_obj);
-
-const devs_obj = require('./config/developers.json');
-const devs_string = JSON.stringify(devs_obj);
 
 clientConfig.permissionLevels = new PermissionLevels(31)
 // anyone
@@ -63,15 +49,15 @@ clientConfig.permissionLevels = new PermissionLevels(31)
 // server owner
   .add(25, ({ guild, member }) => guild && member === guild.owner)
 // mazz trial
-  .add(26, ({ member }) => trials_string.includes(member.id))
+  .add(26, ({ member }) => JSON.stringify(require('./config/trials.json')).includes(member.id))
 // mazz mod
-  .add(27, ({ member }) => mods_string.includes(member.id))
+  .add(27, ({ member }) => JSON.stringify(require('./config/moderators.json')).includes(member.id))
 // mazz admin
-  .add(28, ({ member }) => admins_string.includes(member.id))
+  .add(28, ({ member }) => JSON.stringify(require('./config/admins.json')).includes(member.id))
 // bot developer
-  .add(29, ({ member }) => devs_string.includes(member.id))
+  .add(29, ({ member }) => JSON.stringify(require('./config/developers.json')).includes(member.id))
 // RyanLand
-  .add(30, ({ member }) => member.user.id === client.owner.user.id);
+  .add(30, ({ author, client }) => author.id === client.application.owner.ownerID);
 
 // ============================================================================================================================================
 //

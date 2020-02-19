@@ -1,10 +1,6 @@
 const { Command } = require('klasa');
 const fs = require('fs');
 
-//
-// UNFINISHED
-//
-
 module.exports = class extends Command {
 
   constructor(...args) {
@@ -15,16 +11,17 @@ module.exports = class extends Command {
       permissionLevel: 29,
       subcommands: true,
       usageDelim: ' ',
-      usage: '<add|remove|purge> <trial|moderator|admin|developer> (User:member) [Head:boolean]',
+      usage: '<add|remove|purge> <trial|moderator|admin|developer> [User:member] [Head:boolean]',
     });
   }
 
   async add(message, params) {
+    if (!params[1]) return message.channel.send('You need to mention a member (ID)!');
     let arrayToPush = 0;
     const obj = require(`../../config/${params[0]}s.json`);
     const stringToSearch = JSON.stringify(obj);
     const newUser = params[1].user.id;
-    if (stringToSearch.includes(newUser)) return message.channel.send('This user is already a developer!');
+    if (stringToSearch.includes(newUser)) return message.channel.send(`This user is already apart of the ${params[0]} team!`);
     if (params[2] === true) {
       arrayToPush = 'head' + params[0];
     }
@@ -40,6 +37,7 @@ module.exports = class extends Command {
   }
 
   async remove(message, params) {
+    if (!params[1]) return message.channel.send('You need to mention a member (ID)!');
     let arrayToSplice = 0;
     const obj = require(`../../config/${params[0]}s.json`);
     const fullStringToSearch = JSON.stringify(obj);
@@ -63,9 +61,9 @@ module.exports = class extends Command {
   }
 
   async purge(message, params) {
-    const objText = JSON.stringify(require(`../../config/${params[0]}s.json`));
-    if (objText === '{}') return message.channel.send(`There aren't any ${params[0]} members to purge!`);
-    fs.writeFile(`./config/${params[0]}s.json}`, '{}', (err) => {
+    if (JSON.stringify(require(`../../config/${params[0]}s.json`)) === '{}') return message.channel.send(`There aren't any ${params[0]} members to purge!`);
+    const baseObj = { [`head${params[0]}`]: [], [`second${params[0]}`]: [] };
+    fs.writeFile(`./config/${params[0]}s.json`, JSON.stringify(baseObj, null, 4), (err) => {
       if (err) throw err;
     });
     return message.channel.send(`The ${params[0]} team has been purged!`);

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 const { Command } = require('klasa');
 
 module.exports = class extends Command {
