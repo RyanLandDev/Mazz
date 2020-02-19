@@ -12,11 +12,9 @@ module.exports = class extends Command {
   }
 
   async run(message, [...params]) {
-    // code
   }
 
   async init() {
-    // code on init
   }
 
 };

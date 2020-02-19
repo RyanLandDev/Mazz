@@ -10,10 +10,8 @@ const clientConfig = require('./config/clientConfig.json');
 // ============================================================================================================================================
 
 clientConfig.permissionLevels = new PermissionLevels(31)
-// anyone
-  .add(0, () => true)
 // anyone that isn't banned from using the bot
-// (add)
+  .add(0, ({ member }) => JSON.stringify(require('./config/userbans.json')).includes(!member.id))
 // ============================================================================================================================================
 
   .add(1, () => true)

@@ -5,6 +5,7 @@
     "noPrefixDM": true,
     "prefixCaseInsensitive": true,
     "readyMessage": "Ready!",
+    "slowmodeAggressive": true,
 
     "permissionLevels": {
 
