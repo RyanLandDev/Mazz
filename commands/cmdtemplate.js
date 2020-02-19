@@ -73,7 +73,7 @@ module.exports = class extends Command {
       // Default: false
       // Type: boolean
       // Description: If the command can be disabled on a guild level (does not effect global disable)
-      guarded: false,
+      guarded: true,
       // Name: hidden
       // Default: false
       // Type: boolean

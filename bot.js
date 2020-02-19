@@ -14,7 +14,7 @@ const clientConfig = require('./config/clientConfig.json');
 const trials_obj = require('./config/trials.json');
 const trials_string = JSON.stringify(trials_obj);
 
-const mods_obj = require('./config/mods.json');
+const mods_obj = require('./config/moderators.json');
 const mods_string = JSON.stringify(mods_obj);
 
 const admins_obj = require('./config/admins.json');
