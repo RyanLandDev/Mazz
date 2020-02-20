@@ -5,13 +5,15 @@ module.exports = class extends Command {
   constructor(...args) {
     super(...args, {
       runIn: ['text'],
-      permissionLevel: 6,
+      // Server Administrator
+      permissionLevel: 24,
       guarded: true,
       subcommands: true,
       aliases: ['configuration', 'serverconfig', 'serverconfiguration'],
       description: language => language.get('COMMAND_CONF_SERVER_DESCRIPTION'),
       usage: '<set|show|remove|reset> (key:key) (value:value) [...]',
       usageDelim: ' ',
+      enabled: false,
     });
 
     this
