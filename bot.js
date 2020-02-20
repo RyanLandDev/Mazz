@@ -48,7 +48,7 @@ clientConfig.permissionLevels = new PermissionLevels(31)
   .add(25, ({ guild, member }) => guild && member === guild.owner)
 // mazz trial
   .add(26, ({ member }) => JSON.stringify(require('./config/trials.json')).includes(member.id))
-// mazz mod
+// mazz moderator
   .add(27, ({ member }) => JSON.stringify(require('./config/moderators.json')).includes(member.id))
 // mazz admin
   .add(28, ({ member }) => JSON.stringify(require('./config/admins.json')).includes(member.id))

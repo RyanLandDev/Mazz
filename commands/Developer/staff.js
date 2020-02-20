@@ -8,7 +8,8 @@ module.exports = class extends Command {
       description: 'Manages staff members.',
       name: 'staff',
       guarded: true,
-      permissionLevel: 29,
+      // Mazz Admin
+      permissionLevel: 28,
       subcommands: true,
       usageDelim: ' ',
       usage: '<add|remove|purge> <trial|moderator|admin|developer> [User:member] [Head:boolean]',
