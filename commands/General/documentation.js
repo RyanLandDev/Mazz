@@ -8,14 +8,14 @@ module.exports = class extends Command {
     super(...args, {
       description: 'Links to the Mazz documentation.',
       guarded: true,
-      aliases: ['support', 'supportserver', 'discordserver', 'guild'],
+      aliases: ['docs', 'guide'],
     });
   }
 
   async run(message) {
     const Embed = new MessageEmbed()
       .setColor('#0099FF')
-      .setDescription('')
+      .setDescription('Join the official Mazz server.')
       .setAuthor(message.author.username, message.author.avatarURL());
     message.channel.send(Embed);
   }
