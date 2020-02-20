@@ -40,6 +40,7 @@ module.exports = class extends Command {
   }
 
   async set(message, [key, ...valueToSet]) {
+    console.log(key);
     const status = await message.guild.settings.update(key, valueToSet.join(' '), message.guild, { avoidUnconfigurable: true, action: 'add' });
     return this.check(message, key, status) || message.sendLocale('COMMAND_CONF_UPDATED', [key, message.guild.settings.resolveString(message, status.updated[0].piece)]);
   }

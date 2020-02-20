@@ -18,7 +18,6 @@ module.exports = class extends Command {
   }
 
   async init() {
-    this.client.user.setPresence({ activity: { name: `m!help | ${this.client.guilds.size} servers 🔥` }, status: 'online' })
-      .catch(console.error);
+    this.client.user.setPresence({ 'activity': { 'name': `m!help | ${this.client.guilds.size} servers 🔥` }, 'status': 'online' });
   }
 };
