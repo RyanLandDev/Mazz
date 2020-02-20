@@ -1,5 +1,6 @@
 const { Command, Stopwatch, Type, util } = require('klasa');
 const { inspect } = require('util');
+const { MessageEmbed } = require('discord.js');
 
 module.exports = class extends Command {
 
@@ -7,31 +8,34 @@ module.exports = class extends Command {
     super(...args, {
       permissionLevel: 29,
       guarded: true,
-      description: language => language.get('COMMAND_EVAL_DESCRIPTION'),
-      extendedHelp: language => language.get('COMMAND_EVAL_EXTENDEDHELP'),
+      description: 'Evaluate JavaScript code.',
       usage: '<expression:str>',
     });
   }
 
   async run(message, [code]) {
-    const { success, result, time, type } = await this.eval(message, code);
+    const { success, result, type } = await this.eval(message, code);
     const footer = util.codeBlock('ts', type);
     const output = message.language.get(success ? 'COMMAND_EVAL_OUTPUT' : 'COMMAND_EVAL_ERROR',
-      time, util.codeBlock('js', result), footer);
+      ' ', util.codeBlock('js', result), footer);
 
     if ('silent' in message.flagArgs) return null;
 
     // Handle too-long-messages
     if (output.length > 2000) {
       if (message.guild && message.channel.attachable) {
-        return message.channel.sendFile(Buffer.from(result), 'output.txt', message.language.get('COMMAND_EVAL_SENDFILE', time, footer));
+        return message.channel.sendFile(Buffer.from(result), 'output.txt', message.language.get('COMMAND_EVAL_SENDFILE', '2', footer));
       }
       this.client.emit('log', result);
-      return message.sendLocale('COMMAND_EVAL_SENDCONSOLE', [time, footer]);
+      return message.sendLocale('COMMAND_EVAL_SENDCONSOLE', ['3', footer]);
     }
 
     // If it's a message that can be sent correctly, send it
-    return message.sendMessage(output);
+    const Embed = new MessageEmbed()
+      .setDescription(output)
+      .setColor('#0099FF')
+      .setAuthor(message.author.username, message.author.avatarURL());
+    return message.channel.send(Embed);
   }
 
   // Eval the input
@@ -73,11 +77,7 @@ module.exports = class extends Command {
         showHidden: Boolean(flags.showHidden),
       });
     }
-    return { success, type, time: this.formatTime(syncTime, asyncTime), result: util.clean(result) };
-  }
-
-  formatTime(syncTime, asyncTime) {
-    return asyncTime ? `⏱ ${asyncTime}<${syncTime}>` : `⏱ ${syncTime}`;
+    return { success, type, result: util.clean(result) };
   }
 
 };

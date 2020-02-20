@@ -18,7 +18,7 @@ module.exports = class extends Command {
 
   async add(message, params) {
     if (!params[1]) return message.channel.send('You need to mention a member (ID)!');
-    let arrayToPush = 0;
+    let arrayToPush;
     const obj = require(`../../config/${params[0]}s.json`);
     const stringToSearch = JSON.stringify(obj);
     const newUser = params[1].user.id;
