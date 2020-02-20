@@ -4,16 +4,15 @@ module.exports = class extends Command {
 
   constructor(...args) {
     super(...args, {
-      description: '',
-      enabled: false,
+      aliases: ['details', 'what'],
       guarded: true,
+      description: 'klasa ad',
+      enabled: false,
     });
   }
 
-  async run(message, [...params]) {
-  }
-
-  async init() {
+  async run(message) {
+    return message.sendLocale('COMMAND_INFO');
   }
 
 };

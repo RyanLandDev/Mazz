@@ -63,4 +63,5 @@ clientConfig.permissionLevels = new PermissionLevels(31)
 //
 // ============================================================================================================================================
 
+// create KlasaClient
 new Client(clientConfig).login(tokens.login_token);
