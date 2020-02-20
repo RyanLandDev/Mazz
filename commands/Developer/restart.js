@@ -6,12 +6,13 @@ module.exports = class extends Command {
     super(...args, {
       permissionLevel: 29,
       guarded: true,
-      description: language => language.get('COMMAND_REBOOT_DESCRIPTION'),
+      aliases: ['rs'],
+      description: 'Restarts the bot.',
     });
   }
 
   async run(message) {
-    await message.sendLocale('COMMAND_REBOOT').catch(err => this.client.emit('error', err));
+    await message.channel.send('Restarting...').catch(err => this.client.emit('error', err));
     await Promise.all(this.client.providers.map(provider => provider.shutdown()));
     process.exit();
   }
