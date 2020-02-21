@@ -9,8 +9,8 @@ module.exports = class extends Command {
       guarded: true,
     });
   }
-
-  async run(message, [...params]) {
+  async run(message) {
+    // here
   }
 
 };

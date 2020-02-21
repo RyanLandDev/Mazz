@@ -7,6 +7,7 @@ module.exports = class extends Command {
       description: 'Set a new prefix for the server.',
       guarded: true,
       usage: '[NewPrefix:str{1,4}]',
+      runIn: ['text'],
       // Server Admin
       permissionLevel: 24,
     });
