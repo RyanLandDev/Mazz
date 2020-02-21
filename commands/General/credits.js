@@ -18,17 +18,17 @@ module.exports = class extends Command {
   }
 
   async run(message) {
-    let devsString = [];
+    const devsString = [];
     for(let i = 0; i < devs.seconddeveloper.length; i++) {
-      message.client.users.fetch(devs.seconddeveloper[i]).then(value =>
-        devsString.push(value.username));
+      await message.client.users.fetch(devs.seconddeveloper[i]).then(value =>
+        devsString.push(value.username + '#' + value.discriminator));
     }
-    // const Embed = new MessageEmbed()
-    //   .setColor('#0099FF')
-    //   .setDescription('Below is a list of all people that are supporting Mazz.')
-    //   .addField('Name of field', 'Second Developers\n\n' + devsMod.seconddeveloper.join('\n'), true)
-    //   .addField('Name of field', 'Second Developers\n\n' + devsMod.seconddeveloper.join('\n'), true);
-    // message.channel.send(Embed);
+    const devsStringified = devsString.join('\n');
+    const Embed = new MessageEmbed()
+      .setColor('#0099FF')
+      .setDescription('Below is a list of all people that are supporting Mazz.')
+      .addField('**Second Developers**', devsStringified, true);
+    message.channel.send(Embed);
   }
 
 };
