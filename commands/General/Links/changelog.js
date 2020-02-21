@@ -6,7 +6,7 @@ module.exports = class extends Command {
 
   constructor(...args) {
     super(...args, {
-      description: 'Links the user to the Mazz changelog.',
+      description: 'Check the changelog for new updates.',
       guarded: true,
       aliases: ['changes', 'updates'],
     });

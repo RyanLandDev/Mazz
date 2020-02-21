@@ -6,7 +6,7 @@ module.exports = class extends Command {
 
   constructor(...args) {
     super(...args, {
-      description: 'Links the user to the Mazz Patreon.',
+      description: 'Support Mazz on Patreon!',
       guarded: true,
       aliases: ['donate', 'support', 'sponsor', 'subscriptions'],
     });
