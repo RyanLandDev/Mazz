@@ -12,20 +12,7 @@ module.exports = class extends Command {
   }
 
   async run(message) {
-    const randomIndex = Math.round(Math.random() * responses.length);
-    message.channel.send(responses[randomIndex]);
+    message.channel.send(responses[Math.round(Math.random() * responses.length)]);
   }
 
 };
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
