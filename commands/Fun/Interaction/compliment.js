@@ -1,5 +1,5 @@
 const { Command } = require('klasa');
-const responses = require('../../config/compliment_responses.json').main;
+const responses = require('../../../config/compliment_responses.json').main;
 
 module.exports = class extends Command {
 
