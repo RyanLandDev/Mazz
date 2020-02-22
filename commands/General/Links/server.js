@@ -14,7 +14,7 @@ module.exports = class extends Command {
   async run(message) {
     const Embed = new MessageEmbed()
       .setColor('#0099FF')
-      .setDescription('You can join the official Mazz server [here](https://discord.gg/aZEZ7C).')
+      .setDescription('You can join the official Mazz server [here](https://discord.gg/aZEZ7Ct).')
       .setAuthor(message.author.username, message.author.avatarURL());
     message.channel.send(Embed);
   }

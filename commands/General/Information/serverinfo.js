@@ -25,8 +25,8 @@ module.exports = class extends Command {
       .setThumbnail(Guild.iconURL())
       .addField('Name', Guild.name, true)
       .addField('ID', Guild.id, true)
-      .addField('Owner', `${Guild.owner.user.tag}`, true)
-      .addField('Member Count', `${Guild.memberCount}`, true)
+      .addField('Owner', Guild.owner.user.tag, true)
+      .addField('Member Count', `${Guild.memberCount} (${Guild.members.filter(m => m.user.bot == false).size} humans/${Guild.members.filter(m => m.user.bot == true).size} bots)`, true)
       .addField('Created', moment(Guild.createdAt).format('dddd Do [of] MMMM YYYY [at] h:mm:ss a') + ' (' + moment(Guild.createdAt).startOf('day').fromNow() + ')', true);
     message.channel.send(Embed);
   }
