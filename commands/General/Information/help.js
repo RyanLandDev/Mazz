@@ -9,6 +9,7 @@ module.exports = class extends Command {
       guarded: true,
       description: 'You can use this command to get a list of all commands or information about one.',
       usage: '(Command:command)',
+      cooldown: 3,
     });
 
     this.createCustomResolver('command', (arg, possible, message) => {

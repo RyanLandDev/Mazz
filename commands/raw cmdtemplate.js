@@ -6,11 +6,10 @@ module.exports = class extends Command {
     super(...args, {
       description: '',
       enabled: false,
-      guarded: true,
     });
   }
 
-  async run(message, [...params]) {
+  async run(message) {
   }
 
 };

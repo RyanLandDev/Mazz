@@ -8,6 +8,7 @@ module.exports = class extends Command {
       description: 'Ask the magic 8ball a question.',
       aliases: ['8b'],
       usage: '<Question:str{3,200}>',
+      cooldown: 3,
     });
   }
 

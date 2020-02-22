@@ -8,6 +8,7 @@ module.exports = class extends Command {
       guarded: true,
       usage: '[Role:role]',
       aliases: ['role-info'],
+      cooldown: 5,
     });
   }
 

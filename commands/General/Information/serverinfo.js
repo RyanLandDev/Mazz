@@ -11,6 +11,7 @@ module.exports = class extends Command {
       runIn: ['text'],
       usage: '[Server:guild]',
       aliases: ['server-info', 'guildinfo', 'guild-info'],
+      cooldown: 5,
     });
   }
 

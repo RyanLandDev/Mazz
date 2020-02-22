@@ -14,6 +14,7 @@ module.exports = class extends Command {
       description: 'Get a list of all people that have helped Mazz.',
       guarded: true,
       aliases: ['credit', 'devs', 'developers', 'mods', 'patrons', 'moderators', 'admins', 'administrator', 'trials'],
+      cooldown: 10,
     });
   }
 

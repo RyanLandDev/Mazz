@@ -11,6 +11,7 @@ module.exports = class extends Command {
       runIn: ['text'],
       usage: '[User:member]',
       aliases: ['user-info', 'memberinfo', 'member-info'],
+      cooldown: 5,
     });
   }
 

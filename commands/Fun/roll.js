@@ -4,14 +4,14 @@ module.exports = class extends Command {
 
   constructor(...args) {
     super(...args, {
-      guarded: true,
-      description: 'Get the ping of the bot.',
+      description: 'Roll a dice.',
       cooldown: 2,
+      aliases: ['dice'],
     });
   }
 
   async run(message) {
-    message.channel.send(`:ping_pong: Returned at ${Math.round(this.client.ws.ping)}ms.`);
+    message.channel.send(`You rolled a dice and it said ${Math.ceil(Math.random() * 6)}`);
   }
 
 };
