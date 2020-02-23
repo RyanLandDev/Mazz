@@ -19,6 +19,7 @@
     "fs-nextra": "^0.4.7",
     "klasa": "github:dirigeants/klasa#4fa20eb",
     "moment": "^2.24.0",
+    "mongodb": "^3.5.3",
     "path": "^0.12.7"
   }
 }

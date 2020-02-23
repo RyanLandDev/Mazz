@@ -5,11 +5,16 @@ module.exports = class extends Command {
   constructor(...args) {
     super(...args, {
       description: 'Epic test',
-      aliases: ['test1'],
+      aliases: ['test-10'],
     });
   }
 
   async run(message) {
-    message.channel.send(Math.round(Math.random() * (1 - 100) + 100));
+    message.channel.send('my emote')
+      .then((msg)=> {
+        setTimeout(function() {
+          msg.edit('my others emotes');
+        }, 1000);
+      });
   }
 };

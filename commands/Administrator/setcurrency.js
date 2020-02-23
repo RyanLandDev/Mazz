@@ -7,8 +7,7 @@ module.exports = class extends Command {
       description: 'Set the server currency. Emojis are supported.',
       aliases: ['seticon', 'setvaluta'],
       guarded: true,
-      usage: '<set|show|reset> <NewCurrency:str{1,32}>',
-      subcommands: true,
+      usage: '<NewCurrency:str{1,32}>',
       runIn: ['text'],
       // Server Admin
       permissionLevel: 24,

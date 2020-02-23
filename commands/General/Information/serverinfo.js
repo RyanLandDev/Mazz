@@ -26,6 +26,13 @@ module.exports = class extends Command {
     if (region === 'india') region = ':flag_in: **India**';
     if (region === 'japan') region = ':flag_jp: **Japan**';
     if (region === 'russia') region = ':flag_ru: **Russia**';
+    if (region === 'singapore') region = ':flag_sg: **Singapore**';
+    if (region === 'southafrica') region = ':flag_za: **South Africa**';
+    if (region === 'sydney') region = ':flag_au: **Sydney**';
+    if (region === 'us-central') region = ':flag_us: **US Central**';
+    if (region === 'us-east') region = ':flag_us: **US East**';
+    if (region === 'us-south') region = ':flag_us: **US South**';
+    if (region === 'us-west') region = ':flag_us: **US West**';
 
     const Embed = new MessageEmbed()
       .setColor('#0099FF')

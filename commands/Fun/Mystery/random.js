@@ -13,7 +13,7 @@ module.exports = class extends Command {
 
   async run(message, params) {
     if (params[0] > params[1]) return message.channel.send('The min can\'t be higher than the max!');
-    message.channel.send('The magic number is **' + (Math.round(Math.random() * (params[1] - params[0])) + params[0]) + '**');
+    message.channel.send(':sparkles: | The magic number is **' + (Math.round(Math.random() * (params[1] - params[0])) + params[0]) + '**');
   }
 
 };
