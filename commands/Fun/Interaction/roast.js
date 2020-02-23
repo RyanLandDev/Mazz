@@ -1,5 +1,5 @@
 const { Command } = require('klasa');
-const responses = require('../../../config/roast_responses.json').main;
+const responses = require('../../../config/roast_responses.json');
 
 module.exports = class extends Command {
 
