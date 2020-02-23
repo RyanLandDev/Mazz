@@ -13,7 +13,7 @@ module.exports = class extends Command {
   }
 
   async run(message) {
-    message.channel.send(responses[Math.round(Math.random() * responses.length)]);
+    message.channel.send(':8ball: | ' + responses[Math.round(Math.random() * responses.length)]);
   }
 
 };

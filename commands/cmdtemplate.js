@@ -24,7 +24,7 @@ module.exports = class extends Command {
       // Description: a description explaining what the option is and does
       // ==========================================================================================
       // Name: aliases
-      // Default: (Required option)
+      // Default: []
       // Type: Array<string>
       // Description: Controls the command's aliases
       aliases: [],
@@ -64,7 +64,7 @@ module.exports = class extends Command {
       // Description: The help description for the command
       description: '',
       // Name: enabled
-      // Default: (Required option)
+      // Default: true
       // Type: boolean
       // Description: Controls if whether the command is enabled or not
       enabled: false,
@@ -79,7 +79,7 @@ module.exports = class extends Command {
       // Description: If the command should be hidden
       hidden: false,
       // Name: name
-      // Default: (Required option)
+      // Default: Name of file
       // Type: string
       // Description: The name of the command.
       name: 'command name',

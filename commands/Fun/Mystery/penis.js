@@ -1,5 +1,7 @@
 const { Command } = require('klasa');
 
+// unfinished being worked on by intervexian
+
 module.exports = class extends Command {
 
   constructor(...args) {

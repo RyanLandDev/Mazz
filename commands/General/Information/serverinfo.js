@@ -18,16 +18,37 @@ module.exports = class extends Command {
   async run(message, [Server]) {
     let Guild;
     if (!Server) Guild = message.guild; else Guild = Server;
+
+    let region = Guild.region;
+    if (region === 'europe') region = ':flag_eu: **Europe**';
+    if (region === 'brazil') region = ':flag_br: **Brazil**';
+    if (region === 'hongkong') region = ':flag_hk: **Hong Kong**';
+    if (region === 'india') region = ':flag_in: **India**';
+    if (region === 'japan') region = ':flag_jp: **Japan**';
+    if (region === 'russia') region = ':flag_ru: **Russia**';
+
     const Embed = new MessageEmbed()
       .setColor('#0099FF')
       .setTitle('Server Info')
       .setTimestamp()
       .setThumbnail(Guild.iconURL())
+      .setImage(Guild.splash)
+      //
       .addField('Name', Guild.name, true)
       .addField('ID', Guild.id, true)
-      .addField('Owner', Guild.owner.user.tag, true)
+      .addField('Owner', Guild.owner.user, true)
+      //
+      .addField('Created', moment(Guild.createdAt).format('dddd Do [of] MMMM YYYY [at] h:mm:ss a') + ' (' + moment(Guild.createdAt).startOf('day').fromNow() + ')', true)
       .addField('Member Count', `${Guild.memberCount} (${Guild.members.filter(m => m.user.bot == false).size} humans/${Guild.members.filter(m => m.user.bot == true).size} bots)`, true)
-      .addField('Created', moment(Guild.createdAt).format('dddd Do [of] MMMM YYYY [at] h:mm:ss a') + ' (' + moment(Guild.createdAt).startOf('day').fromNow() + ')', true);
+      .addField('Region', region, true)
+      //
+      .addField('Categories', Guild.channels.filter(m => m.type == 'category').size, true)
+      .addField('Text Channels', Guild.channels.filter(m => m.type == 'text' || 'news' || 'store').size, true)
+      .addField('Voice Channels', Guild.channels.filter(m => m.type == 'voice').size, true)
+      //
+      .addField('Roles', Guild.roles.size, true)
+      .addField('Highest Role', Guild.roles.highest, true)
+      .addField('Emojis', Guild.emojis.size, true);
     message.channel.send(Embed);
   }
 

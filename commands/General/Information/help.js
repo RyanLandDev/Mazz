@@ -38,8 +38,10 @@ module.exports = class extends Command {
     }
 
     return message.author.send(helpMessage, { split: { char: '\u200b' } })
-      .then(() => { if (message.channel.type !== 'dm') message.channel.send('📥 | The list of commands you have access to has been sent to your DMs.'); })
-      .catch(() => { if (message.channel.type !== 'dm') message.channel.send('❌ | You have DMs disabled, I couldn\'t send you the commands in DMs.'); });
+      .then(() => {
+        if (message.channel.type !== 'dm') message.react('📨');
+      })
+      .catch(() => { if (message.channel.type !== 'dm') message.channel.send('❌ | You have DMs disabled, please enable them so I can help you.'); });
   }
 
   async buildHelp(message) {
