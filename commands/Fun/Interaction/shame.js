@@ -11,7 +11,7 @@ module.exports = class extends Command {
   }
 
   run(msg, [User]) {
-    if (User.username.includes('@everyone') | User.username.includes('@here')) return msg.sendMessage('I\'m smarter');
+    if (User.username.includes('@everyone') || User.username.includes('@here')) return msg.sendMessage('I\'m smarter');
     return msg.sendMessage(`🔔 SHAME 🔔 ${User} 🔔 SHAME 🔔`);
   }
 
