@@ -6,19 +6,19 @@ module.exports = class extends Command {
 
   constructor(...args) {
     super(...args, {
-      description: 'Chirpie chirp!',
+      description: 'Woof fact.',
       cooldown: 3,
     });
   }
 
   async run(msg) {
-    const fact = await fetch('https://some-random-api.ml/facts/bird')
+    const fact = await fetch('https://some-random-api.ml/facts/dog')
       .then(response => response.json())
       .then(body => body.fact);
     return msg.sendMessage(
       new MessageEmbed()
         .setColor('#0099FF')
-        .setDescription(':bird: ' + fact),
+        .setDescription(':dog: | ' + fact),
     );
   }
 

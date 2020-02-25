@@ -16,7 +16,7 @@ module.exports = class extends Command {
     if (!User) return message.channel.send(`:rainbow_flag: You are ${Math.round(Math.random() * 100)}% gay`);
     const Username = User.user.username;
     if (Username.includes('@everyone') | Username.includes('@here')) return message.channel.send('I\'m smarter');
-    message.channel.send(`:rainbow_flag: ${Username} is ${Math.round(Math.random() * 100)}% gay`);
+    message.channel.send(`:rainbow_flag: | ${Username} is ${Math.round(Math.random() * 100)}% gay`);
   }
 
 };

@@ -6,20 +6,19 @@ module.exports = class extends Command {
 
   constructor(...args) {
     super(...args, {
-      aliases: ['kittenfact'],
-      description: 'Let me tell you a mysterious cat fact.',
+      description: 'Facts about uwu pandas :3',
       cooldown: 3,
     });
   }
 
   async run(msg) {
-    const fact = await fetch('https://catfact.ninja/fact')
+    const fact = await fetch('https://some-random-api.ml/facts/panda')
       .then(response => response.json())
       .then(body => body.fact);
     return msg.sendMessage(
       new MessageEmbed()
         .setColor('#0099FF')
-        .setDescription(':cat: ' + fact),
+        .setDescription(':panda: | ' + fact),
     );
   }
 

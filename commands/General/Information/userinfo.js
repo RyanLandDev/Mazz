@@ -32,7 +32,7 @@ module.exports = class extends Command {
     if (status === 'online') status = '<:ds_online:680430295023091807> **Online**';
     const Embed = new MessageEmbed()
       .setColor('#0099FF')
-      .setThumbnail(User.avatarURL())
+      .setThumbnail(User.avatarURL({ dynamic: true }))
       .setTitle('User Info')
       .setTimestamp()
       .addField('Username', User.tag, true)

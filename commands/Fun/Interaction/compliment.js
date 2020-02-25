@@ -11,7 +11,7 @@ module.exports = class extends Command {
   }
 
   async run(message) {
-    message.channel.send(responses[Math.round(Math.random() * responses.length)]);
+    message.channel.send(':smiling_face_with_3_hearts: | ' + responses[Math.round(Math.random() * responses.length)]);
   }
 
 };

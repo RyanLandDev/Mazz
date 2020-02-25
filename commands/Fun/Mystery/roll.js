@@ -11,7 +11,7 @@ module.exports = class extends Command {
   }
 
   async run(message) {
-    message.channel.send(`You rolled a dice and it said ${Math.ceil(Math.random() * 6)}`);
+    message.channel.send(`:white_square_button: | You rolled a dice and it said ${Math.ceil(Math.random() * 6)}`);
   }
 
 };

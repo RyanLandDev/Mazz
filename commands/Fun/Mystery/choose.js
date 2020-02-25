@@ -13,8 +13,8 @@ module.exports = class extends Command {
   }
 
   async run(message, params) {
-    const itemPicked = params[Math.round(Math.random() * params.length)];
-    message.channel.send('I have magically chosen **' + itemPicked + '**');
+    const itemPicked = params[Math.round(Math.random() * (params.length - 1))];
+    message.channel.send(':sparkles: | I have magically chosen **' + itemPicked + '**');
   }
 
 };

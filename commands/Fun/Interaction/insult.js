@@ -12,7 +12,7 @@ module.exports = class extends Command {
   }
 
   run(msg, [user]) {
-    return msg.sendMessage(`${user}, you know what? You're nothing but ${roll(start)} ${roll(middle)} ${roll(end)}.`);
+    return msg.sendMessage(`:exploding_head: | ${user}, you know what? You're nothing but ${roll(start)} ${roll(middle)} ${roll(end)}.`);
   }
 
 };
