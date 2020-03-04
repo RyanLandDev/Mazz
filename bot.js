@@ -65,3 +65,15 @@ clientConfig.permissionLevels = new PermissionLevels(31)
 
 // create KlasaClient
 new Client(clientConfig).login(tokens.login_token);
+
+// ============================================================================================================================================
+//
+// Databases
+//
+// ============================================================================================================================================
+
+Client.defaultGuildSchema
+  .add('currency', 'string', { default: '<:ds_coin:598799086795096084>' });
+
+Client.defaultUserSchema
+  .add('balance', 'integer', { default: 0 });

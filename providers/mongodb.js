@@ -17,7 +17,7 @@ module.exports = class extends Provider {
     }, this.client.options.providers.mongodb);
 
     // If full connection string is provided, use that, otherwise fall back to individual parameters
-    const connectionString = this.client.options.providers.mongodb.connectionString || 'mongodb+srv://Mazz:MazzDatabaseAccess@mazzdatabase-4oymq.mongodb.net/';
+    const connectionString = this.client.options.providers.mongodb.connectionString || `mongodb://${connection.user}:${connection.password}@${connection.host}:${connection.port}/${connection.db}`;
 
     const mongoClient = await Mongo.connect(
       connectionString,
@@ -100,6 +100,3 @@ function flatten(obj, path = '') {
 function parseEngineInput(updated) {
   return Object.assign({}, ...updated.map(entry => ({ [entry.data[0]]: entry.data[1] })));
 }
-
-
-// mongodb+srv://Mazz:MazzDatabaseAccess@mazzdatabase-4oymq.mongodb.net/test?retryWrites=true&w=majority

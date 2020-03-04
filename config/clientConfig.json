@@ -1,13 +1,13 @@
 {
-    "fetchAllMembers": false,
-    "prefix": "m!",
-    "commandEditing": true,
-    "noPrefixDM": true,
-    "prefixCaseInsensitive": true,
-    "readyMessage": "Ready!",
-    "slowmodeAggressive": true,
-
-    "permissionLevels": {
-
-    }
-  }
+	"fetchAllMembers": false,
+	"prefix": "m!",
+	"commandEditing": true,
+	"noPrefixDM": true,
+	"prefixCaseInsensitive": true,
+	"readyMessage": "Ready!",
+	"slowmodeAggressive": true,
+	"providers": { "default": "mongodb", "mongodb": {
+		"connectionString": "mongodb+srv://MazzAdminUser:MazzEpic32!@mazzdatabase-4oymq.mongodb.net/test?retryWrites=true&w=majority"
+		} },
+	"permissionLevels": {}
+}

@@ -4,8 +4,8 @@ module.exports = class extends Command {
 
   constructor(...args) {
     super(...args, {
-      description: 'Set the server currency. Emojis are supported.',
-      aliases: ['seticon', 'setvaluta'],
+      description: 'Set the server currency. Emojis are supported. You can also use \'default\' to set it back to the default currency.',
+      aliases: ['seticon'],
       guarded: true,
       usage: '<NewCurrency:str{1,32}>',
       runIn: ['text'],
@@ -15,9 +15,10 @@ module.exports = class extends Command {
   }
 
   async run(message, [...params]) {
+    if (params[0] === 'default') params[0] = '<:ds_coin:598799086795096084>';
     if (!params[0]) return message.channel.send(`The currency of \`${message.guild.name}\` is **${message.guild.settings.get('currency') ? message.guild.settings.get('currency') : '<:ds_coin:598799086795096084>'}**`);
     if (params[0] === message.guild.settings.get('currency')) return message.channel.send(`The currency of \`${message.guild.name}\` is already **${params[0]}**!`);
-    message.guild.settings.update('currency', params[0], message.guild, { avoidUnconfigurable: true, action: 'overwrite' });
+    message.guild.settings.update('currency', params[0]);
     return message.channel.send(`The currency has been set to **${params[0]}**!`);
   }
 

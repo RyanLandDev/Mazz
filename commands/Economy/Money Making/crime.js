@@ -6,7 +6,7 @@ module.exports = class extends Command {
 
   constructor(...args) {
     super(...args, {
-      description: 'Do some quick work for cash.',
+      description: 'Commit a crime. Bad.',
       cooldown: 900,
     });
   }
@@ -18,7 +18,7 @@ module.exports = class extends Command {
     message.author.settings.update('balance', message.author.settings.get('balance') + reward);
 
     let transformedResponse = response.replace('{currency}', message.guild.settings.get('currency'));
-    transformedResponse = transformedResponse.replace('{reward}', '**' + reward + '**');
+    transformedResponse = transformedResponse.replace('{reward}', reward);
 
     const Embed = new MessageEmbed()
       .setColor('GREEN')

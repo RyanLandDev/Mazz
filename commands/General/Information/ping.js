@@ -11,7 +11,7 @@ module.exports = class extends Command {
   }
 
   async run(message) {
-    message.channel.send(`:ping_pong: Returned at ${Math.round(this.client.ws.ping)}ms.`);
+    message.channel.send(`:ping_pong: | Returned at ${Math.round(this.client.ws.ping)}ms.`);
   }
 
 };
