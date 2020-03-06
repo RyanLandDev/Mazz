@@ -6,7 +6,8 @@ module.exports = class extends Command {
 
   constructor(...args) {
     super(...args, {
-      permissionLevel: 10,
+      // RyanLand
+      permissionLevel: 30,
       guarded: true,
       description: language => language.get('COMMAND_TRANSFER_DESCRIPTION'),
       usage: '<Piece:piece>',

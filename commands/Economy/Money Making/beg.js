@@ -1,16 +1,17 @@
 const { Command } = require('klasa');
 const { MessageEmbed } = require('discord.js');
 
-
 module.exports = class extends Command {
 
   constructor(...args) {
-      super(...args, {
-          description: 'do some begging on the streets',
-          cooldown: 300,
-      });
-    }
+    super(...args, {
+      description: 'Beg for money. How deep have you sunk.',
+      cooldown: 120,
+    });
+  }
 
-async run(message) {
-    const response = responses[Math.round(Math.random() * response.length)];
-    message.author.settings.update('balance')
+  async run(msg) {
+    const reward = 
+    msg.author.settings.update('balance');
+  }
+};

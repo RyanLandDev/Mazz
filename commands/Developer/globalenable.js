@@ -4,7 +4,8 @@ module.exports = class extends Command {
 
   constructor(...args) {
     super(...args, {
-      permissionLevel: 29,
+      // mazz admin
+      permissionLevel: 28,
       guarded: true,
       description: language => language.get('COMMAND_ENABLE_DESCRIPTION'),
       usage: '<Piece:piece>',

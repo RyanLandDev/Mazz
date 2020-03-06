@@ -1,5 +1,5 @@
 const { Command } = require('klasa');
-const responses = require('../../../config/work_responses.json').main;
+const responses = require('../../../config/work_responses.json');
 const { MessageEmbed } = require('discord.js');
 
 module.exports = class extends Command {

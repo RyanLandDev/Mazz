@@ -39,7 +39,8 @@ module.exports = class extends Command {
       .addField('User ID', User.id, true)
       .addField('Status', status, true)
       .addField('Created', moment(User.createdAt).format('dddd Do [of] MMMM YYYY [at] h:mm:ss a') + ' (' + moment(User.createdAt).startOf('day').fromNow() + ')', true)
-      .addField('Joined', moment(Member.joinedAt).format('dddd Do [of] MMMM YYYY [at] h:mm:ss a') + ' (' + moment(Member.joinedAt).startOf('day').fromNow() + ')', true);
+      .addField('Joined', moment(Member.joinedAt).format('dddd Do [of] MMMM YYYY [at] h:mm:ss a') + ' (' + moment(Member.joinedAt).startOf('day').fromNow() + ')', true)
+      .addField('Administrator', Member.permissions.toArray().includes('ADMINISTRATOR') ? 'Yes' : 'No', true);
     message.channel.send(Embed);
   }
 

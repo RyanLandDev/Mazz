@@ -2,6 +2,8 @@ const { Language, util } = require('klasa');
 const { MessageEmbed } = require('discord.js');
 const moment = require('moment');
 
+const errortitle = '<:ds_redtick:591919718554796033> Error';
+
 module.exports = class extends Language {
 
   constructor(...args) {
@@ -22,25 +24,139 @@ module.exports = class extends Language {
       SETTING_GATEWAY_INVALID_TYPE: 'The type parameter must be either add or remove.',
       SETTING_GATEWAY_INVALID_FILTERED_VALUE: (piece, value) => `${piece.key} doesn't accept the value: ${value}`,
       RESOLVER_MULTI_TOO_FEW: (name, min = 1) => `Provided too few ${name}s. At least ${min} ${min === 1 ? 'is' : 'are'} required.`,
-      RESOLVER_INVALID_BOOL: (name) => `${name} must be true or false.`,
-      RESOLVER_INVALID_CHANNEL: (name) => `${name} must be a channel tag or valid channel id.`,
-      RESOLVER_INVALID_CUSTOM: (name, type) => `${name} must be a valid ${type}.`,
-      RESOLVER_INVALID_DATE: (name) => `${name} must be a valid date.`,
-      RESOLVER_INVALID_DURATION: (name) => `${name} must be a valid duration string.`,
-      RESOLVER_INVALID_EMOJI: (name) => `${name} must be a custom emoji tag or valid emoji id.`,
-      RESOLVER_INVALID_FLOAT: (name) => `${name} must be a valid number.`,
-      RESOLVER_INVALID_GUILD: (name) => `${name} must be a valid guild id.`,
-      RESOLVER_INVALID_INT: (name) => `${name} must be an integer.`,
-      RESOLVER_INVALID_LITERAL: (name) => `Your option did not match the only possibility: ${name}`,
-      RESOLVER_INVALID_MEMBER: (name) => `${name} must be a mention or valid user id.`,
-      RESOLVER_INVALID_MESSAGE: (name) => `${name} must be a valid message id.`,
-      RESOLVER_INVALID_PIECE: (name, piece) => `${name} must be a valid ${piece} name.`,
-      RESOLVER_INVALID_REGEX_MATCH: (name, pattern) => `${name} must follow this regex pattern \`${pattern}\`.`,
-      RESOLVER_INVALID_ROLE: (name) => `${name} must be a role mention or role id.`,
-      RESOLVER_INVALID_STRING: (name) => `${name} must be a valid string.`,
-      RESOLVER_INVALID_TIME: (name) => `${name} must be a valid duration or date string.`,
-      RESOLVER_INVALID_URL: (name) => `${name} must be a valid url.`,
-      RESOLVER_INVALID_USER: (name) => `${name} must be a mention or valid user id.`,
+      RESOLVER_INVALID_BOOL: (name) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`The argument \`${name}\` should be either \`true\` or \`false\`.`)
+          .setColor('RED')
+          .setTimestamp();
+      },
+      RESOLVER_INVALID_CHANNEL: (name) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`The argument \`${name}\` should be either a valid channel mention or ID.`)
+          .setColor('RED')
+          .setTimestamp();
+      },
+      RESOLVER_INVALID_CUSTOM: (name, type) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`The argument \`${name}\` should be a valid \`${type}\`.`)
+          .setColor('RED')
+          .setTimestamp();
+      },
+      RESOLVER_INVALID_DATE: (name) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`The argument \`${name}\` should be a valid date.`)
+          .setColor('RED')
+          .setTimestamp();
+      },
+      RESOLVER_INVALID_DURATION: (name) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`The argument \`${name}\` should be a valid duration.`)
+          .setColor('RED')
+          .setTimestamp();
+      },
+      RESOLVER_INVALID_EMOJI: (name) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`The argument \`${name}\` should be either a valid emoji or ID.`)
+          .setColor('RED')
+          .setTimestamp();
+      },
+      RESOLVER_INVALID_FLOAT: (name) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`The argument \`${name}\` should be a valid number.`)
+          .setColor('RED')
+          .setTimestamp();
+      },
+      RESOLVER_INVALID_GUILD: (name) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`The argument \`${name}\` should be a valid guild ID.`)
+          .setColor('RED')
+          .setTimestamp();
+      },
+      RESOLVER_INVALID_INT: (name) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`The argument \`${name}\` should be a valid number.`)
+          .setColor('RED')
+          .setTimestamp();
+      },
+      RESOLVER_INVALID_LITERAL: (name) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`Your option doesn't match the only possibility: \`${name}\`.`)
+          .setColor('RED')
+          .setTimestamp();
+      },
+      RESOLVER_INVALID_MEMBER: (name) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`The argument \`${name}\` should be either a valid user mention or ID.`)
+          .setColor('RED')
+          .setTimestamp();
+      },
+      RESOLVER_INVALID_MESSAGE: (name) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`The argument \`${name}\` should be a valid message ID.`)
+          .setColor('RED')
+          .setTimestamp();
+      },
+      RESOLVER_INVALID_PIECE: (name, piece) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`The argument \`${name}\` should be a valid \`${piece}\` name.`)
+          .setColor('RED')
+          .setTimestamp();
+      },
+      RESOLVER_INVALID_REGEX_MATCH: (name, pattern) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`The argument \`${name}\` should follow the regex pattern \`${pattern}\`.`)
+          .setColor('RED')
+          .setTimestamp();
+      },
+      RESOLVER_INVALID_ROLE: (name) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`The argument \`${name}\` should be either a valid role mention or ID.`)
+          .setColor('RED')
+          .setTimestamp();
+      },
+      RESOLVER_INVALID_STRING: (name) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`The argument \`${name}\` should be a valid string.`)
+          .setColor('RED')
+          .setTimestamp();
+      },
+      RESOLVER_INVALID_TIME: (name) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`The argument \`${name}\` should be a valid time.`)
+          .setColor('RED')
+          .setTimestamp();
+      },
+      RESOLVER_INVALID_URL: (name) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`The argument \`${name}\` should be a valid URL.`)
+          .setColor('RED')
+          .setTimestamp();
+      },
+      RESOLVER_INVALID_USER: (name) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`The argument \`${name}\` should be either a valid user mention or ID.`)
+          .setColor('RED')
+          .setTimestamp();
+      },
       RESOLVER_STRING_SUFFIX: ' characters',
       RESOLVER_MINMAX_EXACTLY: (name, min, suffix) => `${name} must be exactly ${min}${suffix}.`,
       RESOLVER_MINMAX_BOTH: (name, min, max, suffix) => `${name} must be between ${min} and ${max}${suffix}.`,
@@ -50,12 +166,25 @@ module.exports = class extends Language {
       COMMANDMESSAGE_MISSING: 'Missing one or more required arguments after end of input.',
       COMMANDMESSAGE_MISSING_REQUIRED: (name) => {
         return new MessageEmbed()
+          .setTitle(errortitle)
           .setDescription(`This command is missing the required argument \`${name}\`. Please make sure you are following the usage instructions.`)
           .setColor('RED')
           .setTimestamp();
       },
-      COMMANDMESSAGE_MISSING_OPTIONALS: (possibles) => `Missing a required option: (${possibles})`,
-      COMMANDMESSAGE_NOMATCH: (possibles) => `Your option didn't match any of the possibilities: (${possibles})`,
+      COMMANDMESSAGE_MISSING_OPTIONALS: (possibles) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`Your option doesn't match any of the possibilities!\nYou can choose between \`${possibles}\``)
+          .setColor('RED')
+          .setTimestamp();
+      },
+      COMMANDMESSAGE_NOMATCH: (possibles) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`Your option doesn't match any of the possibilities!\nYou can choose between \`${possibles}\``)
+          .setColor('RED')
+          .setTimestamp();
+      },
       // eslint-disable-next-line max-len
       MONITOR_COMMAND_HANDLER_REPROMPT: (tag, error, time, abortOptions) => `${tag} | **${error}** | You have **${time}** seconds to respond to this prompt with a valid argument. Type **${abortOptions.join('**, **')}** to abort this prompt.`,
       // eslint-disable-next-line max-len
@@ -63,8 +192,9 @@ module.exports = class extends Language {
       MONITOR_COMMAND_HANDLER_ABORTED: 'Aborted',
       INHIBITOR_COOLDOWN: (remaining) => {
         return new MessageEmbed()
+          .setTitle(errortitle)
         // VVV please format VVV
-          .setDescription('This command is on cooldown. You can use it again in ' + moment().add(remaining, 's').fromNow())
+          .setDescription('This command is on cooldown. You can use it again ' + moment().add(remaining, 's').fromNow() + '.')
           .setTimestamp()
           .setColor('RED');
       },
@@ -73,13 +203,20 @@ module.exports = class extends Language {
       INHIBITOR_MISSING_BOT_PERMS: (missing) => `Insufficient permissions, missing: **${missing}**`,
       INHIBITOR_NSFW: () => {
         return new MessageEmbed()
-          .setDescription('⚠️ This command can only be used in NSFW channels! ⚠️')
+          .setTitle(errortitle)
+          .setDescription('This command can only be used in NSFW channels!')
           .setColor('RED')
           .setTimestamp();
       },
       INHIBITOR_PERMISSIONS: 'You do not have permission to use this command.',
       INHIBITOR_REQUIRED_SETTINGS: (settings) => `The guild is missing the **${settings.join(', ')}** guild setting${settings.length !== 1 ? 's' : ''} and thus the command cannot run.`,
-      INHIBITOR_RUNIN: (types) => `This command is only available in ${types} channels.`,
+      INHIBITOR_RUNIN: (types) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`This command is only available in ${types} channels.`)
+          .setColor('RED')
+          .setTimestamp();
+      },
       INHIBITOR_RUNIN_NONE: (name) => `The ${name} command is not configured to run in any channel.`,
       COMMAND_BLACKLIST_DESCRIPTION: 'Blacklists or un-blacklists users and guilds from the bot.',
       COMMAND_BLACKLIST_SUCCESS: (usersAdded, usersRemoved, guildsAdded, guildsRemoved) => [

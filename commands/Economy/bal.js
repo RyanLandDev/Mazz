@@ -1,4 +1,5 @@
 const { Command } = require('klasa');
+// temporary for testing will be replaced with profile (trello 0.4.9)
 
 module.exports = class extends Command {
 

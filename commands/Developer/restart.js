@@ -4,6 +4,7 @@ module.exports = class extends Command {
 
   constructor(...args) {
     super(...args, {
+      // developer
       permissionLevel: 29,
       guarded: true,
       aliases: ['rs'],
