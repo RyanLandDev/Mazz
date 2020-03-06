@@ -1,7 +1,10 @@
 const { Client, PermissionLevels } = require('klasa');
 
-const tokens = require('./config/tokens.json');
+require('dotenv').config();
 const clientConfig = require('./config/clientConfig.json');
+
+// The Discord bot token can be referenced as "token"
+const token = process.env.DISCORD_TOKEN;
 
 // ============================================================================================================================================
 //
@@ -64,7 +67,7 @@ clientConfig.permissionLevels = new PermissionLevels(31)
 // ============================================================================================================================================
 
 // create KlasaClient
-new Client(clientConfig).login(tokens.login_token);
+new Client(clientConfig).login(token.login_token);
 
 // ============================================================================================================================================
 //
