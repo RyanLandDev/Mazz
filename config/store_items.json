@@ -1,0 +1,40 @@
+{
+    "CODENAME": {
+        "id": "the order in which items should be shown",
+        "page": "page to show this item on",
+        "title": "title to show",
+        "price": "the currency price of this item",
+        "summary": "a short summary of what this item does/is",
+        "statistics": {
+            "friendlyname": "name of statistic to show",
+            "key": "name of settingsGateway key to modify",
+            "increaser": "value to modify by"
+        },
+        "titleInValue": "whether to show the title in the field value or not (default = true)",
+        "affectSales": "whether this item should be affected by sales or not (default = true)"
+    },
+    "safe": {
+        "id": 1,
+        "page": 1,
+        "title": "**The Safe**",
+        "price": 2000,
+        "summary": "All those bitches tryna rob ya?",
+        "statistics": {
+            "friendlyname": "Robbery Chance",
+            "key": "robChance",
+            "increaser": -4
+        }
+    },
+    "training": {
+        "id": 2,
+        "page": 1,
+        "title": "**Rob Training**",
+        "price": 1500,
+        "summary": "Learn all the techniques.",
+        "statistics": {
+            "friendlyname": "Robbery Cut",
+            "key": "robCut",
+            "increaser": 5
+        }
+    }
+}

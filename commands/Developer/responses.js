@@ -13,7 +13,7 @@ module.exports = class extends Command {
       subcommands: true,
       // mazz admin
       permissionLevel: 28,
-      usage: '<add|remove> <work|crime|roast> [input:str] [...]',
+      usage: '<add> <work|crime|roast> [input:str] [...]',
     });
   }
 
@@ -34,10 +34,6 @@ module.exports = class extends Command {
       if (err) throw err;
     });
     return msg.send('Success!');
-  }
-
-  async remove(msg, params) {
-    const responses = require(`../../config/${params[1]}_responses.json`);
   }
 
 };

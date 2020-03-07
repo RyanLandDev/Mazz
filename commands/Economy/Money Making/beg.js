@@ -7,6 +7,7 @@ module.exports = class extends Command {
     super(...args, {
       description: 'Beg for money. How deep have you sunk.',
       cooldown: 120,
+      runIn: ['text'],
     });
   }
 

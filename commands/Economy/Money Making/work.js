@@ -8,6 +8,7 @@ module.exports = class extends Command {
     super(...args, {
       description: 'Do some quick work for cash.',
       cooldown: 900,
+      runIn: ['text'],
     });
   }
 
