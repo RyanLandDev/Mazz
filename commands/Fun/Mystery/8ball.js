@@ -1,5 +1,5 @@
 const { Command } = require('klasa');
-const responses = require('../../../config/8ball_responses.json');
+const responses = require('../../../config/responses/8ball_responses.json');
 
 module.exports = class extends Command {
 

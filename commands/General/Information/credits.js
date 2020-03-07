@@ -1,11 +1,11 @@
 const { Command } = require('klasa');
 const { MessageEmbed } = require('discord.js');
 
-const trials = require('../../../config/trials.json');
-const mods = require('../../../config/moderators.json');
-const admins = require('../../../config/admins.json');
-const devs = require('../../../config/developers.json');
-const patrons = require('../../../config/patrons.json');
+const trials = require('../../../config/users/trials.json');
+const mods = require('../../../config/users/moderators.json');
+const admins = require('../../../config/users/admins.json');
+const devs = require('../../../config/users/developers.json');
+const patrons = require('../../../config/users/patrons.json');
 
 module.exports = class extends Command {
 

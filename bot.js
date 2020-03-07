@@ -11,7 +11,7 @@ const clientConfig = require('./config/clientConfig.json');
 
 clientConfig.permissionLevels = new PermissionLevels(31)
 // anyone that isn't banned from using the bot
-  .add(0, ({ member }) => JSON.stringify(require('./config/userbans.json')).includes(!member.id))
+  .add(0, ({ member }) => JSON.stringify(require('./config/users/userbans.json')).includes(!member.id))
 // ============================================================================================================================================
 
   .add(1, () => true)
@@ -47,13 +47,13 @@ clientConfig.permissionLevels = new PermissionLevels(31)
 // server owner
   .add(25, ({ guild, member }) => guild && member === guild.owner)
 // mazz trial
-  .add(26, ({ member }) => JSON.stringify(require('./config/trials.json')).includes(member.id))
+  .add(26, ({ member }) => JSON.stringify(require('./config/users/trials.json')).includes(member.id))
 // mazz moderator
-  .add(27, ({ member }) => JSON.stringify(require('./config/moderators.json')).includes(member.id))
+  .add(27, ({ member }) => JSON.stringify(require('./config/users/moderators.json')).includes(member.id))
 // mazz admin
-  .add(28, ({ member }) => JSON.stringify(require('./config/admins.json')).includes(member.id))
+  .add(28, ({ member }) => JSON.stringify(require('./config/users/admins.json')).includes(member.id))
 // bot developer
-  .add(29, ({ member }) => JSON.stringify(require('./config/developers.json')).includes(member.id))
+  .add(29, ({ member }) => JSON.stringify(require('./config/users/developers.json')).includes(member.id))
 // RyanLand
   .add(30, ({ author, client }) => author.id === client.application.owner.ownerID);
 
@@ -76,4 +76,11 @@ Client.defaultGuildSchema
   .add('currency', 'string', { default: '<:ds_coin:598799086795096084>' });
 
 Client.defaultUserSchema
-  .add('balance', 'integer', { default: 0 });
+// Balance
+  .add('balance', 'integer', { default: 0 })
+
+// Upgrades
+  .add('robChance', 'integer', { default: 50, min: 10, max: 50 })
+  .add('robCut', 'integer', { default: 20, min: 20, max: 80 })
+  .add('robExtraChance', 'integer', { default: 0, min: 0, max: 50 })
+  .add('bankStorage', 'integer', { default: 0, min: 0, max: 50000 });

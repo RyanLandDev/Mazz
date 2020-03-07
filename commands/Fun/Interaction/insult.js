@@ -17,8 +17,8 @@ module.exports = class extends Command {
 
 };
 
-const start = require('../../../config/insult_responses.json').start;
+const start = require('../../../config/responses/insult_responses.json').start;
 
-const middle = require('../../../config/insult_responses.json').middle;
+const middle = require('../../../config/responses/insult_responses.json').middle;
 
-const end = require('../../../config/insult_responses.json').end;
+const end = require('../../../config/responses/insult_responses.json').end;

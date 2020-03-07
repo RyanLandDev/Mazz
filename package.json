@@ -20,6 +20,7 @@
     "klasa": "github:dirigeants/klasa#4fa20eb",
     "moment": "^2.24.0",
     "mongodb": "^3.5.3",
+    "number-formatter": "^1.2.0",
     "path": "^0.12.7"
   }
 }
