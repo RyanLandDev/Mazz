@@ -15,7 +15,7 @@ module.exports = class extends Command {
     const chance = Math.round(Math.random() * 100);
     let responses;
     let reward;
-    if (chance < 60) responses = require('../../../config/responses/crime_responses.json').fail, reward = Math.round(Math.random() * (-18 - -2000) + -2000); else responses = require('../../../config/crime_responses.json').success, reward = Math.round(Math.random() * (3500 - 18) + 18);
+    if (chance < 60) responses = require('../../../config/responses/crime_responses.json').fail, reward = Math.round(Math.random() * (-18 - -2000) + -2000); else responses = require('../../../config/responses/crime_responses.json').success, reward = Math.round(Math.random() * (3500 - 18) + 18);
     const response = responses[Math.round(Math.random() * responses.length)];
 
     message.author.settings.update('balance', message.author.settings.get('balance') + reward);

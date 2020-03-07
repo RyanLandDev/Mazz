@@ -19,6 +19,11 @@ module.exports = class extends Command {
   }
 
   async init() {
-    this.client.user.setPresence({ 'activity': { 'name': `m!help | ${this.client.guilds.size} servers 🔥` }, 'status': 'online' });
+    this.client.user.setPresence({ 'activity': { 'name': '✅ RESTART DONE!' } });
+
+    const parent = this;
+    setTimeout(function() {
+      parent.client.user.setPresence({ 'activity': { 'name': `m!help | ${parent.client.guilds.cache.size} servers 🔥`, 'type': 'WATCHING' } });
+    }, 5000);
   }
 };

@@ -9,5 +9,5 @@
 	"providers": { "default": "mongodb", "mongodb": {
 		"connectionString": "mongodb+srv://MazzAdminUser:MazzEpic32!@mazzdatabase-4oymq.mongodb.net/test?retryWrites=true&w=majority"
 		} },
-	"permissionLevels": {}
+	"disableMentions": "everyone"
 }

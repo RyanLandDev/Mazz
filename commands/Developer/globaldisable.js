@@ -7,7 +7,7 @@ module.exports = class extends Command {
       // Mazz admin
       permissionLevel: 28,
       guarded: true,
-      description: language => language.get('COMMAND_DISABLE_DESCRIPTION'),
+      description: 'Globally disable a command.',
       usage: '<Piece:piece>',
     });
   }

@@ -9,8 +9,8 @@ module.exports = class extends Command {
       // RyanLand
       permissionLevel: 30,
       guarded: true,
-      description: language => language.get('COMMAND_TRANSFER_DESCRIPTION'),
       usage: '<Piece:piece>',
+      description: 'Transfer a built-in Klasa piece to the source files.',
     });
   }
 

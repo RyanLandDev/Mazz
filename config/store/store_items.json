@@ -1,67 +1,83 @@
 {
-    "CODENAME: used in the buy command": {
-        "id": "the order in which items should be shown",
-        "page": "page to show this item on",
-        "title": "title to show",
-        "price": "the currency price of this item",
-        "summary": "a short summary of what this item does/is",
-        "statistics": {
-            "friendlyname": "name of statistic to show",
-            "key": "name of settingsGateway key to modify (must exist)",
-            "starter": "default value (default = 0)",
-            "increaser": "value to modify by"
-        },
-        "titleInValue": "whether to show the title in the field value or not (default = true)",
-        "affectSales": "whether this item should be affected by sales or not (default = true)"
-    },
-    "safe": {
-        "id": 1,
-        "page": 1,
-        "title": "<:ds_safe:685760142570029070> **The Safe**",
-        "price": 2000,
-        "summary": "All those bitches tryna rob ya?",
-        "statistics": {
-            "friendlyname": "Robbery Chance",
-            "key": "robChance",
-            "starter": 50,
-            "increaser": -4
-        }
-    },
-    "robtraining": {
-        "id": 2,
-        "page": 1,
-        "title": "<:ds_robtraining:685760141957529610> **Rob Training**",
-        "price": 1500,
-        "summary": "Learn all the techniques.",
-        "statistics": {
-            "friendlyname": "Robbery Cut",
-            "key": "robCut",
-            "starter": 20,
-            "increaser": 5
-        }
-    },
-    "equipment": {
-        "id": 3,
-        "page": 1,
-        "title": "<:ds_extraequipment:685760141697744907> **Extra Equipment**",
-        "price": 2500,
-        "summary": "Buy some extra equipment.",
-        "statistics": {
-            "friendlyname": "Extra Chances",
-            "key": "robExtraChance",
-            "increaser": 5
-        }
-    },
-    "bankaccount": {
-        "id": 4,
-        "page": 1,
-        "title": "<:ds_bankaccount:685760142733475856> **Bank Account**",
-        "price": 1500,
-        "summary": "Get a fancy bank account.",
-        "statistics": {
-            "friendlyname": "Bank Storage",
-            "key": "bankStorage",
-            "increaser": 500
-        }
-    }
+	"CODENAME: used in the buy command": {
+		"id": "the order in which items should be shown",
+		"page": "page to show this item on",
+		"title": "title to show",
+		"price": "the currency price of this item",
+		"summary": "a short summary of what this item does/is",
+		"statistics": {
+			"friendlyname": "name of statistic to show",
+			"key": "name of settingsGateway key to modify (must exist)",
+			"starter": "default value (default = 0)",
+			"increaser": "value to modify by"
+		},
+		"titleInValue": "whether to show the title in the field value or not (default = true)",
+		"affectSales": "whether this item should be affected by sales or not (default = true)",
+		"statExtra": "an extra piece of text that should be added to the statistic show number (default = '')"
+	},
+	"safe": {
+		"id": 1,
+		"page": 1,
+		"title": "<:ds_safe:685760142570029070> **The Safe**",
+		"price": 2000,
+		"summary": "All those bitches tryna rob ya?",
+		"statistics": {
+			"friendlyname": "Robbery Chance",
+			"key": "robChance",
+			"starter": 50,
+			"increaser": -4
+		},
+		"statExtra": "%"
+	},
+	"robtraining": {
+		"id": 2,
+		"page": 1,
+		"title": "<:ds_robtraining:685790576075210772> **Rob Training**",
+		"price": 1500,
+		"summary": "Learn all the techniques.",
+		"statistics": {
+			"friendlyname": "Robbery Cut",
+			"key": "robCut",
+			"starter": 20,
+			"increaser": 5
+		},
+		"statExtra": "%"
+	},
+	"equipment": {
+		"id": 3,
+		"page": 1,
+		"title": "<:ds_extraequipment:685760141697744907> **Extra Equipment**",
+		"price": 2500,
+		"summary": "Buy some extra equipment.",
+		"statistics": {
+			"friendlyname": "Extra Chances",
+			"key": "robExtraChance",
+			"increaser": 5
+		},
+		"statExtra": "%"
+	},
+	"bankaccount": {
+		"id": 4,
+		"page": 1,
+		"title": "<:ds_bankaccount:685760142733475856> **Bank Account**",
+		"price": 1500,
+		"summary": "Get a fancy bank account.",
+		"statistics": {
+			"friendlyname": "Bank Storage",
+			"key": "bankStorage",
+			"increaser": 500
+		}
+	},
+	"test": {
+		"id": 5,
+		"page": 2,
+		"title": "Test",
+		"price": 1500,
+		"summary": "Get a fancy bank accounttest",
+		"statistics": {
+			"friendlyname": "Bank Stteste",
+			"key": "bankStorage",
+			"increaser": 500
+		}
+	}
 }
