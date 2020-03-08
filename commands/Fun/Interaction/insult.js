@@ -6,13 +6,13 @@ module.exports = class extends Command {
   constructor(...args) {
     super(...args, {
       description: 'Insults who you mention.',
-      usage: '<user:mention>',
+      usage: '<member:mention>',
       cooldown: 3,
     });
   }
 
-  run(msg, [user]) {
-    return msg.sendMessage(`:exploding_head: | ${user}, you know what? You're nothing but ${roll(start)} ${roll(middle)} ${roll(end)}.`);
+  run(msg, [member]) {
+    return msg.sendMessage(`:exploding_head: | ${member}, you know what? You're nothing but ${roll(start)} ${roll(middle)} ${roll(end)}.`);
   }
 
 };

@@ -8,13 +8,13 @@ module.exports = class extends Command {
     super(...args, {
       description: 'Hug someone.',
       cooldown: 3,
-      usage: '<User:member>',
+      usage: '<member:member>',
       usageDelim: ' ',
     });
   }
 
-  async run(msg, [User]) {
-    if (User.user.username.includes('@everyone' || '@here') || msg.author.username.includes('@everyone' || '@here')) return msg.send('I\'m smarter');
+  async run(msg, [member]) {
+    if (member.displayName.includes('@everyone' || '@here') || msg.member.displayName.includes('@everyone' || '@here')) return msg.send('I\'m smarter');
     const image = await fetch('https://some-random-api.ml/animu/hug')
       .then(response => response.json())
       .then(body => body.link);
@@ -22,7 +22,7 @@ module.exports = class extends Command {
       new MessageEmbed()
         .setColor('#0099FF')
         .setImage(image)
-        .setDescription('**' + msg.author.username + '** hugs **' + User.user.username + '** ❤')
+        .setDescription('**' + msg.member.displayName + '** hugs **' + member.displayName + '** ❤')
         .setFooter('🤗💞'),
     );
   }

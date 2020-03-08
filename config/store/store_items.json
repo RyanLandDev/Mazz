@@ -9,6 +9,7 @@
 			"friendlyname": "name of statistic to show",
 			"key": "name of settingsGateway key to modify (must exist)",
 			"starter": "default value (default = 0)",
+			"max": "maximum value possible",
 			"increaser": "value to modify by"
 		},
 		"titleInValue": "whether to show the title in the field value or not (default = true)",
@@ -25,6 +26,7 @@
 			"friendlyname": "Robbery Chance",
 			"key": "robChance",
 			"starter": 50,
+			"max": 10,
 			"increaser": -4
 		},
 		"statExtra": "%"
@@ -39,6 +41,7 @@
 			"friendlyname": "Robbery Cut",
 			"key": "robCut",
 			"starter": 20,
+			"max": 80,
 			"increaser": 5
 		},
 		"statExtra": "%"
@@ -52,6 +55,7 @@
 		"statistics": {
 			"friendlyname": "Extra Chances",
 			"key": "robExtraChance",
+			"max": 50,
 			"increaser": 5
 		},
 		"statExtra": "%"
@@ -65,6 +69,7 @@
 		"statistics": {
 			"friendlyname": "Bank Storage",
 			"key": "bankStorage",
+			"max": 50000,
 			"increaser": 500
 		}
 	},

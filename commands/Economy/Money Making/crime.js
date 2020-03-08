@@ -22,8 +22,8 @@ module.exports = class extends Command {
     let displayReward;
     if (reward <= 0) displayReward = reward * -1; else displayReward = reward;
 
-    let transformedResponse = response.replace('{currency}', message.guild.settings.get('currency'));
-    transformedResponse = transformedResponse.replace('{reward}', '**' + displayReward + '**');
+    let transformedResponse = response.replace(/{currency}/gi, message.guild.settings.get('currency'));
+    transformedResponse = transformedResponse.replace(/{reward}/gi, '**' + displayReward + '**');
 
     const Embed = new MessageEmbed()
       .setDescription(transformedResponse)

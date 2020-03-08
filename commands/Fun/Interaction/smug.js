@@ -6,7 +6,7 @@ module.exports = class extends Command {
 
   constructor(...args) {
     super(...args, {
-      description: 'Wink to someone.',
+      description: 'Smug to someone.',
       cooldown: 3,
       usage: '<member:member>',
       usageDelim: ' ',
@@ -14,16 +14,16 @@ module.exports = class extends Command {
   }
 
   async run(msg, [member]) {
-    if (member.displayName.includes('@everyone' || '@here') || msg.member.dispalyName.includes('@everyone' || '@here')) return msg.send('I\'m smarter');
-    const image = await fetch('https://some-random-api.ml/animu/wink')
+    if (member.displayName.includes('@everyone' || '@here') || msg.member.displayName.includes('@everyone' || '@here')) return msg.send('I\'m smarter');
+    const image = await fetch('https://nekos.life/api/v2/img/smug')
       .then(response => response.json())
-      .then(body => body.link);
+      .then(body => body.url);
     return msg.sendMessage(
       new MessageEmbed()
         .setColor('#0099FF')
         .setImage(image)
-        .setDescription('**' + msg.member.displayName + '** winks to **' + member.displayName + '**')
-        .setFooter('😉'),
+        .setDescription('**' + msg.member.displayName + '** smugs to **' + member.displayName + '** 😉')
+        .setFooter('😜💫'),
     );
   }
 

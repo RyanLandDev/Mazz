@@ -19,5 +19,4 @@ module.exports = class extends Command {
     message.guild.settings.update('prefix', params[0], message.guild, { avoidUnconfigurable: true, action: 'overwrite' });
     return message.channel.send(`The prefix has been set to **${params[0]}**!`);
   }
-
 };

@@ -9,15 +9,15 @@ module.exports = class extends Command {
       description: 'Display information about the (mentioned) server.',
       guarded: true,
       runIn: ['text'],
-      usage: '[Server:guild]',
+      usage: '[server:guild]',
       aliases: ['server-info', 'guildinfo', 'guild-info'],
       cooldown: 5,
     });
   }
 
-  async run(message, [Server]) {
+  async run(message, [server]) {
     let Guild;
-    if (!Server) Guild = message.guild; else Guild = Server;
+    if (!server) Guild = message.guild; else Guild = server;
 
     let region = Guild.region;
     if (region === 'europe') region = ':flag_eu: **Europe**';
@@ -46,16 +46,16 @@ module.exports = class extends Command {
       .addField('Owner', Guild.owner.user, true)
       //
       .addField('Created', moment(Guild.createdAt).format('dddd Do [of] MMMM YYYY [at] h:mm:ss a') + ' (' + moment(Guild.createdAt).startOf('day').fromNow() + ')', true)
-      .addField('Member Count', `${Guild.memberCount} (${Guild.members.filter(m => m.user.bot == false).size} humans/${Guild.members.filter(m => m.user.bot == true).size} bots)`, true)
+      .addField('Member Count', `${Guild.memberCount} (${Guild.members.cache.filter(m => m.user.bot == false).size} humans/${Guild.members.cache.filter(m => m.user.bot == true).size} bots)`, true)
       .addField('Region', region, true)
       //
-      .addField('Categories', Guild.channels.filter(m => m.type == 'category').size, true)
-      .addField('Text Channels', Guild.channels.filter(m => m.type == 'text' || 'news' || 'store').size, true)
-      .addField('Voice Channels', Guild.channels.filter(m => m.type == 'voice').size, true)
+      .addField('Categories', Guild.channels.cache.filter(m => m.type == 'category').size, true)
+      .addField('Text Channels', Guild.channels.cache.filter(m => m.type == 'text' || 'news' || 'store').size, true)
+      .addField('Voice Channels', Guild.channels.cache.filter(m => m.type == 'voice').size, true)
       //
-      .addField('Roles', Guild.roles.size, true)
-      .addField('Highest Role', Guild.roles.highest, true)
-      .addField('Emojis', Guild.emojis.size, true);
+      .addField('Roles', Guild.roles.cache.size, true)
+      .addField('Highest Role', Guild.roles.cache.highest, true)
+      .addField('Emojis', Guild.emojis.cache.size, true);
     message.channel.send(Embed);
   }
 

@@ -8,13 +8,13 @@ module.exports = class extends Command {
     super(...args, {
       description: 'Poke someone.',
       cooldown: 3,
-      usage: '<User:member>',
+      usage: '<member:member>',
       usageDelim: ' ',
     });
   }
 
-  async run(msg, [User]) {
-    if (User.user.username.includes('@everyone' || '@here') || msg.author.username.includes('@everyone' || '@here')) return msg.send('I\'m smarter');
+  async run(msg, [member]) {
+    if (member.displayName.includes('@everyone' || '@here') || msg.member.displayName.includes('@everyone' || '@here')) return msg.send('I\'m smarter');
     const image = await fetch('https://nekos.life/api/v2/img/poke')
       .then(response => response.json())
       .then(body => body.url);
@@ -22,7 +22,7 @@ module.exports = class extends Command {
       new MessageEmbed()
         .setColor('#0099FF')
         .setImage(image)
-        .setDescription('**' + msg.author.username + '** pokes **' + User.user.username + '**')
+        .setDescription('**' + msg.member.displayName + '** pokes **' + member.displayName + '**')
         .setFooter('🧐👻'),
     );
   }

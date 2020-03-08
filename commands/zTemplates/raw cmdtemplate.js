@@ -9,7 +9,7 @@ module.exports = class extends Command {
     });
   }
 
-  async run(message) {
+  async run(msg) {
   }
 
 };

@@ -8,24 +8,24 @@ module.exports = class extends Command {
     super(...args, {
       description: 'Display information about the mentioned role (ID/Name).',
       guarded: true,
-      usage: '<Role:role|RoleName:str>',
+      usage: '<role:role|RoleName:str>',
       aliases: ['role-info', 'role'],
       cooldown: 5,
       runIn: ['text'],
     });
   }
 
-  async run(message, [Role]) {
+  async run(message, [role]) {
     let newRole;
     // triggers if the role is incorrect, so we can search for name
     // search role via name, access parameter using params[0] then set Role to role object
-    if (typeof Role === 'string') {
+    if (typeof role === 'string') {
       // Roles Object for server. / this is the way of saying search for the role with role name Role
-      newRole = await message.guild.roles.find(roleFind => roleFind.name == Role);
+      newRole = await message.guild.roles.find(roleFind => roleFind.name == role);
       // checks if it found the role
       if (!newRole) return message.channel.send('No role found with that name! (Case-sensitive)');
     }
-    else { newRole = Role; }
+    else { newRole = role; }
 
     const hex = newRole.hexColor.split('#')[1];
     let hexText = hex;

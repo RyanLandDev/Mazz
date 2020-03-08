@@ -8,7 +8,7 @@ module.exports = class extends Command {
       description: 'Talk with me.',
       aliases: ['c'],
       cooldown: 1,
-      usage: '[Message:str] [...]',
+      usage: '[message:str] [...]',
     });
   }
 

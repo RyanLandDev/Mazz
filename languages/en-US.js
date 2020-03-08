@@ -159,7 +159,13 @@ module.exports = class extends Language {
       },
       RESOLVER_STRING_SUFFIX: ' characters',
       RESOLVER_MINMAX_EXACTLY: (name, min, suffix) => `${name} must be exactly ${min}${suffix}.`,
-      RESOLVER_MINMAX_BOTH: (name, min, max, suffix) => `${name} must be between ${min} and ${max}${suffix}.`,
+      RESOLVER_MINMAX_BOTH: (name, min, max, suffix) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`The argument \`${name}\` must be between ${min} and ${max}${suffix}.`)
+          .setColor('RED')
+          .setTimestamp();
+      },
       RESOLVER_MINMAX_MIN: (name, min, suffix) => `${name} must be greater than ${min}${suffix}.`,
       RESOLVER_MINMAX_MAX: (name, max, suffix) => `${name} must be less than ${max}${suffix}.`,
       REACTIONHANDLER_PROMPT: 'Which page would you like to jump to?',
@@ -193,14 +199,19 @@ module.exports = class extends Language {
       INHIBITOR_COOLDOWN: (remaining) => {
         return new MessageEmbed()
           .setTitle(errortitle)
-        // VVV please format VVV
           .setDescription('This command is on cooldown. You can use it again ' + moment().add(remaining, 's').fromNow() + '.')
           .setTimestamp()
           .setColor('RED');
       },
       INHIBITOR_DISABLED_GUILD: 'This command is disabled.',
       INHIBITOR_DISABLED_GLOBAL: 'This command is globally disabled.',
-      INHIBITOR_MISSING_BOT_PERMS: (missing) => `Insufficient permissions, missing: **${missing}**`,
+      INHIBITOR_MISSING_BOT_PERMS: (missing) => {
+        return new MessageEmbed()
+          .setTitle(errortitle)
+          .setDescription(`I am missing the permissions **${missing}**.`)
+          .setTimestamp()
+          .setColor('RED');
+      },
       INHIBITOR_NSFW: () => {
         return new MessageEmbed()
           .setTitle(errortitle)
