@@ -19,7 +19,7 @@ module.exports = class extends Command {
   async add(message, params) {
     if (!params[1]) return message.channel.send('You need to mention a member (ID)!');
     let arrayToPush;
-    const obj = require(`../../config/${params[0]}s.json`);
+    const obj = require(`../../../config/${params[0]}s.json`);
     const stringToSearch = JSON.stringify(obj);
     const newUser = params[1].user.id;
     if (stringToSearch.includes(newUser)) return message.channel.send(`This user is already apart of the ${params[0]} team!`);
@@ -40,7 +40,7 @@ module.exports = class extends Command {
   async remove(message, params) {
     if (!params[1]) return message.channel.send('You need to mention a member (ID)!');
     let arrayToSplice = 0;
-    const obj = require(`../../config/${params[0]}s.json`);
+    const obj = require(`../../../config/${params[0]}s.json`);
     const fullStringToSearch = JSON.stringify(obj);
     const stringToSearch = JSON.stringify(obj[(params[2] ? 'head' : 'second') + params[0]]);
     const newUser = params[1].user.id;
@@ -62,7 +62,7 @@ module.exports = class extends Command {
   }
 
   async purge(message, params) {
-    if (JSON.stringify(require(`../../config/${params[0]}s.json`)) === '{}') return message.channel.send(`There aren't any ${params[0]} members to purge!`);
+    if (JSON.stringify(require(`../../../config/${params[0]}s.json`)) === '{}') return message.channel.send(`There aren't any ${params[0]} members to purge!`);
     const baseObj = { [`head${params[0]}`]: [], [`second${params[0]}`]: [] };
     fs.writeFile(`./config/${params[0]}s.json`, JSON.stringify(baseObj, null, 4), (err) => {
       if (err) throw err;

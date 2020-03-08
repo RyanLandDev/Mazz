@@ -3,6 +3,7 @@
 		"id": "the order in which items should be shown",
 		"page": "page to show this item on",
 		"title": "title to show",
+		"buytitle": "title shown in buy (default = codename with first name capitalized)",
 		"price": "the currency price of this item",
 		"summary": "a short summary of what this item does/is",
 		"statistics": {
@@ -35,6 +36,7 @@
 		"id": 2,
 		"page": 1,
 		"title": "<:ds_robtraining:685790576075210772> **Rob Training**",
+		"buytitle": "Training",
 		"price": 1500,
 		"summary": "Learn all the techniques.",
 		"statistics": {
@@ -64,6 +66,7 @@
 		"id": 4,
 		"page": 1,
 		"title": "<:ds_bankaccount:685760142733475856> **Bank Account**",
+		"buytitle": "Bank account",
 		"price": 1500,
 		"summary": "Get a fancy bank account.",
 		"statistics": {

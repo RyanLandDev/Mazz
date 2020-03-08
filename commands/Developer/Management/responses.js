@@ -21,7 +21,7 @@ module.exports = class extends Command {
     if (params.length === 1) return msg.send('No input!');
 
     const type = params[0];
-    const responses = require(`../../config/${type}_responses.json`);
+    const responses = require(`../../../config/${type}_responses.json`);
     const input = params;
     input.shift();
 

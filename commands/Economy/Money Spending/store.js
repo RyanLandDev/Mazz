@@ -34,11 +34,16 @@ module.exports = class extends Command {
     // add items
     for (let i = 1; i < Object.keys(items).length; i++) {
       const item = items[Object.keys(items)[i]];
+      let secondStat;
+      if (msg.author.settings.get(item.statistics.key) + item.statistics.increaser) secondStat = msg.author.settings.get(item.statistics.key) + item.statistics.increaser; else secondStat = item.statistics.increaser;
+      if (item.statExtra) secondStat = secondStat + item.statExtra;
+      if (msg.author.settings.get(item.statistics.key) === item.statistics.max) secondStat = 'MAX';
       if (items[Object.keys(items)[i]].page === page) {
-        Embed.addField('\u200B', [item.title,
+        const fieldValueArray = [item.title,
           item.summary,
-          `» ${item.statistics.friendlyname}: ${msg.author.settings.get(item.statistics.key) ? msg.author.settings.get(item.statistics.key) : '0'}${item.statExtra ? item.statExtra : ''} > ${msg.author.settings.get(item.statistics.key) + item.statistics.increaser ? msg.author.settings.get(item.statistics.key) + item.statistics.increaser : item.statistics.increaser}${item.statExtra ? item.statExtra : ''}`,
-          `» Price: ${msg.guild.settings.get('currency')}**${item.price}** \`${msg.guild.settings.get('prefix')}buy ${Object.keys(items)[i]}\``].join('\n'), true);
+          `» ${item.statistics.friendlyname}: ${msg.author.settings.get(item.statistics.key) ? msg.author.settings.get(item.statistics.key) : '0'}${item.statExtra ? item.statExtra : ''} > ${secondStat}`];
+        if (msg.author.settings.get(item.statistics.key) !== item.statistics.max) fieldValueArray.push(`» Price: ${msg.guild.settings.get('currency')}**${item.price}** \`${msg.guild.settings.get('prefix')}buy ${Object.keys(items)[i]}\``);
+        Embed.addField('\u200B', fieldValueArray.join('\n'), true);
       }
     }
 
