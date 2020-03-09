@@ -48,18 +48,14 @@ module.exports = class extends Command {
     );
 
     const commands = this.client.commands;
-    const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
-    const help = await Promise.all(commands.map((command) =>
-      this.client.inhibitors.run(message, command, true)
-        .then(() => {
-          const description = command.description;
-
-          richDisplay.addPage(template => template.setDescription('Page 1'));
-        }),
-    ));
-
-    richDisplay.addPage(template => template.setDescription('Page 1'));
-    richDisplay.addPage(template => template.setDescription('Page 2 test'));
+    let cmdArray = [];
+    for (let i = 0; i < commands.size; i++) {
+      const commandName = Array.from(commands.keys())[i];
+      const cmd = commands.get(commandName);
+      if (cmd.category === 'General') cmdArray.push(commandName);
+    }
+    cmdArray = '`' + cmdArray.join('` `') + '`';
+    richDisplay.addPage(template => template.setDescription(cmdArray));
 
     return richDisplay.run(await message.send('Loading help...'));
 
