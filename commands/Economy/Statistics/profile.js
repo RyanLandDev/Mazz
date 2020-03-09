@@ -10,6 +10,7 @@ module.exports = class extends Command {
       aliases: ['pf', 'balance', 'bal', 'money', 'wallet', 'cash'],
       usage: '[member:member]',
       requiredPermissions: ['ATTACH_FILES'],
+      runIn: ['text'],
     });
   }
 

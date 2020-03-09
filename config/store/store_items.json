@@ -75,17 +75,5 @@
 			"max": 50000,
 			"increaser": 500
 		}
-	},
-	"test": {
-		"id": 5,
-		"page": 2,
-		"title": "Test",
-		"price": 1500,
-		"summary": "Get a fancy bank accounttest",
-		"statistics": {
-			"friendlyname": "Bank Stteste",
-			"key": "bankStorage",
-			"increaser": 500
-		}
 	}
 }

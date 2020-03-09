@@ -31,7 +31,7 @@ module.exports = class extends Command {
     const categories = Object.keys(help);
     const helpMessage = [];
     for (let cat = 0; cat < categories.length; cat++) {
-      helpMessage.push(`**${categories[cat]} Commands**:`, '```asciidoc');
+      helpMessage.push(`\`\`\`fix\n${categories[cat]}\`\`\``, '```asciidoc');
       const subCategories = Object.keys(help[categories[cat]]);
       for (let subCat = 0; subCat < subCategories.length; subCat++) helpMessage.push(`= ${subCategories[subCat]} =`, `${help[categories[cat]][subCategories[subCat]].join('\n')}\n`);
       helpMessage.push('```', '\u200b');
@@ -41,7 +41,7 @@ module.exports = class extends Command {
       .then(() => {
         if (message.channel.type !== 'dm') message.react('📨');
       })
-      .catch(() => { if (message.channel.type !== 'dm') message.channel.send('❌ | You have DMs disabled, please enable them so I can help you.'); });
+      .catch(() => { if (message.channel.type !== 'dm') return message.send('❌ | You have DMs disabled, please enable them so I can help you.'); });
   }
 
   async buildHelp(message) {

@@ -10,6 +10,7 @@ module.exports = class extends Command {
       description: 'Buy an item from the store.',
       hidden: true,
       usage: '[item:str]',
+      runIn: ['text'],
     });
   }
 

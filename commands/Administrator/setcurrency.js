@@ -18,6 +18,7 @@ module.exports = class extends Command {
     if (params[0] === 'default') params[0] = '<:ds_coin:598799086795096084>';
     if (!params[0]) return message.channel.send(`The currency of \`${message.guild.name}\` is **${message.guild.settings.get('currency') ? message.guild.settings.get('currency') : '<:ds_coin:598799086795096084>'}**`);
     if (params[0] === message.guild.settings.get('currency')) return message.channel.send(`The currency of \`${message.guild.name}\` is already **${params[0]}**!`);
+    if (params[0].includes('@everyone') || params[0].includes('@here')) return message.send('I\'m smarter');
     message.guild.settings.update('currency', params[0]);
     return message.channel.send(`The currency has been set to **${params[0]}**!`);
   }

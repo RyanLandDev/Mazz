@@ -99,16 +99,16 @@ module.exports = class extends Command {
       .setDescription('Below is a list of all people that are supporting Mazz.')
       .addField('**Head Mazzelopers**', headDevs, true)
       .addField('**Second Mazzelopers**', secondDevs, true)
-      .addBlankField()
+      .addField('\u200b', '\u200b')
       .addField('**Head Mazzmins**', headAdmins, true)
       .addField('**Second Mazzmins**', secondAdmins, true)
-      .addBlankField()
+      .addField('\u200b', '\u200b')
       .addField('**Head Mazzerators**', headMods, true)
       .addField('**Second Mazzerators**', secondMods, true)
-      .addBlankField()
+      .addField('\u200b', '\u200b')
       .addField('**Head Trials**', headTrials, true)
       .addField('**Second Trials**', secondTrials, true)
-      .addBlankField()
+      .addField('\u200b', '\u200b')
       .addField('**Patrons**', patronsNew, true);
     message.channel.send(Embed);
   }

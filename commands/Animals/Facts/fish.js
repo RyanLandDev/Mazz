@@ -1,13 +1,15 @@
 const { Command } = require('klasa');
 
 module.exports = class extends Command {
+
   constructor(...args) {
     super(...args, {
-      description: '',
-      enabled: false,
+      description: 'blup',
     });
   }
 
   async run(msg) {
+    msg.send('🐟🐠🐡');
   }
+
 };
