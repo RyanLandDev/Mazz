@@ -1,5 +1,5 @@
-const { Command } = require('klasa');
-const has = (obj, key) => Object.prototype.hasOwnProperty.call(obj, key);
+const { Command, RichDisplay } = require('klasa');
+const { MessageEmbed } = require('discord.js');
 
 module.exports = class extends Command {
 
@@ -8,8 +8,9 @@ module.exports = class extends Command {
       aliases: ['commands'],
       guarded: true,
       description: 'You can use this command to get a list of all commands or information about one.',
-      usage: '(Command:command)',
+      usage: '(command:command)',
       cooldown: 3,
+      runIn: ['text'],
     });
 
     this.createCustomResolver('command', (arg, possible, message) => {
@@ -19,51 +20,63 @@ module.exports = class extends Command {
   }
 
   async run(message, [command]) {
+    // ============================================================================================================================================
+    //
+    // Command Help
+    //
+    // ============================================================================================================================================
+
     if (command) {
       const info = [
         `= ${command.name} = `,
         command.description,
-        `Usage :: ${command.usage.fullUsage(message)}`,
+        `Usage :: ${command.usage}`,
       ].join('\n');
-      return message.channel.send(info, { code: 'asciidoc' });
-    }
-    const help = await this.buildHelp(message);
-    const categories = Object.keys(help);
-    const helpMessage = [];
-    for (let cat = 0; cat < categories.length; cat++) {
-      helpMessage.push(`\`\`\`fix\n${categories[cat]}\`\`\``, '```asciidoc');
-      const subCategories = Object.keys(help[categories[cat]]);
-      for (let subCat = 0; subCat < subCategories.length; subCat++) helpMessage.push(`= ${subCategories[subCat]} =`, `${help[categories[cat]][subCategories[subCat]].join('\n')}\n`);
-      helpMessage.push('```', '\u200b');
+      return message.send(info, { code: 'asciidoc' });
     }
 
-    return message.author.send(helpMessage, { split: { char: '\u200b' } })
-      .then(() => {
-        if (message.channel.type !== 'dm') message.react('📨');
-      })
-      .catch(() => { if (message.channel.type !== 'dm') return message.send('❌ | You have DMs disabled, please enable them so I can help you.'); });
-  }
+    // ============================================================================================================================================
+    //
+    // Commands List
+    //
+    // ============================================================================================================================================
 
-  async buildHelp(message) {
-    const help = {};
+    const richDisplay = new RichDisplay(new MessageEmbed()
+      .setColor('#0099FF')
+      .setAuthor(this.client.user.username, this.client.user.avatarURL())
+      .setDescription(`Here is a list of all commands.\nUse \`${message.guild.settings.get('prefix')}help [command]\` for more information about a command!`),
+    );
 
-    const { prefix } = message.guildSettings;
-    const commandNames = [...this.client.commands.keys()];
+    const commands = this.client.commands;
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
-    await Promise.all(this.client.commands.map((command) =>
+    const help = await Promise.all(commands.map((command) =>
       this.client.inhibitors.run(message, command, true)
         .then(() => {
-          if (!has(help, command.category)) help[command.category] = {};
-          if (!has(help[command.category], command.subCategory)) help[command.category][command.subCategory] = [];
           const description = command.description;
-          help[command.category][command.subCategory].push(`${prefix}${command.name.padEnd(longest)} :: ${description}`);
-        })
-        .catch(() => {
-          // noop
+
+          richDisplay.addPage(template => template.setDescription('Page 1'));
         }),
     ));
 
-    return help;
-  }
+    richDisplay.addPage(template => template.setDescription('Page 1'));
+    richDisplay.addPage(template => template.setDescription('Page 2 test'));
 
+    return richDisplay.run(await message.send('Loading help...'));
+
+    // async buildHelp(message) {
+    //   const help = {};
+    //   const { prefix } = message.guildSettings;
+    //   const commandNames = [...this.client.commands.keys()];
+    //   const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
+    //   await Promise.all(this.client.commands.map((command) =>
+    //     this.client.inhibitors.run(message, command, true)
+    //       .then(() => {
+    //         if (!has(help, command.category)) help[command.category] = {};
+    //         if (!has(help[command.category], command.subCategory)) help[command.category][command.subCategory] = [];
+    //         const description = command.description;
+    //         help[command.category][command.subCategory].push(`${prefix}${command.name.padEnd(longest)} :: ${description}`);
+    //       }),
+    //   ));
+    //   return help;
+  }
 };

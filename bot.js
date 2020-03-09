@@ -79,6 +79,9 @@ Client.defaultUserSchema
 // Balance
   .add('balance', 'integer', { default: 0 })
 
+// Active Items
+
+
 // Upgrades
   .add('robChance', 'integer', { default: 50, min: 10, max: 50 })
   .add('robCut', 'integer', { default: 20, min: 20, max: 80 })

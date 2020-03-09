@@ -43,7 +43,7 @@ module.exports = class extends Command {
     // money
     ctx.font = '25px sans-serif';
     ctx.fillStyle = '#ffffff';
-    ctx.fillText('$' + Member.user.settings.get('balance'), canvas.width / 2.5, canvas.height / 1.9);
+    ctx.fillText(`${Member.user.settings.get('balance') < 0 ? '[In Debt] ' : '' }$${Member.user.settings.get('balance')}`, canvas.width / 2.5, canvas.height / 1.9);
 
     // make avatar rounded
     ctx.beginPath();
