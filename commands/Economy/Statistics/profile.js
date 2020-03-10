@@ -19,7 +19,7 @@ module.exports = class extends Command {
     if (params.length === 0) Member = msg.member; else Member = params[0];
 
     // make the canvas and context
-    const canvas = Canvas.createCanvas(700, 250);
+    const canvas = Canvas.createCanvas(852, 480);
     const ctx = canvas.getContext('2d');
 
     // make the background

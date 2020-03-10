@@ -1,5 +1,11 @@
 const { Command, RichDisplay } = require('klasa');
 const { MessageEmbed } = require('discord.js');
+const { readdirSync } = require('fs');
+
+const getDirectories = source =>
+  readdirSync(source, { withFileTypes: true })
+    .filter(dirent => dirent.isDirectory())
+    .map(dirent => dirent.name);
 
 module.exports = class extends Command {
 
@@ -43,19 +49,44 @@ module.exports = class extends Command {
 
     const richDisplay = new RichDisplay(new MessageEmbed()
       .setColor('#0099FF')
-      .setAuthor(this.client.user.username, this.client.user.avatarURL())
-      .setDescription(`Here is a list of all commands.\nUse \`${message.guild.settings.get('prefix')}help [command]\` for more information about a command!`),
+      .setAuthor(message.author.username, message.author.avatarURL())
+      .setTitle('Help'),
     );
 
+    const mainCategories = getDirectories('./commands');
+    mainCategories.splice(mainCategories.length - 2, 2);
     const commands = this.client.commands;
-    let cmdArray = [];
-    for (let i = 0; i < commands.size; i++) {
-      const commandName = Array.from(commands.keys())[i];
-      const cmd = commands.get(commandName);
-      if (cmd.category === 'General') cmdArray.push(commandName);
+
+    const cmds = {};
+    for (let i = 0; i < mainCategories.length; i++) {
+      cmds[mainCategories[i]] = {};
+      const subCategories = getDirectories(`./commands/${mainCategories[i]}`);
+      for (let i2 = 0; i2 < subCategories.length; i2++) cmds[mainCategories[i]][subCategories[i2]] = [];
     }
-    cmdArray = '`' + cmdArray.join('` `') + '`';
-    richDisplay.addPage(template => template.setDescription(cmdArray));
+
+    for (let i = 0; i < mainCategories.length; i++) {
+      for (let i2 = 0; i2 < commands.size; i2++) {
+        const commandName = Array.from(commands.keys())[i2];
+        const cmd = commands.get(commandName);
+        const subCategories = getDirectories(`./commands/${mainCategories[i]}`);
+        for (let i3 = 0; i3 < subCategories.length; i3++) if (cmd.fullCategory[0] === mainCategories[i] && cmd.fullCategory[1] === subCategories[i3]) cmds[mainCategories[i]][subCategories[i3]].push(commandName);
+      }
+      // form description
+      const description = [`Below is a list of all commands within this category. You can use the reaction buttons to switch between categories.\nUse \`${message.guild.settings.get('prefix')}help [command]\` for more information about a command!`];
+      for (let i4 = 0; i4 < getDirectories(`./commands/${mainCategories[i]}`).length; i4++) {
+        const subCategories = getDirectories(`./commands/${mainCategories[i]}`);
+        description.push('');
+        description.push(`**${subCategories[i4]}**`);
+        description.push('`' + cmds[mainCategories[i]][subCategories[i4]].join('` `') + '`');
+        description.push('');
+      }
+      richDisplay.setFooterPrefix(`${mainCategories[i]} - Page `);
+      richDisplay.addPage(template => {
+        template.setDescription(description.join('\n'));
+        template.setTitle(`Help - ${mainCategories[i]}`);
+        return template;
+      });
+    }
 
     return richDisplay.run(await message.send('Loading help...'));
 
