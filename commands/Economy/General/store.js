@@ -1,6 +1,7 @@
 // require modules
 const { Command } = require('klasa');
 const { MessageEmbed } = require('discord.js');
+const numberFormatter = require('number-formatter');
 
 // require store information
 const items = require('../../../config/store/store_items.json');
@@ -29,7 +30,7 @@ module.exports = class extends Command {
       .setAuthor(msg.author.username, msg.author.avatarURL())
       .setColor('#0099FF')
       .setFooter(`${pages[page - 1].name} - Page ${page}/${pages.length}`)
-      .setDescription(`You currently have ${msg.guild.settings.get('currency')}**${msg.author.settings.get('balance')}**.`);
+      .setDescription(`You currently have ${msg.guild.settings.get('currency')}**${numberFormatter('#,##0.', msg.author.settings.get('balance'))}**.`);
 
     // add items
     for (let i = 1; i < Object.keys(items).length; i++) {
@@ -38,11 +39,12 @@ module.exports = class extends Command {
       if (msg.author.settings.get(item.statistics.key) + item.statistics.increaser) secondStat = msg.author.settings.get(item.statistics.key) + item.statistics.increaser; else secondStat = item.statistics.increaser;
       if (item.statExtra) secondStat = secondStat + item.statExtra;
       if (msg.author.settings.get(item.statistics.key) === item.statistics.max) secondStat = 'MAX';
+      if (typeof secondStat === 'number') secondStat = numberFormatter('#,##0.', secondStat);
       if (items[Object.keys(items)[i]].page === page) {
         const fieldValueArray = [item.title,
           item.summary,
-          `» ${item.statistics.friendlyname}: ${msg.author.settings.get(item.statistics.key) ? msg.author.settings.get(item.statistics.key) : '0'}${item.statExtra ? item.statExtra : ''} > ${secondStat}`];
-        if (msg.author.settings.get(item.statistics.key) !== item.statistics.max) fieldValueArray.push(`» Price: ${msg.guild.settings.get('currency')}**${item.price}** \`${msg.guild.settings.get('prefix')}buy ${Object.keys(items)[i]}\``);
+          `» ${item.statistics.friendlyname}: ${numberFormatter('#,##0.', msg.author.settings.get(item.statistics.key) ? msg.author.settings.get(item.statistics.key) : '0')}${item.statExtra ? item.statExtra : ''} > ${secondStat}`];
+        if (msg.author.settings.get(item.statistics.key) !== item.statistics.max) fieldValueArray.push(`» Price: ${msg.guild.settings.get('currency')}**${numberFormatter('#,##0.', item.price)}** \`${msg.guild.settings.get('prefix')}buy ${Object.keys(items)[i]}\``);
         Embed.addField('\u200B', fieldValueArray.join('\n'), true);
       }
     }

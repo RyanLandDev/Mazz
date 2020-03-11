@@ -1,5 +1,6 @@
 const { Command } = require('klasa');
 const { MessageEmbed } = require('discord.js');
+const numberFormatter = require('number-formatter');
 
 const items = require('../../../config/store/store_items.json');
 
@@ -36,7 +37,7 @@ module.exports = class extends Command {
         .setColor('GREEN')
         .setTimestamp()
         .setDescription([`» ${buyingItem.statistics.friendlyname}: ${msg.author.settings.get(buyingItem.statistics.key)}${buyingItem.statExtra ? buyingItem.statExtra : ''} > ${msg.author.settings.get(buyingItem.statistics.key) + buyingItem.statistics.increaser}${buyingItem.statExtra ? buyingItem.statExtra : ''}`,
-          `» Price: ${msg.guild.settings.get('currency')}**${buyingItem.price}**`].join('\n'))
+          `» Price: ${msg.guild.settings.get('currency')}**${numberFormatter('#,##0.', buyingItem.price)}**`].join('\n'))
         .setTitle(`<:ds_greentick:591919521598799872> ${buyingItem.buytitle ? buyingItem.buytitle : toFirstCase(item)} successfully bought!`),
     );
   }

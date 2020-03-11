@@ -11,14 +11,15 @@ module.exports = class extends Command {
   }
 
   async run(msg, [member]) {
-    if (msg.author.settings.get('balance') < 500) return msg.send(`You need at least ${msg.guild.settings.get('currency')}**500** to rob someone!`);
-    if (member === msg.author) return msg.send('You can\'t rob yourself!');
-    if (member.settings.get('balance') < 250) return msg.send('They don\'t have a well sized wallet, not worth it man');
+    if (msg.author.settings.get('balance') < 500) throw msg.send(`You need at least ${msg.guild.settings.get('currency')}**500** to rob someone!`);
+    if (member === msg.author) throw msg.send('You can\'t rob yourself!');
+    if (member.settings.get('balance') < 250) throw msg.send('They don\'t have a well sized wallet, not worth it man');
 
     const min = 1;
     const max = 100 + msg.author.settings.get('robExtraChance');
+    const chance = Math.round(Math.random() * (max - min) + min);
 
-    if (Math.round(Math.random() * (max - min) + min) > member.settings.get('robChance')) {
+    if (chance > member.settings.get('robChance')) {
       // Success
       const moneyEarnt = Math.round(msg.author.settings.get('robCut') / 100 * member.settings.get('balance'));
       msg.author.settings.update('balance', msg.author.settings.get('balance') + moneyEarnt);

@@ -68,26 +68,30 @@ module.exports = class extends Command {
       for (let i2 = 0; i2 < commands.size; i2++) {
         const commandName = Array.from(commands.keys())[i2];
         const cmd = commands.get(commandName);
+        const checkPermissions = await message.hasAtLeastPermissionLevel(cmd.permissionLevel);
         const subCategories = getDirectories(`./commands/${mainCategories[i]}`);
-        for (let i3 = 0; i3 < subCategories.length; i3++) if (cmd.fullCategory[0] === mainCategories[i] && cmd.fullCategory[1] === subCategories[i3]) cmds[mainCategories[i]][subCategories[i3]].push(commandName);
+        for (let i3 = 0; i3 < subCategories.length; i3++) if (cmd.category === mainCategories[i] && cmd.subCategory === subCategories[i3] && checkPermissions) cmds[mainCategories[i]][subCategories[i3]].push(commandName);
       }
       // form description
+      let cmdsLength;
       const description = [`Below is a list of all commands within this category. You can use the reaction buttons to switch between categories.\nUse \`${message.guild.settings.get('prefix')}help [command]\` for more information about a command!`];
       for (let i4 = 0; i4 < getDirectories(`./commands/${mainCategories[i]}`).length; i4++) {
         const subCategories = getDirectories(`./commands/${mainCategories[i]}`);
         description.push('');
         description.push(`**${subCategories[i4]}**`);
         description.push('`' + cmds[mainCategories[i]][subCategories[i4]].join('` `') + '`');
-        description.push('');
+        cmdsLength = cmds[mainCategories[i]][subCategories[i4]].length;
       }
-      richDisplay.setFooterPrefix(`${mainCategories[i]} - Page `);
-      richDisplay.addPage(template => {
-        template.setDescription(description.join('\n'));
-        template.setTitle(`Help - ${mainCategories[i]}`);
-        return template;
-      });
+      if (cmdsLength !== 0) {
+        richDisplay.addPage(template => {
+          template.setDescription(description.join('\n'));
+          template.setTitle(`Help - ${mainCategories[i]}`);
+          return template;
+        });
+      }
     }
 
+    richDisplay.setFooterPrefix('Help - Page ');
     return richDisplay.run(await message.send('Loading help...'));
 
     // async buildHelp(message) {

@@ -7,7 +7,7 @@ module.exports = class extends Command {
     super(...args, {
       description: 'Join the official Mazz server.',
       guarded: true,
-      aliases: ['supportserver', 'discordserver', 'guild'],
+      aliases: ['supportserver', 'discordserver', 'guild', 'suggest', 'suggestion', 'idea'],
     });
   }
 
