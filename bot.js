@@ -72,12 +72,18 @@ new Client(clientConfig).login(process.env.DISCORD_TOKEN);
 //
 // ============================================================================================================================================
 
+Client.defaultClientSchema
+// Total money in bank
+  .add('bankMoney', 'integer', { default: 0 });
+
 Client.defaultGuildSchema
+// Currency/Icon
   .add('currency', 'string', { default: '<:ds_coin:598799086795096084>' });
 
 Client.defaultUserSchema
 // Balance
   .add('balance', 'integer', { default: 0 })
+  .add('bankBalance', 'integer', { default: 0 })
 
 // Active Items
 
