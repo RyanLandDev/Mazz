@@ -12,7 +12,7 @@ module.exports = class extends Command {
       .then(response => response.json())
       .then(body => body.link);
 
-    msg.channel.send(
+    msg.send(
       new MessageEmbed()
         .setImage(image)
         .setTitle('Cat :cat:')
