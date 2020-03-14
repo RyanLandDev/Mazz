@@ -1,3 +1,10 @@
+// ============================================================================================================================================
+//
+// Use Canary or Main
+const useCanary = true;
+//
+// ============================================================================================================================================
+
 const { Client, PermissionLevels } = require('klasa');
 
 require('dotenv').config();
@@ -63,8 +70,9 @@ clientConfig.permissionLevels = new PermissionLevels(31)
 //
 // ============================================================================================================================================
 
+if (useCanary === true) clientConfig.prefix = 'mc!';
 // create KlasaClient
-new Client(clientConfig).login(process.env.DISCORD_TOKEN);
+new Client(clientConfig).login(useCanary === true ? process.env.CANARY_TOKEN : process.env.DISCORD_TOKEN);
 
 // ============================================================================================================================================
 //

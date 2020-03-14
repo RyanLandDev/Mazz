@@ -8,7 +8,7 @@ module.exports = class extends Command {
   }
 
   async run(msg) {
-    const image = await fetch('https://nekos.life/api/v2/lizard')
+    const image = await fetch('https://nekos.life/api/lizard')
       .then(response => response.json())
       .then(body => body.url);
 

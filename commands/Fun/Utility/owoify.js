@@ -17,7 +17,7 @@ module.exports = class extends Command {
     const text = await fetch(`https://nekos.life/api/v2/owoify?text=${params.join()}`)
       .then(response => response.json())
       .then(body => body.owo);
-    msg.send(text);
+    msg.send(':blush: | ' + text);
   }
 
 };

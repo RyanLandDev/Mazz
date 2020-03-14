@@ -6,6 +6,7 @@ module.exports = class extends Command {
       description: 'Deposit money to your bank account.',
       aliases: ['dep', 'dp'],
       usage: '<amount:num|all>',
+      runIn: ['text'],
     });
   }
 

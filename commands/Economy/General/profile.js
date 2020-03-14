@@ -28,7 +28,7 @@ module.exports = class extends Command {
         '**Level XP**: wip',
         '**Progress**: wip\n',
         `**Wallet**: ${Member.user.settings.get('balance') < 0 ? '[In Debt]' : ''}${msg.guild.settings.get('currency')}${numberFormatter('#,##0.', Member.user.settings.get('balance'))}`,
-        '**Bank**: wip'].join('\n'), true)
+        `**Bank**: ${msg.guild.settings.get('currency')}${numberFormatter('#,##0.', Member.user.settings.get('bankBalance'))}`].join('\n'), true)
       .addField('**Upgrades**', [`**Robbery Chance**: ${Member.user.settings.get('robChance')}%`,
         `**Robbery Cut**: ${Member.user.settings.get('robCut')}%`,
         `**Extra Robbery Chances**: ${Member.user.settings.get('robExtraChance')}%`,
