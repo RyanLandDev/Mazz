@@ -14,6 +14,7 @@ module.exports = class extends Command {
 
   async run(message, params) {
     const itemPicked = params[Math.round(Math.random() * (params.length - 1))];
+    if (itemPicked.includes('@everyone') || itemPicked.includes('@here')) throw message.send('I\'m smarter');
     message.channel.send(':sparkles: | I have magically chosen **' + itemPicked + '**');
   }
 

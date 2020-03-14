@@ -18,7 +18,7 @@ module.exports = class extends Command {
     return msg.sendMessage(
       new MessageEmbed()
         .setColor('#0099FF')
-        .setDescription(':panda: | ' + fact),
+        .setDescription(':panda_face: | ' + fact),
     );
   }
 

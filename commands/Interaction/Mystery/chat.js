@@ -13,11 +13,13 @@ module.exports = class extends Command {
   }
 
   async run(msg, params) {
-    if (params.length === 0) return msg.send('hi');
+    if (params.length === 0) throw msg.send('hi');
+    msg.channel.startTyping();
     const text = await fetch(`https://some-random-api.ml/chatbot?message=${params.join()}`)
       .then(response => response.json())
       .then(body => body.response);
     msg.send(text);
+    msg.channel.stopTyping();
   }
 
 };

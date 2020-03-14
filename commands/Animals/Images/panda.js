@@ -15,7 +15,7 @@ module.exports = class extends Command {
     msg.channel.send(
       new MessageEmbed()
         .setImage(image)
-        .setTitle('Panda :panda:')
+        .setTitle('Panda :panda_face:')
         .setColor('#0099FF'),
     );
   }
