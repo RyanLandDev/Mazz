@@ -14,7 +14,7 @@ module.exports = class extends Command {
   }
 
   async run(msg, [member]) {
-    if (member.displayName.includes('@everyone' || '@here') || msg.member.dispalyName.includes('@everyone' || '@here')) return msg.send('I\'m smarter');
+    if (member.displayName.includes('@everyone' || '@here') || msg.member.displayName.includes('@everyone' || '@here')) return msg.send('I\'m smarter');
     const image = await fetch('https://some-random-api.ml/animu/wink')
       .then(response => response.json())
       .then(body => body.link);
