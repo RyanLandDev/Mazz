@@ -17,7 +17,20 @@
 		"You manage to hack into a bank's system and steal {currency}{reward}!",
 		"You crack open a safe and shovel {currency}{reward} into your pockets. These old people never learn.",
 		"You pickpocket a passing noble, guess crime does pay after all. You manage to steal {currency}{reward}",
-		"You break into a home to steal jewelry worth {currency}{reward}"
+		"You break into a home to steal jewelry worth {currency}{reward}",
+		"You blow up Mazz Headquarters and earn {currency}{reward}",
+		"You rob a bank for {currency}{reward}",
+		"In the guise of darkness you break into a home to steal jewelry worth {currency}{reward}",
+		"You make a profit selling catnip on the streets, and get {currency}{reward}",
+		"You steal a phone and sell it for {currency}{reward}",
+		"You robbed a Walmart and cashed out with {currency}{reward}",
+		"You robbed a bank and secured {currency}{reward}",
+		"You steal lamps for {currency}{reward}",
+		"You steal a bird's egg and sell it on the black market for {currency}{reward}",
+		"You traveled to the Mazz HQ and stole {currency}{reward}",
+		"You robbed the Discord Headquarters and got {currency}{reward}",
+		"You sell your kidney on the black market for {currency}{reward}",
+		"You murdered your old CEO and found {currency}{reward} in his jacket!"
 	],
 	"fail": [
 		"You robbed a bank but your getaway car got a flat tire and you were fined {currency}{reward}",
@@ -34,6 +47,19 @@
 		"You tried to put the milk before the cereal and were put in jail for your heinous acts, you have to pay {currency}{reward} for bail!",
 		"You thought it was a good idea to rob a bank with a dildo. They fined you {currency}{reward}.",
 		"You got caught raiding and got fined {currency}{reward}",
-		"You got caught trying to steal Robux and got a {currency}{reward} fine."
+		"You got caught trying to steal Robux and got a {currency}{reward} fine.",
+		"You dabbed and lost {currency}{reward}",
+		"You snort $100 dollar bills using cocaine and waste {currency}{reward} on getting high.",
+		"You tripped while running from the cops after robbing a bank. Good job! You lost {currency}{reward}",
+		"You were caught trying to rob an old lady, and have been given a {currency}{reward} fine!",
+		"You successfully steal someone's car, but forgot to put fuel in it. The fuel costed {currency}{reward}",
+		"Stealing candy from a baby didn't turn out to be as easy as you thought, you've been fined {currency}{reward}",
+		"You were caught with your hands in the queen's underwear drawer, and have been given a {currency}{reward} fine!",
+		"You have been fined {currency}{reward} because you ate during work hours.",
+		"You have been caught bragging about your money on Facebook, and were fined {currency}{reward}",
+		"You kick an employee for fun while they're wearing a spring lock suit. This causes spring lock failure and the employee dies. You get sued {currency}{reward}",
+		"You were caught not helping to commit the crime and instead sitting on your lazy ass talking about it on Discord and were rated out for {currency}{reward}",
+		"You tried to jump the old lady walking down the street. Turns out she had a gun, and robbed you blind of {currency}{reward}",
+		"You rob an ATM, but the CCTV captures your face. You are fined {currency}{reward}"
 	]
 }

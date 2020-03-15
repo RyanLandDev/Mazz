@@ -70,7 +70,6 @@ clientConfig.permissionLevels = new PermissionLevels(31)
 //
 // ============================================================================================================================================
 
-if (useCanary === true) clientConfig.prefix = 'mc!';
 // create KlasaClient
 new Client(clientConfig).login(useCanary === true ? process.env.CANARY_TOKEN : process.env.DISCORD_TOKEN);
 

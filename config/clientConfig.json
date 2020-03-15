@@ -6,8 +6,11 @@
 	"prefixCaseInsensitive": true,
 	"readyMessage": "Ready!",
 	"slowmodeAggressive": true,
-	"providers": { "default": "mongodb", "mongodb": {
-		"connectionString": "mongodb+srv://MazzAdminUser:MazzEpic32!@mazzdatabase-4oymq.mongodb.net/test?retryWrites=true&w=majority"
-		} },
+	"providers": {
+		"default": "mongodb",
+		"mongodb": {
+			"connectionString": "mongodb+srv://MazzAdminUser:MazzEpic32!@mazzdatabase-4oymq.mongodb.net/test?retryWrites=true&w=majority"
+		}
+	},
 	"disableMentions": "everyone"
 }
