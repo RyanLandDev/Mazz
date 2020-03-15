@@ -78,7 +78,7 @@ module.exports = class extends Command {
         const subCategories = getDirectories(`./commands/${mainCategories[i]}`);
         description.push('');
         description.push(`**${subCategories[i4]}**`);
-        description.push('`' + cmds[mainCategories[i]][subCategories[i4]].join('` `') + '`');
+        if (cmds[mainCategories[i]][subCategories[i4]].length === 0) description.push('(You don\'t have access to any of the commands in this subcategory.)'); else description.push('`' + cmds[mainCategories[i]][subCategories[i4]].join('` `') + '`');
       }
       if (cmds[mainCategories[i]].length !== 0) {
         richDisplay.addPage(template => {
@@ -91,21 +91,5 @@ module.exports = class extends Command {
 
     richDisplay.setFooterPrefix('Help - Page ');
     return richDisplay.run(await message.send('Loading help...'));
-
-    // async buildHelp(message) {
-    //   const help = {};
-    //   const { prefix } = message.guildSettings;
-    //   const commandNames = [...this.client.commands.keys()];
-    //   const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
-    //   await Promise.all(this.client.commands.map((command) =>
-    //     this.client.inhibitors.run(message, command, true)
-    //       .then(() => {
-    //         if (!has(help, command.category)) help[command.category] = {};
-    //         if (!has(help[command.category], command.subCategory)) help[command.category][command.subCategory] = [];
-    //         const description = command.description;
-    //         help[command.category][command.subCategory].push(`${prefix}${command.name.padEnd(longest)} :: ${description}`);
-    //       }),
-    //   ));
-    //   return help;
   }
 };

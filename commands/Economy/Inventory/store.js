@@ -4,8 +4,8 @@ const { MessageEmbed } = require('discord.js');
 const numberFormatter = require('number-formatter');
 
 // require store information
-const items = require('../../../config/store/store_items.json');
-const pages = require('../../../config/store/store_pages.json');
+const items = require('../../../config/items/store_items.json');
+const pages = require('../../../config/items/store_pages.json');
 
 module.exports = class extends Command {
 

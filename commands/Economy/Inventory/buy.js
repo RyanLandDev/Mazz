@@ -2,7 +2,7 @@ const { Command } = require('klasa');
 const { MessageEmbed } = require('discord.js');
 const numberFormatter = require('number-formatter');
 
-const items = require('../../../config/store/store_items.json');
+const items = require('../../../config/items/store_items.json');
 
 module.exports = class extends Command {
 

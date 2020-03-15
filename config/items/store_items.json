@@ -8,7 +8,7 @@
 		"summary": "a short summary of what this item does/is",
 		"statistics": {
 			"friendlyname": "name of statistic to show",
-			"key": "name of settingsGateway key to modify (must exist)",
+			"key": "name of settingsGateway.User key to modify (must exist)",
 			"starter": "default value (default = 0)",
 			"max": "maximum value possible",
 			"increaser": "value to modify by"

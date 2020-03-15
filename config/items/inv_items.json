@@ -1,0 +1,38 @@
+[
+	{
+		"title": "title to show",
+		"codename": "code name to use in settingsGateway.User.items",
+		"summary": "a short summary of what this item does/is",
+		"statistics": {
+			"key": "name of settingsGateway.User key to modify if item is used (must exist)",
+			"increaser": "value to modify by"
+		}
+	},
+	{
+		"title": ":dollar: **Cheque**",
+		"codename": "cheque",
+		"summary": "Gives {currency}**15,000** instantly.",
+		"statistics": {
+			"key": "balance",
+			"increaser": 15000
+		}
+	},
+	{
+		"title": "<:ds_mrbeast:661157261498122254> **MrBeast**",
+		"codename": "mrbeast",
+		"summary": "Gives {currency}**25,000** instantly.",
+		"statistics": {
+			"key": "balance",
+			"increaser": 25000
+		}
+	},
+	{
+		"title": "<:ds_hundredpennies:665905657253462034> **Hundred Pennies**",
+		"codename": "100pennies",
+		"summary": "Gives {currency}**1**.",
+		"statistics": {
+			"key": "balance",
+			"increaser": 1
+		}
+	}
+]

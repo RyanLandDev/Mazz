@@ -92,8 +92,9 @@ Client.defaultUserSchema
   .add('balance', 'integer', { default: 0 })
   .add('bankBalance', 'integer', { default: 0 })
 
-// Active Items
-
+// Items
+  .add('activeItems', 'string', { array: true })
+  .add('items', 'string', { array: true })
 
 // Upgrades
   .add('robChance', 'integer', { default: 50, min: 10, max: 50 })
