@@ -102,13 +102,19 @@ Client.defaultClientSchema
   .add('bankMoney', 'integer', { default: 0 })
 
 // Statistics
-  .add('dayStats', 'string', { array: true });
+  .add('dayStats', 'string', { array: true })
+
+// AFK
+  .add('afk', 'string', { array: true });
 
 Client.defaultGuildSchema
 // Currency/Icon
   .add('currency', 'string', { default: '<:ds_coin:598799086795096084>' });
 
 Client.defaultUserSchema
+// AFK
+  .add('afkStatus', 'string', { max: 100 })
+
 // Balance
   .add('balance', 'integer', { default: 0 })
   .add('bankBalance', 'integer', { default: 0 })
