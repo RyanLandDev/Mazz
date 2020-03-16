@@ -16,7 +16,7 @@
 
 [![](https://img.shields.io/github/last-commit/MazzStudios/Mazz?logo=GitHub&style=plastic)](https://github.com/RyanLandDev/Mazz)
 
-[![](https://img.shields.io/npm/v/discord.js?color=a&label=discord.js&logo=npm&style=plastic](https://discord.js.org)
+[![](https://img.shields.io/npm/v/discord.js?label=discord.js&logo=npm&style=plastic)](https://discord.js.org)
 
 [![](https://img.shields.io/badge/donate-patreon-F96854.svg?logo=patreon)](https://patreon.com/mazzbot)
 
