@@ -81,7 +81,10 @@ new Client(clientConfig).login(useCanary === true ? process.env.CANARY_TOKEN : p
 
 Client.defaultClientSchema
 // Total money in bank
-  .add('bankMoney', 'integer', { default: 0 });
+  .add('bankMoney', 'integer', { default: 0 })
+
+// Statistics
+  .add('dayStats', 'string', { array: true });
 
 Client.defaultGuildSchema
 // Currency/Icon
