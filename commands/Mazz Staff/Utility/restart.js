@@ -14,6 +14,7 @@ module.exports = class extends Command {
 
   async run(message) {
     await message.channel.send('Restarting...').catch(err => this.client.emit('error', err));
+    this.client.user.setPresence({ 'activity': { 'name': '🔁 RESTARTING...' } });
     await Promise.all(this.client.providers.map(provider => provider.shutdown()));
     process.exit();
   }
@@ -23,7 +24,7 @@ module.exports = class extends Command {
 
     const parent = this;
     setTimeout(function() {
-      parent.client.user.setPresence({ 'activity': { 'name': `m!help | ${parent.client.guilds.cache.size} servers 🔥`, 'type': 'WATCHING' } });
+      parent.client.user.setPresence({ 'activity': { 'name': `m!help | ${parent.client.guilds.cache.size} servers 🔥` } });
     }, 5000);
   }
 };
