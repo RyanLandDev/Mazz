@@ -11,6 +11,10 @@ module.exports = class extends Monitor {
 
   run(message) {
     const settings = message.client.settings.afk;
+    // remove afk
+    if (settings.includes(message.author.id)) message.client.settings.update('afk', message.author.id, { action: 'remove' }), message.send(`Welcome back ${message.member}, I have removed your AFK`);
+
+    // detect afk
     if (message.mentions.members.size === 0) return;
     for (let i = 0; i < message.mentions.members.size; i++) {
       const member = message.mentions.members.array()[i];
