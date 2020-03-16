@@ -13,7 +13,7 @@ module.exports = class extends Command {
   }
 
   async run(message) {
-    const response = responses[Math.round(Math.random() * responses.length)];
+    const response = responses[Math.round(Math.random() * responses.length) - 1];
 
     const reward = Math.round(Math.random() * (400 - 18) + 18);
     message.author.settings.update('balance', message.author.settings.get('balance') + reward);
