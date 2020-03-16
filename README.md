@@ -160,7 +160,7 @@ Note: You should ensure the code you've made works. We can't use broken code.
 
 ### Version Info
 
-- Version: v6.1.0
+- Version: v1.0.0
 
 - Version Name: The Total Rewrite
 
@@ -176,15 +176,17 @@ Note: You should ensure the code you've made works. We can't use broken code.
 
   
 
-### Dependencies
+### Main Dependencies
 
 - Language: Javascript
 
 - Runtime: Node.js 12
 
-- Library: Discord.js 11.5
+- Library: Discord.js 12
 
-- Database Provider: TBD
+- Framework: Klasa#master
+
+- Database Provider: MongoDB
 
   
 
