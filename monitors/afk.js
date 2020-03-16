@@ -9,10 +9,16 @@ module.exports = class extends Monitor {
     });
   }
 
-  run(message) {
+  async run(message) {
     const settings = message.client.settings.afk;
     // remove afk
-    if (settings.includes(message.author.id)) message.client.settings.update('afk', message.author.id, { action: 'remove' }), message.send(`Welcome back ${message.member}, I have removed your AFK`);
+    if (settings.includes(message.author.id)) {
+      message.client.settings.update('afk', message.author.id, { action: 'remove' });
+      const sent = await message.send(`Welcome back ${message.member}, I have removed your AFK`);
+      setTimeout(function() {
+        sent.delete();
+      }, 3000);
+    }
 
     // detect afk
     if (message.mentions.members.size === 0) return;
