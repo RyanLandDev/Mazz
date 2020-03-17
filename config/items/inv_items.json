@@ -28,7 +28,7 @@
 	},
 	{
 		"title": "<:ds_hundredpennies:665905657253462034> **Hundred Pennies**",
-		"codename": "100pennies",
+		"codename": "hundred pennies",
 		"summary": "Gives {currency}**1**.",
 		"statistics": {
 			"key": "balance",

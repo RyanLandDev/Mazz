@@ -21,7 +21,7 @@ module.exports = class extends Command {
     if (params.length === 1) return msg.send('No input!');
 
     const type = params[0];
-    const responses = require(`../../../config/${type}_responses.json`);
+    const responses = require(`../../../config/responses/${type}_responses.json`);
     const input = params;
     input.shift();
 
@@ -30,7 +30,7 @@ module.exports = class extends Command {
 
     responses.push(input.join(' '));
     const stringToSave = JSON.stringify(responses, null, 4);
-    fs.writeFile(`./config/${type}_responses.json`, stringToSave, (err) => {
+    fs.writeFile(`./config/responses/${type}_responses.json`, stringToSave, (err) => {
       if (err) throw err;
     });
     return msg.send('Success!');

@@ -27,7 +27,7 @@ module.exports = class extends Command {
       for (let i2 = 0; i2 < Object.keys(items).length - 1; i2++) {
         const item = items[Object.keys(items)[i2 + 1]];
         const summary = item.summary.replace(/{currency}/gi, msg.guild.settings.get('currency'));
-        if (item.codename === userItems[i] && !fieldsDone.includes(item.codename)) Embed.addField('\u200b', `${item.title}${counts[item.codename] !== 1 ? ` x${counts[item.codename]}` : ''}${msg.author.settings.activeItems.includes(item.codename) ? ' **[ACTIVE]**' : ''}\n${summary}`, true), fieldsDone.push(item.codename);
+        if (item.codename === userItems[i] && !fieldsDone.includes(item.codename)) Embed.addField('\u200b', `${item.title}${counts[item.codename] !== 1 ? ` x${counts[item.codename]}` : ''}${msg.author.settings.activeItems.includes(item.codename) ? ' **[ACTIVE]**' : ''}\n${summary} \n\`${msg.guild.settings.prefix}use ${item.codename}\``, true), fieldsDone.push(item.codename);
       }
     }
 
