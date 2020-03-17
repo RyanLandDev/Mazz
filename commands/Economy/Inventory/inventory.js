@@ -17,7 +17,7 @@ module.exports = class extends Command {
   async run(msg, [member]) {
     let User;
     if (member) User = member.user; else User = msg.author;
-    const userItems = User.settings.items;
+    const userItems = User.settings.items.slice();
 
     const counts = {};
     userItems.forEach(function(x) { counts[x] = (counts[x] || 0) + 1; });
