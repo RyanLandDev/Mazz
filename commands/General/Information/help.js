@@ -33,12 +33,26 @@ module.exports = class extends Command {
     // ============================================================================================================================================
 
     if (command) {
-      const info = [
-        `= ${command.name} = `,
-        command.description,
-        `Usage :: ${command.usage}`,
-      ].join('\n');
-      return message.send(info, { code: 'asciidoc' });
+      // form the usage
+      let usage = command.usage.fullUsage(message);
+      usage = usage.replace(message.guild.settings.prefix + ' ', '');
+      if (!usage.startsWith('《')) usage = usage.replace(/([^\s]+)/, '');
+      usage = usage.replace(/(.*(?<=》))|(:[^\]>]*)/g, '');
+
+      // form the cooldown
+      let cooldown = command.cooldown;
+      if (cooldown >= 60) cooldown = `${Math.round(cooldown / 60)} minutes${cooldown - (Math.round(cooldown / 60) * 60) === 0 ? '' : ` and ${(cooldown - (Math.round(cooldown / 60) * 60))} seconds`}`; else cooldown = cooldown + ' seconds';
+
+      // form the embed
+      const embed = new MessageEmbed()
+        .setAuthor(message.author.username, message.author.avatarURL())
+        .setTitle(command.name)
+        .setColor('#0099FF')
+        .setDescription(command.cooldown === 0 ? command.description : `${command.description}\nCooldown: ${cooldown}`)
+        .addField('**Usage**', `\`\`\`fix\n${message.guild.settings.prefix}${command.name}${usage}\n\`\`\``)
+        .setFooter('<> = required parameter, [] = optional parameter');
+      if (command.aliases.length >= 1) embed.addField('**Aliases**', '`' + command.aliases.join('` `') + '`');
+      return message.send(embed);
     }
 
     // ============================================================================================================================================
@@ -80,8 +94,16 @@ module.exports = class extends Command {
         description.push(`**${subCategories[i4]}**`);
         if (cmds[mainCategories[i]][subCategories[i4]].length === 0) description.push('(You don\'t have access to any of the commands in this subcategory.)'); else description.push('`' + cmds[mainCategories[i]][subCategories[i4]].join('` `') + '`');
       }
-      for (let i2 = 0; i2 < cmds[mainCategories[i]].length; i2++) {}
-      if (description.length !== 0) {
+      let categoryCommands = 0;
+      for (let i2 = 0; i2 < Object.keys(cmds[mainCategories[i]]).length; i2++) {
+        for (let i3 = 0; i3 < cmds[mainCategories[i]][Object.keys(cmds[mainCategories[i]])[i2]].length; i3++) {
+          const commandName = cmds[mainCategories[i]][Object.keys(cmds[mainCategories[i]])[i2]][i3];
+          const cmd = commands.get(commandName);
+          const checkPermissions = await message.hasAtLeastPermissionLevel(cmd.permissionLevel);
+          if (checkPermissions) categoryCommands = categoryCommands + 1;
+        }
+      }
+      if (categoryCommands !== 0) {
         richDisplay.addPage(template => {
           template.setDescription(description.join('\n'));
           template.setTitle(`Help - ${mainCategories[i]}`);

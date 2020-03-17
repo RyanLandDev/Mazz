@@ -130,4 +130,4 @@ Client.defaultUserSchema
   .add('robChance', 'integer', { default: 50, min: 10, max: 50 })
   .add('robCut', 'integer', { default: 20, min: 20, max: 80 })
   .add('robExtraChance', 'integer', { default: 0, min: 0, max: 50 })
-  .add('bankStorage', 'integer', { default: 0, min: 0, max: 50000 });
+  .add('bankStorage', 'integer', { default: 0, min: 0 });
