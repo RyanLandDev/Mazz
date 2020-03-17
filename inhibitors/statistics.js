@@ -1,13 +1,14 @@
-const { Finalizer } = require('klasa');
+const { Inhibitor } = require('klasa');
 const moment = require('moment');
 
-module.exports = class extends Finalizer {
+module.exports = class extends Inhibitor {
+
   constructor(...args) {
     super(...args, {
     });
   }
 
-  run(message) {
+  async run(message) {
     const current = message.client.settings.dayStats.slice();
     const date = moment().format('DD-MM-YYYY');
 
