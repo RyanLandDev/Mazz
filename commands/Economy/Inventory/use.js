@@ -22,7 +22,7 @@ module.exports = class extends Command {
     }
     if (!itemUsed) throw msg.send('You don\'t have this item or it doesn\'t exist');
 
-    itemUsed.statistics.increaser = itemUsed.statistics.increaser.replace(/{time}/gi, moment().format('x'));
+    if (typeof itemUsed.statistics.increaser === 'string') itemUsed.statistics.increaser = itemUsed.statistics.increaser.replace(/{time}/gi, moment().format('x'));
     msg.author.settings.update('items', itemUsed.codename, { action: 'remove' });
     msg.author.settings.update(itemUsed.statistics.key, itemUsed.statistics.set ? itemUsed.statistics.increaser : itemUsed.statistics.increaser + msg.author.settings.get(itemUsed.statistics.key));
 

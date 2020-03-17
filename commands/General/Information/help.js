@@ -80,7 +80,8 @@ module.exports = class extends Command {
         description.push(`**${subCategories[i4]}**`);
         if (cmds[mainCategories[i]][subCategories[i4]].length === 0) description.push('(You don\'t have access to any of the commands in this subcategory.)'); else description.push('`' + cmds[mainCategories[i]][subCategories[i4]].join('` `') + '`');
       }
-      if (cmds[mainCategories[i]].length !== 0) {
+      for (let i2 = 0; i2 < cmds[mainCategories[i]].length; i2++) {}
+      if (description.length !== 0) {
         richDisplay.addPage(template => {
           template.setDescription(description.join('\n'));
           template.setTitle(`Help - ${mainCategories[i]}`);
