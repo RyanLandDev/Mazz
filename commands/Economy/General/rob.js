@@ -19,7 +19,7 @@ module.exports = class extends Command {
     const max = 100 + msg.author.settings.get('robExtraChance');
     const chance = Math.round(Math.random() * (max - min) + min);
 
-    if (chance > member.settings.get('robChance')) {
+    if (!member.settings.activeItems.includes('llama') && chance > member.settings.get('robChance')) {
       // Success
       const moneyEarnt = Math.round(msg.author.settings.get('robCut') / 100 * member.settings.get('balance'));
       msg.author.settings.update('balance', msg.author.settings.get('balance') + moneyEarnt);
@@ -31,7 +31,7 @@ module.exports = class extends Command {
       const moneyLost = Math.round(20 / 100 * msg.author.settings.get('balance'));
       msg.author.settings.update('balance', msg.author.settings.get('balance') - moneyLost);
       member.settings.update('balance', member.settings.get('balance') + moneyLost);
-      return msg.send('Robbery failed.. You have lost ' + msg.guild.settings.get('currency') + '**' + moneyLost + '**');
+      return msg.send(`Robbery failed..${member.settings.activeItems.includes('llama') ? ` \`${member.username}\`'s llama spit on you and you ` : ' You have '}lost ${msg.guild.settings.get('currency')}**${moneyLost}**`);
     }
   }
 };

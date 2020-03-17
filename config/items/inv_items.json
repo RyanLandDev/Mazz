@@ -5,8 +5,11 @@
 		"summary": "a short summary of what this item does/is",
 		"statistics": {
 			"key": "name of settingsGateway.User key to modify if item is used (must exist)",
+			"set": "whether to set or increase (default = increase, false)",
 			"increaser": "value to modify by"
-		}
+		},
+		"temporary": "an item that should last temporarily (default = false)",
+		"temporaryTime": "after what amount of time the item should expire in ms"
 	},
 	{
 		"title": ":dollar: **Cheque**",
@@ -34,5 +37,26 @@
 			"key": "balance",
 			"increaser": 1
 		}
+	},
+	{
+		"title": ":bank: **Bank Account Upgrade**",
+		"codename": "bank account upgrade",
+		"summary": "Upgrade your bank account once, regardless of the maximum.",
+		"statistics": {
+			"key": "bankStorage",
+			"increaser": 500
+		}
+	},
+	{	
+		"title": ":llama: **Llama**",
+		"codename": "llama",
+		"summary": "Spit anyone who tries to rob you for the next 12 hours.",
+		"statistics": {
+			"key": "illama",
+			"set": true,
+			"increaser": "{time}"
+		},
+		"temporary": true,
+		"temporaryTime": 1800000
 	}
 ]

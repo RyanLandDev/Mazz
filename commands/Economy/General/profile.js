@@ -7,7 +7,7 @@ module.exports = class extends Command {
   constructor(...args) {
     super(...args, {
       description: 'Check your profile.',
-      aliases: ['pf', 'balance', 'bal', 'money', 'wallet', 'cash'],
+      aliases: ['p', 'pf', 'balance', 'bal', 'money', 'wallet', 'cash'],
       usage: '[member:member]',
       runIn: ['text'],
     });

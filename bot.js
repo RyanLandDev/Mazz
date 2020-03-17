@@ -123,6 +123,9 @@ Client.defaultUserSchema
   .add('activeItems', 'string', { array: true })
   .add('items', 'string', { array: true })
 
+// Active Items
+  .add('illama', 'string')
+
 // Upgrades
   .add('robChance', 'integer', { default: 50, min: 10, max: 50 })
   .add('robCut', 'integer', { default: 20, min: 20, max: 80 })

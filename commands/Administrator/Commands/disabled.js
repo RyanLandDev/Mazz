@@ -6,6 +6,8 @@ module.exports = class extends Command {
     super(...args, {
       description: 'This command will give a list of all commands currently disabled in this server.',
       guarded: true,
+      // server admin
+      permissionLevel: 24,
     });
   }
 
