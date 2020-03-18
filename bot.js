@@ -120,7 +120,7 @@ Client.defaultUserSchema
   .add('bankBalance', 'integer', { default: 0 })
 
 // Leveling
-  .add('level', 'integer')
+  .add('level', 'integer', { default: 0 })
   .add('levelXP', 'integer')
   .add('lastXP', 'string')
 

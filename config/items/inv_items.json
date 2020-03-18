@@ -57,6 +57,6 @@
 			"increaser": "{time}"
 		},
 		"temporary": true,
-		"temporaryTime": 1800000
+		"temporaryTime": 43200000
 	}
 ]
