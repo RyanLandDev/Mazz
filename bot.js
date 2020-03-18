@@ -119,6 +119,11 @@ Client.defaultUserSchema
   .add('balance', 'integer', { default: 0 })
   .add('bankBalance', 'integer', { default: 0 })
 
+// Leveling
+  .add('level', 'integer')
+  .add('levelXP', 'integer')
+  .add('lastXP', 'string')
+
 // Items
   .add('activeItems', 'string', { array: true })
   .add('items', 'string', { array: true })

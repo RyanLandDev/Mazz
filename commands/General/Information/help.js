@@ -14,7 +14,7 @@ module.exports = class extends Command {
       aliases: ['commands'],
       guarded: true,
       description: 'You can use this command to get a list of all commands or information about one.',
-      usage: '(command:command)',
+      usage: '[command:command]',
       cooldown: 3,
       runIn: ['text'],
     });

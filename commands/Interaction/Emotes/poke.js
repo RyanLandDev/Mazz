@@ -8,12 +8,20 @@ module.exports = class extends Command {
     super(...args, {
       description: 'Poke someone.',
       cooldown: 3,
-      usage: '<member:member>',
+      usage: '<member:member|name:str>',
       usageDelim: ' ',
     });
   }
 
-  async run(msg, [member]) {
+  async run(msg, params) {
+    let member = params[0];
+    console.log(member);
+    let newMember;
+    if (typeof member === 'string') newMember = msg.guild.members.cache.find(m => m.displayName.toLowerCase().includes(member.toLowerCase()));
+    if (!newMember && typeof member === 'string') newMember = msg.guild.members.cache.find(m => m.user.username.toLowerCase().includes(member.toLowerCase()));
+    if (!newMember && typeof member === 'string') newMember = params[0];
+    if (newMember) member = newMember;
+
     if (member.displayName.includes('@everyone' || '@here') || msg.member.displayName.includes('@everyone' || '@here')) return msg.send('I\'m smarter');
     const image = await fetch('https://nekos.life/api/v2/img/poke')
       .then(response => response.json())

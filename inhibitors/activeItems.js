@@ -15,7 +15,7 @@ module.exports = class extends Inhibitor {
       let item;
       for (let i2 = 1; i2 < items.length; i2++) if (items[i2].codename === activeItems[i]) item = items[i2];
       const nowUnix = parseInt(moment().format('x'));
-      const initUnix = message.author.settings.get(item.statistics.key);
+      const initUnix = parseInt(message.author.settings.get(item.statistics.key));
       if ((nowUnix - initUnix) > item.temporaryTime) message.author.settings.update('activeItems', item.codename, { action: 'remove' });
     }
   }
