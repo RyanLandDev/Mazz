@@ -11,6 +11,9 @@ module.exports = class extends Command {
   }
 
   async run(msg, [member]) {
+    const { settings } = this.client.users.cache.get(member.id);
+    await settings.sync();
+
     if (msg.author.settings.get('balance') < 500) throw msg.send(`You need at least ${msg.guild.settings.get('currency')}**500** to rob someone!`);
     if (member === msg.author) throw msg.send('You can\'t rob yourself!');
     if (member.settings.get('balance') < 250) throw msg.send('They don\'t have a well sized wallet, not worth it man');

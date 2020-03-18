@@ -17,6 +17,10 @@ module.exports = class extends Command {
   async run(msg, [member]) {
     let User;
     if (member) User = member.user; else User = msg.author;
+
+    const { settings } = this.client.users.cache.get(User.id);
+    await settings.sync();
+
     const userItems = User.settings.items.slice();
 
     const counts = {};
