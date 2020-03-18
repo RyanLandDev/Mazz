@@ -26,7 +26,7 @@ module.exports = class extends Command {
 
     if (!Object.keys(items).includes(item)) return msg.send('No (valid) item specified');
     if (buyingItem.price > msg.author.settings.get('balance')) return msg.send('Insufficient funds');
-    if (msg.author.settings.get(buyingItem.statistics.key) === buyingItem.statistics.max) return msg.send('Already maxed');
+    if (msg.author.settings.get(buyingItem.statistics.key) >= buyingItem.statistics.max) return msg.send('Already maxed');
 
     msg.author.settings.update('balance', msg.author.settings.get('balance') - buyingItem.price);
     msg.author.settings.update(buyingItem.statistics.key, msg.author.settings.get(buyingItem.statistics.key) + buyingItem.statistics.increaser);

@@ -38,7 +38,7 @@ module.exports = class extends Command {
       let secondStat;
       if (msg.author.settings.get(item.statistics.key) + item.statistics.increaser) secondStat = msg.author.settings.get(item.statistics.key) + item.statistics.increaser; else secondStat = item.statistics.increaser;
       if (item.statExtra) secondStat = secondStat + item.statExtra;
-      if (msg.author.settings.get(item.statistics.key) === item.statistics.max) secondStat = 'MAX';
+      if (msg.author.settings.get(item.statistics.key) >= item.statistics.max) secondStat = 'MAX';
       if (typeof secondStat === 'number') secondStat = numberFormatter('#,##0.', secondStat);
       if (items[Object.keys(items)[i]].page === page) {
         const fieldValueArray = [item.title,
