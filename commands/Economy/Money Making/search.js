@@ -4,7 +4,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = class extends Command {
   constructor(...args) {
     super(...args, {
-      description: 'Search for stuff.',
+      description: 'Search for money and perhaps even an item.',
       runIn: ['text'],
       cooldown: 600,
     });
