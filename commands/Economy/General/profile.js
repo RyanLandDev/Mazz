@@ -18,7 +18,7 @@ module.exports = class extends Command {
     if (params.length === 0) Member = msg.member; else Member = params[0];
 
     // level progress
-    const xpProgress = Math.floor(msg.author.settings.levelXP / (5 * (msg.author.settings.level ^ 2) + 50 * msg.author.settings.level + 100) * 10);
+    const xpProgress = Math.floor(Member.user.settings.levelXP / (5 * (Member.user.settings.level ^ 2) + 50 * Member.user.settings.level + 100) * 10);
     let xpProgressString = '';
     for (let i = 0; i < xpProgress; i++) xpProgressString = xpProgressString + '■';
     for (let i = 0; i < 10 - xpProgress; i++) xpProgressString = xpProgressString + '□';
@@ -30,8 +30,8 @@ module.exports = class extends Command {
       .setThumbnail(Member.user.avatarURL())
       .setTimestamp()
       .setFooter(this.client.user.username, this.client.user.avatarURL())
-      .addField('**General**', [`**Level**: ${msg.author.settings.level}`,
-        `**Level XP**: ${msg.author.settings.levelXP}/${5 * (msg.author.settings.level ^ 2) + 50 * msg.author.settings.level + 100}`,
+      .addField('**General**', [`**Level**: ${Member.user.settings.level}`,
+        `**Level XP**: ${Member.user.settings.levelXP}/${5 * (Member.user.settings.level ^ 2) + 50 * Member.user.settings.level + 100}`,
         `**Progress**: ${xpProgressString}\n`,
         `**Wallet**: ${Member.user.settings.get('balance') < 0 ? '[In Debt]' : ''}${msg.guild.settings.get('currency')}${numberFormatter('#,##0.', Member.user.settings.get('balance'))}`,
         `**Bank**: ${msg.guild.settings.get('currency')}${numberFormatter('#,##0.', Member.user.settings.get('bankBalance'))}`].join('\n'), true)
