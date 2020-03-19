@@ -2,7 +2,7 @@
   "name": "mazz",
   "version": "0.0.1",
   "description": "The best economy bot on Discord.",
-  "main": "bot.js",
+  "main": "src/bot.js",
   "scripts": {
     "start": "node bot.js",
     "test": "echo \"Error: no test specified\" && exit 1"

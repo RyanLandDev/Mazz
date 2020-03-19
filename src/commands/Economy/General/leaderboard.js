@@ -4,7 +4,7 @@ module.exports = class extends Command {
   constructor(...args) {
     super(...args, {
       description: 'Check the leaderboards.',
-      usage: '[money|level] [-g]',
+      usage: '[wallet|bank] [-g]',
       runIn: ['text'],
       aliases: ['lb', 'lead'],
     });
@@ -15,7 +15,5 @@ module.exports = class extends Command {
     if (params[0]) type = params[0]; else type = 'money';
     let global;
     if (params[1]) global = true; else global = false;
-
-    msg.send('Wip.');
   }
 };
