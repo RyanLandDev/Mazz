@@ -22,7 +22,7 @@ module.exports = class extends Monitor {
       message.author.settings.update('level', message.author.settings.level + 1);
       message.author.settings.update('levelXP', 0);
       message.author.settings.update('balance', message.author.settings.balance + ((message.author.settings.level + 1) * 500));
-      message.send(`Good job ${message.member}, you have reached **Level ${message.author.settings.level + 1}** and earned ${message.guild.settings.currency}**${(message.author.settings.level + 1) * 500}**!`);
+      if (message.guild.settings.levelMsg) message.send(`Good job ${message.member}, you have reached **Level ${message.author.settings.level + 1}** and earned ${message.guild.settings.currency}**${(message.author.settings.level + 1) * 500}**!`);
     }
   }
 };

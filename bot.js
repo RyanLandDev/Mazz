@@ -108,6 +108,9 @@ Client.defaultClientSchema
   .add('afk', 'string', { array: true });
 
 Client.defaultGuildSchema
+// Level up messages
+  .add('levelMsg', 'boolean', { default: true })
+
 // Currency/Icon
   .add('currency', 'string', { default: '<:ds_coin:598799086795096084>' });
 
