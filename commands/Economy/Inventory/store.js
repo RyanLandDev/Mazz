@@ -44,7 +44,7 @@ module.exports = class extends Command {
         const fieldValueArray = [item.title,
           item.summary,
           `» ${item.statistics.friendlyname}: ${numberFormatter('#,##0.', msg.author.settings.get(item.statistics.key) ? msg.author.settings.get(item.statistics.key) : '0')}${item.statExtra ? item.statExtra : ''} > ${secondStat}`];
-        if (msg.author.settings.get(item.statistics.key) !== item.statistics.max) fieldValueArray.push(`» Price: ${msg.guild.settings.get('currency')}**${numberFormatter('#,##0.', item.price)}** \`${msg.guild.settings.get('prefix')}buy ${Object.keys(items)[i]}\``);
+        if (msg.author.settings.get(item.statistics.key) < item.statistics.max) fieldValueArray.push(`» Price: ${msg.guild.settings.get('currency')}**${numberFormatter('#,##0.', item.price)}** \`${msg.guild.settings.get('prefix')}buy ${Object.keys(items)[i]}\``);
         Embed.addField('\u200B', fieldValueArray.join('\n'), true);
       }
     }
