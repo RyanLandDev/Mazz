@@ -67,14 +67,14 @@ module.exports = class extends Command {
       .setTitle('Help'),
     );
 
-    const mainCategories = getDirectories('./commands');
+    const mainCategories = getDirectories('./src/commands');
     mainCategories.splice(mainCategories.length - 2, 2);
     const commands = this.client.commands;
 
     const cmds = {};
     for (let i = 0; i < mainCategories.length; i++) {
       cmds[mainCategories[i]] = {};
-      const subCategories = getDirectories(`./commands/${mainCategories[i]}`);
+      const subCategories = getDirectories(`./src/commands/${mainCategories[i]}`);
       for (let i2 = 0; i2 < subCategories.length; i2++) cmds[mainCategories[i]][subCategories[i2]] = [];
     }
 
@@ -83,13 +83,13 @@ module.exports = class extends Command {
         const commandName = Array.from(commands.keys())[i2];
         const cmd = commands.get(commandName);
         const checkPermissions = await message.hasAtLeastPermissionLevel(cmd.permissionLevel);
-        const subCategories = getDirectories(`./commands/${mainCategories[i]}`);
+        const subCategories = getDirectories(`./src/commands/${mainCategories[i]}`);
         for (let i3 = 0; i3 < subCategories.length; i3++) if (cmd.category === mainCategories[i] && cmd.subCategory === subCategories[i3] && checkPermissions) cmds[mainCategories[i]][subCategories[i3]].push(commandName);
       }
       // form description
       const description = [`Below is a list of all commands within this category. You can use the reaction buttons to switch between categories.\nUse \`${message.guild.settings.get('prefix')}help [command]\` for more information about a command!`];
-      for (let i4 = 0; i4 < getDirectories(`./commands/${mainCategories[i]}`).length; i4++) {
-        const subCategories = getDirectories(`./commands/${mainCategories[i]}`);
+      for (let i4 = 0; i4 < getDirectories(`./src/commands/${mainCategories[i]}`).length; i4++) {
+        const subCategories = getDirectories(`./src/commands/${mainCategories[i]}`);
         description.push('');
         description.push(`**${subCategories[i4]}**`);
         if (cmds[mainCategories[i]][subCategories[i4]].length === 0) description.push('(You don\'t have access to any of the commands in this subcategory.)'); else description.push('`' + cmds[mainCategories[i]][subCategories[i4]].join('` `') + '`');
