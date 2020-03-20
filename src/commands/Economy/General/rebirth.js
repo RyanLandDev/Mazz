@@ -14,7 +14,7 @@ module.exports = class extends Command {
   }
 
   async run(msg) {
-    const { Settings } = msg.author;
+    const { Settings } = msg.author.settings;
     await Settings.sync();
 
     const rebirth = msg.author.settings.rebirth ? msg.author.settings.rebirth : 0;
