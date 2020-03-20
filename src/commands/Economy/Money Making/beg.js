@@ -13,7 +13,7 @@ module.exports = class extends Command {
 
   async run(msg) {
     const reward = Math.round(Math.random() * (200 - 2) + 2);
-    msg.author.settings.update('balance', msg.author.settings.get('balance') + reward);
+    await msg.author.settings.update('balance', msg.author.settings.get('balance') + reward);
 
     const response = 'You begged and got {currency}{reward}';
     let transformedResponse = response.replace(/{currency}/gi, msg.guild.settings.get('currency'));

@@ -124,6 +124,7 @@ Client.defaultUserSchema
 
 // Rebirths and Prestiges
   .add('rebirth', 'integer')
+  .add('oldBal', 'integer')
 
 // Leveling
   .add('level', 'integer', { default: 0 })

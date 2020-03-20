@@ -22,7 +22,7 @@ module.exports = class extends Command {
       if (typeof member === 'string') newMember = msg.guild.members.cache.find(m => m.displayName.toLowerCase().includes(member.toLowerCase()));
       if (!newMember && typeof member === 'string') newMember = msg.guild.members.cache.find(m => m.user.username.toLowerCase().includes(member.toLowerCase()));
       if (!newMember && typeof member === 'string') newMember = params[0];
-      if (newMember) member = newMember;
+      if (newMember) member = newMember.user;
       User = member;
     }
 

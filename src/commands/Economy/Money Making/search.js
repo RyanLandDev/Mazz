@@ -12,7 +12,7 @@ module.exports = class extends Command {
 
   async run(msg) {
     const reward = Math.round(Math.random() * (500 - 20) + 20);
-    msg.author.settings.update('balance', msg.author.settings.get('balance') + reward);
+    await msg.author.settings.update('balance', msg.author.settings.get('balance') + reward);
     const response = [`You searched and found ${msg.guild.settings.get('currency')}**${reward}**`];
     const itemsToFind = require('../../../config/items/inv_items.json');
     if (Math.round(Math.random() * 6) === 1) {

@@ -15,7 +15,8 @@
 		},
 		"titleInValue": "whether to show the title in the field value or not (default = true)",
 		"affectSales": "whether this item should be affected by sales or not (default = true)",
-		"statExtra": "an extra piece of text that should be added to the statistic show number (default = '')"
+		"statExtra": "an extra piece of text that should be added to the statistic show number (default = '')",
+		"reverse": "whether this item upgrades in reverse, for maximums (default = false)"
 	},
 	"safe": {
 		"id": 1,
@@ -30,7 +31,8 @@
 			"max": 10,
 			"increaser": -4
 		},
-		"statExtra": "%"
+		"statExtra": "%",
+		"reverse": true
 	},
 	"robtraining": {
 		"id": 2,

@@ -15,7 +15,7 @@ module.exports = class extends Command {
   async run(msg, params) {
     let member = params[0];
     let newMember, Member;
-    if (!params[0]) {Member = msg.author;}
+    if (!params[0]) {Member = msg.member;}
     else {
       if (typeof member === 'string') newMember = msg.guild.members.cache.find(m => m.displayName.toLowerCase().includes(member.toLowerCase()));
       if (!newMember && typeof member === 'string') newMember = msg.guild.members.cache.find(m => m.user.username.toLowerCase().includes(member.toLowerCase()));
@@ -42,7 +42,8 @@ module.exports = class extends Command {
         `**Progress**: ${xpProgressString}\n`,
         `**Wallet**: ${Member.user.settings.get('balance') < 0 ? '[In Debt]' : ''}${msg.guild.settings.get('currency')}${numberFormatter('#,##0.', Member.user.settings.get('balance'))}`,
         `**Bank**: ${msg.guild.settings.get('currency')}${numberFormatter('#,##0.', Member.user.settings.get('bankBalance'))}\n`,
-        `**Rebirth**: ${Member.user.settings.rebirth ? Member.user.settings.rebirth : '0'}`].join('\n'), true)
+        `**Rebirth**: ${Member.user.settings.rebirth ? Member.user.settings.rebirth : '0'}`,
+        `**Money Multiplier**: x${(Member.user.settings.rebirth ? Member.user.settings.rebirth * 0.1 : 0) + 1}`].join('\n'), true)
       .addField('**Upgrades**', [`**Robbery Chance**: ${Member.user.settings.get('robChance')}%`,
         `**Robbery Cut**: ${Member.user.settings.get('robCut')}%`,
         `**Extra Robbery Chances**: ${Member.user.settings.get('robExtraChance')}%`,

@@ -18,7 +18,7 @@ module.exports = class extends Command {
     if (chance < 60) responses = require('../../../config/responses/crime_responses.json').fail, reward = Math.round(Math.random() * (-18 - -2000) + -2000); else responses = require('../../../config/responses/crime_responses.json').success, reward = Math.round(Math.random() * (6000 - 18) + 18);
     const response = responses[Math.round(Math.random() * (0 - (responses.length - 1)) + (responses.length - 1))];
 
-    message.author.settings.update('balance', message.author.settings.get('balance') + reward);
+    await message.author.settings.update('balance', message.author.settings.get('balance') + reward);
     let displayReward;
     if (reward <= 0) displayReward = reward * -1; else displayReward = reward;
 
