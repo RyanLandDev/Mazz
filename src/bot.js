@@ -122,6 +122,9 @@ Client.defaultUserSchema
   .add('balance', 'integer', { default: 0 })
   .add('bankBalance', 'integer', { default: 0 })
 
+// Rebirths and Prestiges
+  .add('rebirth', 'integer')
+
 // Leveling
   .add('level', 'integer', { default: 0 })
   .add('levelXP', 'integer')

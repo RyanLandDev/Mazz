@@ -3,11 +3,10 @@ const { MessageEmbed } = require('discord.js');
 const numberFormatter = require('number-formatter');
 
 module.exports = class extends Command {
-
   constructor(...args) {
     super(...args, {
       description: 'Check your profile.',
-      aliases: ['p', 'pf', 'balance', 'bal', 'money', 'wallet', 'cash'],
+      aliases: ['p', 'pf', 'balance', 'bal', 'money', 'wallet', 'cash', 'rank', 'level'],
       usage: '[member:member]',
       runIn: ['text'],
     });
@@ -34,7 +33,8 @@ module.exports = class extends Command {
         `**Level XP**: ${Member.user.settings.levelXP}/${5 * (Member.user.settings.level ^ 2) + 50 * Member.user.settings.level + 100}`,
         `**Progress**: ${xpProgressString}\n`,
         `**Wallet**: ${Member.user.settings.get('balance') < 0 ? '[In Debt]' : ''}${msg.guild.settings.get('currency')}${numberFormatter('#,##0.', Member.user.settings.get('balance'))}`,
-        `**Bank**: ${msg.guild.settings.get('currency')}${numberFormatter('#,##0.', Member.user.settings.get('bankBalance'))}`].join('\n'), true)
+        `**Bank**: ${msg.guild.settings.get('currency')}${numberFormatter('#,##0.', Member.user.settings.get('bankBalance'))}\n`,
+        `**Rebirth**: ${Member.user.settings.rebirth ? Member.user.settings.rebirth : '0'}`].join('\n'), true)
       .addField('**Upgrades**', [`**Robbery Chance**: ${Member.user.settings.get('robChance')}%`,
         `**Robbery Cut**: ${Member.user.settings.get('robCut')}%`,
         `**Extra Robbery Chances**: ${Member.user.settings.get('robExtraChance')}%`,
