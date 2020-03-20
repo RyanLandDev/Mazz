@@ -127,7 +127,7 @@ Client.defaultUserSchema
 
 // Leveling
   .add('level', 'integer', { default: 0 })
-  .add('levelXP', 'integer')
+  .add('levelXP', 'integer', { default: 0 })
   .add('lastXP', 'string')
 
 // Items

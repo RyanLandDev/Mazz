@@ -7,14 +7,22 @@ module.exports = class extends Command {
     super(...args, {
       description: 'Check your profile.',
       aliases: ['p', 'pf', 'balance', 'bal', 'money', 'wallet', 'cash', 'rank', 'level'],
-      usage: '[member:member]',
+      usage: '[member:member|name:str]',
       runIn: ['text'],
     });
   }
 
   async run(msg, params) {
-    let Member;
-    if (params.length === 0) Member = msg.member; else Member = params[0];
+    let member = params[0];
+    let newMember, Member;
+    if (!params[0]) {Member = msg.author;}
+    else {
+      if (typeof member === 'string') newMember = msg.guild.members.cache.find(m => m.displayName.toLowerCase().includes(member.toLowerCase()));
+      if (!newMember && typeof member === 'string') newMember = msg.guild.members.cache.find(m => m.user.username.toLowerCase().includes(member.toLowerCase()));
+      if (!newMember && typeof member === 'string') newMember = params[0];
+      if (newMember) member = newMember;
+      Member = member;
+    }
 
     // level progress
     const xpProgress = Math.floor(Member.user.settings.levelXP / (5 * (Member.user.settings.level ^ 2) + 50 * Member.user.settings.level + 100) * 10);

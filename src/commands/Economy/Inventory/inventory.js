@@ -9,14 +9,22 @@ module.exports = class extends Command {
       cooldown: 5,
       runIn: ['text'],
       aliases: ['inv', 'bp', 'backpack'],
-      usage: '[member:member]',
+      usage: '[member:member|name:str]',
       usageDelim: ' ',
     });
   }
 
-  async run(msg, [member]) {
-    let User;
-    if (member) User = member.user; else User = msg.author;
+  async run(msg, params) {
+    let member = params[0];
+    let newMember, User;
+    if (!params[0]) {User = msg.author;}
+    else {
+      if (typeof member === 'string') newMember = msg.guild.members.cache.find(m => m.displayName.toLowerCase().includes(member.toLowerCase()));
+      if (!newMember && typeof member === 'string') newMember = msg.guild.members.cache.find(m => m.user.username.toLowerCase().includes(member.toLowerCase()));
+      if (!newMember && typeof member === 'string') newMember = params[0];
+      if (newMember) member = newMember;
+      User = member;
+    }
 
     const { settings } = this.client.users.cache.get(User.id);
     await settings.sync();
