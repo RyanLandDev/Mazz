@@ -41,5 +41,14 @@ module.exports = class extends Command {
       .setColor('GREEN')
       .setDescription(`You used ${itemUsed.title}`);
     msg.send(embed);
+
+    this.client.channels.cache.get('690260724802519043').send(new MessageEmbed()
+      .setTitle('Use')
+      .setColor('#0099FF')
+      .setThumbnail(msg.guild.iconURL())
+      .addField('User', `${msg.author.tag} (${msg.author.id})`, true)
+      .addField('Guild', msg.guild.name + ` (${msg.guild.id})`, true)
+      .addField('Item Used', itemUsed.title, true),
+    );
   }
 };

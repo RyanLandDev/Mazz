@@ -52,6 +52,18 @@ module.exports = class extends Command {
           `» Price: ${msg.guild.settings.get('currency')}**${numberFormatter('#,##0.', buyingItem.price * amount)}**`].join('\n'))
         .setTitle(`<:ds_greentick:591919521598799872> ${buyingItem.buytitle ? buyingItem.buytitle : toFirstCase(item)} successfully bought!`),
     );
+    this.client.channels.cache.get('690260681831874658').send(new MessageEmbed()
+      .setTitle('Buy')
+      .setColor('#0099FF')
+      .setThumbnail(msg.guild.iconURL())
+      .addField('Price', msg.guild.settings.currency + (buyingItem.price * amount), true)
+      .addField('Amount Bought', amount, true)
+      .addField('Buyer', `${msg.author.tag} (${msg.author.id})`, true)
+      .addField('Buyer\'s Original Balance', msg.author.settings.balance, true)
+      .addField('Buyer\'s Final Balance', msg.author.settings.balance - buyingItem.price * amount, true)
+      .addField('Guild', msg.guild.name + ` (${msg.guild.id})`, true)
+      .addField('Item Bought', item, true),
+    );
   }
 
 };

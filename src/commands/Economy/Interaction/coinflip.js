@@ -58,7 +58,7 @@ module.exports = class extends Command {
     msgAcceptOrDeny.react('591919521598799872'); // ds_greentick
     msgAcceptOrDeny.react('591919718554796033'); // ds_redtick
 
-    acceptOrDenyEmbed.setDescription(`The invite has been rejected by ${member}.`);
+    acceptOrDenyEmbed.setDescription(`<:ds_redtick:591919718554796033> The invite has been rejected by ${member}.`);
     acceptOrDenyEmbed.setColor('RED');
 
     // check rejected
@@ -81,7 +81,7 @@ module.exports = class extends Command {
           .setAuthor(member.username, member.avatarURL())
           .setColor('RED')
           .setTimestamp()
-          .setDescription('This invite has expired.'),
+          .setDescription('<:ds_redtick:591919718554796033> This invite has expired.'),
         );
       }
     });
