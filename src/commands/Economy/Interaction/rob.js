@@ -19,8 +19,8 @@ module.exports = class extends Command {
     if (msg.author.settings.get('balance') < 500) {
       throw msg.send(new MessageEmbed()
         .setDescription(`<:ds_redtick:591919718554796033> You need at least ${msg.guild.settings.get('currency')}**500** to rob someone!`)
-        .setAuthor(msg.author.username, msg.author.avatarURL()
-          .setColor('RED')));
+        .setAuthor(msg.author.username, msg.author.avatarURL())
+          .setColor('RED'));
     }
     if (member === msg.author) {
       throw msg.send(new MessageEmbed()
