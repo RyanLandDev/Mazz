@@ -37,7 +37,7 @@ module.exports = class extends Command {
       let usage = command.usage.fullUsage(message);
       usage = usage.replace(message.guild.settings.prefix + ' ', '');
       if (!usage.startsWith('《')) usage = usage.replace(/([^\s]+)/, '');
-      usage = usage.replace(/(.*(?<=》))|(:[^\]>]*)/g, '');
+      usage = usage.replace(/(.*(?<=》))|(:[^\]|>]*)/g, '');
 
       // form the cooldown
       let cooldown = command.cooldown;
