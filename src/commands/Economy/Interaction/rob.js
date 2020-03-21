@@ -34,6 +34,19 @@ module.exports = class extends Command {
       const moneyLost = Math.round(20 / 100 * msg.author.settings.get('balance'));
       msg.author.settings.update('balance', msg.author.settings.get('balance') - moneyLost);
       member.settings.update('balance', member.settings.get('balance') + moneyLost);
+      this.client.channels.cache.get('664128623896428554').send(new MessageEmbed()
+        .setTitle('Give')
+        .setColor('#0099FF')
+        .setThumbnail(msg.guild.iconURL())
+        .addField('Amount', msg.guild.settings.currency + amount, true)
+        .addField('Giver', `${msg.author.tag} (${msg.author.id})`, true)
+        .addField('Receiver', `${member.user.tag} (${member.user.id})`, true)
+        .addField('Giver\'s Original Balance', msg.author.settings.balance, true)
+        .addField('Giver\'s Final Balance', msg.author.settings.balance - amount, true)
+        .addField('Guild', msg.guild.name + ` (${msg.guild.id})`, true)
+        .addField('Receiver\'s Original Balance', member.user.settings.balance, true)
+        .addField('Receiver\'s Final Balance', member.user.settings.balance + amount, true),
+      );
       return msg.send(`Robbery failed..${member.settings.activeItems.includes('llama') ? ` \`${member.username}\`'s llama spit on you and you ` : ' You have '}lost ${msg.guild.settings.get('currency')}**${moneyLost}**`);
     }
   }

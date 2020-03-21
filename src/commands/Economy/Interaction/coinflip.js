@@ -16,6 +16,7 @@ module.exports = class extends Command {
 
   async run(msg, params) {
     const member = params[0].user, bet = params[1];
+    const parent = this;
 
     // check: coinflip self
     if (member === msg.author) {
@@ -119,6 +120,19 @@ module.exports = class extends Command {
           coinflipEmbed.setDescription(`The coinflip has ended! ${winner} has won ${msg.guild.settings.currency}**${bet * 2}**!`);
           msgAcceptOrDeny.edit(coinflipEmbed);
           clearInterval(timer);
+          parent.client.channels.cache.get('690256358431653894').send(new MessageEmbed()
+            .setTitle('Coinflip')
+            .setColor('#0099FF')
+            .setThumbnail(msg.guild.iconURL())
+            .addField('Amount', msg.guild.settings.currency + bet, true)
+            .addField('Starter', `${msg.author.tag} (${msg.author.id})`, true)
+            .addField('Opponent', `${member.tag} (${member.id})`, true)
+            .addField('Starter\'s Original Balance', msg.author.settings.balance, true)
+            .addField('Starter\'s Final Balance', loser === msg.member ? msg.author.settings.balance - bet : msg.author.settings.balance + bet, true)
+            .addField('Guild', msg.guild.name + ` (${msg.guild.id})`, true)
+            .addField('Opponent\'s Original Balance', member.settings.balance, true)
+            .addField('Opponent\'s Final Balance', loser === params[0] ? member.settings.balance - bet : member.settings.balance + bet, true),
+          );
           return;
         }
       }, 1000);

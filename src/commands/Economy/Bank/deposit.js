@@ -16,7 +16,7 @@ module.exports = class extends Command {
     const bankStorageLeft = msg.author.settings.get('bankStorage') - msg.author.settings.get('bankBalance');
     if (amount > bankStorageLeft) amount = bankStorageLeft;
     if (amount > msg.author.settings.get('balance') || msg.author.settings.balance <= 0) throw msg.send('Insufficient funds');
-    if (amount <= 0) throw msg.send('Not enough bank storage! Try upgrading your bank account');
+    if (amount <= 0) throw msg.send('Not enough bank storage! Try upgrading your bank account in the ' + msg.guild.settings.prefix + 'store');
 
     msg.author.settings.update('balance', msg.author.settings.get('balance') - amount);
     this.client.settings.update('bankMoney', this.client.settings.get('bankMoney') + amount);
