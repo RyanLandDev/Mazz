@@ -61,7 +61,7 @@ module.exports = class extends Command {
         .addField('Amount', msg.guild.settings.currency + moneyEarnt, true),
       );
       return msg.send(new MessageEmbed()
-        .setColor('RED')
+        .setColor('GREEN')
         .setTitle('<:ds_greentick:591919521598799872> Robbery successful')
         .setDescription('You have stolen ' + msg.guild.settings.get('currency') + '**' + moneyEarnt + '**'));
     }

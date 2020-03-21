@@ -126,6 +126,10 @@ Client.defaultUserSchema
   .add('rebirth', 'integer')
   .add('oldBal', 'integer')
 
+// Contacts
+  .add('contacts', 'string', { array: true })
+  .add('activeContacts', 'string', { array: true })
+
 // Leveling
   .add('level', 'integer', { default: 0 })
   .add('levelXP', 'integer', { default: 0 })

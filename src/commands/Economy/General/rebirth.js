@@ -18,7 +18,7 @@ module.exports = class extends Command {
     await settings.sync();
 
     const rebirth = msg.author.settings.rebirth ? msg.author.settings.rebirth : 0;
-    const price = 100000 + rebirth * 50000;
+    const price = 100000 + rebirth * 10000;
 
     if (msg.author.settings.balance < price) throw msg.send('You don\'t have enough money to rebirth!' + ` Need ${msg.guild.settings.currency}**${price - msg.author.settings.balance}** more`);
 
