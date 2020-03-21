@@ -12,7 +12,7 @@ module.exports = class extends Inhibitor {
     const { settings } = this.client.users.cache.get(message.author.id);
     await settings.sync();
 
-    const activeContacts = message.author.settings.activeItems;
+    const activeContacts = message.author.settings.activeContacts;
     if (activeContacts.length <= 0) return;
     for (let i = 0; i < activeContacts.length; i++) {
       let contact;
