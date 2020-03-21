@@ -43,7 +43,7 @@ module.exports = class extends Command {
         `**Wallet**: ${Member.user.settings.get('balance') < 0 ? '[In Debt]' : ''}${msg.guild.settings.get('currency')}${numberFormatter('#,##0.', Member.user.settings.get('balance'))}`,
         `**Bank**: ${msg.guild.settings.get('currency')}${numberFormatter('#,##0.', Member.user.settings.get('bankBalance'))}\n`,
         `**Rebirth**: ${Member.user.settings.rebirth ? Member.user.settings.rebirth : '0'}`,
-        `**Money Multiplier**: x${(Member.user.settings.rebirth ? Member.user.settings.rebirth * 0.1 : 0) + 1}`].join('\n'), true)
+        `**Money Multiplier**: x${(Member.user.settings.rebirth ? Member.user.settings.rebirth * 0.1 : 0) + (Member.user.settings.activeContacts.includes('uncleg') ? 2 : 1)}`].join('\n'), true)
       .addField('**Upgrades**', [`**Robbery Chance**: ${Member.user.settings.get('robChance')}%`,
         `**Robbery Cut**: ${Member.user.settings.get('robCut')}%`,
         `**Extra Robbery Chances**: ${Member.user.settings.get('robExtraChance')}%`,

@@ -28,7 +28,7 @@ module.exports = class extends Command {
       userArray.sort(function(a, b) {
         return b.user.settings.balance - a.user.settings.balance;
       });
-      userArray.splice(9, msg.guild.members.cache.size - 10);
+      userArray.splice(10, msg.guild.members.cache.size);
       for (let i = 0; i < userArray.length; i++) userArray[i] = `${i === 0 ? ' 🥇' : ''}${i === 1 ? ' 🥈' : ''}${i === 2 ? ' 🥉' : ''}${i > 2 ? `${i + 1}.` : ''} **${userArray[i].user.username}** - ${msg.guild.settings.currency}${userArray[i].user.settings.balance}`;
     }
     if (type === 'bank') {
@@ -36,7 +36,7 @@ module.exports = class extends Command {
       userArray.sort(function(a, b) {
         return b.user.settings.bankBalance - a.user.settings.bankBalance;
       });
-      userArray.splice(9, msg.guild.members.cache.size - 10);
+      userArray.splice(10, msg.guild.members.cache.size);
       for (let i = 0; i < userArray.length; i++) userArray[i] = `${i === 0 ? ' 🥇' : ''}${i === 1 ? ' 🥈' : ''}${i === 2 ? ' 🥉' : ''}${i > 2 ? `${i + 1}.` : ''} **${userArray[i].user.username}** - ${msg.guild.settings.currency}${userArray[i].user.settings.bankBalance}`;
     }
     if (type === 'level') {
@@ -44,16 +44,16 @@ module.exports = class extends Command {
       userArray.sort(function(a, b) {
         return b.user.settings.level - a.user.settings.level;
       });
-      userArray.splice(9, msg.guild.members.cache.size - 10);
-      for (let i = 0; i < userArray.length; i++) userArray[i] = `${i === 0 ? ' 🥇' : ''}${i === 1 ? ' 🥈' : ''}${i === 2 ? ' 🥉' : ''}${i > 2 ? `${i + 1}.` : ''} **${userArray[i].user.username}** - Level ${userArray[i].user.settings.level}`;
+      userArray.splice(10, msg.guild.members.cache.size);
+      for (let i = 0; i < userArray.length; i++) if (userArray[i].user.settings.level > 0) userArray[i] = `${i === 0 ? ' 🥇' : ''}${i === 1 ? ' 🥈' : ''}${i === 2 ? ' 🥉' : ''}${i > 2 ? `${i + 1}.` : ''} **${userArray[i].user.username}** - Level ${userArray[i].user.settings.level}`; else userArray[i] = '';
     }
     if (type === 'rebirth') {
       userArray = msg.guild.members.cache.array();
       userArray.sort(function(a, b) {
         return b.user.settings.rebirth - a.user.settings.rebirth;
       });
-      userArray.splice(9, msg.guild.members.cache.size - 10);
-      for (let i = 0; i < userArray.length; i++) userArray[i] = `${i === 0 ? ' 🥇' : ''}${i === 1 ? ' 🥈' : ''}${i === 2 ? ' 🥉' : ''}${i > 2 ? `${i + 1}.` : ''} **${userArray[i].user.username}** - Rebirth ${userArray[i].user.settings.rebirth}`;
+      userArray.splice(10, msg.guild.members.cache.size);
+      for (let i = 0; i < userArray.length; i++) if (userArray[i].user.settings.rebirth > 0) userArray[i] = `${i === 0 ? ' 🥇' : ''}${i === 1 ? ' 🥈' : ''}${i === 2 ? ' 🥉' : ''}${i > 2 ? `${i + 1}.` : ''} **${userArray[i].user.username}** - Rebirth ${userArray[i].user.settings.rebirth}`; else userArray[i] = '';
     }
 
     const embed = new MessageEmbed()

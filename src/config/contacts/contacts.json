@@ -2,6 +2,12 @@
     {
         "codename": "uncleg",
         "nickname": "Gangster",
-        "title": "Uncle G"
+        "title": "Uncle G",
+        "description": "I'll double yo' goddamn rewards 6 hours long fo' 1200 ma homie",
+        "temporaryTime": 21600000,
+        "timeKey": "iuncleg"
+    },
+    {
+        "codename": "jake"
     }
 ]

@@ -33,8 +33,6 @@ module.exports = class extends Command {
     const activeItemsArray = msg.author.settings.activeItems.slice();
     activeItemsArray.push(itemUsed.codename);
     if (itemUsed.temporary && !msg.author.settings.activeItems.includes(itemUsed.codename)) await msg.author.settings.update('activeItems', activeItemsArray, { action: 'overwrite' });
-    console.log(msg.author.settings.activeItems);
-    console.log(activeItemsArray);
 
     const embed = new MessageEmbed()
       .setAuthor(msg.author.username, msg.author.avatarURL())
