@@ -9,7 +9,18 @@
         "temporary": true
     },
     {
-        "codename": "jake",
-        "temporary": false
+        "codename": "jake"
+    },
+    {
+        "codename": "lawyer",
+        "nickname": "High IQ",
+        "title": "Lawyer",
+        "description": "I can protect you from police fines, for the fine price of 400."
+    },
+    {
+        "codename": "guard",
+        "nickname": "Security Guy",
+        "title": "Guard",
+        "description": "I will protect you from any criminals trying to grab a portion of your success, for only 1500."
     }
 ]

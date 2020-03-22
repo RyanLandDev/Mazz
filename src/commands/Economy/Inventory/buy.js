@@ -30,9 +30,7 @@ module.exports = class extends Command {
 
     if (!Object.keys(items).includes(item)) return msg.send('No (valid) item specified');
     if (buyingItem.price > msg.author.settings.get('balance')) return msg.send('Insufficient funds');
-    if (!buyingItem.item) {
-      if (msg.author.settings.get(buyingItem.statistics.key) >= buyingItem.statistics.max) return msg.send('Already maxed');
-    }
+    if (!buyingItem.item) if (msg.author.settings.get(buyingItem.statistics.key) >= buyingItem.statistics.max) return msg.send('Already maxed');
 
     // define what amount to buy
     let amount;
@@ -41,6 +39,7 @@ module.exports = class extends Command {
     else if (typeof rawAmount === 'string') {amount = timesCanBuy;}
     else {amount = rawAmount;}
     if (amount > timesCanBuy) throw msg.send('Insufficient funds');
+    if (!buyingItem.item) if ((msg.author.settings.get(buyingItem.statistics.key) + buyingItem.statistics.increaser * amount) >= buyingItem.statistics.max) amount = (buyingItem.statistics.max - msg.author.settings.get(buyingItem.statistics.key)) / buyingItem.price;
 
     msg.author.settings.update('balance', msg.author.settings.get('balance') - buyingItem.price * amount);
     if (buyingItem.item) {

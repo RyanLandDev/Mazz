@@ -15,7 +15,7 @@ module.exports = class extends Command {
     recipient.toLowerCase();
     const active = msg.author.settings.activeContacts.slice();
 
-    // unknown
+    // jake
     if (recipient === 'jake') {
       const callmsg = await msg.send(':telephone_receiver: **Jake** - Huh? How\'d you find my number?? Shh!');
       await new Promise(resolve => setTimeout(resolve, 2000));
@@ -48,6 +48,62 @@ module.exports = class extends Command {
       const callmsg = await msg.send(':telephone_receiver: **Uncle G** - ayy thanks I\'ll git started right away my homie');
       await new Promise(resolve => setTimeout(resolve, 1500));
       callmsg.edit(':telephone: **Uncle G hang up.**');
+      return;
     }
+    // lawyer
+    if (recipient === 'lawyer') {
+      if (!msg.author.settings.contacts.includes('lawyer')) {
+        const callmsg = await msg.send(':telephone_receiver: **Lawyer** - Who is this? Too busy right now.');
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        callmsg.edit(':telephone: **Lawyer hang up.**');
+        return;
+      }
+      if (msg.author.settings.balance < 400) {
+        const callmsg = await msg.send(':telephone_receiver: **Lawyer** - Sorry, I am going to need a little more than that to be able to work for you, my respect.');
+        await new Promise(resolve => setTimeout(resolve, 2500));
+        callmsg.edit(':telephone: **Lawyer hang up.**');
+        return;
+      }
+      if (active.includes('lawyer')) {
+        const callmsg = await msg.send(':telephone_receiver: **Lawyer** - I\'m already working for you, my client.');
+        await new Promise(resolve => setTimeout(resolve, 2500));
+        callmsg.edit(':telephone: **Lawyer hang up.**');
+        return;
+      }
+      msg.author.settings.update('balance', msg.author.settings.balance - 400);
+      msg.author.settings.update('activeContacts', 'lawyer', { action: 'add' });
+      const callmsg = await msg.send(':telephone_receiver: **Lawyer** - Thanks! I won\'t let you down, my client. My respect.');
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      callmsg.edit(':telephone: **Lawyer hang up.**');
+      return;
+    }
+    // guard
+    if (recipient === 'guard') {
+      if (!msg.author.settings.contacts.includes('guard')) {
+        const callmsg = await msg.send(':telephone_receiver: **Guard** - Who is this?');
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        callmsg.edit(':telephone: **Guard hang up.**');
+        return;
+      }
+      if (msg.author.settings.balance < 1500) {
+        const callmsg = await msg.send(':telephone_receiver: **Guard** - That\'s not enough for my services, sir or ma\'am.');
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        callmsg.edit(':telephone: **Guard hang up.**');
+        return;
+      }
+      if (active.includes('guard')) {
+        const callmsg = await msg.send(':telephone_receiver: **Guard** - My services are already being processed, sir or ma\'am.');
+        await new Promise(resolve => setTimeout(resolve, 5000));
+        callmsg.edit(':telephone: **Guard hang up.**');
+        return;
+      }
+      msg.author.settings.update('balance', msg.author.settings.balance - 1500);
+      msg.author.settings.update('activeContacts', 'guard', { action: 'add' });
+      const callmsg = await msg.send(':telephone_receiver: **Guard** - Alrighty, my services have started. Thank you, sir or ma\'am.');
+      await new Promise(resolve => setTimeout(resolve, 5000));
+      callmsg.edit(':telephone: **Guard hang up.**');
+      return;
+    }
+    throw msg.send(':telephone: **Unknown Number**');
   }
 };

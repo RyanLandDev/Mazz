@@ -18,7 +18,7 @@ module.exports = class extends Command {
       .setAuthor(msg.author.username, msg.author.avatarURL())
       .setColor('#0099FF')
       .setThumbnail(msg.author.avatarURL())
-      .setDescription(`*More contacts coming soon*\n${contacts.length - userContacts.length}/${contacts.length} unlocked`)
+      .setDescription(`*More contacts coming soon*\n${userContacts.length}/${contacts.length} unlocked`)
       .setTitle('Contacts')
       .setTimestamp()
       .setFooter('Contacts', this.client.user.avatarURL());

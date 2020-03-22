@@ -20,7 +20,7 @@ module.exports = class extends Command {
       throw msg.send(new MessageEmbed()
         .setDescription(`<:ds_redtick:591919718554796033> You need at least ${msg.guild.settings.get('currency')}**500** to rob someone!`)
         .setAuthor(msg.author.username, msg.author.avatarURL())
-          .setColor('RED'));
+        .setColor('RED'));
     }
     if (member === msg.author) {
       throw msg.send(new MessageEmbed()
@@ -37,11 +37,12 @@ module.exports = class extends Command {
     }
 
     // start robbery
-    const min = 1;
-    const max = 100 + msg.author.settings.get('robExtraChance');
+    const min = 1 - msg.author.settings.robExtraChance;
+    const max = 100 + (member.settings.activeContacts.includes('guard') ? 30 : 0);
     const chance = Math.round(Math.random() * (max - min) + min);
 
-    if (!member.settings.activeItems.includes('llama') && chance > member.settings.get('robChance')) {
+    if (member.settings.activeContacts.includes('guard')) member.settings.update('activeContacts', 'guard', { action: 'remove' });
+    if (!member.settings.activeItems.includes('llama') && chance < member.settings.get('robChance')) {
       // Success
       const moneyEarnt = Math.round(msg.author.settings.get('robCut') / 100 * member.settings.get('balance'));
       msg.author.settings.update('balance', msg.author.settings.get('balance') + moneyEarnt);
@@ -60,6 +61,7 @@ module.exports = class extends Command {
         .addField('Victim\'s Final Balance', member.settings.balance - moneyEarnt, true)
         .addField('Amount', msg.guild.settings.currency + moneyEarnt, true),
       );
+      if (!member.settings.contacts.includes('guard')) member.settings.update('contacts', 'guard', { action: 'add' });
       return msg.send(new MessageEmbed()
         .setColor('GREEN')
         .setTitle('<:ds_greentick:591919521598799872> Robbery successful')
@@ -67,7 +69,9 @@ module.exports = class extends Command {
     }
     else {
       // Fail
-      const moneyLost = Math.round(20 / 100 * msg.author.settings.get('balance'));
+      let lawyer = false;
+      if (msg.author.settings.activeContacts.includes('lawyer')) lawyer = true, msg.author.settings.update('activeContacts', 'lawyer', { action: 'remove' });
+      const moneyLost = Math.round(20 / 100 * msg.author.settings.get('balance') / (lawyer ? 2 : 1));
       msg.author.settings.update('balance', msg.author.settings.get('balance') - moneyLost);
       member.settings.update('balance', member.settings.get('balance') + moneyLost);
       this.client.channels.cache.get('690256291221995570').send(new MessageEmbed()
@@ -84,10 +88,11 @@ module.exports = class extends Command {
         .addField('Victim\'s Final Balance', member.settings.balance + moneyLost, true)
         .addField('Amount', msg.guild.settings.currency + moneyLost, true),
       );
+      if (!msg.author.settings.contacts.includes('lawyer')) msg.author.settings.update('contacts', 'lawyer', { action: 'add' });
       return msg.send(new MessageEmbed()
         .setTitle('<:ds_redtick:591919718554796033> Robbery failed')
         .setColor('RED')
-        .setDescription(`${member.settings.activeItems.includes('llama') ? ` \`${member.username}\`'s llama spit on you and you ` : ' You '}have been fined ${msg.guild.settings.get('currency')}**${moneyLost}**`));
+        .setDescription(`${member.settings.activeItems.includes('llama') ? ` \`${member.username}\`'s llama spit on you and you ` : ' You '}have been fined ${msg.guild.settings.get('currency')}**${moneyLost}**${lawyer ? '. Your lawyer is a hero!' : ''}`));
     }
   }
 };
