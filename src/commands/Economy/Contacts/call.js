@@ -30,7 +30,7 @@ module.exports = class extends Command {
         callmsg.edit(':telephone: **Uncle G hang up.**');
         return;
       }
-      if (msg.author.settings.balance < 1200) {
+      if (msg.author.settings.balance < 15000) {
         const callmsg = await msg.send(':telephone_receiver: **Uncle G** - can\'t work fo\' yo\' wit\' dat lil\' money, yo\' fat ass');
         await new Promise(resolve => setTimeout(resolve, 2000));
         callmsg.edit(':telephone: **Uncle G hang up.**');
@@ -42,7 +42,7 @@ module.exports = class extends Command {
         callmsg.edit(':telephone: **Uncle G hang up.**');
         return;
       }
-      msg.author.settings.update('balance', msg.author.settings.balance - 1200);
+      msg.author.settings.update('balance', msg.author.settings.balance - 15000);
       msg.author.settings.update('activeContacts', 'uncleg', { action: 'add' });
       msg.author.settings.update('iuncleg', moment().format('x'));
       const callmsg = await msg.send(':telephone_receiver: **Uncle G** - ayy thanks I\'ll git started right away my homie');

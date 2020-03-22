@@ -36,17 +36,21 @@ module.exports = class extends Command {
     for (let i = 1; i < Object.keys(items).length; i++) {
       const item = items[Object.keys(items)[i]];
       let secondStat;
-      if (msg.author.settings.get(item.statistics.key) + item.statistics.increaser) secondStat = msg.author.settings.get(item.statistics.key) + item.statistics.increaser; else secondStat = item.statistics.increaser;
-      if (item.statExtra) secondStat = secondStat + item.statExtra;
-      if (msg.author.settings.get(item.statistics.key) >= item.statistics.max && !item.reverse) secondStat = 'MAX';
-      if (msg.author.settings.get(item.statistics.key) <= item.statistics.max && item.reverse) secondStat = 'MAX';
-      if (typeof secondStat === 'number') secondStat = numberFormatter('#,##0.', secondStat);
+      if (!item.item) {
+        if (msg.author.settings.get(item.statistics.key) + item.statistics.increaser) secondStat = msg.author.settings.get(item.statistics.key) + item.statistics.increaser; else secondStat = item.statistics.increaser;
+        if (item.statExtra) secondStat = secondStat + item.statExtra;
+        if (msg.author.settings.get(item.statistics.key) >= item.statistics.max && !item.reverse) secondStat = 'MAX';
+        if (msg.author.settings.get(item.statistics.key) <= item.statistics.max && item.reverse) secondStat = 'MAX';
+        if (typeof secondStat === 'number') secondStat = numberFormatter('#,##0.', secondStat);
+      }
       if (items[Object.keys(items)[i]].page === page) {
-        const fieldValueArray = [item.title,
-          item.summary,
-          `» ${item.statistics.friendlyname}: ${numberFormatter('#,##0.', msg.author.settings.get(item.statistics.key) ? msg.author.settings.get(item.statistics.key) : '0')}${item.statExtra ? item.statExtra : ''} > ${secondStat}`];
-        if (msg.author.settings.get(item.statistics.key) < item.statistics.max && !item.reverse) fieldValueArray.push(`» Price: ${msg.guild.settings.get('currency')}**${numberFormatter('#,##0.', item.price)}** \`${msg.guild.settings.get('prefix')}buy ${Object.keys(items)[i]}\``);
-        if (msg.author.settings.get(item.statistics.key) > item.statistics.max && item.reverse) fieldValueArray.push(`» Price: ${msg.guild.settings.get('currency')}**${numberFormatter('#,##0.', item.price)}** \`${msg.guild.settings.get('prefix')}buy ${Object.keys(items)[i]}\``);
+        const fieldValueArray = [item.title, item.summary];
+        if (!item.item) {
+          fieldValueArray.push(`» ${item.statistics.friendlyname}: ${numberFormatter('#,##0.', msg.author.settings.get(item.statistics.key) ? msg.author.settings.get(item.statistics.key) : '0')}${item.statExtra ? item.statExtra : ''} > ${secondStat}`);
+          if (msg.author.settings.get(item.statistics.key) < item.statistics.max && !item.reverse) fieldValueArray.push(`» Price: ${msg.guild.settings.get('currency')}**${numberFormatter('#,##0.', item.price)}** \`${msg.guild.settings.get('prefix')}buy ${Object.keys(items)[i]}\``);
+          if (msg.author.settings.get(item.statistics.key) > item.statistics.max && item.reverse) fieldValueArray.push(`» Price: ${msg.guild.settings.get('currency')}**${numberFormatter('#,##0.', item.price)}** \`${msg.guild.settings.get('prefix')}buy ${Object.keys(items)[i]}\``);
+        }
+        else {fieldValueArray.push(`» Price: ${msg.guild.settings.get('currency')}**${numberFormatter('#,##0.', item.price)}** \`${msg.guild.settings.get('prefix')}buy ${Object.keys(items)[i]}\``);}
         Embed.addField('\u200B', fieldValueArray.join('\n'), true);
       }
     }

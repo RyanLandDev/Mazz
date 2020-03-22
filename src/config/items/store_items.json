@@ -16,7 +16,8 @@
 		"titleInValue": "whether to show the title in the field value or not (default = true)",
 		"affectSales": "whether this item should be affected by sales or not (default = true)",
 		"statExtra": "an extra piece of text that should be added to the statistic show number (default = '')",
-		"reverse": "whether this item upgrades in reverse, for maximums (default = false)"
+		"reverse": "whether this item upgrades in reverse, for maximums (default = false)",
+		"item": "if this is an item (default = false)"
 	},
 	"safe": {
 		"id": 1,
@@ -77,5 +78,13 @@
 			"max": 50000,
 			"increaser": 500
 		}
+	},
+	"bomb": {
+		"id": 5,
+		"page": 2,
+		"title": "<:ds_bomb:691236650260627476> **The Bomb**",
+		"price": 20000,
+		"summary": "Explode another's item in an inventory.",
+		"item": true
 	}
 }

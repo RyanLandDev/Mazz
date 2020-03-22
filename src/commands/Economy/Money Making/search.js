@@ -15,7 +15,7 @@ module.exports = class extends Command {
     await msg.author.settings.update('balance', msg.author.settings.get('balance') + reward);
     const response = [`You searched and found ${msg.guild.settings.get('currency')}**${reward}**`];
     const itemsToFind = require('../../../config/items/inv_items.json');
-    if (Math.round(Math.random() * 6) === 1) {
+    if (Math.round(Math.random() * 4) === 1) {
       const itemFound = itemsToFind[Math.ceil(Math.random() * (itemsToFind.length - 1))];
       const currentItems = msg.author.settings.items;
       currentItems.push(itemFound.codename);

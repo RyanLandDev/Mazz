@@ -30,7 +30,9 @@ module.exports = class extends Command {
 
     if (!Object.keys(items).includes(item)) return msg.send('No (valid) item specified');
     if (buyingItem.price > msg.author.settings.get('balance')) return msg.send('Insufficient funds');
-    if (msg.author.settings.get(buyingItem.statistics.key) >= buyingItem.statistics.max) return msg.send('Already maxed');
+    if (!buyingItem.item) {
+      if (msg.author.settings.get(buyingItem.statistics.key) >= buyingItem.statistics.max) return msg.send('Already maxed');
+    }
 
     // define what amount to buy
     let amount;
@@ -41,15 +43,22 @@ module.exports = class extends Command {
     if (amount > timesCanBuy) throw msg.send('Insufficient funds');
 
     msg.author.settings.update('balance', msg.author.settings.get('balance') - buyingItem.price * amount);
-    msg.author.settings.update(buyingItem.statistics.key, msg.author.settings.get(buyingItem.statistics.key) + buyingItem.statistics.increaser * amount);
+    if (buyingItem.item) {
+      const userItems = msg.author.settings.items.slice();
+      userItems.push(item);
+      msg.author.settings.update('items', userItems, { action: 'overwrite' });
+    }
+    else {msg.author.settings.update(buyingItem.statistics.key, msg.author.settings.get(buyingItem.statistics.key) + buyingItem.statistics.increaser * amount);}
 
+    let descArray;
+    if (buyingItem.item) descArray = []; else descArray = [`» ${buyingItem.statistics.friendlyname}: ${msg.author.settings.get(buyingItem.statistics.key)}${buyingItem.statExtra ? buyingItem.statExtra : ''} > ${msg.author.settings.get(buyingItem.statistics.key) + buyingItem.statistics.increaser * amount}${buyingItem.statExtra ? buyingItem.statExtra : ''}`];
+    descArray.push(`» Price: ${msg.guild.settings.get('currency')}**${numberFormatter('#,##0.', buyingItem.price * amount)}**`);
     msg.send(
       new MessageEmbed()
         .setAuthor(msg.author.username, msg.author.avatarURL())
         .setColor('GREEN')
         .setTimestamp()
-        .setDescription([`» ${buyingItem.statistics.friendlyname}: ${msg.author.settings.get(buyingItem.statistics.key)}${buyingItem.statExtra ? buyingItem.statExtra : ''} > ${msg.author.settings.get(buyingItem.statistics.key) + buyingItem.statistics.increaser * amount}${buyingItem.statExtra ? buyingItem.statExtra : ''}`,
-          `» Price: ${msg.guild.settings.get('currency')}**${numberFormatter('#,##0.', buyingItem.price * amount)}**`].join('\n'))
+        .setDescription(descArray.join('\n'))
         .setTitle(`<:ds_greentick:591919521598799872> ${buyingItem.buytitle ? buyingItem.buytitle : toFirstCase(item)} successfully bought!`),
     );
     this.client.channels.cache.get('690260681831874658').send(new MessageEmbed()

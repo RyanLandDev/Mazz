@@ -15,7 +15,7 @@ module.exports = class extends Command {
 
   async run(msg, params) {
     params[0].settings.update('level', params[2] ? params[0].settings.get('level') + params[1] : params[1]);
-    msg.send(`The level of \`${params[0].username} (${params[0].id})\` has been set to ${msg.guild.settings.get('level')}**${params[2] ? params[0].settings.get('level') + params[1] : params[1]}**.`);
+    msg.send(`The level of \`${params[0].username} (${params[0].id})\` has been set to Level **${params[2] ? params[0].settings.get('level') + params[1] : params[1]}**.`);
   }
 
 };

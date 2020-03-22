@@ -9,7 +9,8 @@ module.exports = class extends Command {
       description: 'Use one of the items in your inventory.',
       runIn: ['text'],
       cooldown: 5,
-      usage: '<item:str>',
+      usage: '<item:str> [member:user]',
+      usageDelim: ' ',
     });
   }
 
@@ -25,9 +26,20 @@ module.exports = class extends Command {
     }
     if (!itemUsed) throw msg.send('You don\'t have this item or it doesn\'t exist');
 
-    if (typeof itemUsed.statistics.increaser === 'string') itemUsed.statistics.increaser = itemUsed.statistics.increaser.replace(/{time}/gi, moment().format('x'));
+    if (!itemUsed.special) if (typeof itemUsed.statistics.increaser === 'string') itemUsed.statistics.increaser = itemUsed.statistics.increaser.replace(/{time}/gi, moment().format('x'));
+
+    // bomb
+    if (itemUsed.codename === 'bomb') {
+      if (!params[1]) throw msg.send('You need to mention who to throw a bomb on!');
+      const victim = params[1];
+      const victimItems = victim.settings.items;
+      if (victimItems.length === 0) throw msg.send('You can\'t throw a bomb on someone that doesn\'t have anything in their inventory!');
+      victimItems.splice(Math.floor(Math.random() * victimItems.length), 1);
+      victim.settings.update('items', victimItems, { action: 'overwrite' });
+    }
+
     msg.author.settings.update('items', itemUsed.codename, { action: 'remove' });
-    msg.author.settings.update(itemUsed.statistics.key, itemUsed.statistics.set ? itemUsed.statistics.increaser : itemUsed.statistics.increaser + msg.author.settings.get(itemUsed.statistics.key));
+    if (!itemUsed.special) msg.author.settings.update(itemUsed.statistics.key, itemUsed.statistics.set ? itemUsed.statistics.increaser : itemUsed.statistics.increaser + msg.author.settings.get(itemUsed.statistics.key));
 
     if (msg.author.settings.activeItems.includes(itemUsed.codename)) throw msg.send('This item is already active');
     const activeItemsArray = msg.author.settings.activeItems.slice();
