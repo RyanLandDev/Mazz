@@ -21,7 +21,7 @@ module.exports = class extends Command {
     const userItems = msg.author.settings.items.slice();
     const activeItems = msg.author.settings.activeItems.slice();
 
-    params[0] = params[0].replace('_', ' ');
+    params[0] = params[0].replace(/_/g, ' ');
     let itemUsed;
     for (let i = 1; i < items.length; i++) {
       const item = items[i];
