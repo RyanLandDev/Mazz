@@ -118,9 +118,6 @@ Client.defaultUserSchema
 // AFK
   .add('afkStatus', 'string', { max: 100 })
 
-// Active User
-  .add('first', 'boolean')
-
 // Balance
   .add('balance', 'integer', { default: 0 })
   .add('bankBalance', 'integer', { default: 0 })

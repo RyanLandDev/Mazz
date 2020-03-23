@@ -8,7 +8,7 @@ module.exports = class extends Command {
       usage: '[wallet|bank|level|rebirth]',
       usageDelim: ' ',
       runIn: ['text'],
-      aliases: ['lb', 'lead'],
+      aliases: ['lb', 'lead', 'top'],
     });
   }
 

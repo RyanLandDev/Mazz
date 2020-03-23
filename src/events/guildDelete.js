@@ -1,4 +1,5 @@
 const { Event } = require('klasa');
+const { MessageEmbed } = require('discord.js');
 
 module.exports = class extends Event {
 
@@ -7,7 +8,12 @@ module.exports = class extends Event {
     });
   }
 
-  run() {
+  run(guild) {
     this.client.user.setPresence({ 'activity': { 'name': `m!help | ${this.client.guilds.cache.size} servers 🔥` } });
+    this.client.channels.cache.get('662412990074716170').send(new MessageEmbed()
+      .setTitle('Server Leave')
+      .setColor('#0099FF')
+      .setThumbnail(guild.iconURL())
+      .setDescription(`${guild.name} (${guild.id})`));
   }
 };
