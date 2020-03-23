@@ -41,10 +41,12 @@ module.exports = class extends Command {
       victim.settings.update('items', victimItems, { action: 'overwrite' });
     }
 
+if (activeItems.includes(itemUsed.codename)) throw msg.send('This item is already active');
+
     msg.author.settings.update('items', itemUsed.codename, { action: 'remove' });
     if (!itemUsed.special) msg.author.settings.update(itemUsed.statistics.key, itemUsed.statistics.set ? itemUsed.statistics.increaser : itemUsed.statistics.increaser + msg.author.settings.get(itemUsed.statistics.key));
 
-    if (activeItems.includes(itemUsed.codename)) throw msg.send('This item is already active');
+
     const activeItemsArray = activeItems;
     activeItemsArray.push(itemUsed.codename);
     if (itemUsed.temporary) await msg.author.settings.update('activeItems', activeItemsArray, { action: 'overwrite' });
