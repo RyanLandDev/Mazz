@@ -38,6 +38,8 @@ module.exports = class extends Command {
     if (!rawAmount) {amount = 1;}
     else if (typeof rawAmount === 'string') {amount = timesCanBuy;}
     else {amount = rawAmount;}
+amount = Math.floor(amount);
+if (amount < 1) throw msg.send('You can\'t buy negative amounts!');
     if (amount > timesCanBuy) throw msg.send('Insufficient funds');
     if (!buyingItem.item) if ((msg.author.settings.get(buyingItem.statistics.key) + buyingItem.statistics.increaser * amount) >= buyingItem.statistics.max) amount = (buyingItem.statistics.max - msg.author.settings.get(buyingItem.statistics.key)) / buyingItem.price;
 
