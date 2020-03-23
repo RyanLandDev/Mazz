@@ -19,6 +19,8 @@ module.exports = class extends Command {
     await settings.sync();
 
     const userItems = msg.author.settings.items.slice();
+    const activeItems = msg.author.settings.activeItems.slice();
+
     let itemUsed;
     for (let i = 1; i < items.length; i++) {
       const item = items[i];
@@ -32,7 +34,7 @@ module.exports = class extends Command {
     if (itemUsed.codename === 'bomb') {
       if (!params[1]) throw msg.send('You need to mention who to throw a bomb on!');
       const victim = params[1];
-      const victimItems = victim.settings.items;
+      const victimItems = victim.settings.items.slice();
       if (victimItems.length === 0) throw msg.send('You can\'t throw a bomb on someone that doesn\'t have anything in their inventory!');
       victimItems.splice(Math.floor(Math.random() * victimItems.length), 1);
       victim.settings.update('items', victimItems, { action: 'overwrite' });
@@ -41,10 +43,10 @@ module.exports = class extends Command {
     msg.author.settings.update('items', itemUsed.codename, { action: 'remove' });
     if (!itemUsed.special) msg.author.settings.update(itemUsed.statistics.key, itemUsed.statistics.set ? itemUsed.statistics.increaser : itemUsed.statistics.increaser + msg.author.settings.get(itemUsed.statistics.key));
 
-    if (msg.author.settings.activeItems.includes(itemUsed.codename)) throw msg.send('This item is already active');
-    const activeItemsArray = msg.author.settings.activeItems.slice();
+    if (activeItems.includes(itemUsed.codename)) throw msg.send('This item is already active');
+    const activeItemsArray = activeItems;
     activeItemsArray.push(itemUsed.codename);
-    if (itemUsed.temporary && !msg.author.settings.activeItems.includes(itemUsed.codename)) await msg.author.settings.update('activeItems', activeItemsArray, { action: 'overwrite' });
+    if (itemUsed.temporary && !activeItems.includes(itemUsed.codename)) await msg.author.settings.update('activeItems', activeItemsArray, { action: 'overwrite' });
 
     const embed = new MessageEmbed()
       .setAuthor(msg.author.username, msg.author.avatarURL())

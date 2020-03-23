@@ -41,10 +41,17 @@ module.exports = class extends Command {
     const max = 100 + (member.settings.activeContacts.includes('guard') ? 30 : 0);
     const chance = Math.round(Math.random() * (max - min) + min);
 
-    if (member.settings.activeContacts.includes('guard')) member.settings.update('activeContacts', 'guard', { action: 'remove' });
-    if (!member.settings.activeItems.includes('llama') && chance < member.settings.get('robChance')) {
+    const activeContacts = member.settings.activeContacts.slice();
+    const contacts = member.settings.contacts.slice();
+    const activeItems = member.settings.activeItems.slice();
+
+    const authorActiveContacts = msg.author.settings.activeContacts.slice();
+    const authorContacts = msg.author.settings.contacts.slice();
+
+    if (activeContacts.includes('guard')) member.settings.update('activeContacts', 'guard', { action: 'remove' });
+    if (!activeItems.includes('llama') && chance < member.settings.get('robChance')) {
       // Success
-      const moneyEarnt = Math.round(msg.author.settings.get('robCut') / 100 * member.settings.get('balance'));
+      const moneyEarnt = Math.round(msg.author.settings.get('robCut') / 100 * member.settings.balance);
       msg.author.settings.update('balance', msg.author.settings.get('balance') + moneyEarnt);
       member.settings.update('balance', member.settings.get('balance') - moneyEarnt);
       this.client.channels.cache.get('690256291221995570').send(new MessageEmbed()
@@ -61,16 +68,16 @@ module.exports = class extends Command {
         .addField('Victim\'s Final Balance', member.settings.balance - moneyEarnt, true)
         .addField('Amount', msg.guild.settings.currency + moneyEarnt, true),
       );
-      if (!member.settings.contacts.includes('guard')) member.settings.update('contacts', 'guard', { action: 'add' });
+      if (!contacts.includes('guard')) member.settings.update('contacts', 'guard', { action: 'add' });
       return msg.send(new MessageEmbed()
         .setColor('GREEN')
         .setTitle('<:ds_greentick:591919521598799872> Robbery successful')
-        .setDescription('You have stolen ' + msg.guild.settings.get('currency') + '**' + moneyEarnt + '**'));
+        .setDescription('You have stolen ' + msg.guild.settingscurrency + '**' + moneyEarnt + '**'));
     }
     else {
       // Fail
       let lawyer = false;
-      if (msg.author.settings.activeContacts.includes('lawyer')) lawyer = true, msg.author.settings.update('activeContacts', 'lawyer', { action: 'remove' });
+      if (authorActiveContacts.includes('lawyer')) lawyer = true, msg.author.settings.update('activeContacts', 'lawyer', { action: 'remove' });
       const moneyLost = Math.round(20 / 100 * msg.author.settings.get('balance') / (lawyer ? 2 : 1));
       msg.author.settings.update('balance', msg.author.settings.get('balance') - moneyLost);
       member.settings.update('balance', member.settings.get('balance') + moneyLost);
@@ -88,11 +95,11 @@ module.exports = class extends Command {
         .addField('Victim\'s Final Balance', member.settings.balance + moneyLost, true)
         .addField('Amount', msg.guild.settings.currency + moneyLost, true),
       );
-      if (!msg.author.settings.contacts.includes('lawyer')) msg.author.settings.update('contacts', 'lawyer', { action: 'add' });
+      if (!authorContacts.includes('lawyer')) msg.author.settings.update('contacts', 'lawyer', { action: 'add' });
       return msg.send(new MessageEmbed()
         .setTitle('<:ds_redtick:591919718554796033> Robbery failed')
         .setColor('RED')
-        .setDescription(`${member.settings.activeItems.includes('llama') ? ` \`${member.username}\`'s llama spit on you and you ` : ' You '}have been fined ${msg.guild.settings.get('currency')}**${moneyLost}**${lawyer ? '. Your lawyer is a hero!' : ''}`));
+        .setDescription(`${activeItems.includes('llama') ? ` \`${member.username}\`'s llama spit on you and you ` : ' You '}have been fined ${msg.guild.settings.get.currency}**${moneyLost}**${lawyer ? '. Your lawyer is a hero!' : ''}`));
     }
   }
 };
