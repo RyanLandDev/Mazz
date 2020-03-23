@@ -34,6 +34,7 @@ module.exports = class extends Command {
     // bomb
     if (itemUsed.codename === 'bomb') {
       if (!params[1]) throw msg.send('You need to mention who to throw a bomb on!');
+if (params[1] === msg.author) throw msg.send('You can\'t throw a bomb on yourself!');
       const victim = params[1];
       const victimItems = victim.settings.items.slice();
       if (victimItems.length === 0) throw msg.send('You can\'t throw a bomb on someone that doesn\'t have anything in their inventory!');
