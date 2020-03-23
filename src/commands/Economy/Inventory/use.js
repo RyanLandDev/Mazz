@@ -47,7 +47,7 @@ module.exports = class extends Command {
     if (activeItems.includes(itemUsed.codename)) throw msg.send('This item is already active');
     const activeItemsArray = activeItems;
     activeItemsArray.push(itemUsed.codename);
-    if (itemUsed.temporary && !activeItems.includes(itemUsed.codename)) await msg.author.settings.update('activeItems', activeItemsArray, { action: 'overwrite' });
+    if (itemUsed.temporary) await msg.author.settings.update('activeItems', activeItemsArray, { action: 'overwrite' });
 
     const embed = new MessageEmbed()
       .setAuthor(msg.author.username, msg.author.avatarURL())
