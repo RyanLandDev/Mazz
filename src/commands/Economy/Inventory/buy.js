@@ -34,18 +34,18 @@ module.exports = class extends Command {
 
     // define what amount to buy
     let amount;
-    const timesCanBuy = Math.floor(msg.author.settings.balance / buyingItem.price);
+    const timesCanBuy = Math.floor(msg.author.settings.get('balance') / buyingItem.price);
     if (!rawAmount) {amount = 1;}
     else if (typeof rawAmount === 'string') {amount = timesCanBuy;}
     else {amount = rawAmount;}
-amount = Math.floor(amount);
-if (amount < 1) throw msg.send('You can\'t buy negative amounts!');
+    amount = Math.floor(amount);
+    if (amount < 1) throw msg.send('You can\'t buy negative amounts!');
     if (amount > timesCanBuy) throw msg.send('Insufficient funds');
     if (!buyingItem.item) if ((msg.author.settings.get(buyingItem.statistics.key) + buyingItem.statistics.increaser * amount) >= buyingItem.statistics.max) amount = (buyingItem.statistics.max - msg.author.settings.get(buyingItem.statistics.key)) / buyingItem.price;
 
     msg.author.settings.update('balance', msg.author.settings.get('balance') - buyingItem.price * amount);
     if (buyingItem.item) {
-      const userItems = msg.author.settings.items.slice();
+      const userItems = msg.author.settings.get('items').slice();
       userItems.push(item);
       msg.author.settings.update('items', userItems, { action: 'overwrite' });
     }
@@ -62,15 +62,15 @@ if (amount < 1) throw msg.send('You can\'t buy negative amounts!');
         .setDescription(descArray.join('\n'))
         .setTitle(`<:ds_greentick:591919521598799872> ${buyingItem.buytitle ? buyingItem.buytitle : toFirstCase(item)} successfully bought!`),
     );
-    this.client.channels.cache.get('690260681831874658').send(new MessageEmbed()
+    this.client.channels.get('690260681831874658').send(new MessageEmbed()
       .setTitle('Buy')
       .setColor('#0099FF')
       .setThumbnail(msg.guild.iconURL())
-      .addField('Price', msg.guild.settings.currency + (buyingItem.price * amount), true)
+      .addField('Price', msg.guild.settings.get('currency') + (buyingItem.price * amount), true)
       .addField('Amount Bought', amount, true)
       .addField('Buyer', `${msg.author.tag} (${msg.author.id})`, true)
-      .addField('Buyer\'s Original Balance', msg.author.settings.balance, true)
-      .addField('Buyer\'s Final Balance', msg.author.settings.balance - buyingItem.price * amount, true)
+      .addField('Buyer\'s Original Balance', msg.author.settings.get('balance'), true)
+      .addField('Buyer\'s Final Balance', msg.author.settings.get('balance') - buyingItem.price * amount, true)
       .addField('Guild', msg.guild.name + ` (${msg.guild.id})`, true)
       .addField('Item Bought', item, true),
     );

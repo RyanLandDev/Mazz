@@ -17,8 +17,8 @@ module.exports = class extends Command {
   async run(msg, params) {
     let member = params[0];
     let newMember;
-    if (typeof member === 'string') newMember = msg.guild.members.cache.find(m => m.displayName.toLowerCase().includes(member.toLowerCase()));
-    if (!newMember && typeof member === 'string') newMember = msg.guild.members.cache.find(m => m.user.username.toLowerCase().includes(member.toLowerCase()));
+    if (typeof member === 'string') newMember = msg.guild.members.find(m => m.displayName.toLowerCase().includes(member.toLowerCase()));
+    if (!newMember && typeof member === 'string') newMember = msg.guild.members.find(m => m.user.username.toLowerCase().includes(member.toLowerCase()));
     if (!newMember && typeof member === 'string') newMember = params[0];
     if (newMember) member = newMember;
 

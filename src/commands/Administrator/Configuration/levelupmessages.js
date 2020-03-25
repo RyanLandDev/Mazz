@@ -12,6 +12,6 @@ module.exports = class extends Command {
   }
 
   async run(msg) {
-    if (msg.guild.settings.levelMsg) msg.guild.settings.update('levelMsg', false), msg.send('Level up messages have been disabled!'); else msg.guild.settings.update('levelMsg', true), msg.send('Level up messages have been enabled!');
+    if (msg.guild.settings.get('levelMsg')) msg.guild.settings.update('levelMsg', false), msg.send('Level up messages have been disabled!'); else msg.guild.settings.update('levelMsg', true), msg.send('Level up messages have been enabled!');
   }
 };

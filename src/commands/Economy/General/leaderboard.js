@@ -26,34 +26,34 @@ module.exports = class extends Command {
     if (type === 'wallet') {
       userArray = msg.guild.members.cache.array();
       userArray.sort(function(a, b) {
-        return b.user.settings.balance - a.user.settings.balance;
+        return b.user.settings.get('balance') - a.user.settings.get('balance');
       });
-      userArray.splice(10, msg.guild.members.cache.size);
-      for (let i = 0; i < userArray.length; i++) userArray[i] = `${i === 0 ? ' 🥇' : ''}${i === 1 ? ' 🥈' : ''}${i === 2 ? ' 🥉' : ''}${i > 2 ? `${i + 1}.` : ''} **${userArray[i].user.username}** - ${msg.guild.settings.currency}${userArray[i].user.settings.balance}`;
+      userArray.splice(10, msg.guild.members.size);
+      for (let i = 0; i < userArray.length; i++) userArray[i] = `${i === 0 ? ' 🥇' : ''}${i === 1 ? ' 🥈' : ''}${i === 2 ? ' 🥉' : ''}${i > 2 ? `${i + 1}.` : ''} **${userArray[i].user.username}** - ${msg.guild.settings.get('currency')}${userArray[i].user.settings.get('balance')}`;
     }
     if (type === 'bank') {
-      userArray = msg.guild.members.cache.array();
+      userArray = msg.guild.members.array();
       userArray.sort(function(a, b) {
-        return b.user.settings.bankBalance - a.user.settings.bankBalance;
+        return b.user.settings.get('bankBalance') - a.user.settings.get('bankBalance');
       });
-      userArray.splice(10, msg.guild.members.cache.size);
-      for (let i = 0; i < userArray.length; i++) userArray[i] = `${i === 0 ? ' 🥇' : ''}${i === 1 ? ' 🥈' : ''}${i === 2 ? ' 🥉' : ''}${i > 2 ? `${i + 1}.` : ''} **${userArray[i].user.username}** - ${msg.guild.settings.currency}${userArray[i].user.settings.bankBalance}`;
+      userArray.splice(10, msg.guild.members.size);
+      for (let i = 0; i < userArray.length; i++) userArray[i] = `${i === 0 ? ' 🥇' : ''}${i === 1 ? ' 🥈' : ''}${i === 2 ? ' 🥉' : ''}${i > 2 ? `${i + 1}.` : ''} **${userArray[i].user.username}** - ${msg.guild.settings.get('currency')}${userArray[i].user.settings.get('bankBalance')}`;
     }
     if (type === 'level') {
       userArray = msg.guild.members.cache.array();
       userArray.sort(function(a, b) {
-        return b.user.settings.level - a.user.settings.level;
+        return b.user.settings.get('level') - a.user.settings.get('level');
       });
-      userArray.splice(10, msg.guild.members.cache.size);
-      for (let i = 0; i < userArray.length; i++) if (userArray[i].user.settings.level > 0) userArray[i] = `${i === 0 ? ' 🥇' : ''}${i === 1 ? ' 🥈' : ''}${i === 2 ? ' 🥉' : ''}${i > 2 ? `${i + 1}.` : ''} **${userArray[i].user.username}** - Level ${userArray[i].user.settings.level}`; else userArray[i] = '';
+      userArray.splice(10, msg.guild.members.size);
+      for (let i = 0; i < userArray.length; i++) if (userArray[i].user.settings.get('level') > 0) userArray[i] = `${i === 0 ? ' 🥇' : ''}${i === 1 ? ' 🥈' : ''}${i === 2 ? ' 🥉' : ''}${i > 2 ? `${i + 1}.` : ''} **${userArray[i].user.username}** - Level ${userArray[i].user.settings.get('level')}`; else userArray[i] = '';
     }
     if (type === 'rebirth') {
       userArray = msg.guild.members.cache.array();
       userArray.sort(function(a, b) {
-        return b.user.settings.rebirth - a.user.settings.rebirth;
+        return b.user.settings.get('rebirth') - a.user.settings.get('rebirth');
       });
       userArray.splice(10, msg.guild.members.cache.size);
-      for (let i = 0; i < userArray.length; i++) if (userArray[i].user.settings.rebirth > 0) userArray[i] = `${i === 0 ? ' 🥇' : ''}${i === 1 ? ' 🥈' : ''}${i === 2 ? ' 🥉' : ''}${i > 2 ? `${i + 1}.` : ''} **${userArray[i].user.username}** - Rebirth ${userArray[i].user.settings.rebirth}`; else userArray[i] = '';
+      for (let i = 0; i < userArray.length; i++) if (userArray[i].user.settings.get('rebirth') > 0) userArray[i] = `${i === 0 ? ' 🥇' : ''}${i === 1 ? ' 🥈' : ''}${i === 2 ? ' 🥉' : ''}${i > 2 ? `${i + 1}.` : ''} **${userArray[i].user.username}** - Rebirth ${userArray[i].user.settings.get('rebirth')}`; else userArray[i] = '';
     }
 
     const embed = new MessageEmbed()

@@ -15,11 +15,8 @@ module.exports = class extends Command {
   }
 
   async run(msg, params) {
-    const { settings } = this.client.users.cache.get(msg.author.id);
-    await settings.sync();
-
-    const userItems = msg.author.settings.items.slice();
-    const activeItems = msg.author.settings.activeItems.slice();
+    const userItems = msg.author.settings.get('items').slice();
+    const activeItems = msg.author.settings.get('activeItems').slice();
 
     params[0] = params[0].replace(/_/g, ' ');
     let itemUsed;
@@ -34,15 +31,15 @@ module.exports = class extends Command {
     // bomb
     if (itemUsed.codename === 'bomb') {
       if (!params[1]) throw msg.send('You need to mention who to throw a bomb on!');
-if (params[1] === msg.author) throw msg.send('You can\'t throw a bomb on yourself!');
+      if (params[1] === msg.author) throw msg.send('You can\'t throw a bomb on yourself!');
       const victim = params[1];
-      const victimItems = victim.settings.items.slice();
+      const victimItems = victim.settings.get('items').slice();
       if (victimItems.length === 0) throw msg.send('You can\'t throw a bomb on someone that doesn\'t have anything in their inventory!');
       victimItems.splice(Math.floor(Math.random() * victimItems.length), 1);
       victim.settings.update('items', victimItems, { action: 'overwrite' });
     }
 
-if (activeItems.includes(itemUsed.codename)) throw msg.send('This item is already active');
+    if (activeItems.includes(itemUsed.codename)) throw msg.send('This item is already active');
 
     msg.author.settings.update('items', itemUsed.codename, { action: 'remove' });
     if (!itemUsed.special) msg.author.settings.update(itemUsed.statistics.key, itemUsed.statistics.set ? itemUsed.statistics.increaser : itemUsed.statistics.increaser + msg.author.settings.get(itemUsed.statistics.key));
@@ -58,7 +55,7 @@ if (activeItems.includes(itemUsed.codename)) throw msg.send('This item is alread
       .setDescription(`You used ${itemUsed.title}`);
     msg.send(embed);
 
-    this.client.channels.cache.get('690260724802519043').send(new MessageEmbed()
+    this.client.channels.get('690260724802519043').send(new MessageEmbed()
       .setTitle('Use')
       .setColor('#0099FF')
       .setThumbnail(msg.guild.iconURL())

@@ -9,7 +9,7 @@ module.exports = class extends Inhibitor {
   }
 
   async run(message) {
-    const current = message.client.settings.dayStats.slice();
+    const current = message.client.settings.get('dayStats').slice();
     const date = moment().format('DD-MM-YYYY');
 
     let checker = false;

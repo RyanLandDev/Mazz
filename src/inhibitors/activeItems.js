@@ -9,10 +9,9 @@ module.exports = class extends Inhibitor {
   }
 
   async run(message) {
-    const { settings } = this.client.users.cache.get(message.author.id);
-    await settings.sync();
 
-    const activeItems = message.author.settings.activeItems.slice();
+
+    const activeItems = message.author.settings.get('activeItems').slice();
     if (activeItems.length <= 0) return;
     for (let i = 0; i < activeItems.length; i++) {
       let item;

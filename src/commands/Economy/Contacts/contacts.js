@@ -12,7 +12,7 @@ module.exports = class extends Command {
   }
 
   async run(msg) {
-    const userContacts = msg.author.settings.contacts.slice();
+    const userContacts = msg.author.settings.get('contacts').slice();
 
     const embed = new MessageEmbed()
       .setAuthor(msg.author.username, msg.author.avatarURL())
@@ -25,7 +25,7 @@ module.exports = class extends Command {
     for (let i = 0; i < userContacts.length; i++) {
       let contact;
       for (let j = 0; j < contacts.length; j++) if (contacts[j].codename === userContacts[i]) contact = contacts[j];
-      embed.addField('\u200b', `**${contact.title}**\n${contact.description}\n*'${contact.nickname}'*  \`${msg.guild.settings.prefix}call ${contact.codename}\``, true);
+      embed.addField('\u200b', `**${contact.title}**\n${contact.description}\n*'${contact.nickname}'*  \`${msg.guild.settings.get('prefix')}call ${contact.codename}\``, true);
     }
     if (embed.fields.length === 0) embed.setDescription('(Empty)');
     msg.send(embed);

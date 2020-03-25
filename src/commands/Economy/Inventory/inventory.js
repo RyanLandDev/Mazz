@@ -20,18 +20,15 @@ module.exports = class extends Command {
     let newMember, User;
     if (!params[0]) {User = msg.author;}
     else {
-      if (typeof member === 'string') newMember = msg.guild.members.cache.find(m => m.displayName.toLowerCase().includes(member.toLowerCase()));
-      if (!newMember && typeof member === 'string') newMember = msg.guild.members.cache.find(m => m.user.username.toLowerCase().includes(member.toLowerCase()));
+      if (typeof member === 'string') newMember = msg.guild.members.find(m => m.displayName.toLowerCase().includes(member.toLowerCase()));
+      if (!newMember && typeof member === 'string') newMember = msg.guild.members.find(m => m.user.username.toLowerCase().includes(member.toLowerCase()));
       if (!newMember && typeof member === 'string') newMember = params[0];
       if (newMember) member = newMember.user;
       User = member;
     }
 
-    const { settings } = this.client.users.cache.get(User.id);
-    await settings.sync();
-
-    const userItems = User.settings.items.slice();
-    const activeItems = User.settings.activeItems.slice();
+    const userItems = User.settings.get('items').slice();
+    const activeItems = User.settings.get('activeItems').slice();
 
     const counts = {};
     userItems.forEach(function(x) { counts[x] = (counts[x] || 0) + 1; });
@@ -46,7 +43,7 @@ module.exports = class extends Command {
       for (let i2 = 0; i2 < Object.keys(items).length - 1; i2++) {
         const item = items[Object.keys(items)[i2 + 1]];
         const summary = item.summary.replace(/{currency}/gi, msg.guild.settings.get('currency'));
-        if (item.codename === userItems[i] && !fieldsDone.includes(item.codename)) Embed.addField('\u200b', `${item.title}${counts[item.codename] !== 1 ? ` x${counts[item.codename]}` : ''}\n${summary} \n\`${msg.guild.settings.prefix}use ${item.codename.replace(/ /g, '_')}\``, true), fieldsDone.push(item.codename);
+        if (item.codename === userItems[i] && !fieldsDone.includes(item.codename)) Embed.addField('\u200b', `${item.title}${counts[item.codename] !== 1 ? ` x${counts[item.codename]}` : ''}\n${summary} \n\`${msg.guild.settings.get('prefix')}use ${item.codename.replace(/ /g, '_')}\``, true), fieldsDone.push(item.codename);
       }
     }
     // active items

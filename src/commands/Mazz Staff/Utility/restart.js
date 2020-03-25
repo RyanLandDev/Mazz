@@ -24,7 +24,7 @@ module.exports = class extends Command {
 
     const parent = this;
     setTimeout(function() {
-      parent.client.user.setPresence({ 'activity': { 'name': `m!help | ${parent.client.guilds.cache.size} servers 🔥` } });
+      parent.client.user.setPresence({ 'activity': { 'name': `m!help | ${parent.client.guilds.size} servers 🔥` } });
     }, 5000);
   }
 };

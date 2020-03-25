@@ -35,7 +35,7 @@ module.exports = class extends Command {
     if (command) {
       // form the usage
       let usage = command.usage.fullUsage(message);
-      usage = usage.replace(message.guild.settings.prefix + ' ', '');
+      usage = usage.replace(message.guild.settings.get('prefix') + ' ', '');
       if (!usage.startsWith('《')) usage = usage.replace(/([^\s]+)/, '');
       usage = usage.replace(/(.*(?<=》))|(:[^\]|>]*)/g, '');
 
@@ -49,7 +49,7 @@ module.exports = class extends Command {
         .setTitle(command.name)
         .setColor('#0099FF')
         .setDescription(command.cooldown === 0 ? command.description : `${command.description}\nCooldown: ${cooldown}`)
-        .addField('**Usage**', `\`\`\`fix\n${message.guild.settings.prefix}${command.name}${usage}\n\`\`\``)
+        .addField('**Usage**', `\`\`\`fix\n${message.guild.settings.get('prefix')}${command.name}${usage}\n\`\`\``)
         .setFooter('<> = required parameter, [] = optional parameter');
       if (command.aliases.length >= 1) embed.addField('**Aliases**', '`' + command.aliases.join('` `') + '`');
       return message.send(embed);

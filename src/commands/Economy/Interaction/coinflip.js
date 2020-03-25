@@ -31,7 +31,7 @@ module.exports = class extends Command {
     if (bet < 1) throw msg.send('You can\'t coinflip less than zero');
 
     // check: author enough money
-    if (bet > msg.author.settings.balance) {
+    if (bet > msg.author.settings.get('balance')) {
       throw msg.send(new MessageEmbed()
         .setColor('RED')
         .setDescription('You can\'t bet more than you have!')
@@ -40,7 +40,7 @@ module.exports = class extends Command {
     }
 
     // check: opponent enough money
-    if (bet > member.settings.balance) {
+    if (bet > member.settings.get('balance')) {
       throw msg.send(new MessageEmbed()
         .setColor('RED')
         .setDescription(`${member} doesn't have this amount of money!`)
@@ -53,7 +53,7 @@ module.exports = class extends Command {
       .setAuthor(member.username, member.avatarURL())
       .setTimestamp()
       .setColor('#0099FF')
-      .setDescription(`${msg.member} has invited you to a coinflip! Use the reaction buttons below to accept.\nThis invite will expire in 30 seconds.\n**Amount:** ${msg.guild.settings.currency}${bet}`);
+      .setDescription(`${msg.member} has invited you to a coinflip! Use the reaction buttons below to accept.\nThis invite will expire in 30 seconds.\n**Amount:** ${msg.guild.settings.get('currency')}${bet}`);
     const msgAcceptOrDeny = await msg.send(acceptOrDenyEmbed);
     msgAcceptOrDeny.react('591919521598799872'); // ds_greentick
     msgAcceptOrDeny.react('591919718554796033'); // ds_redtick
@@ -115,23 +115,23 @@ module.exports = class extends Command {
           let winner, loser;
           const random = Math.round(Math.random());
           if (random == 1) winner = params[0], loser = msg.member; else winner = msg.member, loser = params[0];
-          loser.user.settings.update('balance', loser.user.settings.balance - bet);
-          winner.user.settings.update('balance', winner.user.settings.balance + bet);
-          coinflipEmbed.setDescription(`The coinflip has ended! ${winner} has won ${msg.guild.settings.currency}**${bet * 2}**!`);
+          loser.user.settings.update('balance', loser.user.settings.get('balance') - bet);
+          winner.user.settings.update('balance', winner.user.settings.get('balance') + bet);
+          coinflipEmbed.setDescription(`The coinflip has ended! ${winner} has won ${msg.guild.settings.get('currency')}**${bet * 2}**!`);
           msgAcceptOrDeny.edit(coinflipEmbed);
           clearInterval(timer);
-          parent.client.channels.cache.get('690256358431653894').send(new MessageEmbed()
+          parent.client.channels.get('690256358431653894').send(new MessageEmbed()
             .setTitle('Coinflip')
             .setColor('#0099FF')
             .setThumbnail(msg.guild.iconURL())
-            .addField('Amount', msg.guild.settings.currency + bet, true)
+            .addField('Amount', msg.guild.settings.get('currency') + bet, true)
             .addField('Starter', `${msg.author.tag} (${msg.author.id})`, true)
             .addField('Opponent', `${member.tag} (${member.id})`, true)
-            .addField('Starter\'s Original Balance', msg.author.settings.balance, true)
-            .addField('Starter\'s Final Balance', loser === msg.member ? msg.author.settings.balance - bet : msg.author.settings.balance + bet, true)
+            .addField('Starter\'s Original Balance', msg.author.settings.get('balance'), true)
+            .addField('Starter\'s Final Balance', loser === msg.member ? msg.author.settings.get('balance') - bet : msg.author.settings.get('balance') + bet, true)
             .addField('Guild', msg.guild.name + ` (${msg.guild.id})`, true)
-            .addField('Opponent\'s Original Balance', member.settings.balance, true)
-            .addField('Opponent\'s Final Balance', loser === params[0] ? member.settings.balance - bet : member.settings.balance + bet, true),
+            .addField('Opponent\'s Original Balance', member.settings.get('balance'), true)
+            .addField('Opponent\'s Final Balance', loser === params[0] ? member.settings.get('balance') - bet : member.settings.get('balance') + bet, true),
           );
           return;
         }

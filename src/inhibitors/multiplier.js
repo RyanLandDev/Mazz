@@ -8,6 +8,6 @@ module.exports = class extends Inhibitor {
   }
 
   async run(message) {
-    message.author.settings.update('oldBal', message.author.settings.balance);
+    message.author.settings.update('oldBal', message.author.settings.get('balance'));
   }
 };
