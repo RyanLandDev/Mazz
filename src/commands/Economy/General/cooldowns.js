@@ -14,8 +14,8 @@ module.exports = class extends Command {
   async run(msg) {
     // work
     let workCDh, workCDm, workCDs;
-    if (this.client.commands.get('work').cooldowns.get(msg.author.id)) {
-      const workRemainingS = Math.floor(this.client.commands.get('work').cooldowns.get(msg.author.id).remainingTime / 1000);
+    if (this.client.finalizers.get('commandCooldown').getCooldown(msg, this.client.commands.get('work'))) {
+      const workRemainingS = Math.floor(this.client.finalizers.get('commandCooldown').getCooldown(msg, this.client.commands.get('work')).remainingTime / 1000);
       workCDh = Math.floor(workRemainingS / 3600);
       if (workCDh === 0) workCDm = Math.floor(workRemainingS / 60); else workCDm = Math.floor(workRemainingS / 60 - (workCDh * 60));
       if (workCDm === 0) workCDs = workRemainingS; else workCDs = Math.round(workRemainingS - ((workCDh * 3600) + (workCDm * 60)));
@@ -23,8 +23,8 @@ module.exports = class extends Command {
 
     // crime
     let crimeCDh, crimeCDm, crimeCDs;
-    if (this.client.commands.get('crime').cooldowns.get(msg.author.id)) {
-      const crimeRemainingS = Math.floor(this.client.commands.get('crime').cooldowns.get(msg.author.id).remainingTime / 1000);
+    if (this.client.finalizers.get('commandCooldown').getCooldown(msg, this.client.commands.get('crime'))) {
+      const crimeRemainingS = Math.floor(this.client.finalizers.get('commandCooldown').getCooldown(msg, this.client.commands.get('crime')).remainingTime / 1000);
       crimeCDh = Math.floor(crimeRemainingS / 3600);
       if (crimeCDh === 0) crimeCDm = Math.floor(crimeRemainingS / 60); else crimeCDm = Math.floor(crimeRemainingS / 60 - (crimeCDh * 60));
       if (crimeCDm === 0) crimeCDs = crimeRemainingS; else crimeCDs = Math.round(crimeRemainingS - ((crimeCDh * 3600) + (crimeCDm * 60)));
@@ -32,8 +32,8 @@ module.exports = class extends Command {
 
     // beg
     let begCDh, begCDm, begCDs;
-    if (this.client.commands.get('beg').cooldowns.get(msg.author.id)) {
-      const begRemainingS = Math.floor(this.client.commands.get('beg').cooldowns.get(msg.author.id).remainingTime / 1000);
+    if (this.client.finalizers.get('commandCooldown').getCooldown(msg, this.client.commands.get('beg'))) {
+      const begRemainingS = Math.floor(this.client.finalizers.get('commandCooldown').getCooldown(msg, this.client.commands.get('beg')).remainingTime / 1000);
       begCDh = Math.floor(begRemainingS / 3600);
       if (begCDh === 0) begCDm = Math.floor(begRemainingS / 60); else begCDm = Math.floor(begRemainingS / 60 - (begCDh * 60));
       if (begCDm === 0) begCDs = begRemainingS; else begCDs = Math.round(begRemainingS - ((begCDh * 3600) + (begCDm * 60)));
@@ -41,8 +41,8 @@ module.exports = class extends Command {
 
     // search
     let searchCDh, searchCDm, searchCDs;
-    if (this.client.commands.get('search').cooldowns.get(msg.author.id)) {
-      const searchRemainingS = Math.floor(this.client.commands.get('search').cooldowns.get(msg.author.id).remainingTime / 1000);
+    if (this.client.finalizers.get('commandCooldown').getCooldown(msg, this.client.commands.get('search'))) {
+      const searchRemainingS = Math.floor(this.client.finalizers.get('commandCooldown').getCooldown(msg, this.client.commands.get('search')).remainingTime / 1000);
       searchCDh = Math.floor(searchRemainingS / 3600);
       if (searchCDh === 0) searchCDm = Math.floor(searchRemainingS / 60); else searchCDm = Math.floor(searchRemainingS / 60 - (searchCDh * 60));
       if (searchCDm === 0) searchCDs = searchRemainingS; else searchCDs = Math.round(searchRemainingS - ((searchCDh * 3600) + (searchCDm * 60)));
@@ -50,8 +50,8 @@ module.exports = class extends Command {
 
     // rob
     let robCDh, robCDm, robCDs;
-    if (this.client.commands.get('rob').cooldowns.get(msg.author.id)) {
-      const robRemainingS = Math.floor(this.client.commands.get('rob').cooldowns.get(msg.author.id).remainingTime / 1000);
+    if (this.client.finalizers.get('commandCooldown').getCooldown(msg, this.client.commands.get('rob'))) {
+      const robRemainingS = Math.floor(this.client.finalizers.get('commandCooldown').getCooldown(msg, this.client.commands.get('rob')).remainingTime / 1000);
       robCDh = Math.floor(robRemainingS / 3600);
       if (robCDh === 0) robCDm = Math.floor(robRemainingS / 60); else robCDm = Math.floor(robRemainingS / 60 - (robCDh * 60));
       if (robCDm === 0) robCDs = robRemainingS; else robCDs = Math.round(robRemainingS - ((robCDh * 3600) + (robCDm * 60)));

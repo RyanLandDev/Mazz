@@ -29,8 +29,8 @@ module.exports = class extends Command {
     msg.author.settings.update('robExtraChance', 0);
     msg.author.settings.update('bankStorage', 0);
     msg.author.settings.update('rebirth', msg.author.settings.get('rebirth') + 1);
-    msg.author.settings.update('items', [], { action: 'overwrite' });
-    msg.author.settings.update('activeItems', [], { action: 'overwrite' });
+    msg.author.settings.update('items', [], { arrayAction: 'overwrite' });
+    msg.author.settings.update('activeItems', [], { arrayAction: 'overwrite' });
 
     const embed = new MessageEmbed()
       .setAuthor(msg.author.username, msg.author.avatarURL())

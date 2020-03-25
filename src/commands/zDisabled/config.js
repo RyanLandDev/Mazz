@@ -28,7 +28,7 @@ module.exports = class extends Command {
   }
 
   show(message, [key]) {
-    const path = this.client.gateways.guilds.getPath(key, { avoidUnconfigurable: true, errors: false, piece: null });
+    const path = this.client.gateways.guilds.getPath(key, { onlyConfigurable: true, errors: false, piece: null });
     if (!path) return message.sendLocale('COMMAND_CONF_GET_NOEXT', [key]);
     if (path.piece.type === 'Folder') {
       return message.sendLocale('COMMAND_CONF_SERVER', [
@@ -41,12 +41,12 @@ module.exports = class extends Command {
 
   async set(message, [key, ...valueToSet]) {
     console.log(key);
-    const status = await message.guild.settings.update(key, valueToSet.join(' '), message.guild, { avoidUnconfigurable: true, action: 'add' });
+    const status = await message.guild.settings.update(key, valueToSet.join(' '), message.guild, { onlyConfigurable: true, arrayAction: 'add' });
     return this.check(message, key, status) || message.sendLocale('COMMAND_CONF_UPDATED', [key, message.guild.settings.resolveString(message, status.updated[0].piece)]);
   }
 
   async remove(message, [key, ...valueToRemove]) {
-    const status = await message.guild.settings.update(key, valueToRemove.join(' '), message.guild, { avoidUnconfigurable: true, action: 'remove' });
+    const status = await message.guild.settings.update(key, valueToRemove.join(' '), message.guild, { onlyConfigurable: true, arrayAction: 'remove' });
     return this.check(message, key, status) || message.sendLocale('COMMAND_CONF_UPDATED', [key, message.guild.settings.resolveString(message, status.updated[0].piece)]);
   }
 

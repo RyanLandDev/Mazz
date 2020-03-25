@@ -1,4 +1,4 @@
-const { Monitor } = require('klasa');
+const { Monitor, Timestamp } = require('klasa');
 const moment = require('moment');
 
 module.exports = class extends Monitor {
@@ -6,11 +6,12 @@ module.exports = class extends Monitor {
     super(...args, {
       ignoreOthers: false,
     });
+    this.timestamp = new Timestamp('DD-MM-YYYY');
   }
 
   async run(message) {
     // cooldown
-    if (moment().format('x') - message.author.settings.get('lastXP') < 45000) return;
+    if (this.timestamp.display() - message.author.settings.get('lastXP') < 45000) return;
 
     // generate xp
     const xpGot = Math.round(Math.random() * (25 - 15)) + 15;

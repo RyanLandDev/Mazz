@@ -29,7 +29,7 @@ module.exports = class extends Command {
       .setDescription(transformedResponse)
       .setAuthor(message.author.username, message.author.avatarURL());
     if (reward >= 0) Embed.setColor('GREEN'); else Embed.setColor('RED');
-    if (!message.author.settings.get('contacts').includes('uncleg')) message.author.settings.update('contacts', 'uncleg', { action: 'add' });
+    if (!message.author.settings.get('contacts').includes('uncleg')) message.author.settings.update('contacts', 'uncleg', { arrayAction: 'add' });
     message.send(Embed);
   }
 

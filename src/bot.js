@@ -116,7 +116,7 @@ Client.defaultGuildSchema
 
 Client.defaultUserSchema
 // AFK
-  .add('afkStatus', 'string', { max: 100 })
+  .add('afkStatus', 'string', { maximum: 100 })
 
 // Balance
   .add('balance', 'integer', { default: 0 })
@@ -146,7 +146,7 @@ Client.defaultUserSchema
   .add('iuncleg', 'string')
 
 // Upgrades
-  .add('robChance', 'integer', { default: 50, min: 10, max: 50 })
-  .add('robCut', 'integer', { default: 20, min: 20, max: 80 })
-  .add('robExtraChance', 'integer', { default: 0, min: 0, max: 50 })
-  .add('bankStorage', 'integer', { default: 0, min: 0 });
+  .add('robChance', 'integer', { default: 50, minimum: 10, maximum: 50 })
+  .add('robCut', 'integer', { default: 20, minimum: 20, maximum: 80 })
+  .add('robExtraChance', 'integer', { default: 0, minimum: 0, maximum: 50 })
+  .add('bankStorage', 'integer', { default: 0, minimum: 0 });

@@ -36,18 +36,18 @@ module.exports = class extends Command {
       const victimItems = victim.settings.get('items').slice();
       if (victimItems.length === 0) throw msg.send('You can\'t throw a bomb on someone that doesn\'t have anything in their inventory!');
       victimItems.splice(Math.floor(Math.random() * victimItems.length), 1);
-      victim.settings.update('items', victimItems, { action: 'overwrite' });
+      victim.settings.update('items', victimItems, { arrayAction: 'overwrite' });
     }
 
     if (activeItems.includes(itemUsed.codename)) throw msg.send('This item is already active');
 
-    msg.author.settings.update('items', itemUsed.codename, { action: 'remove' });
+    msg.author.settings.update('items', itemUsed.codename, { arrayAction: 'remove' });
     if (!itemUsed.special) msg.author.settings.update(itemUsed.statistics.key, itemUsed.statistics.set ? itemUsed.statistics.increaser : itemUsed.statistics.increaser + msg.author.settings.get(itemUsed.statistics.key));
 
 
     const activeItemsArray = activeItems;
     activeItemsArray.push(itemUsed.codename);
-    if (itemUsed.temporary) await msg.author.settings.update('activeItems', activeItemsArray, { action: 'overwrite' });
+    if (itemUsed.temporary) await msg.author.settings.update('activeItems', activeItemsArray, { arrayAction: 'overwrite' });
 
     const embed = new MessageEmbed()
       .setAuthor(msg.author.username, msg.author.avatarURL())

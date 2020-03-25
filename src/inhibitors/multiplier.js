@@ -8,6 +8,8 @@ module.exports = class extends Inhibitor {
   }
 
   async run(message) {
-    message.author.settings.update('oldBal', message.author.settings.get('balance'));
+    // Be careful, this is dangerous, doing multiple settings updates in inhibitors can lead
+    // to serious race-conditions and potential parallelism issues
+    await message.author.settings.update('oldBal', message.author.settings.get('balance'));
   }
 };

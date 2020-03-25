@@ -13,7 +13,7 @@ module.exports = class extends Monitor {
     const settings = message.client.settings.get('afk');
     // remove afk
     if (settings.includes(message.author.id)) {
-      message.client.settings.update('afk', message.author.id, { action: 'remove' });
+      message.client.settings.update('afk', message.author.id, { arrayAction: 'remove' });
       const sent = await message.send(`Welcome back ${message.member}, I have removed your AFK`);
       setTimeout(function() {
         sent.delete();

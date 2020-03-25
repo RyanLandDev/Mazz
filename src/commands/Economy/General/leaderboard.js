@@ -24,7 +24,7 @@ module.exports = class extends Command {
 
     let userArray;
     if (type === 'wallet') {
-      userArray = msg.guild.members.cache.array();
+      userArray = msg.guild.members.array();
       userArray.sort(function(a, b) {
         return b.user.settings.get('balance') - a.user.settings.get('balance');
       });

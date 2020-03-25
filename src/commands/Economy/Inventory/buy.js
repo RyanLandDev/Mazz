@@ -47,7 +47,7 @@ module.exports = class extends Command {
     if (buyingItem.item) {
       const userItems = msg.author.settings.get('items').slice();
       userItems.push(item);
-      msg.author.settings.update('items', userItems, { action: 'overwrite' });
+      msg.author.settings.update('items', userItems, { arrayAction: 'overwrite' });
     }
     else {msg.author.settings.update(buyingItem.statistics.key, msg.author.settings.get(buyingItem.statistics.key) + buyingItem.statistics.increaser * amount);}
 

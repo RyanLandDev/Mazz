@@ -46,7 +46,7 @@ module.exports = class extends Command {
     const authorActiveContacts = msg.author.settings.get('activeContacts').slice();
     const authorContacts = msg.author.settings.get('contacts').slice();
 
-    if (activeContacts.includes('guard')) member.settings.update('activeContacts', 'guard', { action: 'remove' });
+    if (activeContacts.includes('guard')) member.settings.update('activeContacts', 'guard', { arrayAction: 'remove' });
     if (!activeItems.includes('llama') && chance < member.settings.get('robChance')) {
       // Success
       const moneyEarnt = Math.round(msg.author.settings.get('robCut') / 100 * member.settings.get('balance'));
@@ -64,7 +64,7 @@ module.exports = class extends Command {
         .addField('Victim\'s Final Balance', member.settings.get('balance') - moneyEarnt, true)
         .addField('Amount', msg.guild.settings.get('currency') + moneyEarnt, true),
       );
-      if (!contacts.includes('guard')) member.settings.update('contacts', 'guard', { action: 'add' });
+      if (!contacts.includes('guard')) member.settings.update('contacts', 'guard', { arrayAction: 'add' });
       msg.send(new MessageEmbed()
         .setColor('GREEN')
         .setTitle('<:ds_greentick:591919521598799872> Robbery successful')
@@ -76,7 +76,7 @@ module.exports = class extends Command {
     else {
       // Fail
       let lawyer = false;
-      if (authorActiveContacts.includes('lawyer')) lawyer = true, msg.author.settings.update('activeContacts', 'lawyer', { action: 'remove' });
+      if (authorActiveContacts.includes('lawyer')) lawyer = true, msg.author.settings.update('activeContacts', 'lawyer', { arrayAction: 'remove' });
       const moneyLost = Math.round(20 / 100 * msg.author.settings.get('balance') / (lawyer ? 2 : 1));
       this.client.channels.get('690256291221995570').send(new MessageEmbed()
         .setTitle('Rob')
@@ -92,7 +92,7 @@ module.exports = class extends Command {
         .addField('Victim\'s Final Balance', member.settings.get('balance') + moneyLost, true)
         .addField('Amount', msg.guild.settings.get('currency') + moneyLost, true),
       );
-      if (!authorContacts.includes('lawyer')) msg.author.settings.update('contacts', 'lawyer', { action: 'add' });
+      if (!authorContacts.includes('lawyer')) msg.author.settings.update('contacts', 'lawyer', { arrayAction: 'add' });
       msg.send(new MessageEmbed()
         .setTitle('<:ds_redtick:591919718554796033> Robbery failed')
         .setColor('RED')

@@ -12,8 +12,8 @@ module.exports = class extends Command {
   }
 
   async run(msg, [recipient]) {
-    recipient.toLowerCase();
-    const active = msg.author.settings.get('activeContacts').slice();
+    recipient = recipient.toLowerCase();
+    const active = msg.author.settings.get('activeContacts');
 
     // jake
     if (recipient === 'jake') {
@@ -43,7 +43,7 @@ module.exports = class extends Command {
         return;
       }
       msg.author.settings.update('balance', msg.author.settings.get('balance') - 15000);
-      msg.author.settings.update('activeContacts', 'uncleg', { action: 'add' });
+      msg.author.settings.update('activeContacts', 'uncleg', { arrayAction: 'add' });
       msg.author.settings.update('iuncleg', moment().format('x'));
       const callmsg = await msg.send(':telephone_receiver: **Uncle G** - ayy thanks I\'ll git started right away my homie');
       await new Promise(resolve => setTimeout(resolve, 1500));
@@ -71,7 +71,7 @@ module.exports = class extends Command {
         return;
       }
       msg.author.settings.update('balance', msg.author.settings.get('balance') - 400);
-      msg.author.settings.update('activeContacts', 'lawyer', { action: 'add' });
+      msg.author.settings.update('activeContacts', 'lawyer', { arrayAction: 'add' });
       const callmsg = await msg.send(':telephone_receiver: **Lawyer** - Thanks! I won\'t let you down, my client. My respect.');
       await new Promise(resolve => setTimeout(resolve, 1500));
       callmsg.edit(':telephone: **Lawyer hang up.**');
@@ -98,7 +98,7 @@ module.exports = class extends Command {
         return;
       }
       msg.author.settings.update('balance', msg.author.settings.get('balance') - 1500);
-      msg.author.settings.update('activeContacts', 'guard', { action: 'add' });
+      msg.author.settings.update('activeContacts', 'guard', { arrayAction: 'add' });
       const callmsg = await msg.send(':telephone_receiver: **Guard** - Alrighty, my services have started. Thank you, sir or ma\'am.');
       await new Promise(resolve => setTimeout(resolve, 5000));
       callmsg.edit(':telephone: **Guard hang up.**');

@@ -13,11 +13,11 @@ module.exports = class extends Command {
 
   async run(msg, params) {
     const status = params.join(' ');
-    if (msg.client.settings.get('afk').includes(msg.author.id)) {this.client.settings.update('afk', msg.author.id, { action: 'remove' }), msg.send(`Welcome back ${msg.member}, I have removed your AFK`);}
+    if (msg.client.settings.get('afk').includes(msg.author.id)) {this.client.settings.update('afk', msg.author.id, { arrayAction: 'remove' }), msg.send(`Welcome back ${msg.member}, I have removed your AFK`);}
     else {
       if (status.length > 100) throw msg.send('That status is too long!');
       msg.author.settings.update('afkStatus', status ? status : 'none');
-      msg.client.settings.update('afk', msg.author.id, { action: 'add' });
+      msg.client.settings.update('afk', msg.author.id, { arrayAction: 'add' });
       msg.send(`You are now AFK${status ? ': ' + status : ''}`);
     }
   }

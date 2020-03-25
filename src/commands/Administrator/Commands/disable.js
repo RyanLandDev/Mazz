@@ -16,7 +16,7 @@ module.exports = class extends Command {
     if (command.guarded === true) throw msg.send('This command cannot be disabled.');
     if (msg.guild.settings.get('disabledCommands').includes(command.name)) throw msg.send('This command is already disabled.');
 
-    msg.guild.settings.update('disabledCommands', command.name, { action: 'add' });
+    msg.guild.settings.update('disabledCommands', command.name, { arrayAction: 'add' });
     msg.send(`The \`${command.name}\` command has been disabled!\nYou can enable it again using \`${msg.guild.settings.get('prefix')}enable <command>\``);
   }
 };

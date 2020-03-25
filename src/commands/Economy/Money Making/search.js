@@ -19,7 +19,7 @@ module.exports = class extends Command {
       const itemFound = itemsToFind[Math.ceil(Math.random() * (itemsToFind.length - 1))];
       const currentItems = msg.author.settings.items.slice();
       currentItems.push(itemFound.codename);
-      msg.author.settings.update('items', currentItems, { action: 'overwrite' });
+      msg.author.settings.update('items', currentItems, { arrayAction: 'overwrite' });
       response.push(`, and a ${itemFound.title}`);
     }
     msg.send(

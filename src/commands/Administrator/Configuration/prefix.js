@@ -16,7 +16,7 @@ module.exports = class extends Command {
   async run(message, [...params]) {
     if (!params[0]) return message.channel.send(`The prefix for \`${message.guild.name}\` is **${message.guild.settings.get('prefix')}**`);
     if (params[0] === message.guild.settings.get('prefix')) return message.channel.send(`The prefix for \`${message.guild.name}\` is already **${params[0]}**!`);
-    message.guild.settings.update('prefix', params[0], message.guild, { avoidUnconfigurable: true, action: 'overwrite' });
+    message.guild.settings.update('prefix', params[0], message.guild, { onlyConfigurable: true, arrayAction: 'overwrite' });
     return message.channel.send(`The prefix has been set to **${params[0]}**!`);
   }
 };
