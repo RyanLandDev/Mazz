@@ -53,7 +53,7 @@ module.exports = class extends Command {
       userArray.sort(function(a, b) {
         return b.user.settings.get('rebirth') - a.user.settings.get('rebirth');
       });
-      userArray.splice(10, msg.guild.members.cache.size);
+      if (userArray.length > 10) userArray.splice(10, msg.guild.members.size);
       for (let i = 0; i < userArray.length; i++) if (userArray[i].user.settings.get('rebirth') > 0) userArray[i] = `${i === 0 ? ' 🥇' : ''}${i === 1 ? ' 🥈' : ''}${i === 2 ? ' 🥉' : ''}${i > 2 ? `${i + 1}.` : ''} **${userArray[i].user.username}** - Rebirth ${userArray[i].user.settings.get('rebirth')}`; else userArray[i] = '';
     }
 
