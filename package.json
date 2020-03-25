@@ -21,7 +21,7 @@
     "figlet": "^1.2.4",
     "fs-nextra": "^0.4.7",
     "klasa": "github:dirigeants/klasa#sgn",
-    "minimist": ">=1.2.2",
+    "minimist": "^1.2.5",
     "moment": "^2.24.0",
     "mongodb": "^3.5.3",
     "number-formatter": "^1.2.0",

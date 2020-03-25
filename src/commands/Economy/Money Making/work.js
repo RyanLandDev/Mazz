@@ -21,11 +21,10 @@ module.exports = class extends Command {
     let transformedResponse = response.replace(/{currency}/gi, message.guild.settings.get('currency'));
     transformedResponse = transformedResponse.replace(/{reward}/gi, '**' + reward + '**');
 
-    const Embed = new MessageEmbed()
+    message.send(new MessageEmbed()
       .setColor('GREEN')
       .setDescription(transformedResponse)
-      .setAuthor(message.author.username, message.author.avatarURL());
-    message.send(Embed);
+      .setAuthor(message.author.username, message.author.avatarURL()));
   }
 
 };
