@@ -8,7 +8,7 @@ module.exports = class extends Finalizer {
   }
 
   run(message, command) {
-    if (command.cooldown <= 0 || this.client.owners.has(message.author)) return;
+    if (command.cooldown <= 0) return;
 
     try {
       this.getCooldown(message, command).drip();
