@@ -12,7 +12,7 @@
     "node": "12.0.0"
   },
   "dependencies": {
-    "minimist": ">=1.2.2",
+    "canvas": "^2.6.1",
     "d3-cloud": "^1.2.5",
     "discord.js": "github:discordjs/discord.js#fe7df708e44e0280dfaf0f8e457b154781bb5140",
     "dotenv": "^8.2.0",
@@ -21,6 +21,7 @@
     "figlet": "^1.2.4",
     "fs-nextra": "^0.4.7",
     "klasa": "github:dirigeants/klasa#sgn",
+    "minimist": ">=1.2.2",
     "moment": "^2.24.0",
     "mongodb": "^3.5.3",
     "number-formatter": "^1.2.0",

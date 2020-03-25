@@ -10,7 +10,7 @@ module.exports = class extends Monitor {
   }
 
   async run(message) {
-    const settings = message.client.settings.afk;
+    const settings = message.client.settings.get('afk');
     // remove afk
     if (settings.includes(message.author.id)) {
       message.client.settings.update('afk', message.author.id, { action: 'remove' });
@@ -28,7 +28,7 @@ module.exports = class extends Monitor {
         const embed = new MessageEmbed()
           .setAuthor(`${member.displayName} is AFK`, member.user.avatarURL())
           .setColor('#0099FF');
-        if (member.user.settings.afkStatus !== 'none') embed.setDescription(member.user.settings.afkStatus);
+        if (member.user.settings.get('afkStatus') !== 'none') embed.setDescription(member.user.settings.afkStatus);
         return message.send(embed);
       }
     }

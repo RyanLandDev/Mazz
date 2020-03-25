@@ -10,19 +10,19 @@ module.exports = class extends Monitor {
 
   async run(message) {
     // cooldown
-    if (moment().format('x') - message.author.settings.lastXP < 45000) return;
+    if (moment().format('x') - message.author.settings.get('lastXP') < 45000) return;
 
     // generate xp
     const xpGot = Math.round(Math.random() * (25 - 15)) + 15;
     message.author.settings.update('lastXP', moment().format('x'));
-    message.author.settings.update('levelXP', message.author.settings.levelXP + xpGot);
+    message.author.settings.update('levelXP', message.author.settings.get('levelXP') + xpGot);
 
     // level up
-    if (message.author.settings.levelXP + xpGot > 5 * (message.author.settings.level ^ 2) + 50 * message.author.settings.level + 100) {
-      message.author.settings.update('level', message.author.settings.level + 1);
+    if (message.author.settings.get('levelXP') + xpGot > 5 * (message.author.settings.get('level') ^ 2) + 50 * message.author.settings.get('level') + 100) {
+      message.author.settings.update('level', message.author.settings.get('level') + 1);
       message.author.settings.update('levelXP', 0);
-      message.author.settings.update('balance', message.author.settings.balance + ((message.author.settings.level + 1) * 500));
-      if (message.guild.settings.levelMsg) message.send(`Good job ${message.member}, you have reached **Level ${message.author.settings.level + 1}** and earned ${message.guild.settings.currency}**${(message.author.settings.level + 1) * 500}**!`);
+      message.author.settings.update('balance', message.author.settings.get('balance') + ((message.author.settings.get('level') + 1) * 500));
+      if (message.guild.settings.get('levelMsg')) message.send(`Good job ${message.member}, you have reached **Level ${message.author.settings.get('level') + 1}** and earned ${message.guild.settings.get('currency')}**${(message.author.settings.get('level') + 1) * 500}**!`);
     }
   }
 };

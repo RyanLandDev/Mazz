@@ -9,7 +9,7 @@ module.exports = class extends Monitor {
   }
 
   run(message) {
-    if (message.content === 'm!help' && message.guild.settings.prefix !== 'm!') return message.send('The prefix in this guild is different. Please use **' + message.guild.settings.prefix + 'help**!');
+    if (message.content === 'm!help' && message.guild.settings.get('prefix') !== 'm!') return message.send('The prefix in this guild is different. Please use **' + message.guild.settings.get('prefix') + 'help**!');
   }
 
 };
