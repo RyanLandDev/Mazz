@@ -37,7 +37,7 @@ module.exports = class extends Command {
       .setThumbnail(Member.user.avatarURL())
       .setTimestamp()
       .setFooter(this.client.user.username, this.client.user.avatarURL())
-      .addField('**General**', [`**Level**: ${Member.user.settings.level}`,
+      .addField('**General**', [`**Level**: ${Member.user.settings.get('level')}`,
         `**Level XP**: ${Member.user.settings.get('levelXP')}/${5 * (Member.user.settings.get('level') ^ 2) + 50 * Member.user.settings.get('level') + 100}`,
         `**Progress**: ${xpProgressString}\n`,
         `**Wallet**: ${Member.user.settings.get('balance') < 0 ? '[In Debt]' : ''}${msg.guild.settings.get('currency')}${numberFormatter('#,##0.', Member.user.settings.get('balance'))}`,
