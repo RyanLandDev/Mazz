@@ -6,7 +6,7 @@ module.exports = class extends Monitor {
     super(...args, {
       ignoreOthers: false,
     });
-    this.timestamp = new Timestamp('DD-MM-YYYY');
+    this.timestamp = new Timestamp('x');
   }
 
   async run(message) {

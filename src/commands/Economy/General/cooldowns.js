@@ -58,11 +58,11 @@ module.exports = class extends Command {
     }
 
     const description = [];
-    if (this.client.commands.get('work').cooldowns.get(msg.author.id)) description.push(`**Work** | ${workCDh === 0 ? '' : `${workCDh}h`}${workCDm === 0 ? '' : `${workCDm}m`}${workCDs}s`); else description.push('**Work** | **Ready**');
-    if (this.client.commands.get('crime').cooldowns.get(msg.author.id)) description.push(`**Crime** | ${crimeCDh === 0 ? '' : `${crimeCDh}h`}${crimeCDm === 0 ? '' : `${crimeCDm}m`}${crimeCDs}s`); else description.push('**Crime** | **Ready**');
-    if (this.client.commands.get('beg').cooldowns.get(msg.author.id)) description.push(`**Beg** | ${begCDh === 0 ? '' : `${begCDh}h`}${begCDm === 0 ? '' : `${begCDm}m`}${begCDs}s`); else description.push('**Beg** | **Ready**');
-    if (this.client.commands.get('search').cooldowns.get(msg.author.id)) description.push(`**Search** | ${searchCDh === 0 ? '' : `${searchCDh}h`}${searchCDm === 0 ? '' : `${searchCDm}m`}${searchCDs}s`); else description.push('**Search** | **Ready**');
-    if (this.client.commands.get('rob').cooldowns.get(msg.author.id)) description.push(`**Rob** | ${robCDh === 0 ? '' : `${robCDh}h`}${robCDm === 0 ? '' : `${robCDm}m`}${robCDs}s`); else description.push('**Rob** | **Ready**');
+    if (this.client.finalizers.get('commandCooldown').getCooldown(msg, this.client.commands.get('work'))) description.push(`**Work** | ${workCDh === 0 ? '' : `${workCDh}h`}${workCDm === 0 ? '' : `${workCDm}m`}${workCDs}s`); else description.push('**Work** | **Ready**');
+    if (this.client.finalizers.get('commandCooldown').getCooldown(msg, this.client.commands.get('crime'))) description.push(`**Crime** | ${crimeCDh === 0 ? '' : `${crimeCDh}h`}${crimeCDm === 0 ? '' : `${crimeCDm}m`}${crimeCDs}s`); else description.push('**Crime** | **Ready**');
+    if (this.client.finalizers.get('commandCooldown').getCooldown(msg, this.client.commands.get('beg'))) description.push(`**Beg** | ${begCDh === 0 ? '' : `${begCDh}h`}${begCDm === 0 ? '' : `${begCDm}m`}${begCDs}s`); else description.push('**Beg** | **Ready**');
+    if (this.client.finalizers.get('commandCooldown').getCooldown(msg, this.client.commands.get('search'))) description.push(`**Search** | ${searchCDh === 0 ? '' : `${searchCDh}h`}${searchCDm === 0 ? '' : `${searchCDm}m`}${searchCDs}s`); else description.push('**Search** | **Ready**');
+    if (this.client.finalizers.get('commandCooldown').getCooldown(msg, this.client.commands.get('rob'))) description.push(`**Rob** | ${robCDh === 0 ? '' : `${robCDh}h`}${robCDm === 0 ? '' : `${robCDm}m`}${robCDs}s`); else description.push('**Rob** | **Ready**');
 
     const embed = new MessageEmbed()
       .setAuthor(msg.author.username, msg.author.avatarURL())

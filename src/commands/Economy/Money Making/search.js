@@ -17,7 +17,7 @@ module.exports = class extends Command {
     const itemsToFind = require('../../../config/items/inv_items.json');
     if (Math.round(Math.random() * 4) === 1) {
       const itemFound = itemsToFind[Math.ceil(Math.random() * (itemsToFind.length - 1))];
-      const currentItems = msg.author.settings.items.slice();
+      const currentItems = msg.author.settings.get('items');
       currentItems.push(itemFound.codename);
       msg.author.settings.update('items', currentItems, { arrayAction: 'overwrite' });
       response.push(`, and a ${itemFound.title}`);

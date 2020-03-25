@@ -24,6 +24,7 @@ module.exports = class extends Command {
 
     let userArray;
     if (type === 'wallet') {
+      userArray = Array.from(msg.guild.members.values());
       userArray = msg.guild.members.array();
       userArray.sort(function(a, b) {
         return b.user.settings.get('balance') - a.user.settings.get('balance');
@@ -32,7 +33,7 @@ module.exports = class extends Command {
       for (let i = 0; i < userArray.length; i++) userArray[i] = `${i === 0 ? ' 🥇' : ''}${i === 1 ? ' 🥈' : ''}${i === 2 ? ' 🥉' : ''}${i > 2 ? `${i + 1}.` : ''} **${userArray[i].user.username}** - ${msg.guild.settings.get('currency')}${userArray[i].user.settings.get('balance')}`;
     }
     if (type === 'bank') {
-      userArray = msg.guild.members.array();
+      userArray = Array.from(msg.guild.members.values());
       userArray.sort(function(a, b) {
         return b.user.settings.get('bankBalance') - a.user.settings.get('bankBalance');
       });
@@ -40,7 +41,7 @@ module.exports = class extends Command {
       for (let i = 0; i < userArray.length; i++) userArray[i] = `${i === 0 ? ' 🥇' : ''}${i === 1 ? ' 🥈' : ''}${i === 2 ? ' 🥉' : ''}${i > 2 ? `${i + 1}.` : ''} **${userArray[i].user.username}** - ${msg.guild.settings.get('currency')}${userArray[i].user.settings.get('bankBalance')}`;
     }
     if (type === 'level') {
-      userArray = msg.guild.members.cache.array();
+      userArray = Array.from(msg.guild.members.values());
       userArray.sort(function(a, b) {
         return b.user.settings.get('level') - a.user.settings.get('level');
       });
@@ -48,7 +49,7 @@ module.exports = class extends Command {
       for (let i = 0; i < userArray.length; i++) if (userArray[i].user.settings.get('level') > 0) userArray[i] = `${i === 0 ? ' 🥇' : ''}${i === 1 ? ' 🥈' : ''}${i === 2 ? ' 🥉' : ''}${i > 2 ? `${i + 1}.` : ''} **${userArray[i].user.username}** - Level ${userArray[i].user.settings.get('level')}`; else userArray[i] = '';
     }
     if (type === 'rebirth') {
-      userArray = msg.guild.members.cache.array();
+      userArray = Array.from(msg.guild.members.values());
       userArray.sort(function(a, b) {
         return b.user.settings.get('rebirth') - a.user.settings.get('rebirth');
       });
