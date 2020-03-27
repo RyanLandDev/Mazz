@@ -3,11 +3,12 @@ const items = require('../config/items/inv_items.json');
 
 module.exports = class extends Inhibitor {
   constructor(...args) {
-    super(...args, {
-    });
+    super(...args, {});
   }
 
-  async run(message) {
+  async run(message, command) {
+    if (command.category !== 'Economy') return;
+
     const activeItems = message.author.settings.get('activeItems').slice();
     if (activeItems.length <= 0) return;
     for (let i = 0; i < activeItems.length; i++) {

@@ -7,7 +7,9 @@ module.exports = class extends Inhibitor {
     });
   }
 
-  async run(message) {
+  async run(message, command) {
+    if (command.category !== 'Economy') return;
+
     const activeContacts = message.author.settings.get('activeContacts');
     if (activeContacts.length <= 0) return;
     for (const activeContact of activeContacts) {
