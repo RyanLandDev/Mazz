@@ -20,6 +20,11 @@ module.exports = class extends Command {
       .then(response => response.json())
       .then(body => body);
 
+    const countriesM = countries.slice();
+    countriesM.sort(function(a, b) {
+      return b.cases - a.cases;
+    });
+
     const mostActiveCases = countries.slice();
     mostActiveCases.sort(function(a, b) {
       return b.active - a.active;
@@ -57,16 +62,16 @@ module.exports = class extends Command {
       .addField('Total Cases', output.cases, true)
       .addField('Deaths', output.deaths, true)
       .addField('Recovered', output.recovered, true)
-      .addField('Countries with most cases', [`${countries[0].country}: ${countries[0].cases}`,
-        `${countries[1].country}: ${countries[1].cases}`,
-        `${countries[2].country}: ${countries[2].cases}`,
-        `${countries[3].country}: ${countries[3].cases}`,
-        `${countries[4].country}: ${countries[4].cases}`,
-        `${countries[5].country}: ${countries[5].cases}`,
-        `${countries[6].country}: ${countries[6].cases}`,
-        `${countries[7].country}: ${countries[7].cases}`,
-        `${countries[8].country}: ${countries[8].cases}`,
-        `${countries[9].country}: ${countries[9].cases}`].join('\n'), true)
+      .addField('Countries with most cases', [`${countriesM[0].country}: ${countriesM[0].cases}`,
+        `${countriesM[1].country}: ${countriesM[1].cases}`,
+        `${countriesM[2].country}: ${countriesM[2].cases}`,
+        `${countriesM[3].country}: ${countriesM[3].cases}`,
+        `${countriesM[4].country}: ${countriesM[4].cases}`,
+        `${countriesM[5].country}: ${countriesM[5].cases}`,
+        `${countriesM[6].country}: ${countriesM[6].cases}`,
+        `${countriesM[7].country}: ${countriesM[7].cases}`,
+        `${countriesM[8].country}: ${countriesM[8].cases}`,
+        `${countriesM[9].country}: ${countriesM[9].cases}`].join('\n'), true)
       .addField('Countries with most active cases', [`${mostActiveCases[0].country}: ${mostActiveCases[0].active}`,
         `${mostActiveCases[1].country}: ${mostActiveCases[1].active}`,
         `${mostActiveCases[2].country}: ${mostActiveCases[2].active}`,

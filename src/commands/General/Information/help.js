@@ -113,6 +113,8 @@ module.exports = class extends Command {
     }
 
     richDisplay.setFooterPrefix('Help - Page ');
-    return richDisplay.run(await message.send('Loading help...'));
+    const displayMessage = await message.send('Loading help...');
+    displayMessage.edit('\u200b');
+    return richDisplay.run(displayMessage);
   }
 };
