@@ -21,7 +21,7 @@ module.exports = class extends Monitor {
     // level up
     if (message.author.settings.get('levelXP') + xpGot > 5 * (message.author.settings.get('level') ^ 2) + 50 * message.author.settings.get('level') + 100) {
       message.author.settings.update('level', message.author.settings.get('level') + 1);
-      message.author.settings.update('levelXP', 0);
+      message.author.settings.reset('levelXP');
       message.author.settings.update('balance', message.author.settings.get('balance') + ((message.author.settings.get('level') + 1) * 500));
       if (message.guild.settings.get('levelMsg')) message.send(`Good job ${message.member}, you have reached **Level ${message.author.settings.get('level') + 1}** and earned ${message.guild.settings.get('currency')}**${(message.author.settings.get('level') + 1) * 500}**!`);
     }
