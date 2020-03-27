@@ -54,14 +54,13 @@ module.exports = class extends Command {
     let descArray;
     if (buyingItem.item) descArray = []; else descArray = [`» ${buyingItem.statistics.friendlyname}: ${msg.author.settings.get(buyingItem.statistics.key)}${buyingItem.statExtra ? buyingItem.statExtra : ''} > ${msg.author.settings.get(buyingItem.statistics.key) + buyingItem.statistics.increaser * amount}${buyingItem.statExtra ? buyingItem.statExtra : ''}`];
     descArray.push(`» Price: ${msg.guild.settings.get('currency')}**${numberFormatter('#,##0.', buyingItem.price * amount)}**`);
-    msg.send(
-      new MessageEmbed()
-        .setAuthor(msg.author.username, msg.author.avatarURL())
-        .setColor('GREEN')
-        .setTimestamp()
-        .setDescription(descArray.join('\n'))
-        .setTitle(`<:ds_greentick:591919521598799872> ${buyingItem.buytitle ? buyingItem.buytitle : toFirstCase(item)} successfully bought!`),
-    );
+    msg.send(new MessageEmbed()
+      .setAuthor(msg.author.username, msg.author.avatarURL())
+      .setColor('GREEN')
+      .setTimestamp()
+      .setDescription(descArray.join('\n'))
+      .setFooter(`Tip: Use ${msg.guild.settings.get('prefix')}buy <item> [amount] to buy multiple at a time! For all options, try ${msg.guild.settings.get('prefix')}help buy`)
+      .setTitle(`<:ds_greentick:591919521598799872> ${buyingItem.buytitle ? buyingItem.buytitle : toFirstCase(item)} successfully bought!`));
     this.client.channels.get('690260681831874658').send(new MessageEmbed()
       .setTitle('Buy')
       .setColor('#0099FF')
@@ -72,8 +71,4 @@ module.exports = class extends Command {
       .addField('Buyer\'s Original Balance', msg.author.settings.get('balance'), true)
       .addField('Buyer\'s Final Balance', msg.author.settings.get('balance') - buyingItem.price * amount, true)
       .addField('Guild', msg.guild.name + ` (${msg.guild.id})`, true)
-      .addField('Item Bought', item, true),
-    );
-  }
-
-};
+      .addField('Item Bought', item, true)); }};
