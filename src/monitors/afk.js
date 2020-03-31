@@ -28,7 +28,7 @@ module.exports = class extends Monitor {
         const embed = new MessageEmbed()
           .setAuthor(`${member.displayName} is AFK`, member.user.avatarURL())
           .setColor('#0099FF');
-        if (member.user.settings.get('afkStatus') !== 'none') embed.setDescription(member.user.settings.afkStatus);
+        if (member.user.settings.get('afkStatus') !== 'none') embed.setDescription(member.user.settings.get('afkStatus'));
         return message.send(embed);
       }
     }
