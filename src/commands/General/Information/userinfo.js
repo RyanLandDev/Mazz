@@ -36,7 +36,7 @@ module.exports = class extends Command {
     if (status === 'online') status = '<:ds_online:680430295023091807> **Online**';
 
     // join position
-    let timestamps = Member.guild.members.cache.filter(m => m.user.bot == false).sorted((a, b) => a.joinedTimestamp - b.joinedTimestamp);
+    let timestamps = Member.guild.members.filter(m => m.user.bot == false).sorted((a, b) => a.joinedTimestamp - b.joinedTimestamp);
     timestamps = timestamps.array();
     let joinPos;
     for (let i = 0; i < timestamps.length; i++) {
@@ -45,8 +45,8 @@ module.exports = class extends Command {
 
     // roles
     const array = [];
-    for (let i = 0; i < Member.roles.cache.size; i++) {
-      array.push(Member.roles.cache.array()[i].id);
+    for (let i = 0; i < Member.roles.size; i++) {
+      array.push(Member.roles.array()[i].id);
     }
 
     // booster
@@ -98,7 +98,7 @@ module.exports = class extends Command {
       .addField('Created', moment(User.createdAt).format('dddd Do [of] MMMM YYYY [at] h:mm:ss a') + ' (' + moment(User.createdAt).startOf('day').fromNow() + ')', true)
       .addField('Joined', moment(Member.joinedAt).format('dddd Do [of] MMMM YYYY [at] h:mm:ss a') + ' (' + moment(Member.joinedAt).startOf('day').fromNow() + ')', true)
       .addField('Join Position', joinPos + 1, true)
-      .addField('Roles', '<@&' + array.join('> <@&') + '> (' + Member.roles.cache.size + ')', true)
+      .addField('Roles', '<@&' + array.join('> <@&') + '> (' + Member.roles.size + ')', true)
       .addField('Permissions', permissions, true)
       .addField('Administrator', Member.permissions.toArray().includes('ADMINISTRATOR') ? 'Yes' : 'No', true)
       .addField('Booster', booster, true);
