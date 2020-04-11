@@ -9,7 +9,7 @@
   },
   "author": "Mazz Studios",
   "engines": {
-    "node": "12.0.0"
+    "node": "^12.0.0"
   },
   "dependencies": {
     "canvas": "^2.6.1",
