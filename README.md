@@ -62,7 +62,7 @@ Welcome to the official Mazz Github repository! Here you can find the source cod
 
 ### What is Mazz?
 
-Mazz is a public Discord bot focused on <b>fun<\b> and <b>economy<\b>.
+Mazz is a public Discord bot focused on <b>fun</b> and <b>economy</b>.
 
   
 
