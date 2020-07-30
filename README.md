@@ -36,8 +36,6 @@
 
 <ol  type="I"><li><a  href="#commands">Commands</a></li>
 
-<li><a  href="#documentation">Documentation</a></li>
-
 <li><a  href="#support-server">Support server</a></li>
 
 <li><a  href="#faq">FAQ</a></li>
@@ -54,14 +52,6 @@
 
 <ol  type="I"><li><a  href="#what-should-i-help-with">What should I help with?</a></li>
 
-<li><a  href="#version-info">Version Info</a></li>
-
-<li><a  href="#coding-tips">Coding Tips</a></li>
-
-<li><a  href="#dependencies">Dependencies</a></li>
-
-<li><a  href="#contributors">Contributors</a></li></ul>
-
   
 
 ## Introduction
@@ -72,13 +62,13 @@ Welcome to the official Mazz Github repository! Here you can find the source cod
 
 ### What is Mazz?
 
-Mazz is a public Discord bot focused on a one-of-a-kind 💵 <b>economy/currency/money</b> system.
+Mazz is a public Discord bot focused on <b>fun<\b> and <b>economy<\b>.
 
   
 
 ### How do I get it?
 
-You can invite the bot to your own Discord server using [this](https://discordapp.com/oauth2/authorize?client_id=650273454062567435&permissions=371776&scope=bot) link.
+You can invite the bot to your own Discord server using [this](https://bit.ly/addmazz) link.
 
   
 
@@ -132,17 +122,15 @@ Any other type of suggestion should probably be submitted to, once again, the <a
 
 #### I want to help code the bot. How can I?
 
-The best way to get into the Mazz developer team is to propose commits. Fixing bugs in the code, creating planned features, and so on. If we see you are proposing a lot of good commits (and we accept them) that means you are doing a good job! If we want you to join the official team, we'll shoot you a DM.
+The best way to get into the Mazz developer team is to create pull requests. Fixing bugs in the code, creating planned features, and so on. If we see you are requesting a lot of good pulls (and we accept them) that means you are doing a good job! If we want you to join the official team, we'll shoot you a DM.
 
   
 
 ## Developers
 
-Want to support Mazz code-wise? You've come to the right place! You are free to propose commits anywhere in the repository. You'll get a free cookie 🍪
+Want to support Mazz code-wise? You've come to the right place! You are free to pull request anywhere in the repository. You'll get a free cookie 🍪
 
 
 ### What should I help with?
 
 You could help with anything! Helping us in any way helps. What helps us most? 🐞 <b>Bug fixes</b>. We love to work on new features, but unfortunately bugs come with that too. It would make our day if you helped fix one of them!
-
-Note: You should ensure the code you've made works. We can't use broken code.
