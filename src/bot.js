@@ -4,7 +4,7 @@
 //
 // ============================================================================================================================================
 
-const useCanary = true;
+const useCanary = false;
 
 const { Client, PermissionLevels } = require('klasa');
 require('dotenv').config();
@@ -25,7 +25,7 @@ app.get('/', (request, response) => {
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+  http.get(`http://mazz.ryanlanddev.repl.co/`);
 }, 280000);
 
 // ============================================================================================================================================
