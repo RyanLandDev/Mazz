@@ -20,7 +20,7 @@
     "express": "^4.17.1",
     "figlet": "^1.2.4",
     "fs-nextra": "^0.4.7",
-    "klasa": "github:dirigeants/klasa#sgn",
+    "klasa": "github:dirigeants/klasa#settings",
     "minimist": "^1.2.5",
     "moment": "^2.24.0",
     "mongodb": "^3.5.3",
