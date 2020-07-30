@@ -100,14 +100,6 @@ help [command name]
 
   
 
-### Documentation
-
-We've made an extensive documentation about using Mazz on Gitbook. It can be found here: https://ryanland.gitbook.io/mazz<br>
-
-This documentation is mostly for specific information. If you're looking for that, here you go.
-
-  
-
 ### Support server
 
 Haven't found what you're looking for? You can ask anything about Mazz in our official support server. Before asking for help, please read the Support Rules inside of the support channel. Invite: https://discord.gg/aZEZ7Ct
@@ -148,50 +140,9 @@ The best way to get into the Mazz developer team is to propose commits. Fixing b
 
 Want to support Mazz code-wise? You've come to the right place! You are free to propose commits anywhere in the repository. You'll get a free cookie 🍪
 
-  
 
 ### What should I help with?
 
 You could help with anything! Helping us in any way helps. What helps us most? 🐞 <b>Bug fixes</b>. We love to work on new features, but unfortunately bugs come with that too. It would make our day if you helped fix one of them!
 
 Note: You should ensure the code you've made works. We can't use broken code.
-
-  
-
-### Version Info
-
-- Version: v1.0.0
-
-- Version Name: The Total Rewrite
-
-- Version Status: INDEV
-
-  
-
-### Coding Tips
-
-- Use ESLint
-
-- Commit from your code editor
-
-  
-
-### Main Dependencies
-
-- Language: Javascript
-
-- Runtime: Node.js 12
-
-- Library: Discord.js 12
-
-- Framework: Klasa#master
-
-- Database Provider: MongoDB
-
-  
-
-### Contributors
-
-- RyanLand (RyanLandDev)
-
-- Alcoholic (Al-Kohollik)
