@@ -113,6 +113,7 @@ module.exports = class extends Command {
     }
 
     richDisplay.setFooterPrefix('Help - Page ');
+richDisplay.setFooterSuffix(' - Made by RyanLand#3916 and Al Kohollik#7261');
     const displayMessage = await message.send('Loading help...');
     displayMessage.edit('\u200b');
     return richDisplay.run(displayMessage);
