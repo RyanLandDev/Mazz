@@ -1,0 +1,20 @@
+{
+  "name": "mazz",
+  "version": "0.0.1",
+  "description": "The best economy bot on Discord.",
+  "main": "src/bot.js",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mazz Studios",
+  "license": "MIT",
+  "engines": {
+    "node": "^12.0.0"
+  },
+  "dependencies": {
+    "axoncore": "^2.1.0",
+    "dotenv": "^8.2.0",
+    "eris": "^0.13.3"
+  }
+}
