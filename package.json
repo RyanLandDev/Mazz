@@ -1,20 +1,23 @@
 {
   "name": "mazz",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "The best economy bot on Discord.",
-  "main": "src/bot.js",
-  "scripts": {
-    "start": "node .",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Mazz Studios",
+  "link": "https://github.com/MazzStudios/Mazz",
   "license": "MIT",
   "engines": {
-    "node": "^12.0.0"
+    "node": ">=8.0.0"
+  },
+  "main": "./index.js",
+  "scripts": {
+    "start": "node -r esm src/index.js",
+    "start:pm2": "pm2 start scripts/start.config.js"
   },
   "dependencies": {
-    "axoncore": "^2.1.0",
+    "axoncore": "^2.0.0",
+    "chalk": "^2.4.2",
     "dotenv": "^8.2.0",
-    "eris": "^0.13.3"
+    "eris": "git+https://www.github.com/khaazz/eris.git#axoncore",
+    "pm2": "^4.2.1"
   }
 }
