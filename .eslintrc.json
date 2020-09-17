@@ -1,6 +1,0 @@
-{
-  "extends": "@axonteam/eslint-config",
-  "rules": {
-    "no-magic-numbers": "off"
-  }
-}
