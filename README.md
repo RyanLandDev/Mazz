@@ -1,0 +1,2 @@
+# Mazz
+Public Discord bot.
