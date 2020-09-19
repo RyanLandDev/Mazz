@@ -1,5 +1,5 @@
 const Bot = require('./Bot');
-const config = require('./configs/config.json');
+const config = require('../configs/config.json');
 
 if (config.settings.db === 2) {
     try {

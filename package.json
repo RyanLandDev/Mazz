@@ -8,9 +8,9 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "main": "./index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "start": "node -r esm src/index.js",
+    "start": "node -r esm ./src/index.js",
     "start:pm2": "pm2 start scripts/start.config.js"
   },
   "dependencies": {
