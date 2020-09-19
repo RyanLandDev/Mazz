@@ -1,11 +1,12 @@
 const Eris = require('eris');
+require('dotenv').config();
 
 const { AxonOptions } = require('axoncore');
 
 const Client = require('./Client');
 
 const botConfig = require('./configs/config.json');
-const secret = require('./configs/secret.json');
+const secret = process.env;
 const lang = require('./configs/lang.json');
 
 const MyUtils = require('./MyUtils');
@@ -40,7 +41,7 @@ secret.webhooks,
  * new Client(token, erisOptions, AxonOptions) => Modules imported in Client
  */
 const client = new Eris.Client(
-    secret.bot.token,
+    secret.CTOKEN,
     {
         autoreconnect: true,
         defaultImageFormat: 'png',
