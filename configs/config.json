@@ -18,7 +18,7 @@
         "version": "0.1.0"
     },
     "staff": {
-        "owners": [{ "name": "", "id": "" }],
+        "owners": [{ "name": "RyanLand", "id": "298491523459317762" }, { "name": "Al Kohollik", "id": "539004733252304896" }],
         "admins": [{ "name": "", "id": "" }]
     },
     "template": {
