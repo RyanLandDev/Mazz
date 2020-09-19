@@ -8,9 +8,9 @@
         "guildConfigCache": 1000
     },
     "prefixes": {
-        "general": "a!",
-        "admin": "a.",
-        "owner": "a$"
+        "general": "m!",
+        "admin": "m.",
+        "owner": "m$"
     },
     "info": {
         "name": "AxonCore - eris",
@@ -29,8 +29,8 @@
         },
 
         "emotes": {
-            "error": ":x:",
-            "success": ":white_check_mark:"
+            "error": "<:redtick:635082052189814806>",
+            "success": "<:greentick:635082052261380097>"
         }
     }
 }
