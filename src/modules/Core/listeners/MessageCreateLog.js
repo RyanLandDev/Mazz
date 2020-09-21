@@ -13,7 +13,7 @@ class MessageCreateLog extends Listener {
         /** Event name (Function name) */
         this.label = 'messageCreateLog';
 
-        this.enabled = true;
+        this.enabled = false;
 
         this.info = {
             owners: ['KhaaZ'],

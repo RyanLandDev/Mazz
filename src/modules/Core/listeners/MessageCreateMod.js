@@ -13,7 +13,7 @@ class MessageCreateMod extends Listener {
         /** Event name (Function name) */
         this.label = 'messageCreateMod';
 
-        this.enabled = true;
+        this.enabled = false;
 
         this.info = {
             owners: ['KhaaZ'],
