@@ -1,4 +1,5 @@
 const { Listener } = require('axoncore');
+const botConfig = require('../../../../configs/config.json');
 
 class GuildDelete extends Listener {
     /**
@@ -27,6 +28,10 @@ class GuildDelete extends Listener {
      */
     execute(guild, guildConfig) { // eslint-disable-line
         console.log(`Guild Deleted: ${guild.name} [${guild.id}]`);
+        this.bot.editStatus(null, {
+            name: `${botConfig.prefixes.general}help | ${this.bot.guilds.size} servers 🔥`,
+            type: 0,
+        } );
         return Promise.resolve();
     }
 }

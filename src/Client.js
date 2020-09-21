@@ -49,7 +49,7 @@ class Client extends AxonClient {
         // overrides default editStatus
         // used to setup custom status
         this.botClient.editStatus(null, {
-            name: `AxonCore | ${this.settings.prefixes[0]}help`,
+            name: `${this.settings.prefixes[0]}help | ${this.botClient.guilds.size} servers 🔥`,
             type: 0,
         } );
     }

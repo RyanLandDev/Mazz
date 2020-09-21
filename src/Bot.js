@@ -7,7 +7,8 @@ const Client = require('./Client');
 
 const botConfig = require('../configs/config.json');
 const secret = process.env;
-    const lang = require('../configs/lang.json');
+
+const lang = require('../configs/lang.json');
 
 const MyUtils = require('./MyUtils');
 
