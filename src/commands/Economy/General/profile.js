@@ -24,6 +24,16 @@ module.exports = class extends Command {
       Member = member;
     }
 
+    console.log(Member);
+
+    const errEmbed = new MessageEmbed()
+      .setTimestamp()
+      .setColor('RED')
+      .setTitle('<:ds_redtick:591919718554796033> Error')
+      .setDescription('The specified user was not found.');
+
+    if (!Member.user) throw msg.send(errEmbed);
+
     // level progress
     const xpProgress = Math.floor(Member.user.settings.get('levelXP') / (5 * (Member.user.settings.get('level') ^ 2) + 50 * Member.user.settings.get('level') + 100) * 10);
     let xpProgressString = '';

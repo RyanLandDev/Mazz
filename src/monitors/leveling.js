@@ -10,6 +10,7 @@ module.exports = class extends Monitor {
   }
 
   async run(message) {
+    await message.author.settings.sync();
     // cooldown
     if (this.timestamp.display() - message.author.settings.get('lastXP') < 45000) return;
 
