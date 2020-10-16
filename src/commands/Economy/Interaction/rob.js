@@ -96,7 +96,7 @@ module.exports = class extends Command {
       msg.send(new MessageEmbed()
         .setTitle('<:ds_redtick:591919718554796033> Robbery failed')
         .setColor('RED')
-        .setDescription(`${activeItems.includes('llama') ? ` \`${member.username}\`'s llama spit on you and you ` : ' You '}have been fined ${msg.guild.settings.currency}**${moneyLost}**${lawyer ? '. Your lawyer is a hero!' : ''}`));
+        .setDescription(`${activeItems.includes('llama') ? ` \`${member.username}\`'s llama spit on you and you ` : ' You '}have been fined ${msg.guild.settings.get('currency')}**${moneyLost}**${lawyer ? '. Your lawyer is a hero!' : ''}`));
       msg.author.settings.update('balance', msg.author.settings.get('balance') - moneyLost);
       member.settings.update('balance', member.settings.get('balance') + moneyLost);
       return;
