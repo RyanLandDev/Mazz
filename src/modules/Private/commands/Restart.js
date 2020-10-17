@@ -5,7 +5,7 @@ class Restart extends Command {
         super(module);
 
         this.label = 'restart';
-        this.aliases = ['restart', 'rs'],
+        this.aliases = ['rs'],
             this.info = { description: 'Restarts the bot.' };
         this.permissions = new CommandPermissions(this, {
             staff: {
