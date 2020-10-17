@@ -1,22 +1,10 @@
-/* eslint-disable no-unused-vars */
 const nodeUtil = require('util');
-const botDevs = require('../../../Utils');
+const config = require('../../../../configs/config.json');
 
 const {
     Command,
     CommandPermissions,
     CommandOptions,
-    CommandResponse,
-    AxonEnums,
-    Collection,
-    Embed,
-    Prompt,
-    MessageCollector,
-    Stack,
-    Queue,
-    FunctionQueue,
-    AutoQueue,
-    AsyncQueue,
 } = require('axoncore');
 
 class Eval extends Command {
@@ -24,26 +12,17 @@ class Eval extends Command {
         super(module);
 
         this.label = 'eval';
-        this.aliases = ['eval', 'e'];
 
         this.info = {
-            name: 'eval',
-            description: 'Eval js code.',
-            usage: 'eval [js code]',
-            examples: ['eval 1 + 1'],
+            description: 'Evaluate JavaScript code.',
+            usage: 'eval [code]',
+            examples: ['eval 1+1'],
         };
 
-        /**
-         * @type {CommandOptions}
-         */
         this.options = new CommandOptions(this, {
             argsMin: 1,
-            cooldown: null,
         } );
-        
-        /**
-         * @type {CommandPermissions}
-         */
+
         this.permissions = new CommandPermissions(this, {
             staff: {
                 needed: this.axon.staff.owners,
@@ -74,13 +53,13 @@ class Eval extends Command {
             }
         } catch (err) {
             this.logger.debug(err.stack);
-            return this.sendError(msg.channel, err.message ? err.message : `Error: ${err}`);
+            return this.utils.sendError(msg.channel, err.message ? err.message : `Error: ${err}`);
         }
 
         evalString = evalString.replace(new RegExp(this.bot.token, 'g'), '[REDACTED TOKEN]');
 
         if (evalString.length === 0) {
-            return this.sendError(msg.channel, 'Nothing to evaluate.');
+            return this.utils.sendError(msg.channel, 'Nothing to evaluate.');
         }
 
         const splitEvaled = evalString.match(/[\s\S]{1,1900}[\n\r]/g) || [evalString];
@@ -94,19 +73,9 @@ class Eval extends Command {
                 if (!splitEvaled[i]) {
                     break;
                 }
-                msg.channel.createMessage({
-                    embed: {
-                        description: `**Output${i > 1 ? ` ${i}` : ''}**:\n\`\`\`js\n${splitEvaled[i]}\n\`\`\``,
-                        author: { name: msg.author.username, icon_url: msg.author.avatarURL },
-                        color: 0x0099FF
-                    }
-                });
+                this.utils.sendBasic(msg, `**Output${i > 1 ? ` ${i}` : ''}**:\n\`\`\`js\n${splitEvaled[i]}\n\`\`\``);
             }
         }
-
-
-    
-        // return this.sendMessage(channel, `\`\`\`${lang}\n${content}\`\`\``);
         
     }
 }

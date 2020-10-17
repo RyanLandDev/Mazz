@@ -3,7 +3,7 @@ const { Module } = require('axoncore');
 const commands = require('./commands/index');
 const listeners = require('./listeners/index');
 
-class Core extends Module {
+class General extends Module {
     /**
      * @param {import('axoncore').AxonClient} client
      * @param {import('axoncore').ModuleData} data
@@ -11,14 +11,11 @@ class Core extends Module {
     constructor(client, data = {} ) {
         super(client, data);
 
-        this.label = 'Core';
-
-        this.enabled = true;
-        this.serverBypass = true;
+        this.label = 'General';
 
         this.info = {
-            name: 'Core',
-            description: 'The main module with most basic commands.',
+            name: 'General',
+            description: 'General commands like help, ping and more.',
         };
     }
 
@@ -27,4 +24,4 @@ class Core extends Module {
     }
 }
 
-module.exports = Core;
+module.exports = General;

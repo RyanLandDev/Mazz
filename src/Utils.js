@@ -1,4 +1,5 @@
 const { Utils } = require('axoncore');
+const config = require('../configs/config.json');
 
 class MazzUtils extends Utils {
     /**
@@ -8,6 +9,48 @@ class MazzUtils extends Utils {
         super(client);
         this.invite = /^(discord.gg\/|discordapp.com\/invite\/)([a-z0-9]+)$/gi;
     }
+
+    // ====================================================================================================================================
+    //
+    // Embeds
+    //
+    // ====================================================================================================================================
+
+    // error embed util
+    sendError(channel, description) {
+        let date = new Date();
+        date = date.toISOString();
+        return channel.createMessage({
+            embed: {
+                description: description,
+                title: `${config.template.emotes.error} Error`,
+                color: config.template.embeds.error,
+                timestamp: date,
+                footer: { text: this.bot.user.username, icon_url: this.bot.user.avatarURL }
+            }
+        });
+    }
+
+    // basic embed util
+    sendBasic(message, description, title) {
+        let date = new Date();
+        date = date.toISOString();
+        const embed = {
+            description: description,
+            author: { name: message.author.username, icon_url: message.author.avatarURL },
+            color: config.template.embeds.global,
+            timestamp: date,
+            footer: { text: this.bot.user.username, icon_url: this.bot.user.avatarURL },
+        };
+        if (title) embed.title = title;
+        return message.channel.createMessage({ embed: embed });
+    }
+
+    // ====================================================================================================================================
+    //
+    // Colors
+    //
+    // ====================================================================================================================================
 
     /**
      * Convert a hex code into a rgb code

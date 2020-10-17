@@ -1,4 +1,4 @@
 module.exports = {
-    Core: require('./Core/index'),
+    General: require('./General/index'),
     Private: require('./Private/index'),
 };

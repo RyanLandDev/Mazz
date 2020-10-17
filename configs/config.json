@@ -23,9 +23,9 @@
     },
     "template": {
         "embeds": {
-            "help": "ffffff",
-            "global": 4315874,
-            "error": 15844367
+            "help": 16777215,
+            "global": 39423,
+            "error": 15223869
         },
 
         "emotes": {
