@@ -54,25 +54,23 @@ class Client extends AxonClient {
         } );
     }
 
-    // disabled
     /**
      * @param {import('discord.js').Message} msg
      * @param {import('axoncore').GuildConfig} guildConfig
      * @returns {Promise<import('discord.js').Message>}
      */
     // eslint-disable-next-line no-unused-vars
-    $sendFullHelp(msg, guildConfig) {
+    sendFullHelp(msg, guildConfig) {
         // override sendFullHelp method
         return this.axonUtils.sendMessage(msg.channel, 'Full Help override');
     }
 
-    // disabled
     /**
      * @param {import('axoncore').Command} command
      * @param {import('axoncore').CommandEnvironment} env
      * @returns {Promise<import('discord.js').Message>}
      */
-    $sendHelp(command, env) {
+    sendHelp(command, env) {
         // override sendHelp method
         return this.axonUtils.sendMessage(env.msg.channel, `Help override for ${command.label}`);
     }
