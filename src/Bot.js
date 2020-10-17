@@ -10,7 +10,7 @@ const secret = process.env;
 
 const lang = require('../configs/lang.json');
 
-const MyUtils = require('./MyUtils');
+const MazzUtils = require('./Utils');
 
 const axonOptions = new AxonOptions( {
     prefixes: botConfig.prefixes,
@@ -27,7 +27,7 @@ const axonOptions = new AxonOptions( {
 },
 secret.webhooks,
 {
-    utils: MyUtils, // use your own Utils
+    utils: MazzUtils, // use your own Utils
     logger: null, // custom Logger
     DBProvider: null, // custom DB Service
     DBLocation: `${__dirname}/Database/`,

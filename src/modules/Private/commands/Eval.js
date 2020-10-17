@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 const nodeUtil = require('util');
+const botDevs = require('../../../Utils');
 
 const {
     Command,
@@ -26,7 +27,6 @@ class Eval extends Command {
         this.aliases = ['eval', 'e'];
 
         this.info = {
-            owners: ['KhaaZ'],
             name: 'eval',
             description: 'Eval js code.',
             usage: 'eval [js code]',
@@ -47,7 +47,6 @@ class Eval extends Command {
         this.permissions = new CommandPermissions(this, {
             staff: {
                 needed: this.axon.staff.owners,
-                bypass: this.axon.staff.owners,
             },
         } );
     }
@@ -58,12 +57,18 @@ class Eval extends Command {
     async execute(env) {
         const { msg, args, guildConfig } = env;
         let evalString;
+        let noOutput;
         try {
             // eslint-disable-next-line no-eval
-            evalString = await eval(args.join(' ') );
+            evalString = args.join(' ');
+            if (evalString.includes('--no-output')) {
+                noOutput = true;
+                evalString = evalString.replace('--no-output', '');
+            }
+            evalString = await eval(evalString);
 
             if (typeof evalString === 'object') {
-                evalString = nodeUtil.inspect(evalString, { depth: 0, showHidden: true } );
+                evalString = nodeUtil.inspect(evalString, { depth: 0, showHidden: true });
             } else {
                 evalString = String(evalString);
             }
@@ -72,7 +77,7 @@ class Eval extends Command {
             return this.sendError(msg.channel, err.message ? err.message : `Error: ${err}`);
         }
 
-        evalString = this.cleanUpToken(evalString);
+        evalString = evalString.replace(new RegExp(this.bot.token, 'g'), '[REDACTED TOKEN]');
 
         if (evalString.length === 0) {
             return this.sendError(msg.channel, 'Nothing to evaluate.');
@@ -84,31 +89,25 @@ class Eval extends Command {
             this.sendMessage(msg.channel, `Cut the response! [3/${splitEvaled.length} | ${evalString.length} chars]`);
         }
         
-        for (let i = 0; i < 3; i++) {
-            if (!splitEvaled[i] ) {
-                break;
+        if (!noOutput) {
+            for (let i = 0; i < 3; i++) {
+                if (!splitEvaled[i]) {
+                    break;
+                }
+                msg.channel.createMessage({
+                    embed: {
+                        description: `**Output${i > 1 ? ` ${i}` : ''}**:\n\`\`\`js\n${splitEvaled[i]}\n\`\`\``,
+                        author: { name: msg.author.username, icon_url: msg.author.avatarURL },
+                        color: 0x0099FF
+                    }
+                });
             }
-            this.sendCode(msg.channel, splitEvaled[i] );
         }
-        return new CommandResponse( {
-            success: true,
-        } );
-    }
 
-    /**
-     * @param {String} evalString
-     */
-    cleanUpToken(evalString) {
-        return evalString.replace(new RegExp(this.bot.token, 'g'), 'Khaaz Baguette');
-    }
 
-    /**
-     * @param {import('eris').TextableChannel} channel
-     * @param {String} content
-     * @param {String} lang
-     */
-    sendCode(channel, content, lang = 'js') {
-        return this.sendMessage(channel, `\`\`\`${lang}\n${content}\`\`\``);
+    
+        // return this.sendMessage(channel, `\`\`\`${lang}\n${content}\`\`\``);
+        
     }
 }
 

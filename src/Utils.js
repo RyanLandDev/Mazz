@@ -1,6 +1,6 @@
 const { Utils } = require('axoncore');
 
-class MyUtils extends Utils {
+class MazzUtils extends Utils {
     /**
      * @param {import('axoncore').AxonClient} client
      */
@@ -37,4 +37,4 @@ class MyUtils extends Utils {
     }
 }
 
-module.exports = MyUtils;
+module.exports = MazzUtils;
