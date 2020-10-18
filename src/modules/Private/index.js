@@ -1,7 +1,7 @@
 const { Module, CommandPermissions } = require('axoncore');
 
 const commands = require('./commands/index');
-// const listeners = require('./commands/index');
+const listeners = require('./listeners/index');
 
 class Private extends Module {
     /**
@@ -25,7 +25,7 @@ class Private extends Module {
     }
 
     init() {
-        return { commands };
+        return { commands, listeners };
     }
 }
 

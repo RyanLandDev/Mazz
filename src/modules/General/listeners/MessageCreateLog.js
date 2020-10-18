@@ -26,6 +26,7 @@ class MessageCreateLog extends Listener {
      * @param {import('axoncore').GuildConfig} guildConfig
      */
     execute(message, guildConfig) { // eslint-disable-line
+        console.log('hi');
         if (!message.channel.guild) {
             return Promise.resolve();
         }

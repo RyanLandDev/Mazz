@@ -3,5 +3,5 @@ module.exports = {
     GuildDelete: require('./GuildDelete'),
     MessageCreateLog: require('./MessageCreateLog'),
     MessageCreateMod: require('./MessageCreateMod'),
-    CommandExecution: require('./CommandExecution')
+    HelpDetect: require('./HelpDetect')
 };
