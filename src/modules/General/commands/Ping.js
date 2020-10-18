@@ -15,6 +15,8 @@ class Ping extends Command {
 
         const diff = (Date.now() - start);
         this.editMessage(mess, `:ping_pong: | Returned at ${diff}ms`);
+
+        return new CommandResponse({ success: true });
     }
 }
 

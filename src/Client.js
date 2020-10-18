@@ -1,5 +1,5 @@
 const { AxonClient } = require('axoncore');
-const { CategoryHelp, CommandHelp } = require('./modules/General/commands/Help');
+const { ErrorHelp, SpecHelp } = require('./modules/General/commands/Help');
 
 const modules = require('./modules/index');
 
@@ -62,7 +62,7 @@ class Client extends AxonClient {
      */
     // eslint-disable-next-line no-unused-vars
     sendFullHelp(msg) {
-        return CategoryHelp(msg);
+        return ErrorHelp(this, msg);
     }
 
     /**
@@ -70,9 +70,8 @@ class Client extends AxonClient {
      * @param {import('axoncore').CommandEnvironment} env
      * @returns {Promise<import('discord.js').Message>}
      */
-    sendHelp(env) {
-        console.log(env);
-        return CommandHelp(env.msg);
+    sendHelp(cmd, env) {
+        return SpecHelp(this, cmd, env);
     }
 }
 
