@@ -1,4 +1,5 @@
 const { AxonClient } = require('axoncore');
+const { CategoryHelp, CommandHelp } = require('./modules/General/commands/Help');
 
 const modules = require('./modules/index');
 
@@ -60,9 +61,8 @@ class Client extends AxonClient {
      * @returns {Promise<import('discord.js').Message>}
      */
     // eslint-disable-next-line no-unused-vars
-    sendFullHelp(msg, guildConfig) {
-        // override sendFullHelp method
-        return this.axonUtils.sendMessage(msg.channel, 'Full Help override');
+    sendFullHelp(msg) {
+        return CategoryHelp(msg);
     }
 
     /**
@@ -70,9 +70,9 @@ class Client extends AxonClient {
      * @param {import('axoncore').CommandEnvironment} env
      * @returns {Promise<import('discord.js').Message>}
      */
-    sendHelp(command, env) {
-        // override sendHelp method
-        return this.axonUtils.sendMessage(env.msg.channel, `Help override for ${command.label}`);
+    sendHelp(env) {
+        console.log(env);
+        return CommandHelp(env.msg);
     }
 }
 
