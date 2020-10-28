@@ -4,9 +4,11 @@ const config = require('../configs/config.json');
 if (config.settings.db === 2) {
     try {
         const mongoose = require('mongoose');
-        mongoose.connect('mongodb://localhost/AxonCoreDB', {
+        require('dotenv').config();
+        mongoose.connect(process.env.MONGOURI, {
+            useNewUrlParser: true,
             useCreateIndex: true,
-            autoReconnect: true,
+            useUnifiedTopology: true
         } )
             .then( () => {
                 Bot.logger.notice('Connected to AxonCore DataBase.');
